@@ -1,8 +1,8 @@
 import os
 import argparse
 
-text = r'''teams?'''
-replacement = r'''teams/teams?'''
+text = "href='"
+replacement = "href='../"
 
 
 
