@@ -4,4 +4,7 @@ This site, eventually hosted on [2019.galacticpuzzlehunt.com](https://2019.galac
 
 ## TODO
 
-* Create a real TODO list
+* Static answer checker
+* Identify which interactive puzzles need fixing
+* Do something with the translations
+* 404 page
