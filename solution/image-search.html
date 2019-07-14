@@ -1,0 +1,371 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: Image Search</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/image-search.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: Image Search
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">UPPERCUT</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Alan Huang<br>
+Special thanks to Logan Engstrom and Chris Shallue
+
+        
+    </h4>
+    
+<style>
+.art {
+    width: 100%;
+}
+
+.art img {
+    width: 256px;
+    max-width: 25vw;
+}
+
+.art td, .art th {
+    padding-left: 0;
+}
+
+.art tr:nth-child(3n+2) td, .art tr:nth-child(3n) td {
+    border-bottom: none;
+}
+
+.not-art {
+    margin: auto;
+}
+
+.not-art td {
+    border: none;
+}
+
+u {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+</style>
+
+<p>
+This is a puzzle about neural networks. Specifically, it uses
+<a href="https://github.com/lengstrom/fast-style-transfer">one</a> trained to
+transfer art styles from fourteen source paintings to any target image, and
+<a href="https://github.com/tensorflow/models/tree/master/research/im2txt">one</a>
+trained on a large corpus of photo captions to describe what it sees.
+
+<p>
+Our panel of judges is made up of the fourteen artists who created each work.
+When consulting an individual judge, he will provide you with a rendition of
+your submission in the style of his work. For example, here is Hokusai's
+rendition of a doge.
+
+<p style="text-align: center">
+You might consider putting your subject into better perspective by adding something in the background.
+<br><img src="image-search/doge.jpg" style="width: 512px; max-width: 50vw;">
+
+<p>
+Each judge also has a particular object he is thinking of, which is always*
+found somewhere in the source work. If you send in a picture without a judge's
+object in it, he will provide a clue as to its identity.
+
+<p>
+* In the case of Broadway Boogie Woogie, there are no concrete objects
+represented in the painting, so this puzzle takes the view that it is based on
+the street grid of Manhattan as referenced in the title.
+
+<table class="art">
+<tr>
+<th><th>Artwork<th>Artist<th>Object
+<tr>
+<td rowspan="3"><img src="image-search/descending-a-staircase.jpg">
+<td>Nude Descending a Staircase<td>Marcel Duchamp<td>staircase
+<tr>
+<td colspan="3">I don't know what Judge 8 is on about. I painted one of these forty years before he did. His doesn't even make sense!
+<tr>
+<td colspan="3">The staircase being descended, as in the title. Duchamp is throwing shade at the younger M. C. Escher below, who also drew a bunch of staircases.
+<tr>
+<td rowspan="3"><img src="image-search/great-wave.jpg">
+<td>The Great Wave off Kanagawa<td>Hokusai<td>mountain
+<tr>
+<td colspan="3">You might consider putting your subject into better perspective by adding something in the background.
+<tr>
+<td colspan="3">Hokusai refers to Mount Fuji, which he has placed at a contrasting scale with the wave before it.
+<tr>
+<td rowspan="3"><img src="image-search/kiss.jpg">
+<td>The Kiss<td>Gustav Klimt<td>flowers
+<tr>
+<td colspan="3">Please disregard those two. I believe love beats hate, anyway... when you paint your lover, put these in her hair.
+<tr>
+<td colspan="3">The figure on the right has flowers on her clothing, the ground beneath, and around her hair. Klimt is waiting for Duchamp and Escher to kiss and make up.
+<tr>
+<td rowspan="3"><img src="image-search/guernica.jpg">
+<td>Guernica<td>Pablo Picasso<td>horse
+<tr>
+<td colspan="3">I always like to center my compositions around an animal.
+<tr>
+<td colspan="3">A panicked horse figures prominently in the center of Guernica.
+<tr>
+<td rowspan="3"><img src="image-search/wanderer.jpg">
+<td>Wanderer above the Sea of Fog<td>Caspar David Friedrich<td>coat
+<tr>
+<td colspan="3">It's not only a good centerpiece for the painting, it's also just common sense when you're up that high.
+<tr>
+<td colspan="3">As it turns out, there really aren't that many distinct things in this painting, so it came down to the coat or the walking stick.
+<tr>
+<td rowspan="3"><img src="image-search/hope.jpg">
+<td>Barack Obama Hope poster<td>Shepard Fairey<td>tie
+<tr>
+<td colspan="3">The wardrobe isn't the focus, but it's what really sells a piece like this.
+<tr>
+<td colspan="3">For the same reason, this one had to hinge on what Obama is wearing.
+<tr>
+<td rowspan="3"><img src="image-search/drying-sails.jpg">
+<td>Drying Sails<td>André Derain<td>basket
+<tr>
+<td colspan="3">They called me a beast, but could a beast have painted this in the bottom left? I don't think so.
+<tr>
+<td colspan="3">In the bottom left as indicated, a fisher or dock worker is carrying a large basket. Derain was a co-founder of Fauvism, named after a critic who disparaged them as <i>les fauves</i> (wild beasts).
+<tr>
+<td rowspan="3"><img src="image-search/relativity.jpg">
+<td>Relativity<td>M. C. Escher<td>bottle
+<tr>
+<td colspan="3">You can barely see Judge 1's version even though he titled his painting after it. Plus, I've got something he doesn't: whatever this figure is carrying in the... uh. Bottom right? I think?
+<tr>
+<td colspan="3">The person descending the stairs toward the bottom right doorway is carrying a tray with a bottle on it. Escher is not very impressed with Duchamp's abstract rendition of a staircase.
+<tr>
+<td rowspan="3"><img src="image-search/dance.jpg">
+<td>Dance<td>Henri Matisse<td>hands
+<tr>
+<td colspan="3">You really just need something that joins all the figures. Something that holds them together.
+<tr>
+<td colspan="3">There's even less in this painting, so we'll go with a body part that's safe for work.
+<tr>
+<td rowspan="3"><img src="image-search/broadway-boogie-woogie.jpg">
+<td>Broadway Boogie Woogie<td>Piet Mondrian<td>cars
+<tr>
+<td colspan="3">I know all these little pieces seem abstract, but they do actually represent something, you know.
+<tr>
+<td colspan="3">And finally the pinnacle of "not much in the painting". Abandoned ideas for this object included roads ("broadway") and dancing ("boogie woogie").
+<tr>
+<td rowspan="3"><img src="image-search/scream.jpg">
+<td>The Scream<td>Edvard Munch<td>boat
+<tr>
+<td colspan="3">See, these two things behind me. You probably didn't even notice them, but that's the whole point.
+<tr>
+<td colspan="3">The figure in <i>The Scream</i> is standing on a bridge or boardwalk. In the body of water behind its head are two small but distinct boats.
+<tr>
+<td rowspan="3"><img src="image-search/campbell-soup.jpg">
+<td>Campbell's Soup Cans<td>Andy Warhol<td>soup
+<tr>
+<td colspan="3">Whatever you add, just add as many of it as you can. That's the key.
+<tr>
+<td colspan="3">Soup is surprisingly hard.
+<tr>
+<td rowspan="3"><img src="image-search/starry-night.jpg">
+<td>The Starry Night<td>Vincent Van Gogh<td>church
+<tr>
+<td colspan="3">I do believe you need something right in the middle to bring the whole composition together.
+<tr>
+<td colspan="3">A church steeple is visible in the bottom center of this painting.
+<tr>
+<td rowspan="3"><img src="image-search/girl-with-hair-ribbon.jpg">
+<td>Girl with Hair Ribbon<td>Roy Lichtenstein<td>hair
+<tr>
+<td colspan="3">You just need some color to really frame her well.
+<tr>
+<td colspan="3">The color around the outer edges is provided by the girl's yellow hair.
+</table>
+
+<p>
+If you submit an image to the jury containing one judge's object, he will ask
+you to gain a second judge's support.
+
+<img src="image-search/jury1.png" style="margin: 20px; width: 100%">
+
+<p>
+Finally, if you submit an image to the jury containing at least two judges'
+objects, they will each give it a star rating that is actually an index into the
+artists' names.
+
+<img src="image-search/jury2.png" style="margin: 20px; width: 100%">
+
+<p>
+Once you figure out everyone's objects and ratings, the letters in order spell
+out <tt><a href="https://en.wikipedia.org/wiki/Dutch_Sam">DUTCH SAM</a>'S
+PUNCH</tt>, which is an <tt><b>UPPERCUT</b></tt>. (There are a few Dutch
+artists represented here, but none of them is named Sam.)
+
+<table class="not-art">
+<tr>
+<td>Nude Descending a Staircase<td>Marcel <u>D</u>uchamp<td>7/13<td>staircase
+<tr>
+<td>The Great Wave off Kanagawa<td>Hok<u>u</u>sai<td>4/7<td>mountain
+<tr>
+<td>The Kiss<td>Gustav Klim<u>t</u><td>11/11<td>flowers
+<tr>
+<td>Guernica<td>Pablo Pi<u>c</u>asso<td>8/12<td>horse
+<tr>
+<td>Wanderer above the Sea of Fog<td>Caspar David Friedric<u>h</u><td>20/20<td>coat
+<tr>
+<td>Barack Obama Hope poster<td><u>S</u>hepard Fairey<td>1/13<td>tie
+<tr>
+<td>Drying Sails<td>André Der<u>a</u>in<td>9/11<td>basket
+<tr>
+<td>Relativity<td><u>M</u>. C. Escher<td>1/8<td>bottle
+<tr>
+<td>Dance<td>Henri Mati<u>ss</u>e<td>10 or 11/12<td>hands
+<tr>
+<td>Broadway Boogie Woogie<td><u>P</u>iet Mondrian<td>1/12<td>cars
+<tr>
+<td>The Scream<td>Edvard M<u>u</u>nch<td>8/11<td>boat
+<tr>
+<td>Campbell's Soup Cans<td>A<u>n</u>dy Warhol<td>2/10<td>soup
+<tr>
+<td>The Starry Night<td>Vin<u>c</u>ent Van Gogh<td>4/14<td>church
+<tr>
+<td>Girl with Hair Ribbon<td>Roy Lic<u>h</u>tenstein<td>7/15<td>hair
+</table>
+
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>
+I trained several dozen style models while constructing this puzzle. You can
+see samples of them all
+<a href="https://drive.google.com/drive/folders/11UDtT_aU2CMBJT2ShjznFIlugVsJgl0i?usp=sharing">here</a>.
+
+<p>
+I'm sorry that I couldn't include a more diverse set of artists in this puzzle.
+The requirement that the works be recognizable to solvers who might not be art
+history buffs* as well as having a distinctive style that transferred well
+ended up severely limiting the selection.
+
+<p>
+* The first testsolve group actually did turn out to consist of art history
+buffs, who blew through it in about ten minutes. I expanded the puzzle as a
+result, adding some less famous works, and tightened the thresholds on the
+image description net. Some of the judges still wildly overtrigger, but
+hopefully this acts as a clue giving you an in to how the puzzle works, rather
+than just being confusing or letting you bypass half the puzzle. The clues were
+designed not to give everything away if you hadn't identified the painting, but
+still avoid a difficulty cliff where the puzzle might become impossible if you
+didn't know enough art history. The second testsolve group informed me that
+Google Image Search could often dig up the original work just given a style
+transfer, which definitely assuaged some of my worries on that point.
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

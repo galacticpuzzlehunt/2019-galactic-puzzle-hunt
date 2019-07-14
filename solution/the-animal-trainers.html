@@ -1,0 +1,302 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: The Animal Trainers</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/the-animal-trainers.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: The Animal Trainers
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">GO BE THE VERY BEST</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Alan Huang, Jakob Weisblat, Rahul Sridhar, Anderson Wang, and Benjamin Yang
+
+        
+    </h4>
+    
+
+<style>
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+.chart td, .chart th {
+    border: none;
+    padding: 0;
+}
+.chart span {
+    writing-mode: vertical-rl;
+}
+.chart td {
+    font-family: monospace;
+    text-align: center;
+    width: 26px;
+}
+.sup {
+    background-color: lime;
+}
+.sub {
+    background-color: tomato;
+}
+.not {
+    background-color: gray;
+}
+</style>
+
+<b>Answers used:</b>
+<p class="answers-used">BLUE
+CLEAR
+DAZZLING
+DUAL
+LUNAR
+MUDDY
+PARABOLIC
+SILVER
+</p>
+
+<p>
+All the answers for this meta are one-word adjectives. How suspicious! While
+each individual word is fairly generic, you can try putting various combinations
+of them into a search engine. Quite a lot of the time, a list of Pokémon moves
+will appear in the results. The first sentence of the flavortext clues this
+&mdash; qunxe and erqoye translate as Sun and Moon, which at the time of hunt
+are the most recent generation of Pokémon games &mdash; as does the title.
+
+<table>
+<tr><th>Type</th><th>Answer</th><th>Noun</th></tr>
+<tr><td>Electric</td><td>PARABOLIC</td><td>Charge</td></tr>
+<tr><td>Water</td><td>MUDDY</td><td>Water</td></tr>
+<tr><td>Fire</td><td>BLUE</td><td>Flare</td></tr>
+<tr><td>Bug</td><td>SILVER</td><td>Wind</td></tr>
+<tr><td>Psychic</td><td>LUNAR</td><td>Dance</td></tr>
+<tr><td>Poison</td><td>CLEAR</td><td>Smog</td></tr>
+<tr><td>Fairy</td><td>DAZZLING</td><td>Gleam</td></tr>
+<tr><td>Dragon</td><td>DUAL</td><td>Chop</td></tr>
+</table>
+
+<p>
+So each answer gives a specific move. Now what? Well, Pokémon moves have a
+bunch of attributes, but in particular, these eight have all distinct types...
+and in Pokémon, types mean one thing: advantages! In fact, this set forms the
+longest possible chain of types where each is super effective against only the
+next one and no others, with the exception that the third element could be
+either Rock or Fire. As clued by the second sentence of the flavortext, we're
+going to need not only the super effectives, but also the not very effectives.
+So let's draw out the full type chart for these eight types.
+
+<table class="chart">
+<tr><th><span></span></th><th><span>Electric</span></th><th><span>Water</span></th><th><span>Fire</span></th><th><span>Bug</span></th><th><span>Psychic</span></th><th><span>Poison</span></th><th><span>Fairy</span></th><th><span>Dragon</span></th></tr>
+<tr><th>Electric</th><td class="sub"></td><td class="sup"></td><td></td><td></td><td></td><td></td><td></td><td class="sub"></td></tr>
+<tr><th>Water</th><td></td><td class="sub"></td><td class="sup"></td><td></td><td></td><td></td><td></td><td class="sub"></td></tr>
+<tr><th>Fire</th><td></td><td class="sub"></td><td class="sub"></td><td class="sup"></td><td></td><td></td><td></td><td class="sub"></td></tr>
+<tr><th>Bug</th><td></td><td></td><td class="sub"></td><td></td><td class="sup"></td><td class="sub"></td><td class="sub"></td><td></td></tr>
+<tr><th>Psychic</th><td></td><td></td><td></td><td></td><td class="sub"></td><td class="sup"></td><td></td><td></td></tr>
+<tr><th>Poison</th><td></td><td></td><td></td><td></td><td></td><td class="sub"></td><td class="sup"></td><td></td></tr>
+<tr><th>Fairy</th><td></td><td></td><td class="sub"></td><td></td><td></td><td class="sub"></td><td></td><td class="sup"></td></tr>
+<tr><th>Dragon</th><td></td><td></td><td></td><td></td><td></td><td></td><td class="not"></td><td class="sup"></td></tr>
+</table>
+
+<p>
+The green super effectives form a diagonal, and match with the grid we're given
+in the puzzle. There are not very effectives
+scattered about, and one ineffective at the bottom. So now what? It would be
+pretty natural to write something into this grid. But nothing we have is exactly
+long enough... right? Well, we haven't used anything linguistic yet. So let's
+try translating the words we have. We don't actually know the translations for
+some of them, but it turns out we do have all the ones for the puzzle answers.
+
+<table>
+<tr><th></th><th>Answer</th><th>Noun</th><th>Class</th><th>Translated</th><th>Declined</th></tr>
+<tr><td>Electric</td><td>PARABOLIC</td><td>Charge</td><td>Physical Action</td><td>GABXO</td><td>GABXWBXO</td></tr>
+<tr><td>Water</td><td>MUDDY</td><td>Water</td><td>Fluid</td><td>OBWNERE</td><td>OBRWNERE</td></tr>
+<tr><td>Fire</td><td>BLUE</td><td>Flare</td><td>Light Producer</td><td>HONWZE</td><td>OTHONWZE</td></tr>
+<tr><td>Bug</td><td>SILVER</td><td>Wind</td><td>Fluid</td><td>ALVERI</td><td>ALVURERI</td></tr>
+<tr><td>Psychic</td><td>LUNAR</td><td>Dance</td><td>Physical Action</td><td>ERQOYE</td><td>ERQOYWYE</td></tr>
+<tr><td>Poison</td><td>CLEAR</td><td>Smog</td><td>Fluid</td><td>SWTABXI</td><td>SWTRABXI</td></tr>
+<tr><td>Fairy</td><td>DAZZLING</td><td>Gleam</td><td>Light Producer</td><td>EGASKA</td><td>ETEGASKA</td></tr>
+<tr><td>Dragon</td><td>DUAL</td><td>Chop</td><td>Physical Action</td><td>JWNTU</td><td>JWNTWNTU</td></tr>
+</table>
+
+<p>
+None of these are the right length either &mdash; disaster! Except that there is
+not only one way to translate each adjective. By now, you should have figured
+out that adjectives change their form depending on semantic properties of the
+nouns they modify. This is a linguistic phenomenon known as
+<a href="https://en.wikipedia.org/wiki/Noun_class">noun classes</a>, and outside
+of Romance languages which mostly use masculine/feminine/neuter, there is a wide
+variety of different categories used for grammatical agreement around the world.
+Puflantu has three special classes of nouns many examples of which can be found
+in the <a href="https://2019.galacticpuzzlehunt.com/static/artifacts/collage">Collage</a> artifact.
+
+<table>
+<tr><th>Noun Class</th><th>Transformation</th><th>Example</th></tr>
+<tr><td>Default</td><td></td><td>ENDALE</td>
+<tr><td>Physical Action</td><td>reduplicate the last consonant cluster, vowel changes to W</td><td>ENDALWLE</td></tr>
+<tr><td>Light Producer</td><td>prepend first vowel + T</td><td>ETENDALE</td></tr>
+<tr><td>Fluid</td><td>add R before the second vowel, padding with U if necessary</td><td>ENDURALE</td></tr>
+</table>
+
+Conveniently, each of the eight nouns from the move names fall into one of our
+three non-default classes. Thus, what we need to do is inflect the modifying
+adjective for that class <i>instead of</i> using its root form.
+
+<table class="chart">
+<tr><th><span></span></th><th><span>Electric</span></th><th><span>Water</span></th><th><span>Fire</span></th><th><span>Bug</span></th><th><span>Psychic</span></th><th><span>Poison</span></th><th><span>Fairy</span></th><th><span>Dragon</span></th></tr>
+<tr><th>Electric</th><td class="sub">G</td><td class="sup">A</td><td>B</td><td>X</td><td>W</td><td>B</td><td>X</td><td class="sub">O</td></tr>
+<tr><th>Water</th><td>O</td><td class="sub">B</td><td class="sup">R</td><td>W</td><td>N</td><td>E</td><td>R</td><td class="sub">E</td></tr>
+<tr><th>Fire</th><td>O</td><td class="sub">T</td><td class="sub">H</td><td class="sup">O</td><td>N</td><td>W</td><td>Z</td><td class="sub">E</td></tr>
+<tr><th>Bug</th><td>A</td><td>L</td><td class="sub">V</td><td>U</td><td class="sup">R</td><td class="sub">E</td><td class="sub">R</td><td>I</td></tr>
+<tr><th>Psychic</th><td>E</td><td>R</td><td>Q</td><td>O</td><td class="sub">Y</td><td class="sup">W</td><td>Y</td><td>E</td></tr>
+<tr><th>Poison</th><td>S</td><td>W</td><td>T</td><td>R</td><td>A</td><td class="sub">B</td><td class="sup">X</td><td>I</td></tr>
+<tr><th>Fairy</th><td>E</td><td>T</td><td class="sub">E</td><td>G</td><td>A</td><td class="sub">S</td><td>K</td><td class="sup">A</td></tr>
+<tr><th>Dragon</th><td>J</td><td>W</td><td>N</td><td>T</td><td>W</td><td>N</td><td class="not">T</td><td class="sup">U</td></tr>
+</table>
+
+<p>
+And voilà, they are all now eight letters. We're almost done. Read down the
+not every effectives as clued, and we appropriately find that to get this
+Galactic Empire moving, we have to make them <tt><b>GO BE THE VERY BEST</b></tt>.
+
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>
+This (along with the original concept for the intro round meta) was the first
+meta proposed for the hunt, as part of the proposal for a xenolinguistics
+theme. The basic idea is that inferring what the noun classes are for a
+language without explicit instruction is itself a pretty interesting puzzle.
+Since we intended for solvers to learn the language throughout the hunt, we
+then needed another mechanic to construct this meta around.
+
+<p>
+Several themes were proposed, including superhero names, emoji names, D&D
+monsters, and (the most thematic) Super Mario Galaxy levels, but in the end we
+went with Pokémon because it had a relatively large selection and a few obvious
+attributes to use. We designed the noun classes based on the moves we could use
+from the types in the chain. The first testsolved version used the generation
+in which each move was introduced as an index, but we switched to making all the
+inflected adjectives be eight letters long so we could reuse the type chart.
+
+<p>
+In the end, the design of this meta meant that the solution had a bunch of
+logical leaps while the answers were very constrained and backsolvable, which
+wasn't ideal. However, we hope it served as an interesting and relatively
+accessible test of your language knowledge!
+
+<p style="text-align: center"><img src="the-animal-trainers.png">
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

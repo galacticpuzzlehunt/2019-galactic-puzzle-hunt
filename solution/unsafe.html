@@ -1,0 +1,203 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: Unsafe</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/unsafe.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: Unsafe
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">MATRIX</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Brian Chen and Jakob Weisblat
+
+        
+    </h4>
+    
+<style>
+table.extraction tr td {
+    padding: 15px 7px;
+}
+</style>
+<p>This is a puzzle about the 2012 train safety PSA, "Dumb Ways to Die".</p>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/IJNR2EpS0jw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>
+This is clued obliquely a few places in the puzzle:</p>
+<ul>
+<li>The description of the player starts with "You look like you could be in a cartoon."</li>
+<li>The map in the train station has the Melbourne Metro insignia on it.</li>
+<li>There is an old screen in the Control Room that is playing a PSA about train safety.</li>
+<li>The song that plays through the earbuds is a vague description of the song, mentioning that it was a campaign and went viral a few years ago.</li>
+<li>The player is called "dumb" in various places - upon reaching any of the deaths labelled "dumbest" in the video, and upon trying to poke the bear without a stick, among elsewhere.</li>
+</ul>
+
+<p>Solvers will proceed through the puzzle, eventually reaching one of the 14 endings. Upon reaching an ending, the game tells you the number of moves, as well as the optimal number of moves. This indicates that the solver should be looking for different endings, as well as the fastest way to each ending.</p>
+
+<p>Here is a table of each "dumb way to die" from the song, whether it is possible to reach it in the game and one possible optimal sequence of moves.
+</p>
+<table>
+<tr><td>Set fire to your hair</td><td>e (to hall) / e (to kitchen) / take stool / w (to hall) / u (to upstairs hall) / e (to bathroom) / put down stool / stand on stool / open cabinet / take gel / spray gel / w (to upstairs hall) / d (to hall) / d (to basement) / w (passing through the tunnel of extraction) / s / pick up candle                       </td></tr>
+<tr><td>Poke a stick at a grizzly bear</td><td>e (to hall) / s (to back entry) / take blue key / unlock door with blue key / open door / s (to backyard) / take stick / n (to back entry) / n (to hall) / e (to kitchen) / open fridge / take fish / w / d / w (passing through the tunnel of extraction) / w / w / w (trying to enter woods, which fails, as bear shows up) / throw fish to bear / wait (for bear to eat fish) / wait (for bear to fall asleep) / wait (for bear to fall asleep) / w / poke bear                </td></tr>
+<tr><td>Eat medicine that's out of date</td><td><i>(not included)</i></td></tr>
+<tr><td>Use your private parts as piranha bait</td><td>e (to hall) / e (to kitchen) / get stool / w (to hall) / w (to bedroom) / open door / w (to garden) / put down stool / get on stool / get bucket / w (to outskirts) / w (to road) / w (to stream) / take water / e (to road) / s (to warehouse) / d (passing through the tunnel of extraction) / u (to hall) / u (to upstairs) / e (to bathroom) / plug drain / turn on faucet / pour bucket / take off belt / take off shoes / take off socks / take off pants / take off jacket / take off shirt / take off hat / take off underwear / get in tub</td>
+<tr><td>Get your toast out with a fork</td><td>open door / w (to garden) / w (to outskirts) / w (to road) / w (to further road) / pull fork / pick up fork / s (to road) / s (to warehouse) / d (passing through tunnel) / u (hall) / e (kitchen) / open cabinet / open middle drawer / open tupperware / get bread / unwrap bread / plug in toaster / put bread in toaster / put bread in toaster / press button / wait / wait / put fork in toaster</td></tr>
+<tr><td>Do your own electrical work</td><td><i>(not included)</i></td></tr>
+<tr><td>Teach your self how to fly</td><td>open door / w (to garden) / w (to outskirts) / n (to space center) / n (to launch pad) / open spaceship / get in / close door / press ON / say "confirm" / press LAUNCH / say "cancel" / wait (or do anything; the ship continues to take off) / wait (the ship starts getting pretty high up) / wait (the ship runs out of fuel; alarms start going off) / wait (the ship starts to spin out of control) / wait (the ship continues to spin out of control) / wait (the ship starts to fall toward the ground) / wait (the ship rapidly approaches the ground) / wait (the ship rapidly approaches the ground) / wait (the ship crash-lands in the tunnel of extraction)</td></tr>
+<tr><td>Eat a two week old unrefrigerated pie</td><td>e (to hall) / e (to kitchen) / open fridge / get pie / w (to hall) / u (to upstairs hall) / w (to study) / take quarter / e (to upstairs hall) / d (to hall) / d (to basement) / w (through tunnel) / e (to town square) / open entrance / s (to mad scientist's house) / u (to mad scientist's lab) / open outer locker / open middle locker / open inner locker / put pie in inner safe / close middle / close outer / go in time machine / put quarter in slot / press button / out / open outer locker / open middle locker / open inner locker / get pie / eat pie</td></tr>
+<tr><td>Let a psycho killer inside</td><td><i>(not included)</i></td></tr>
+<tr><td>Scratch a drug dealer's brand new ride</td><td><i>(not included)</i></td></tr>
+<tr><td>Take your helmet off in outer space</td><td>e (to hall) / e (to kitchen) / take stool / w (to hall) / w (to bedroom) / open door / w (to garden) / put down stool / step on stool / get bucket / e (to bedroom) / e (to hall) / d (to basement) / open vat / dip bucket in vat / w (passing through tunnel) / n (to road) / e (to outskirts) / n (to space center) / n (to launch pad) / put fuel in ship / get in ship / close door / press ON / press LAUNCH / say suit up (meanwhile, the spaceship reaches space) / open door / get out / take off helmet           </td></tr>
+<tr><td>Use a clothes dryer as a hiding place</td><td><i>(not included)</i></td></tr>
+<tr><td>Keep a rattle snake as a pet</td><td>e (to hall) / take shed key / w (to bedroom) / open door / w (to garden) / unlock shed with key / open shed / get cage / e (to bedroom) / e (to hall) / d (to basement) / open key cabinet / get cage key / w (passing through tunnel) / s (to spooky lair) / put cage down / open ancient cabinet / get canister / open canister / get mouse / put mouse in cage (prompting the rattlesnake to enter the cage) / close cage / lock cage with small key                 </td></tr>
+<tr><td>Sell both your kidneys on the internet</td><td><i>(not included)</i></td></tr>
+<tr><td>Eat a tube of super glue</td><td>e (to hall) / e (to kitchen) / get stool / w (to hall) / d (to basement) / w (through tunnel) / s (to lair) / get sacrificial knife / n (to warehouse) / e (to town square) / open entrance / s (to mad scientist's house) / put down stool / get on stool / get tool box / open tool box / get super glue / cut super glue / eat super glue                     </td></tr>
+<tr><td>I wonder, what's this red button do?</td><td><i>(not included)</i></td></tr>
+<tr><td>Dress up like a moose during hunting season</td><td>e (to hall) / u (to upstairs hall) / w (to study) / take quarter / n (to closet) / take quarter / open second drawer / take quarter / s (to study) / e (to upstairs hall) / d (to hall) / d (to basement) / w (to abandoned warehouse) / e (to town square) / open entrance / s (to mad scientist's house) / u (to mad scientist's lab) / go into time machine / insert quarter / insert quarter / insert quarter / press button / exit time machine / d (to mad scientist's house) / n (to town square) / w (to abandoned warehouse) / w (to clearing) / w (to edge of woods) / w (to woods) / s (to hunting grounds) / open entrance / s (to lodge) / get moose head / wear moose head / n (trying to go outside, fail because you're wearing a wobbly moose head) / n</td></tr>
+<tr><td>Disturb a nest of wasps for no good reason</td><td>e (to hall) / e (to kitchen) / open fridge / take fish / w (to hall) / d (to basement) / w (passing through tunnel) / w (to clearing) / w (to edge of woods) / w (try to go into woods; bear shows up and complains) / throw fish to bear / wait (for bear to eat fish) / wait (for bear to fall asleep) / wait (for bear to fall asleep) / w (to woods) / climb ash tree / u / u / u / shake tree (nest falls into elm tree) / d / d / d / d / climb elm tree / u / shake branch (nest falls into pine tree) / d / d / climb pine tree / shake tree / d / take nest / throw nest</td></tr>
+<tr><td>Stand on the edge of a train station platform</td><td>take ipod / e (to hall) / u (to upstairs hall) / w (to study) / open drawer / get earbuds / e (to upstairs hall) / d (to hall) / d (to basement) / w (passing through tunnel) / n (to road) / n (to further along the road) / n (to abandoned train station) / e (to control room) / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / w (to abandoned train station) / put on earbuds / put earbuds in ipod / stand on edge</td></tr>
+<tr><td>Drive around the boom gates at a level crossing</td><td>e (to hall) / s (to back entry) / untie knot / get car key / n (to hall) / d (to basement) / w (passing through tunnel) / n (to road) / n (to further along the road) / n (to abandoned train station) / e (to control room) / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / w (to abandoned train station) / s (to further road) / w (to parking lot) / open car / get in car / close car / e (to further road) / n (try to go to train station, fail because boom gates are closing) / n (drive around boom gates)</td></tr>
+<tr><td>Run across the tracks between the platforms</td><td>e (to hall) / s (to back entryway) / get right shoe / n (to hall) / u (to upstairs hall) / pick up left shoe / d (to hall) / d (to basement) / w (to tunnel) / n (to road) / n (to further along the road) / n (to abandoned train station) / e (to control room) / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / press button / w (to abandoned train station) / take off shoes / put on running shoes / lace up running shoes / run across tracks</td></tr>
+</table>
+
+<p>The death text implied heavily that the length of the optimal path to a death is relevant. Making a table of the lyrics corresponding to deaths, in order of the song, solvers will notice that the length of the path is simply the number of letters in the lyric. So we won't just index the path length into the song lyric. However, solvers may notice that every single optimal path includes the suspiciously named <em>Tunnel of Extraction</em> exactly once. Indexing into the lyrics by the position of the move that leads to passage through the tunnel (or, for one ending, the crash-landing in the tunnel) gives:</p>
+
+<table class="extraction">
+<tr><th>Lyric</th><th>Path Length</th><th>Tunnel Position</th><th>Extract</th></tr>
+<tr><td>Set fire to your hair</td><td>17</td><td>15</td><td>A</td></tr>
+<tr><td>Poke a stick at a grizzly bear</td><td>24</td><td>15</td><td>R</td></tr>
+<tr><td>Use your private parts as Piranha bait</td><td>32</td><td>17</td><td>R</td></tr>
+<tr><td>Get your toast out with a fork</td><td>24</td><td>10</td><td>A</td></tr>
+<tr><td>Teach your self how to fly</td><td>21</td><td>21</td><td>Y</td></tr>
+<tr><td>Eat a two week old unrefrigerated pie</td><td>31</td><td>12</td><td>O</td></tr>
+<tr><td>take your helmet off in outer space</td><td>29</td><td>16</td><td>F</td></tr>
+<tr><td>Keep a rattle snake as a pet</td><td>22</td><td>13</td><td>N</td></tr>
+<tr><td>Eat a tube of super glue</td><td>19</td><td>6</td><td>U</td></tr>
+<tr><td>Dress up like a moose during hunting season</td><td>36</td><td>13</td><td>M</td></tr>
+<tr><td>Disturb a nest of wasps for no good reason</td><td>34</td><td>7</td><td>B</td></tr>
+<tr><td>Stand on the edge of a train station platform</td><td>37</td><td>10</td><td>E</td></tr>
+<tr><td>Drive around the boom gates at a level crossing</td><td>39</td><td>7</td><td>R</td></tr>
+<tr><td>Run across the tracks between the platforms</td><td>37</td><td>9</td><td>S</td></tr>
+</table>
+
+<p>This yields the cluephrase <tt>ARRAY OF NUMBERS</tt>, which is a <tt><b>MATRIX</b></tt>, the answer to this puzzle.</p>
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p><b>Brian:</b> This was one of my more ambitious puzzle ideas. I was originally planning to save it for Mystery Hunt or later due to the scope, and due to the source material being used in this year's Mystery Hunt. However, in early February, the GPH editors decided that we wanted more ambitious puzzles and my other puzzle ideas weren't panning out, so I decided to write it. I know of a fair number of text adventure puzzles that had already appeared in puzzlehunts (e.g. MUMS's <a href="http://researchers.ms.unimelb.edu.au/~mums/puzzlehunt/2012/puzzles/3.2_Adventure.html">Adventure</a>, Caltech's <a href="http://2018.caltechpuzzlehunt.org/puzzle/hidden-verbiage/index.html">Hidden Verbiage</a>, or of course any of the <a href="https://devjoe.appspot.com/huntindex/keyword/textadventures">text adventures</a> that have appeared in the MIT Mystery Hunt), but wanted to make a puzzle out of a slightly more open-world and traditional pick-up-everything-and-figure-out-how-to-use-it text adventure. I also felt like <i>Dumb Ways to Die</i> could be further explored after the Mystery Hunt puzzle. Finally, I thought it would be funny to include a blatant Tunnel of Extraction in the universe and try to weakly spin it off as something that made sense in-universe.</p><p>The somewhat involved extraction method was chosen to make sure that we could tell teams when they had reached an optimal sequence of moves, while teams could not short-circuit too much of the puzzle by reverse-engineering the puzzle to find those optimal numbers (which is difficult, but far from impossible, and we know of at least one team that immediately reverse-engineered the puzzle when they opened it). This did require a fair amount of sacrifice in terms of how much finagling of some of the endings and padding them out with the exact number of moves was necessary (most egregiously, of course, the mechanism by which you have to press the button 18 times to call a train, which was initially a stopgap but was kept in because it didn't feel worthwhile to pad three endings with identical complex sequences of 18 moves). It also required a lot of caution around the topology of the Tunnel of Extraction. If we had more time I would have loved to come up with more natural ways to force the optimal move sequences. We tried to make the puzzle primarily about finding all the different endings and not about optimizing getting there, so we tried to avoid having not-quite-optimal paths.</p><p>Jakob spent a good week of his life implementing endings for this puzzle. In the end the source code was around 15.5k words.</p><p>Another part of making the move sequences exact was that we generally had to try to make Inform 7, the text adventure engine, less smart &ndash; e.g., we had to disallow trying to go through closed doors (which would by default try to open them first in the same turn) and taking multiple things with "take all", so that move count was exact and we didn't disadvantage teams who got almost perfect runs but might not realize these optimizations. (There were a few Inform shortcuts we were ok with keeping &ndash; e.g., walking off stools.)</p><p><b>Jakob:</b> Going into the hunt, we believed there was a 70% chance that all of our endings were optimal, but several problems were discovered by teams that we had to fix during the hunt:</p><ol><li>We had forgotten to require that you are holding a key in order to unlock a door with it (Inform is willing to let the player pick up a key in order to unlock a door with it on the same turn).</li><li>We had forgotten to include in the definition of "dip" that you can't dip a bucket in a closed vat.</li><li>We misspelled "unrefrigerated" (as "unrefridgerated"), resulting in the optimal number of turns for that path being one more than the number of letters. We had to fix this during the hunt and made the inner safe automatically close after you put something in it. However, it didn't affect the index and many teams seemed to have solved it without noticing.</li><li>Finally, we didn't notice that players had some flexibility in taking off their belt and hat before or after passing through the tunnel in the piranhas ending without sacrificing move optimality. This made the index for that route ambiguous, but since we only learned about this on Sunday, we assume that not a lot of teams were affected.</li></ol>
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

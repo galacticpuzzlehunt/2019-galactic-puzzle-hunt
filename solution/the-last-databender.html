@@ -1,0 +1,267 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: The Last Databender</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/the-last-databender.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: The Last Databender
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">CLEAR</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Colin Lu
+
+        
+    </h4>
+    
+
+<style>
+img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+audio {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+</style>
+
+<p>
+The puzzle consists of a bitmap image of Avatar: The Last Airbender protagonist Aang, with various distorted components.
+There are several different parts to the puzzle, but
+they are all linked by being essentially about combining the information given in some way, as well as being loosely linked to
+the elements of Avatar: The Last Airbender. After each step of the puzzle, an instruction is given as to how to "databend" the
+data to get to next part.
+
+<h3>Image</h3>
+<p>
+For the first part of the puzzle, the top and bottom sections essentially just look like noise, visually, but the section in the
+middle, while distorted, doesn't completely look like noise. In fact, in the bottom left of each distorted section, some words
+can be made out, such as LAW. However, it can be observed that the noise around the word LAW (and indeed throughout the sections)
+is different. This, along with the fact that they are all the same size, motivates the idea of combining the sections somehow.
+
+
+<p>
+There are several somewhat plausible ways of combining the noisy images - multiplying the pixel values, averaging the pixel
+values, XORing the pixel values. Solvers can use trial and error here among these possibilities, but the three distorted "air" element
+symbols can be looked at closely to see that averaging pixels produces the ideal completed element.
+
+
+<p>
+In an image editor, this can be done by overlaying the layers and using transparency. Solvers can either average all six distorted
+components, or average the three "pairs" around each of the non-air element symbols, which cleans up the noise partially, and
+then average the two components thus produced (this process is shown in the images below). For this part, the element boxes
+can be used to help line things up exactly. Doing this, or some other transformation similar enough to averaging, gives the now
+clear text AIR ANSWER OZONE NOW OPEN AS RAW AUDIO MONO A-LAW 44100HZ. This gives us an "answer" which we’ll save for later, and an
+instruction for the next step.
+<p>
+<img src="the-last-databender/step1.png">
+<p>
+<img src="the-last-databender/step2.png">
+
+<h3>Audio</h3>
+<p>
+Following the instruction in an audio editing program such as Audacity, we can hear various sounds similar to flowing water at
+the start of the audio (these water clips are taken from the opening sequence of Avatar: The Last Airbender), as well as some
+very faint speech at some points within the noisy sections after the water sounds.
+
+<p>
+In the same vein as the first part of the puzzle, we will attempt to overlay the water sounds to cancel out the noise.
+However, one will notice that the water sounds are somewhat different from each other: while one is played as normal,
+one is backwards, and the other two are played at twice and four times normal speed. By slowing down and reversing these other
+clips, we can recover four clips in which the water component plays at normal speed.
+
+<p>
+By lining up these four clips using the water component (there is a section added to the water to make it easier to do this,
+although it's also doable from the natural audio), most of the noise cancels out, and the speech after the water sounds
+is now understandable, and says: WATER ANSWER IS RIVER, NOW EXPORT FROM 45 SECONDS TO END AND UNRAR.
+<p>
+<audio controls><source src="the-last-databender/combined.mp3" %}" type="audio/mpeg"></audio>
+
+<h3>Zip files</h3>
+<p>
+We now follow this new instruction: we extract the audio from 45 seconds into the track until the end (naturally, exporting
+in the same way we originally read it, A-law). We can then open this file, which is a RAR archive, and UNRAR (ie. extract)
+the contents. Among the contents is a readme file telling us to ignore the text files for now, so we look at the contained
+ZIP archives. Within these files, there is no content other than a series of folders with single-letter names.
+
+<p>
+Extracting these ZIP archives, each can be thought of as a string of letters (possibly reversed). Perhaps more in theme with
+"Earth", the collection of zip files can also be thought of as a "forest" of tree graphs.
+
+<p>
+Again thinking of a way to combine the data, there is fact a unique way to orient and order the strings, such that each string
+ends with the same letter that the next string begins with. Alternatively, this can be thought of as linking the graphs given
+by the ZIP files, but only where letters coincide, and maintaining the tree structure. Either way, reading the letters in order
+gives: EARTH ANSWER WEEDS NOW USE FILES DIVISIBLE BY THREE.
+
+<h3>Text files and extraction</h3>
+<p>
+Looking through the given text files, there are 10 files which have filenames divisible by 3. Like all of the text files,
+these are single lines of 90 characters, all of which are the various “line” characters: |\_/. Once again we combine the
+given data: in this case, we order the 10 lines such that they spell out the final piece of text in ASCII art (incidentally
+in a slightly modified version of FIGlet’s ASCII art font called “Avatar”). This tells us FIRE ANSWER BARGE NOW COMBINE MOD 26
+(it's also possible to get the lines in reverse, NOW COMBINE MOD 26 FIRE ANSWER BARGE).
+
+<p>
+This final instruction tells us to combine the four answers we’ve found up until this point treating the characters in
+each position as numbers, summing, and taking the values modulo 26. There is perhaps one slight ambiguity, in whether to treat A
+as having value 0 or 1, but setting A=0 seems to make more sense so that the whole alphabet is given consecutive values 0 to 25
+in order.
+
+Adding the sub-answers we’ve found so far, OZONE, RIVER, WEEDS, and BARGE, as instructed, gives the answer. At the end of your
+databending journey, the answer is now <b><tt>CLEAR</tt></b>.
+
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>
+I participated in the <a target="_blank" href="https://docs.google.com/document/d/163xKfUEcCCaIeuRgwa9sc2lRAgsPDZCbwz6TEyFZEJY/edit">Ultraviolet
+  Puzzle Challenge</a> earlier this year, and I really enjoyed the variety of somewhat technical puzzles. This inspired
+  me to write an epic, somewhat technical puzzle of my own. My original idea was to have several steps, each databending the
+  original image in a different way, and a final "aha" in which you apply all of the databending actions in sequence to produce
+  the answer, but I wasn't able to construct this version of the puzzle.
+
+<p>
+  I aimed to write this puzzle in a way that would walk teams through the crazy databending steps, gently introducing them to
+  the craziness of modern file formats, while not actually requiring any such knowledge to solve the puzzle. This turned out to
+  be challenging, because many "cool" steps I wanted to include required some degree of technical skill that solvers would likely
+  need to learn while solving the puzzle. And while I wanted solvers to perhaps learn something about file formats and image and
+  audio editing while solving the puzzle, I didn't want a lack of technical skills to be a big barrier to approaching the puzzle.
+
+<p>
+  One example of this was in the audio component of the puzzle: if I just added noise to the audio files, and then sped some of
+  them up, it turns out that simply slowing down the slowed components and overlaying the files doesn't work to cancel the noise,
+  because speeding a file up and then slowing it down is a lossy action that disrupts the noise pattern. To solve that version
+  of the puzzle, solvers would need to speed all of the files up, sync the noise up, and then slow down the result in order
+  to listen to the message. I thought that this would be a cool concept about audio to "teach" solvers through the puzzle, but
+  on the other hand many solvers might not figure it out, and would just get frustrated or feel like they were doing the wrong
+  thing entirely.
+
+<p>
+  I quickly thought of the "Avatar" theming for the "bending" pun. I tried to think of subpuzzles that would work
+  somewhat thematically - the image uses the last Airbender, and has the answer OZONE, the audio uses the water sound to sync and
+  has the answer RIVER, and the zip files can be thought of as "tree" graphs with the answer WEEDS. I couldn't work much of a
+  fire connection into the last part, but as mentioned above, it does use a font called Avatar, and the Fire Nation spends most of
+  its time in the TV series sailing around on barges! Moreover, each part involves combining different types of information.
+  It was quite difficult to design the puzzle around all of these thematic considerations, so I was quite happy with what I
+  managed to come up with in the end.
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

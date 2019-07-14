@@ -1,0 +1,379 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: Ministry of Word Searches</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/ministry-of-word-searches.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: Ministry of Word Searches
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">PRESIDENT</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Anderson Wang, Jon Schneider, and Lewis Chen
+
+        
+    </h4>
+    
+
+<p>
+Upon opening the puzzle, we are greeted with a fairly generic 11x11 wordsearch grid that changes every time the page is refreshed, as well as the opportunity to input a puzzle ID. From looking through several word searches, we can see the same words seem to appear in each one (one the particularly jumps out in a lot of grids is TRUDEAU, for reasons that will soon become clear). At the same time, there appears to be a message starting with “GREAT WORK” placed in every grid, presumably on the squares that aren’t used by the word search.
+
+<p>
+After solving some word searches, we can eventually deduce the following:
+<ol>
+    <li>The same set of 9 words appear in every word search, though in different positions.</li>
+    <li>Whenever two words intersect in a square, one of them overwrites the other. In fact, the words can be put in a priority order such that words with higher priority always overwrite words with lower priority. This order from highest to lowest is: TRUDEAU, CAMPBELL, TURNER, DIEFENBAKER, BENNETT, LAURIER, BOWELL, ABBOTT, MACKENZIE.</li>
+    <li>Whenever a word intersects the edge of a grid, it continues from the opposite edge and in the same direction (i.e. word placement is toroidal).</li>
+    <li>The “GREAT WORK...” filler message is placed on the squares not used by the word search, from left-to-right and top-to-bottom.</li>
+</ol>
+
+<p>
+So, what are the set of words? With a few names, it’s possible to Google
+them (or you may deduce this from TRUDEAU) - it turns out these are all
+Canadian Prime Ministers. Additionally, the prime minister “priority”
+order from lowest to highest is identical to their order from earliest
+to most recent (this allows us to determine that Trudeau refers to the
+son and not the father). Taking the order in which the prime ministers
+served, disregarding duplicates, these are the 2nd, 3rd, 5th, 7th, 11th,
+13th, 17th, 19th, and 23rd. In other words, they really are prime ministers!
+<p>
+After looking at various grids, we might realize that the “filler message”
+always seems to cut inconveniently early: it starts off “GREAT WORK YOUR
+FIRST CLUE IS THE ANSWER HOLDS NINE LETTERS” and ends around “OK YOU MUST
+NOW ISOLATE THE UN...”. So one thing we might want to do in order to reveal
+more letters is to find a configuration where most of the words overlap each
+other and thus have a large amount of filler material generated.
+<p>
+However, to do this we must first figure out how the words are placed. This
+may be most readily evident with MACKENZIE, which only has two possible
+configurations, alternating between the two, and Mackenzie also happens
+to be the 2nd prime minister. Looking at other prime ministers, we can
+see that indeed, the Nth prime minister has N possible positions and
+cycles between them every N ID numbers. Furthermore, for ease of data
+collection, both the starting location of each word and its direction
+transform “linearly” over the course of the cycle. That is, the starting
+location of each word moves the same number of rows and columns between
+each two consecutive puzzles in a cycle (possibly wrapping around the
+grid), and the direction from start to end of the word rotates by the
+same angle between each two consecutive puzzles. See the appendix for
+more details and a spreadsheet of all possible word locations.
+<p>
+Phew! Armed with this knowledge (or being sufficiently lucky - you can
+probably get enough letters to understand the objective about 1%
+of the time), we may determine the message in its entirety, although
+you probably can understand the objective without getting every letter:
+<p>
+<i>GREAT WORK YOUR FIRST CLUE IS THE ANSWER HOLDS NINE LETTERS OK YOU MUST NOW ISOLATE THE UNIQUE VALID WORD SEARCH!</i>
+<p>
+(For the curious, the last character that can be generated is indeed an
+exclamation point. It can be found at two ID’s in the first 100,000,000:
+ID’s 23,607,102 and 49,853,322. Both of these involve having all words
+on the top-left to bottom-right diagonal, the third column, and fifth row.)
+<p>
+The filler message gives us two pieces of information: namely, that
+the answer is nine letters long, and there exists a unique configuration
+of words that gives a valid word search. After all, all of this words
+overlapping other words and crossing the edges nonsense really doesn’t
+make for a good word search.
+<p>
+Indeed, there is only one grid satisfying the two conditions that:
+  1) words do not wrap around grid boundaries, and
+  2) any intersections of words must agree.
+One way to find this grid by hand is by first noting that MACKENZIE and
+DIEFENBAKER each only have one possibility that do not cross the
+edge of the grid. Then we can work our way up from ABBOTT (only
+3 possible placements) to TRUDEAU (23 possibilities) - it turns
+out that at each step there is a unique placement that satisfies
+our two conditions. Here is the resulting grid:
+<p>
+<table id="puzzle_grid" style="margin-left:auto; margin-right:auto"><tr></tr>
+    <td>G</td><td>R</td><td>E</td><td>A</td><td>T</td><td>W</td><td>O</td><td>R</td><td>K</td><td>Y</td><td>O</td><tr></tr>
+    <td>U</td><td>R</td><td>M</td><td>F</td><td>I</td><td>R</td><td>T</td><td>S</td><td>T</td><td>C</td><td>L</td><tr></tr>
+    <td>U</td><td>U</td><td>A</td><td>E</td><td>D</td><td>U</td><td>R</td><td>T</td><td>E</td><td>I</td><td>S</td><tr></tr>
+    <td>L</td><td>T</td><td>C</td><td>H</td><td>R</td><td>E</td><td>I</td><td>R</td><td>U</td><td>A</td><td>L</td><tr></tr>
+    <td>E</td><td>L</td><td>K</td><td>N</td><td>A</td><td>N</td><td>S</td><td>W</td><td>E</td><td>R</td><td>T</td><tr></tr>
+    <td>L</td><td>L</td><td>E</td><td>B</td><td>P</td><td>M</td><td>A</td><td>C</td><td>T</td><td>T</td><td>H</td><tr></tr>
+    <td>O</td><td>R</td><td>N</td><td>W</td><td>L</td><td>D</td><td>S</td><td>T</td><td>E</td><td>N</td><td>I</td><tr></tr>
+    <td>N</td><td>E</td><td>Z</td><td>L</td><td>O</td><td>E</td><td>O</td><td>N</td><td>T</td><td>T</td><td>E</td><tr></tr>
+    <td>R</td><td>S</td><td>I</td><td>O</td><td>K</td><td>B</td><td>N</td><td>Y</td><td>O</td><td>U</td><td>M</td><tr></tr>
+    <td>U</td><td>S</td><td>E</td><td>T</td><td>B</td><td>E</td><td>N</td><td>O</td><td>W</td><td>I</td><td>S</td><tr></tr>
+    <td>R</td><td>E</td><td>K</td><td>A</td><td>B</td><td>N</td><td>E</td><td>F</td><td>E</td><td>I</td><td>D</td></table>
+<p>
+We could generate this grid ourselves by directly placing the words and
+the filler message, but if we wanted to find the ID of this word search,
+perhaps to check that there is no special message there (and indeed there
+isn’t), we could apply the <a href="https://en.wikipedia.org/wiki/Chinese_remainder_theorem#Computation">Chinese Remainder Theorem</a> to our 9 modular
+congruences to get it, which turns out to be 63,888,718. A more detailed
+explanation of how to apply the Chinese Remainder Theorem is in the appendix.
+<p>
+As you can see, all words can be found like a normal word search! That’s great,
+but what now? If we inspect the diagonal, it spells out what we must do next:
+GRAHAM’S NO. ID. That is, we must now go to the ID of <a href="https://en.wikipedia.org/wiki/Graham%27s_number">Graham’s number</a>, a notable
+large number in mathematics.
+<p>
+Of course, Graham’s number is larger than 10<sup>8</sup> <sup>[citation needed]</sup>.
+Since the server refuses to generate grids with IDs larger than 10<sup>8</sup> (not to mention that
+Graham's number would be infeasible to enter in the box), we’ll have to calculate things
+another way. If we can compute Graham’s number modulo every prime from 2 to 23, then
+that’ll let us generate the grid, since we can place all the names from MACKENZIE to
+TRUDEAU, followed by the filler message. Some ways of doing this include:
+<p>
+<ol>
+  <li>You can use <a target="_blank" href="https://en.wikipedia.org/wiki/Euler%27s_theorem">Euler’s theorem</a> or
+    <a href="https://en.wikipedia.org/wiki/Fermat%27s_little_theorem">Fermat’s little theorem</a>,
+    namely that for coprime (x,n), x<sup>φ(n)</sup> = 1 mod n, where φ is <a target="_blank" href="https://en.wikipedia.org/wiki/Euler%27s_totient_function">Euler's totient function.</a>
+    Since Graham’s number is a sufficiently large power tower of 3’s, this means that, for example,
+    3<sup>3<sup>3<sup>...</sup></sup></sup> mod 23 is equal to 3<sup>x</sup> mod 23, where x=3<sup>3<sup>3<sup>...</sup></sup></sup> mod 22. To save repeating work, we
+    can compute Graham’s number mod n for n from 1-23 in that order, and at each step we can reuse
+    a previous step’s computation.</li>
+<li>Without knowledge of the above number theory, it is still possible to deduce the period
+of powers of 3 mod n by repeatedly multiplying 3 until you reach 1 mod n. This is essentially
+rederiving the above theorems without necessarily having a proof. This method is the “intended”
+way if you don’t immediately jump to Euler’s theorem, and we explain it in more detail in the appendix.</li>
+<li>We could write a computer program to calculate successive power towers of 3s modulo a number,
+and discover that it becomes constant fairly quickly. This is a little trickier for the larger
+primes since power towers grow very fast.</li>
+<li>After calculating Graham’s number mod some smaller numbers (say, 1 through 8), perhaps with
+  the method in 3), we can plug the sequence into <a target="_blank" href="https://oeis.org">OEIS</a> and see if it exists. Turns out, it <a target="_blank" href="https://oeis.org/A240162">does</a>.
+<li>Some careful Googling (e.g. “graham’s number mod n”) can pull up scripts that already do
+this computation or the OEIS sequence.</li>
+</ol>
+<p>
+Anyways, now that we have Graham’s number mod every prime from 2 to 23, we can generate the resulting grid by hand as stated above:
+<p>
+
+<table id="puzzle_grid" style="margin-left:auto; margin-right:auto"><tr></tr>
+  <td>L</td><td>G</td><td>B</td><td>U</td><td>R</td><td>E</td><td>A</td><td>A</td><td>T</td><td>C</td><td>T</td><tr></tr>
+  <td>W</td><td>E</td><td>O</td><td>A</td><td>R</td><td>K</td><td>Y</td><td>K</td><td>K</td><td>U</td><td>O</td><tr></tr>
+  <td>P</td><td>M</td><td>A</td><td>E</td><td>U</td><td>R</td><td>F</td><td>L</td><td>L</td><td>E</td><td>B</td><tr></tr>
+  <td>I</td><td>R</td><td>S</td><td>D</td><td>T</td><td>C</td><td>N</td><td>N</td><td>L</td><td>U</td><td>N</td><tr></tr>
+  <td>E</td><td>I</td><td>S</td><td>U</td><td>E</td><td>Z</td><td>E</td><td>D</td><td>T</td><td>E</td><td>H</td><tr></tr>
+  <td>E</td><td>A</td><td>N</td><td>R</td><td>I</td><td>R</td><td>R</td><td>I</td><td>T</td><td>S</td><td>W</td><tr></tr>
+  <td>E</td><td>R</td><td>H</td><td>T</td><td>O</td><td>E</td><td>O</td><td>E</td><td>L</td><td>D</td><td>S</td><tr></tr>
+  <td>N</td><td>I</td><td>N</td><td>E</td><td>I</td><td>L</td><td>E</td><td>F</td><td>T</td><td>T</td><td>E</td><tr></tr>
+  <td>R</td><td>S</td><td>O</td><td>R</td><td>K</td><td>Y</td><td>O</td><td>E</td><td>U</td><td>M</td><td>U</td><tr></tr>
+  <td>M</td><td>S</td><td>U</td><td>T</td><td>N</td><td>O</td><td>W</td><td>N</td><td>I</td><td>S</td><td>O</td><tr></tr>
+  <td>L</td><td>A</td><td>A</td><td>T</td><td>E</td><td>T</td><td>H</td><td>B</td><td>E</td><td>U</td><td>A</td></table>
+
+
+<p>
+(As a side note, we can also compute this grid’s ID with the Chinese Remainder Theorem, but
+it turns out it has to be 137,693,037 mod 223,092,870. Since the ministry only accepts IDs
+up to 100,000,000, we are actually forced to make this final grid by hand. Though, it is
+possible to bypass most of the work by, for example, visiting the grid at 137693037-223092870/2
+= 26146602 and then moving MACKENZIE)
+<p>
+Reading the diagonal again gives us the cluephrase LEADER OF USA. Knowing that the answer is
+    nine letters long, the answer is therefore <b>PRESIDENT</b>.
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>
+Anderson: Early on in the writing process, I proposed a puzzle consisting of a word search that changed over time, and several of us brainstormed potential ideas for how it would work, but none of them ended up being that promising. Later, Lewis came up with the idea of having a procedurally-generated word search that included sets of things, with one key step of the puzzle being to use the generation rules to find a word search which had enough leftover letters to read a message. This idea went through many iterations: in the beginning, we were still going with the dates/time idea, so the puzzle was going to be The Mezzacotta Word Search, in reference to the <a href="http://www.mezzacotta.net/">mezzacotta webcomic</a> that can generate a random comic for each day all the way back to 9999999999999 BC.
+
+<p>
+However, we had trouble coming up with an interesting way to use dates to generate a puzzle, so we eventually decided on just using and ID number, and word placement would be done by taking the number mod various primes. At first, we wanted to do a "No Man's Wordsearch" with over 18 quintillion word searches in reference to the video game <a href="https://en.wikipedia.org/wiki/No_Man%27s_Sky">No Man's Sky</a> (turns out that 4*9*25*7*11*13*17*19*23*29*31*37*41*43*47 is equal to 2^64 to 6 significant digits!), but eventually I asked Jon for help and he reduced it to the much more reasonable (though still very large) size that you see now. Another fun fact: we spent quite a while discussing how to fit prime ministers into the grid before Lewis realized how appropriate "prime" ministers were for this puzzle!
+
+<p>
+The last step of finding the grid with ID Graham's number was somewhat contentious. We went back and forth a lot on whether it would be "fair" to include it, and eventually decided on leaving it in, partially because some testsolvers loved the step, but mostly because we believed that most teams who made it to the final step would be able to do it or find an alternative route like OEIS, googling "graham's number mod n", or just roping in a mathy friend. It did end up being unfortunate how this made a long puzzle even longer in a hunt filled with long puzzles, but I do hope that it was memorable to at least a few solvers.
+
+<p>
+Another title this puzzle once had was “The 10,000<sup>2</sup> Puzzle Squares”, as a reference to past “The 10,000 Puzzle X”
+puzzles in <a target="_blank" href="http://web.mit.edu/puzzle/www/2015/puzzle/the_10_000_puzzle_pyramid/">Mystery Hunt 2015</a>,
+<a target="_blank" href="https://www.mit.edu/~puzzle/2018/full/puzzle/the_10000_puzzle_tesseract.html">Mystery Hunt 2018</a>,
+and the <a target="_blank" href="http://2018.caltechpuzzlehunt.org/puzzle/the-10000-puzzle-square/index.html">2018 Caltech Puzzle Hunt</a>. However, this was quickly changed, as the reference was pretty forced and also felt somewhat "insular", and besides, this puzzle works very differently from the others.
+
+<h3>Appendix</h3><h4>Cycles of word positions/directions</h4>
+Both the starting location and direction of each word move “linearly” over each cycle,
+so that the starting row, starting column, and direction all have a constant “difference”
+between consecutive IDs. For example, here are the starting coordinates of BOWELL (the 5th
+prime minister) in the first few grids:
+<p><table><tr><th>ID#</th><th>Row (1 is top, 11 is bottom)</th><th>Column (1 is left, 11 is right)</th></tr><tr><td>0</td><td>6</td><td>1</td></tr><tr><td>1</td><td>7</td><td>10</td></tr><tr><td>2</td><td>8</td><td>8</td></tr><tr><td>3</td><td>9</td><td>6</td></tr><tr><td>4</td><td>10</td><td>4</td></tr><tr><td>5</td><td>6</td><td>1</td></tr><tr><td>6</td><td>7</td><td>10</td></tr><tr><td>7</td><td>8</td><td>8</td></tr></table><p>
+Note that the row starts at 6 and increases by 1 each time to 10, until it hits the end of
+the cycle and starts from 6 again. Similarly, the column starts at 1 and decreases by 2 each
+time, ending up at 4 before restarting the cycle. This addition/subtraction “wraps around”,
+which is how 1 minus 2 ends up at 10 (or in slightly mathier terms, 1 minus 2 is congruent
+  to 10 <a href="https://en.wikipedia.org/wiki/Modulo_operation">modulo</a> 11).
+<p>
+The same relationship holds for directions: BOWELL always goes in the north-east direction
+which isn’t that interesting, but for LAURIER, the 7th prime minister, the directions in
+the first 9 grids are NW, E, SW, N, SE, W, NE, NW, E. We can see that the direction always
+rotates 135 degrees clockwise between the first seven IDs before restarting with NW.
+<p>
+(The above “constant differences” observation is not necessary to solve the puzzle, but is
+intended to cut down the amount of time collecting data, since once you figure out the
+pattern you can extrapolate all possible positions of a word from the first two or three grids.)
+<p>
+For reference and for completeness,
+<a target=_blank href="https://docs.google.com/spreadsheets/d/11SSPiKLtlrf9Tn34jaakBh5CCDn1rOx0X2qSRs5AmY8/edit?usp=sharing">here</a>
+is a sheet listing all the possible positions for
+each prime minister (the position of the Pth prime minister in the grid with ID number N,
+is given by N modulo P; this number is highlighted in blue to the above-left of each grid).
+<p><h4>Modular congruences and Chinese Remainder Theorem</h4>
+Each potential placement of a name corresponds to a certain <a href="https://en.wikipedia.org/wiki/Congruence_relation#Basic_example">congruence relation</a> on the ID. For
+example, there are two possible placements of MACKENZIE (in cells B2 and N2 of the <a href="https://docs.google.com/spreadsheets/d/11SSPiKLtlrf9Tn34jaakBh5CCDn1rOx0X2qSRs5AmY8/edit?usp=sharing">above-linked spreadsheet</a>), and they correspond to when the ID is even or odd respectively. Similarly, the three
+possible placements of ABBOTT correspond to the ID being 0, 1, or 2 mod 3 respectively.
+<p>
+If we wanted to generate the ID of the “valid word search” grid, we know that the ID must be 0 mod 2
+for the correct MACKENZIE placement, 10 mod 13 for the correct DIEFENBAKER placement (this is the
+only one that doesn’t cross the edge, as can be seen in cell DR62 on the spreadsheet), 1 mod 3 for
+the correct ABBOTT placement (the only one that doesn’t conflict with MACKENZIE), 3 mod 5 for BOWELL, etc.
+<p>
+All of these congruence relations can be combined with the <a href="https://en.wikipedia.org/wiki/Chinese_remainder_theorem#Computation">Chinese Remainder Theorem</a>, which is a fancy
+way of stating that if, for example, a number must be 0 mod 2 and 10 mod 13, then there is one and
+exactly one number mod 2*13=26 that satisfies this (in this case it’s 10 mod 26). Then, if our ID is
+10 mod 26 and 3 mod 5, there is a unique number mod 26*5=130 that satisfies this (in this case it’s
+88, which you can verify yourself). Basically, we can “build up” primes one by one until we get to
+some number mod 2*3*5*7*11*13*17*19*23.
+<p>
+As one final note, let’s say that we know the ID is 10 mod 26 and 3 mod 5. How do we actually compute
+the number 88 mod 130? One method involves the extended Euclidean algorithm (mentioned in the Wikipedia
+page on the Chinese Remainder Theorem), but a simpler way (which is also mentioned on the Wikipedia page)
+would be something like:
+<ol><li>There are 5 possible numbers mod 130 that are equal to 10 mod 26. These are 10, 10+26, 10+26*2, 10+26*3, and 10+26*4. We need to pick the one that is 3 mod 5.</li><li>We could test each of these by hand, and that would work fine, but we can also be a little “smarter” about it: since 10 is 0 mod 5, and 26 is 1 mod 5, we can already tell that we need to add 26 three times to get up to 3 mod 5.</li></ol><p>
+This same strategy works with 26 replaced by x and 5 replaced by y for any x and y, as long as x and y share no prime factors.
+<p><h4>Computing Graham’s number modulo primes</h4>
+This section goes into how one would compute Graham’s number modulo the primes from 2 to 23. We
+assume familiarity with modular arithmetic but not anything more advanced.
+<p>
+First, Graham’s number can be expressed as a very large “power tower” of 3s, i.e. it is of the form
+3<sup>3<sup>3<sup>...</sup></sup></sup> Since 3 to the power of anything is odd, we can deduce that Graham’s number is 1 mod 2.
+And clearly it is divisible by 3, so it is 0 mod 3. What about 5?
+<p>
+One way to approach this is by looking at the successive powers of 3 modulo 5. 3<sup>0</sup> is 1, 3<sup>1</sup> is 3,
+3<sup>2</sup>=9 which is 4 mod 5, 3<sup>3</sup>=27 which is 2 mod 5, 3<sup>4</sup>=3<sup>3</sup>*3=2*3=1 mod 5, and it repeats from here
+(1, 3, 4, 2, 1, 3, 4, 2, etc.). So that means that 3<sup>x</sup> mod 5 depends on the value of x mod 4,
+since this sequence repeats every 4. In other words, if x = y mod 4, then 3<sup>x</sup> = 3<sup>y</sup> mod 5. This
+can be represented by the following table:
+<p><table><tr><th>x mod 4</th><th>3<sup>x</sup> mod 5</th></tr><tr><td>0</td><td>1</td></tr><tr><td>1</td><td>3</td></tr><tr><td>2</td><td>4</td></tr><tr><td>3</td><td>2</td></tr></table><p>
+That reduces the problem to calculating 3<sup>3<sup>3<sup>...</sup></sup></sup> modulo 4. We can repeat the same logic to find that the powers
+of 3 alternate between 1 and 3 mod 4 (3<sup>0</sup>=1 mod 4, 3<sup>1</sup>=3 mod 4, 3<sup>2</sup>=1 mod 4, etc.), so 3<sup>z</sup> is 1 mod 4 if z is even,
+and 3 mod 4 if z is odd. Because z in this case equals (yet again) 3<sup>3<sup>3<sup>...</sup></sup></sup>, it is odd and therefore 3<sup>3<sup>3<sup>...</sup></sup></sup> is
+equal to 3 mod 4. And finally, consulting our table above means that 3<sup>3<sup>3<sup>...</sup></sup></sup> is equal to 3<sup>3</sup>=2 mod 5.
+<p>
+We can use this exact same technique to calculate Graham’s number modulo the rest of the primes. This seems like a
+daunting task, but we can save a lot of time by “saving” the results of previous computations. For example, let’s
+assume that we’ve already computed the value of the power tower of 3s modulo every number from 1 to 22, and want
+to compute it for 23. It turns out that the powers of 3 modulo 23 cycle every 11, so 3<sup>3<sup>3<sup>...</sup></sup></sup> mod 23 only depends
+on 3<sup>3<sup>3<sup>...</sup></sup></sup> mod 11. But from our assumption, we already know this number (it turns out to be 9), so we just need
+  to compute 3<sup>9</sup> mod 23 and don’t need to go further down.
+<p>
+As a side note, the method we’ve described above is pretty much the same as applying <a href="https://en.wikipedia.org/wiki/Euler%27s_theorem">Euler’s theorem</a> or
+    <a href="https://en.wikipedia.org/wiki/Fermat%27s_little_theorem">Fermat’s little theorem</a>; we’ve essentially rederived them for ourselves.
+<p>
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

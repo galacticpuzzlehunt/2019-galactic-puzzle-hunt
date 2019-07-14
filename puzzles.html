@@ -1,0 +1,2828 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Galactic Puzzle Hunt</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="static/css/normalize.css">
+        <link rel="stylesheet" href="static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="static/css/base.css">
+        
+        <link rel="stylesheet" href="static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="static/js/sorttable.js"></script>
+        <script type="text/javascript" src="static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+
+<style>
+.puzzle {
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 5px;
+}
+
+.puzzle a {
+    text-decoration: none;
+    flex-grow: 1;
+}
+
+.puzzle h4 {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+}
+
+.puzzle table {
+    width: 100%;
+    margin: 0;
+    color: #0c0906;
+}
+
+.puzzle td {
+    border: none;
+    padding: 5px 0;
+}
+
+.puzzle td:last-child {
+    text-align: right;
+}
+
+.regular.puzzle, .locked.puzzle {
+    width: 300px;
+    margin-left: 50px;
+    margin-right: 10px;
+}
+
+.regular.puzzle {
+    border-top-left-radius: 0;
+    min-height: 7.2rem;
+}
+
+.regular.puzzle tr:last-child {
+    font-size: 1.5rem;
+}
+
+.locked.puzzle {
+    font-size: 2.5rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.locked.puzzle p {
+    margin: 0;
+}
+
+.meta.puzzle {
+    width: 400px;
+    min-height: 12rem;
+}
+
+.meta.puzzle h4 {
+    font-size: 3rem;
+}
+
+.icon-container {
+    position: absolute;
+    right: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-container > img {
+    width: 49px;
+}
+
+.icon-container .powerup {
+    width: 41px;
+    margin: -24px 4px 4px;
+}
+
+.icon-container .meta-icon {
+    margin-top: -4px;
+}
+
+.meta-icon {
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid black;
+    width: 1.25em;
+    line-height: 1.25em;
+    font-size: 2.5rem;
+}
+
+.meta-icon img {
+    height: 100%;
+    width: 100%;
+    vertical-align: top;
+}
+
+.disk {
+    display: block;
+    width: 230px;
+    position: relative;
+    color: #c4e6fd;
+    margin: auto;
+}
+
+.disk img {
+    width: 100%;
+}
+
+.shard, .powerups {
+    text-align: center;
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 1em;
+}
+
+.shard img {
+    width: 2em;
+    vertical-align: top;
+}
+
+.powerups img {
+    width: 1.7em;
+    vertical-align: bottom;
+    margin-right: -0.4em;
+}
+
+.puzzle-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen {
+    body {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
+    .wrapper {
+        background: none;
+    }
+
+    .home-top {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        top: 0;
+    }
+
+    .regular-container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1200px;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .meta-box {
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+
+    .selectable .meta-behind {
+        position: absolute;
+        left: -50%;
+        top: -50%;
+        width: 200%;
+        height: 200%;
+        z-index: -1;
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    .selected .meta-behind {
+        opacity: 0.75;
+        color: #4f6a95;
+        animation: behind-selected 1s ease-in-out infinite alternate;
+    }
+
+    .selectable .meta-icon {
+        border-width: 3px;
+        font-size: 60px;
+        display: block;
+    }
+
+    .selected .meta-icon {
+        color: #4f6a95;
+        filter: brightness(1.5);
+        box-shadow: 0 0 10px currentColor;
+        animation: icon-selected 1s ease-in-out infinite alternate;
+    }
+
+    .selected.disk, .powerups {
+        filter: saturate(2) drop-shadow(0 1px 2px black);
+        animation: disk-selected 1s ease-in-out infinite alternate;
+    }
+
+    .meta-icon:focus, .disk:focus {
+        outline: none;
+    }
+
+    .meta-icon, .meta-behind, .disk, .disk img, .puzzle, .powerups {
+        transition-property: transform, filter, box-shadow, opacity;
+        transition-duration: 0.1s;
+        will-change: transform, filter, box-shadow, opacity;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .meta-box:hover .meta-icon, .disk:hover img {
+        transform: scale(1.25);
+    }
+
+    .meta-box:hover .meta-behind, .regular.puzzle:hover {
+        transform: scale(1.1);
+    }
+
+    .meta-box:hover ~ .meta-container .puzzle,
+    .disk:hover ~ .meta-container .puzzle {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes icon-selected {
+    from {
+        filter: brightness(1);
+        box-shadow: 0 0 0 currentColor;
+    }
+    to {
+        filter: brightness(1.5);
+        box-shadow: 0 0 10px currentColor;
+    }
+}
+
+@keyframes behind-selected {
+    from {
+        filter: brightness(1);
+    }
+    to {
+        filter: brightness(1.5);
+    }
+}
+
+@keyframes disk-selected {
+    from {
+        filter: saturate(1) drop-shadow(0 0 0 black);
+    }
+    to {
+        filter: saturate(2) drop-shadow(0 1px 2px black);
+    }
+}
+
+@media screen {
+    body {
+        
+        background-color: #000000;
+        background-image: url(static/images/puzzlespagebg-n1x.jpg);
+        
+        background-size: 100vw;
+        background-position: center calc(168px - 21vw);
+        background-repeat: no-repeat;
+        padding-top: calc(208px + 20vw);
+    }
+
+    .meta-box {
+        margin-top: 171px;
+    }
+}
+
+@media(min-device-pixel-ratio: 2), (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
+    body {
+        
+        background-image: url(static/images/puzzlespagebg-n2x.jpg);
+        
+    }
+}
+
+@media screen and (max-width: 960px) {
+    body {
+        background-size: calc(3840px - 300vw);
+        padding-top: calc(1840px - 150vw);
+    }
+
+    .meta-box {
+        margin-top: calc(987px - 85vw);
+    }
+
+    .regular-container {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        background-size: 1440px;
+        background-position: center top;
+        padding-top: 640px;
+    }
+
+    .meta-box {
+        margin-top: 307px;
+    }
+
+    .regular.puzzle {
+        width: 100%;
+    }
+
+    .regular.puzzle:hover {
+        transform: none;
+    }
+}
+
+@media print {
+    html {
+        font-size: 40%;
+    }
+
+    body {
+        background: none;
+    }
+
+    .home-top, .selectable {
+        display: none;
+    }
+
+    .puzzle {
+        width: 25% !important;
+        margin: 10px !important;
+        display: flex !important;
+    }
+
+    .icon-container > img {
+        width: 4rem;
+    }
+
+    .icon-container .powerup {
+        width: auto;
+        height: 6rem;
+        margin: -24px -8px 0;
+    }
+
+    .icon-container .meta-icon {
+        margin-top: 0;
+    }
+}
+</style>
+
+<div class="home-top">
+
+
+        <nav>
+            <a  href='index.html'>Home</a>
+            <a  href='rules.html'>Rules</a>
+            
+                <a  href='story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='artifacts.html'>Artifacts</a>
+            
+            <a  href='teams.html'>Teams</a>
+            <a  href='faq.html'>FAQ</a>
+            
+                <a  href='errata.html'>Updates</a>
+            
+            
+                <a  href='wrapup.html'>Wrap-Up</a>
+            
+            <a  href='archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+
+</div>
+
+
+
+<div class="meta-box selectable"
+     data-id="the-astrologers"
+     style="left: calc(40% - 80px);
+            top: calc(6vw - 120px);">
+    <a class="meta-icon"
+       href="puzzle/the-astrologers.html"
+       
+       title="The Astrologers">
+        
+        <img src="static/images/meta-647c402e.svg">
+        
+    </a>
+    
+    <img src="static/images/meta-d3c2c35e.png" class="meta-behind">
+    
+</div>
+
+
+
+<div class="meta-box selectable"
+     data-id="the-archivists"
+     style="left: calc(60% + 20px);
+            top: calc(8vw - 100px);">
+    <a class="meta-icon"
+       href="puzzle/the-archivists.html"
+       
+       title="The Archivists">
+        
+        <img src="static/images/meta-2b150bac.svg">
+        
+    </a>
+    
+    <img src="static/images/meta-f6a5c3e6.png" class="meta-behind">
+    
+</div>
+
+
+
+<div class="meta-box selectable"
+     data-id="the-animal-trainers"
+     style="left: 20%;
+            top: calc(-4vw + 80px);">
+    <a class="meta-icon"
+       href="puzzle/the-animal-trainers.html"
+       
+       title="The Animal Trainers">
+        
+        <img src="static/images/meta-4390a97d.svg">
+        
+    </a>
+    
+    <img src="static/images/meta-8913bb4c.png" class="meta-behind">
+    
+</div>
+
+
+
+<div class="meta-box selectable"
+     data-id="the-artists"
+     style="left: 80%;
+            top: calc(-2vw + 60px);">
+    <a class="meta-icon"
+       href="puzzle/the-artists.html"
+       
+       title="The Artists">
+        
+        <img src="static/images/meta-8084133a.svg">
+        
+    </a>
+    
+    <img src="static/images/meta-716ff7bc.png" class="meta-behind">
+    
+</div>
+
+
+
+<div class="meta-box selectable"
+     data-id="the-galactic-conference"
+     style="left: 50%;
+            top: 0;">
+    <a class="meta-icon"
+       href="puzzle/the-galactic-conference.html"
+       
+       style="background-color: rgba(255, 255, 255, 0.6); color: white;"
+       
+       title="The Galactic Conference">
+        
+        <img src="static/images/meta-0a13d44e.svg">
+        
+    </a>
+    
+</div>
+
+
+
+
+
+<a class="disk selectable selected"
+   data-id="the-artifact"
+   href="puzzle/the-artifact.html"
+   title="The Artifact">
+    <img src="static/images/meta-378f9b20.png">
+</a>
+
+<div class="puzzle-container meta-container">
+    <main class="puzzle meta" data-id="the-artifact">
+        
+
+
+
+<a href="puzzle/the-artifact.html" style="color: rgb(79,106,149)">
+    <h4>The Artifact</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/the-artifact.html" style="color: rgb(79,106,149)">
+                <b>257</b>&nbsp;solves
+                / <b>762</b>&nbsp;guesses
+                / <b>271</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/the-artifact.html" style="color: rgb(79,106,149)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    <main class="puzzle meta" data-id="the-astrologers" style="display: none">
+        
+
+
+
+<a href="puzzle/the-astrologers.html" style="color: rgb(79,106,149)">
+    <h4>The Astrologers</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/the-astrologers.html" style="color: rgb(79,106,149)">
+                <b>67</b>&nbsp;solves
+                / <b>193</b>&nbsp;guesses
+                / <b>71</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/the-astrologers.html" style="color: rgb(79,106,149)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    <main class="puzzle meta" data-id="the-archivists" style="display: none">
+        
+
+
+
+<a href="puzzle/the-archivists.html" style="color: rgb(79,106,149)">
+    <h4>The Archivists</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/the-archivists.html" style="color: rgb(79,106,149)">
+                <b>56</b>&nbsp;solves
+                / <b>125</b>&nbsp;guesses
+                / <b>58</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/the-archivists.html" style="color: rgb(79,106,149)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    <main class="puzzle meta" data-id="the-animal-trainers" style="display: none">
+        
+
+
+
+<a href="puzzle/the-animal-trainers.html" style="color: rgb(79,106,149)">
+    <h4>The Animal Trainers</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/the-animal-trainers.html" style="color: rgb(79,106,149)">
+                <b>48</b>&nbsp;solves
+                / <b>147</b>&nbsp;guesses
+                / <b>52</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/the-animal-trainers.html" style="color: rgb(79,106,149)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    <main class="puzzle meta" data-id="the-artists" style="display: none">
+        
+
+
+
+<a href="puzzle/the-artists.html" style="color: rgb(79,106,149)">
+    <h4>The Artists</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/the-artists.html" style="color: rgb(79,106,149)">
+                <b>41</b>&nbsp;solves
+                / <b>174</b>&nbsp;guesses
+                / <b>48</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/the-artists.html" style="color: rgb(79,106,149)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    <main class="puzzle meta" data-id="the-galactic-conference" style="display: none">
+        
+
+
+
+<a href="puzzle/the-galactic-conference.html" style="color: rgb(79,106,149)">
+    <h4>The Galactic Conference</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/the-galactic-conference.html" style="color: rgb(79,106,149)">
+                <b>30</b>&nbsp;solves
+                / <b>94</b>&nbsp;guesses
+                / <b>34</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/the-galactic-conference.html" style="color: rgb(79,106,149)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+</div>
+
+
+
+
+
+<div class="puzzle-container regular-container">
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(255,255,255)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img src="static/images/shard.png" title="Artifact Shard">
+    
+    
+</div>
+
+<a href="puzzle/cross-lines.html" style="color: rgb(79,106,149)">
+    <h4>Cross Lines</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/cross-lines.html" style="color: rgb(79,106,149)">
+                <b>473</b>&nbsp;solves
+                / <b>572</b>&nbsp;guesses
+                / <b>483</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/cross-lines.html" style="color: rgb(79,106,149)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(255,255,255)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img src="static/images/shard.png" title="Artifact Shard">
+    
+    
+</div>
+
+<a href="puzzle/the-farmers-dilemma.html" style="color: rgb(79,106,149)">
+    <h4>The Farmer&#39;s Dilemma</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/the-farmers-dilemma.html" style="color: rgb(79,106,149)">
+                <b>375</b>&nbsp;solves
+                / <b>814</b>&nbsp;guesses
+                / <b>405</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/the-farmers-dilemma.html" style="color: rgb(79,106,149)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(255,255,255)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img src="static/images/shard.png" title="Artifact Shard">
+    
+    
+</div>
+
+<a href="puzzle/twitch-plays-gph.html" style="color: rgb(79,106,149)">
+    <h4>Twitch Plays GPH</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/twitch-plays-gph.html" style="color: rgb(79,106,149)">
+                <b>318</b>&nbsp;solves
+                / <b>819</b>&nbsp;guesses
+                / <b>367</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/twitch-plays-gph.html" style="color: rgb(79,106,149)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(254,254,254)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img src="static/images/shard.png" title="Artifact Shard">
+    
+    
+</div>
+
+<a href="puzzle/an-erratic-puzzle.html" style="color: rgb(78,105,148)">
+    <h4>An Erratic Puzzle</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/an-erratic-puzzle.html" style="color: rgb(78,105,148)">
+                <b>349</b>&nbsp;solves
+                / <b>756</b>&nbsp;guesses
+                / <b>394</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/an-erratic-puzzle.html" style="color: rgb(78,105,148)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(252,252,252)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img src="static/images/shard.png" title="Artifact Shard">
+    
+    
+</div>
+
+<a href="puzzle/courage-and-purity.html" style="color: rgb(78,105,147)">
+    <h4>Courage and Purity</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/courage-and-purity.html" style="color: rgb(78,105,147)">
+                <b>368</b>&nbsp;solves
+                / <b>640</b>&nbsp;guesses
+                / <b>382</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/courage-and-purity.html" style="color: rgb(78,105,147)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(252,252,252)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img src="static/images/shard.png" title="Artifact Shard">
+    
+    
+</div>
+
+<a href="puzzle/line-plots.html" style="color: rgb(78,105,147)">
+    <h4>Line Plots</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/line-plots.html" style="color: rgb(78,105,147)">
+                <b>349</b>&nbsp;solves
+                / <b>938</b>&nbsp;guesses
+                / <b>362</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/line-plots.html" style="color: rgb(78,105,147)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(251,251,251)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img src="static/images/shard.png" title="Artifact Shard">
+    
+    
+</div>
+
+<a href="puzzle/playing-with-matches.html" style="color: rgb(77,104,146)">
+    <h4>Playing with Matches</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/playing-with-matches.html" style="color: rgb(77,104,146)">
+                <b>214</b>&nbsp;solves
+                / <b>555</b>&nbsp;guesses
+                / <b>268</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/playing-with-matches.html" style="color: rgb(77,104,146)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(249,249,249)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img src="static/images/shard.png" title="Artifact Shard">
+    
+    
+</div>
+
+<a href="puzzle/ten-years-later.html" style="color: rgb(77,103,145)">
+    <h4>Ten Years Later</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/ten-years-later.html" style="color: rgb(77,103,145)">
+                <b>176</b>&nbsp;solves
+                / <b>929</b>&nbsp;guesses
+                / <b>257</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/ten-years-later.html" style="color: rgb(77,103,145)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(247,247,247)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img src="static/images/shard.png" title="Artifact Shard">
+    
+    
+</div>
+
+<a href="puzzle/reunited.html" style="color: rgb(76,103,144)">
+    <h4>Reunited</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/reunited.html" style="color: rgb(76,103,144)">
+                <b>344</b>&nbsp;solves
+                / <b>862</b>&nbsp;guesses
+                / <b>369</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/reunited.html" style="color: rgb(76,103,144)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(245,245,245)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img src="static/images/shard.png" title="Artifact Shard">
+    
+    
+</div>
+
+<a href="puzzle/letters-from-the-expedition.html" style="color: rgb(76,102,143)">
+    <h4>Letters from the Expedition</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/letters-from-the-expedition.html" style="color: rgb(76,102,143)">
+                <b>275</b>&nbsp;solves
+                / <b>695</b>&nbsp;guesses
+                / <b>309</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/letters-from-the-expedition.html" style="color: rgb(76,102,143)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(245,245,245)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img src="static/images/shard.png" title="Artifact Shard">
+    
+    
+</div>
+
+<a href="puzzle/polar-sales.html" style="color: rgb(76,102,143)">
+    <h4>Polar Sales</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/polar-sales.html" style="color: rgb(76,102,143)">
+                <b>257</b>&nbsp;solves
+                / <b>822</b>&nbsp;guesses
+                / <b>301</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/polar-sales.html" style="color: rgb(76,102,143)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(243,243,243)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img src="static/images/shard.png" title="Artifact Shard">
+    
+    
+</div>
+
+<a href="puzzle/darker-doki.html" style="color: rgb(75,101,142)">
+    <h4>Darker Doki</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/darker-doki.html" style="color: rgb(75,101,142)">
+                <b>388</b>&nbsp;solves
+                / <b>1246</b>&nbsp;guesses
+                / <b>414</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/darker-doki.html" style="color: rgb(75,101,142)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(226,226,226)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-animal-trainers.html" title="The Animal Trainers">
+        <img src="static/images/meta-4390a97d.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/something-is-off.html" style="color: rgb(70,94,132)">
+    <h4>Something is Off</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/something-is-off.html" style="color: rgb(70,94,132)">
+                <b>149</b>&nbsp;solves
+                / <b>443</b>&nbsp;guesses
+                / <b>163</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/something-is-off.html" style="color: rgb(70,94,132)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(226,226,226)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-archivists.html" title="The Archivists">
+        <img src="static/images/meta-2b150bac.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/peaches.html" style="color: rgb(70,94,132)">
+    <h4>Peaches</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/peaches.html" style="color: rgb(70,94,132)">
+                <b>162</b>&nbsp;solves
+                / <b>501</b>&nbsp;guesses
+                / <b>178</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/peaches.html" style="color: rgb(70,94,132)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(223,223,223)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-astrologers.html" title="The Astrologers">
+        <img src="static/images/meta-647c402e.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/phone-lines.html" style="color: rgb(69,92,130)">
+    <h4>Phone Lines</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/phone-lines.html" style="color: rgb(69,92,130)">
+                <b>103</b>&nbsp;solves
+                / <b>303</b>&nbsp;guesses
+                / <b>109</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/phone-lines.html" style="color: rgb(69,92,130)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(220,220,220)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-astrologers.html" title="The Astrologers">
+        <img src="static/images/meta-647c402e.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/the-meta-puzzle.html" style="color: rgb(68,91,128)">
+    <h4>The Meta Puzzle</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/the-meta-puzzle.html" style="color: rgb(68,91,128)">
+                <b>64</b>&nbsp;solves
+                / <b>396</b>&nbsp;guesses
+                / <b>73</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/the-meta-puzzle.html" style="color: rgb(68,91,128)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(217,217,217)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-animal-trainers.html" title="The Animal Trainers">
+        <img src="static/images/meta-4390a97d.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/make-your-own-crossword.html" style="color: rgb(67,90,127)">
+    <h4>Make Your Own Crossword</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/make-your-own-crossword.html" style="color: rgb(67,90,127)">
+                <b>236</b>&nbsp;solves
+                / <b>1051</b>&nbsp;guesses
+                / <b>253</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/make-your-own-crossword.html" style="color: rgb(67,90,127)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(214,214,214)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-astrologers.html" title="The Astrologers">
+        <img src="static/images/meta-647c402e.svg">
+    </a>
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-artists.html" title="The Artists">
+        <img src="static/images/meta-8084133a.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/road-trip.html" style="color: rgb(66,89,125)">
+    <h4>Road Trip</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/road-trip.html" style="color: rgb(66,89,125)">
+                <b>133</b>&nbsp;solves
+                / <b>551</b>&nbsp;guesses
+                / <b>138</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/road-trip.html" style="color: rgb(66,89,125)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(210,210,210)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-astrologers.html" title="The Astrologers">
+        <img src="static/images/meta-647c402e.svg">
+    </a>
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-archivists.html" title="The Archivists">
+        <img src="static/images/meta-2b150bac.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/word-search-ii.html" style="color: rgb(65,87,123)">
+    <h4>Word Search II</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/word-search-ii.html" style="color: rgb(65,87,123)">
+                <b>160</b>&nbsp;solves
+                / <b>344</b>&nbsp;guesses
+                / <b>163</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/word-search-ii.html" style="color: rgb(65,87,123)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(206,206,206)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-astrologers.html" title="The Astrologers">
+        <img src="static/images/meta-647c402e.svg">
+    </a>
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-artists.html" title="The Artists">
+        <img src="static/images/meta-8084133a.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/fifty-fifty.html" style="color: rgb(64,86,120)">
+    <h4>50/50</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/fifty-fifty.html" style="color: rgb(64,86,120)">
+                <b>225</b>&nbsp;solves
+                / <b>753</b>&nbsp;guesses
+                / <b>233</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/fifty-fifty.html" style="color: rgb(64,86,120)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(203,203,203)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-astrologers.html" title="The Astrologers">
+        <img src="static/images/meta-647c402e.svg">
+    </a>
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-animal-trainers.html" title="The Animal Trainers">
+        <img src="static/images/meta-4390a97d.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/radio-broadcast.html" style="color: rgb(62,84,118)">
+    <h4>Radio Broadcast</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/radio-broadcast.html" style="color: rgb(62,84,118)">
+                <b>118</b>&nbsp;solves
+                / <b>168</b>&nbsp;guesses
+                / <b>122</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/radio-broadcast.html" style="color: rgb(62,84,118)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(198,198,198)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-astrologers.html" title="The Astrologers">
+        <img src="static/images/meta-647c402e.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/cuspidation.html" style="color: rgb(61,82,116)">
+    <h4>Cuspidation</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/cuspidation.html" style="color: rgb(61,82,116)">
+                <b>121</b>&nbsp;solves
+                / <b>485</b>&nbsp;guesses
+                / <b>123</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/cuspidation.html" style="color: rgb(61,82,116)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(194,194,194)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-astrologers.html" title="The Astrologers">
+        <img src="static/images/meta-647c402e.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/race-for-the-galaxy.html" style="color: rgb(60,80,113)">
+    <h4>Race for the Galaxy</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/race-for-the-galaxy.html" style="color: rgb(60,80,113)">
+                <b>191</b>&nbsp;solves
+                / <b>286</b>&nbsp;guesses
+                / <b>208</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/race-for-the-galaxy.html" style="color: rgb(60,80,113)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(190,190,190)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-animal-trainers.html" title="The Animal Trainers">
+        <img src="static/images/meta-4390a97d.svg">
+    </a>
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-artists.html" title="The Artists">
+        <img src="static/images/meta-8084133a.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/galaxy-trucker.html" style="color: rgb(58,79,111)">
+    <h4>Galaxy Trucker</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/galaxy-trucker.html" style="color: rgb(58,79,111)">
+                <b>68</b>&nbsp;solves
+                / <b>213</b>&nbsp;guesses
+                / <b>78</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/galaxy-trucker.html" style="color: rgb(58,79,111)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(190,190,190)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-animal-trainers.html" title="The Animal Trainers">
+        <img src="static/images/meta-4390a97d.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/the-last-databender.html" style="color: rgb(58,79,111)">
+    <h4>The Last Databender</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/the-last-databender.html" style="color: rgb(58,79,111)">
+                <b>45</b>&nbsp;solves
+                / <b>264</b>&nbsp;guesses
+                / <b>74</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/the-last-databender.html" style="color: rgb(58,79,111)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(185,185,185)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-artists.html" title="The Artists">
+        <img src="static/images/meta-8084133a.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/ministry-of-word-searches.html" style="color: rgb(57,77,108)">
+    <h4>Ministry of Word Searches</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/ministry-of-word-searches.html" style="color: rgb(57,77,108)">
+                <b>128</b>&nbsp;solves
+                / <b>891</b>&nbsp;guesses
+                / <b>179</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/ministry-of-word-searches.html" style="color: rgb(57,77,108)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(180,180,180)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-archivists.html" title="The Archivists">
+        <img src="static/images/meta-2b150bac.svg">
+    </a>
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-artists.html" title="The Artists">
+        <img src="static/images/meta-8084133a.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/a-crossword.html" style="color: rgb(55,75,105)">
+    <h4>A Crossword</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/a-crossword.html" style="color: rgb(55,75,105)">
+                <b>95</b>&nbsp;solves
+                / <b>284</b>&nbsp;guesses
+                / <b>106</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/a-crossword.html" style="color: rgb(55,75,105)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(175,175,175)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-archivists.html" title="The Archivists">
+        <img src="static/images/meta-2b150bac.svg">
+    </a>
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-animal-trainers.html" title="The Animal Trainers">
+        <img src="static/images/meta-4390a97d.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/colors.html" style="color: rgb(54,72,102)">
+    <h4>Colors</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/colors.html" style="color: rgb(54,72,102)">
+                <b>109</b>&nbsp;solves
+                / <b>209</b>&nbsp;guesses
+                / <b>114</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/colors.html" style="color: rgb(54,72,102)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(170,170,170)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-artists.html" title="The Artists">
+        <img src="static/images/meta-8084133a.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/observatory.html" style="color: rgb(52,70,99)">
+    <h4>Observatory</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/observatory.html" style="color: rgb(52,70,99)">
+                <b>34</b>&nbsp;solves
+                / <b>430</b>&nbsp;guesses
+                / <b>65</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/observatory.html" style="color: rgb(52,70,99)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(164,164,164)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-archivists.html" title="The Archivists">
+        <img src="static/images/meta-2b150bac.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/holistic.html" style="color: rgb(51,68,96)">
+    <h4>Holistic</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/holistic.html" style="color: rgb(51,68,96)">
+                <b>67</b>&nbsp;solves
+                / <b>180</b>&nbsp;guesses
+                / <b>75</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/holistic.html" style="color: rgb(51,68,96)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(158,158,158)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-artists.html" title="The Artists">
+        <img src="static/images/meta-8084133a.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/geography-lesson.html" style="color: rgb(49,66,92)">
+    <h4>Geography Lesson</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/geography-lesson.html" style="color: rgb(49,66,92)">
+                <b>146</b>&nbsp;solves
+                / <b>567</b>&nbsp;guesses
+                / <b>162</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/geography-lesson.html" style="color: rgb(49,66,92)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(153,153,153)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-artists.html" title="The Artists">
+        <img src="static/images/meta-8084133a.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/where-are-they.html" style="color: rgb(47,63,89)">
+    <h4>Where are They?</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/where-are-they.html" style="color: rgb(47,63,89)">
+                <b>81</b>&nbsp;solves
+                / <b>518</b>&nbsp;guesses
+                / <b>123</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/where-are-they.html" style="color: rgb(47,63,89)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(146,146,146)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-archivists.html" title="The Archivists">
+        <img src="static/images/meta-2b150bac.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/unsafe.html" style="color: rgb(45,61,85)">
+    <h4>Unsafe</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/unsafe.html" style="color: rgb(45,61,85)">
+                <b>104</b>&nbsp;solves
+                / <b>322</b>&nbsp;guesses
+                / <b>111</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/unsafe.html" style="color: rgb(45,61,85)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(140,140,140)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-animal-trainers.html" title="The Animal Trainers">
+        <img src="static/images/meta-4390a97d.svg">
+    </a>
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-artists.html" title="The Artists">
+        <img src="static/images/meta-8084133a.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/puzzle-of-dragons.html" style="color: rgb(43,58,82)">
+    <h4>Puzzle of Dragons</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/puzzle-of-dragons.html" style="color: rgb(43,58,82)">
+                <b>39</b>&nbsp;solves
+                / <b>190</b>&nbsp;guesses
+                / <b>53</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/puzzle-of-dragons.html" style="color: rgb(43,58,82)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(134,134,134)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-animal-trainers.html" title="The Animal Trainers">
+        <img src="static/images/meta-4390a97d.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/research-center.html" style="color: rgb(41,55,78)">
+    <h4>Research Center</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/research-center.html" style="color: rgb(41,55,78)">
+                <b>112</b>&nbsp;solves
+                / <b>726</b>&nbsp;guesses
+                / <b>127</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/research-center.html" style="color: rgb(41,55,78)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    <main class="puzzle regular" style="background-color: rgb(127,127,127)">
+        
+
+
+
+<div class="icon-container">
+    
+    <img class="powerup"
+         
+         src="static/images/powerup-depowered.png"
+         
+         title="Transmitter Powerup">
+    
+    
+    
+    <a class="meta-icon" href="puzzle/the-artists.html" title="The Artists">
+        <img src="static/images/meta-8084133a.svg">
+    </a>
+    
+    
+</div>
+
+<a href="puzzle/image-search.html" style="color: rgb(39,53,74)">
+    <h4>Image Search</h4>
+</a>
+<table>
+    <tr>
+        <td>
+            
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <a href="stats/image-search.html" style="color: rgb(39,53,74)">
+                <b>108</b>&nbsp;solves
+                / <b>442</b>&nbsp;guesses
+                / <b>117</b>&nbsp;teams
+            </a>
+        </td>
+        <td>
+            <a href="solution/image-search.html" style="color: rgb(39,53,74)">
+                <b>Solution</b>
+            </a>
+        </td>
+    </tr>
+    
+</table>
+
+    </main>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+
+<style>
+.laser {
+    display: block;
+    content: "";
+    height: 2px;
+    margin-top: -1px;
+    width: 1000px;
+    border-radius: 1px;
+    background-color: currentColor;
+    box-shadow: 0 0 10px black;
+    position: absolute;
+    pointer-events: none;
+    transform-origin: left;
+    transform: rotate(-90deg) scale(0);
+    transition: transform 0.3s;
+    animation: laser-active 3.14s ease-in-out infinite alternate;
+    will-change: transform, box-shadow;
+}
+
+@keyframes laser-active {
+    from {
+        box-shadow: 0 0 0 currentColor;
+    }
+    to {
+        box-shadow: 0 0 10px currentColor;
+    }
+}
+</style>
+<script>
+var selectable = document.getElementsByClassName('selectable');
+var disk = document.getElementsByClassName('disk')[0];
+var icon = disk;
+var lasers = [];
+for (var i = 0; i < 8; ++i) {
+    var laser = document.createElement('div');
+    laser.className = 'laser';
+    laser.style.top = 49 + 9 * Math.sin(i * Math.PI / 4) + 'px';
+    laser.style.left = 115 + 19 * Math.cos(i * Math.PI / 4) + 'px';
+    disk.appendChild(laser);
+    lasers.push(laser);
+}
+for (var i = 0; i < selectable.length; ++i) {
+    selectable[i].addEventListener('mouseover', function() {
+        if (icon != this) {
+            icon = this;
+            update();
+        }
+    });
+    selectable[i].addEventListener('touchstart', function(e) {
+        var link = this.getElementsByTagName('a')[0] || this;
+        if (icon != this) {
+            if (link.hasAttribute('href')) {
+                link.setAttribute('data-href', link.href);
+                link.removeAttribute('href');
+            }
+            icon = this;
+            update();
+        } else if (!link.hasAttribute('href')) {
+            link.href = link.getAttribute('data-href');
+            link.removeAttribute('data-href');
+        }
+    });
+}
+function update() {
+    var selected = document.getElementsByClassName('selected');
+    for (var i = selected.length - 1; i >= 0; --i) {
+        selected[i].className = selected[i].className.replace(/ ?selected/, '');
+    }
+    icon.className += ' selected';
+    var metas = document.getElementsByClassName('meta');
+    for (var i = 0; i < metas.length; ++i) {
+        metas[i].style.display = metas[i].getAttribute('data-id') ==
+            icon.getAttribute('data-id') ? '' : 'none';
+    }
+    var baseX = icon.offsetLeft - disk.offsetLeft;
+    var baseY = icon.offsetTop - disk.offsetTop;
+    for (var i = 0; i < lasers.length; ++i) {
+        if (icon == disk) {
+            lasers[i].style.transform = '';
+            continue;
+        }
+        var x = baseX - lasers[i].offsetLeft;
+        var y = baseY - lasers[i].offsetTop;
+        lasers[i].style.transform = 'rotate(' + Math.atan2(y, x) +
+            'rad) scaleX(' + Math.sqrt(x * x + y * y) / 1000 + ')';
+    }
+};
+window.addEventListener('resize', update, {passive: true});
+</script>
+
+
+
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

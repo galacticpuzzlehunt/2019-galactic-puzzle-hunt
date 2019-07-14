@@ -1,0 +1,264 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Galactic Puzzle Hunt</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="static/css/normalize.css">
+        <link rel="stylesheet" href="static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="static/css/base.css">
+        
+        <link rel="stylesheet" href="static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="static/js/sorttable.js"></script>
+        <script type="text/javascript" src="static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+
+<style>
+@media screen {
+    body {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
+    .print-image, .print-register {
+        display: none;
+    }
+}
+
+@media print {
+    .hero, .home-top, .logo, .register, .nyeeow {
+        display: none;
+    }
+
+    .print-image {
+        width: 100%;
+        margin: 20px 0;
+    }
+}
+
+.hero {
+    
+    background-image: url(static/images/landingpagehero-n1x.jpg);
+    
+    background-size: 1920px 1280px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.home-top {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.logo {
+    
+    background-image: url(static/images/landingpagelogo-n1x.png);
+    
+    background-size: 1920px 1280px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 768px;
+    position: relative;
+}
+
+@media screen {
+    .under-logo {
+        
+        background-color: #101113;
+        
+        padding-bottom: 60px;
+        position: relative;
+    }
+}
+
+@media print {
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .whoosh {
+        white-space: nowrap;
+    }
+
+    .print-register {
+        color: #4f6a95;
+        font-weight: bold;
+        margin: 20px 0 40px;
+    }
+
+    .four:nth-child(2) {
+        width: 26%;
+    }
+
+    .four:nth-child(3) {
+        width: 35%;
+    }
+}
+
+h4 {
+    text-align: center;
+}
+
+.feedback, .register {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+@media(min-device-pixel-ratio: 2), (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
+    .hero {
+        
+        background-image: url(static/images/landingpagehero-n2x.jpg);
+        
+    }
+
+    .logo {
+        
+        background-image: url(static/images/landingpagelogo-n2x.png);
+        
+    }
+}
+
+@media(max-width: 960px) {
+    .hero {
+        background-size: 200vw 133.33333333vw;
+    }
+
+    .logo {
+        background-size: 200vw 133.33333333vw;
+        height: 80vw;
+    }
+}
+
+@media(min-width: 1920px) {
+    .hero {
+        background-size: 100vw 66.66666666vw;
+    }
+
+    .logo {
+        background-size: 100vw 66.66666666vw;
+        height: 40vw;
+    }
+}
+</style>
+
+<div class="hero"></div>
+
+<div class="home-top">
+
+
+        <nav>
+            <a class="selected-tab" href='index.html'>Home</a>
+            <a  href='rules.html'>Rules</a>
+            
+                <a  href='story.html'>Story</a>
+            
+            
+                <a  href='puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='artifacts.html'>Artifacts</a>
+            
+            <a  href='teams.html'>Teams</a>
+            <a  href='faq.html'>FAQ</a>
+            
+                <a  href='errata.html'>Updates</a>
+            
+            
+                <a  href='wrapup.html'>Wrap-Up</a>
+            
+            <a  href='archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+
+</div>
+
+<div class="logo"></div>
+
+<img class="print-image" src="static/images/landingpageprint.png"></img>
+
+<div class="under-logo">
+
+
+<div class="feedback">
+
+The Galactic Puzzle Hunt has now come to a close. Thanks for exploring with us!
+
+<br>
+Please fill out our <a href="https://docs.google.com/forms/d/e/1FAIpQLSfMbAoEAaz2gZ7OZKex08fHHGSFdrAhgdjB45CmPcJxVa3tNQ/viewform">feedback form</a>
+
+and check out our <a href='wrapup.html'>wrap-up</a>!
+
+</div>
+
+
+<div class="row">
+    <div class="four columns">
+        <h4>What</h4>
+        <p>A mysterious artifact has been discovered near the South Pole and you’ve been called in to investigate. Who knows what cool things you’ll discover!<sup>*</sup></p>
+        <p><small><sup>*</sup>ice, mainly</small></p>
+    </div>
+    <div class="four columns">
+        <h4>When</h4>
+        
+        <p>The hunt began on March 15th, 2019 at 6:28 PM EDT and ended 9.5 days later on March 25th, 2019 at 6:28 AM EDT.</p>
+        
+    </div>
+    <div class="four columns">
+        <h4>More Info</h4>
+        
+        <p>This was a puzzlehunt run by <span class="whoosh">✈&#xfeff;✈&#xfeff;✈ Galactic Trendsetters ✈&#xfeff;✈&#xfeff;✈</span>, the follow-up to the previous year’s <a target="_blank" href="https://2018.galacticpuzzlehunt.com">Galactic Puzzle Hunt</a>.</p>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

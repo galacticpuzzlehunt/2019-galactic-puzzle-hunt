@@ -1,0 +1,177 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: Word Search II</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/word-search-ii.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: Word Search II
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">LEATHER COATS</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Josh Alman and Nathan Pinsker
+
+        
+    </h4>
+    
+<p>Just as Josh and Nathan describe, Josh has six pairs of words we need to find. In order to find them, we can guess words, and for every guess we get back a pair of "distances". Before we start finding the words, we need to use the practice round in order to figure out what "distance" means here. In the practice round we can guess and word and get its "distances" to LUGE TRACK.</p>
+<p>The "distance" measure is inspired by the two word search puzzles from last year's Galactic Puzzle Hunt. In <a href="https://2018.galacticpuzzlehunt.com/puzzle/word-search.html">Word Search</a>, the setup was quite similar, and the distance between a pair of words was the <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance</a>. The puzzle <a href="https://2018.galacticpuzzlehunt.com/puzzle/o-ea-wrd-srch.html">o ea / Wrd Srch</a> involved splitting up the consonants and vowels of words and dealing with them separately.</p>
+<p>In this puzzle, the "distance" computes the Levenshtein distances of the vowels and consonants separately. To be precise: let L<sub>v</sub>(x,y) denote the Levenshtein distance between the vowels of x and the vowels of y, and similarly define L<sub>c</sub>(x,y) for consonants. Then, when Josh's secret words are w<sub>1</sub> and w<sub>2</sub>, and we guess the word g, the two distances given to us are L<sub>v</sub>(g,w<sub>1</sub>) + L<sub>c</sub>(g,w<sub>2</sub>) and L<sub>c</sub>(g,w<sub>1</sub>) + L<sub>v</sub>(g,w<sub>2</sub>).</p>
+<p>For example, when the secret words are w<sub>1</sub> = LUGE and w<sub>2</sub> = TRACK, and we guess g = FAST, the distances we're given are L(A, UE) + L(FST, TRCK) = 2 + 4 = 6, and L(FST, LG) + L(A, A) = 3 + 0 = 3 (where L(x, y) is the normal Levenshtein distance between words x and y).</p>
+<p>Now that we've figured out what the distance measure is, we need to find the six pairs of words. There are many different ways to do this, and most of the <a href="https://2018.galacticpuzzlehunt.com/solution/word-search.html">suggestions from last year</a> are still helpful, but here are a few additional ideas that can help:</p>
+<ul>
+  <li>Words like PAT, PET, PIT, POT, and PUT, which have the same consonants in the same order but different vowels, are helpful for figuring out what vowels are in the two words. For instance, since LUGE contains E and U but not A, I or O, the first distances from PET and PUT will be one smaller than the first distances to PAT, PIT and POT. Two words that differ only in one consonant, like SLY and SHY, or MAT and CAT, can also help. Guesses that differ in both consonants and vowels, like SHOP and SNAP, are harder to reason about since we don't know if differences in the distances are coming from the vowels in one word or the consonants in the other.</li>
+  <li>Once you've figured out one of the words, the remaining task of figuring out the other word is much easier. When you make guesses, you can subtract away the contributions of the word you already know to the distances, and then you're left with the consonant and vowel distances to the remaining unknown word.</li>
+  <li>Similarly, once you're quite confident about the vowels in one word, you can then get much more straightforward information about the consonants of the other word. It often helps to work on both words in parallel instead of focusing on just one at a time.</li>
+</ul>
+
+<p>Finally, we find that the six pairs of are:</p>
+
+<table>
+  <tr>
+    <td>Round 1</td>
+    <td>EMERGENCY LANDING</td>
+  </tr>
+  <tr>
+    <td>Round 2</td>
+    <td>AIRPORT TERMINAL</td>
+  </tr>
+  <tr>
+    <td>Round 3</td>
+    <td>ESCAPE HATCH</td>
+  </tr>
+  <tr>
+    <td>Round 4</td>
+    <td>CONTROL ROOM</td>
+  </tr>
+  <tr>
+    <td>Round 5</td>
+    <td>TAKE OFF</td>
+  </tr>
+  <tr>
+    <td>Round 6</td>
+    <td>SPACE AGE</td>
+  </tr>
+</table>
+
+<p>As suggested by the circles when we find the correct words, we look at the first letters of these words: The first letters of the first words are EAECTS, and the first letters of the second words are LTHROA. Inspired by the distance mechanic, we take the vowels EAE from the first and consonants LTHR from the second to spell LEATHER, and we take the vowels OA from the second and consonants CTS from the first to spell COATS, giving our final answer <b><tt>LEATHER COATS</tt></b>.</p>
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>We really enjoyed making and testing last year's Word Search puzzle, and this year we thought it would be more exciting if solvers had to figure out the distance measure on their own. We'd like to thank Leon Zhou for suggesting the final extraction; in our original version, the first letters simply spelled out the answer.</p>
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

@@ -1,0 +1,190 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: Playing with Matches</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/playing-with-matches.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: Playing with Matches
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">REVOLVER</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Josh Alman, Colin Lu, and Leon Zhou
+
+        
+    </h4>
+    
+<style>
+dt {
+    font-family: monospace;
+}
+dt b {
+    text-decoration: underline;
+}
+img {
+    max-width: 100%;
+}
+</style>
+
+<p>
+This puzzle consists of a large number of matchstick puzzles, many of which have somewhat atypical solutions. Below, for each puzzle,
+the moved matchsticks are highlighted in green, and their final positions are shown in red:
+
+<br><br>
+
+<img class="center" src="playing-with-matches/solution_grid.png">
+<p>
+Some explanations for the more obscure solutions, going from top to bottom:
+<ul>
+
+<li>十 = 二十 - 十 is 10 = 20 - 10 in Chinese or Japanese.</li>
+<li>1.5 + 2.333&hellip; = 3.8333&hellip;, which is equal to 23/6.</li>
+<li>SIXTY = 60</li>
+<li>100 is a big square, as it is 10*10 (which is bigger than 001).</li>
+<li>6E1 is scientific notation for 6 * 10^1 = 60.</li>
+<li>The two parenthesized multiplications are both matrix multiplication. 1*5 + 2*2 = 9, and 4*4 + (-1)*(-2) = 18, where the T in the
+exponent is actually a transpose operator.</li>
+<li>cos(0) = 1</li>
+<li>The Unicode code point for the capital letter J is U+4A.</li>
+</ul>
+<p>
+Next, take all moved matchsticks and copy their original positions into the bottom empty grid, based on their positions within the
+subgrids of the main puzzle. For example, the horizontal stick in “661 = 50” is placed along the third horizontal line from the top,
+starting five columns over from the left. This gives the following:
+
+<br><br>
+
+<img class="center" src="playing-with-matches/solution.png">
+<p>
+This is a series of <a href="https://en.wikipedia.org/wiki/Flag_semaphore">flag semaphore</a> letters, which when translated spell out
+the answer, <tt><b>REVOLVER</b></tt>.
+
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>
+If you enjoyed this puzzle, you should take a look at <a href="http://2018.caltechpuzzlehunt.org/puzzle/mathsticks/index.html">Mathsticks</a>,
+from the 2018 Caltech Puzzle Hunt, which was our inspiration for writing this puzzle!
+
+<p>
+While doing research for this puzzle, we discovered that there seemed to be a dearth of crazy instances of the genre online -
+most instances involve making some number of squares, or satisfying some basic arithmetic equation. While writing this puzzle,
+we tested each of the matchstick puzzles internally to determine whether the canonical solutions felt fair once solvers found
+them. As an additional fun fact, this puzzle involves the most image "layers" of any puzzle in the hunt, even surpassing <i>Where
+Are They?</i>
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

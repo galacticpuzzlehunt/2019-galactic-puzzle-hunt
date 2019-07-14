@@ -1,0 +1,156 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Make Your Own Crossword</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+
+
+
+<a href="../post_hunt_solve/make-your-own-crossword.html" class="btn btn--small">Check your answer spoiler-free</a>
+
+
+<a href="../solution/make-your-own-crossword.html" class="btn btn--small">View solution</a>
+<a href="../stats/make-your-own-crossword.html" class="btn btn--small">Stats</a>
+
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<h1>
+    
+    Make Your Own Crossword
+    
+    
+</h1>
+
+<main>
+    
+
+<p>Hello puzzle solvers! Last year you were so helpful with making us a Fillomino puzzle that we've decided to ask for your help again.
+This time we need your help making a crossword puzzle! We don't need your help with making crossword clues, but we need you to make us
+a filled-in crossword grid.
+</p>
+
+<p> To help us out, we want you to make a 9x9 crossword puzzle with the following constraints:</p>
+
+<ul>
+    <li> Your grid must have 180 degree rotational symmetry (sometimes called two-way symmetry). </li>
+    <li> Your letters in your grid must be <a href="https://www.crosswordunclued.com/2009/09/crossword-grid-connectivity.html">connected</a>. </li>
+    <li> There can be at most 21 black squares in your grid. </li>
+    <li> Every entry in your grid must be an English word or phrase. You can use at most 5 uncommon words and phrases, and the rest must be common. See below for precise definitions. </li>
+    <li> You can use at most two 2-letter words, and can't use any 1-letter words. (In particular, there can't be any letters surrounded both above and below by black squares, or any letters surrounded both to the left and right by black squares.) </li>
+    <li> Each of the letters V, W, X, Y, Z must appear exactly once in your grid. </li>
+    <li> Otherwise there are no constraints, but we <b>highly</b> recommend having as many other distinct letters appear in your grid as possible. The more letters in the grid, the easier it will be to solve the puzzle afterwards. </li>
+</ul>
+
+<p> We will use <a href="https://books.google.com/ngrams">Google Books Ngrams</a> to determine what counts as a valid word or phrase: Common words and phrases must appear at least once per million words of English text on average, and uncommon words and phrases must appear at least once per ten million words on average. Here's a tool where you can submit any word or phrase, and we'll let you know if it's common, uncommon, or invalid.</p>
+<div id="submission">
+<form action="https://2019.galacticpuzzlehunt.com/puzzle/make-your-own-crossword/lookup" method="post" target="lookupTarget">
+  <input type='hidden' name='csrfmiddlewaretoken' value='MpRiaNhZWldsRU3r4oJbNlYhlwIcBb96Qex8oG3LNxvXxQzxKcPAMEPERf0OqQ9x' />
+  Word or Phrase:<br>
+  <input name="word" size="20" spellcheck="false">
+  <button id="firstbox">Submit</button>
+</form>
+<iframe name="lookupTarget" style="height: 40px; border: none;"></iframe>
+
+<p>Submit your crossword grid below as a string of 9 lines of 9 characters each, using "*" for black
+    squares and capital letters for all other squares. For example, the following 4x4 puzzle would be
+
+<p style="text-align: center;">
+<span style="vertical-align: middle; display: inline-block; font-family: monospace; font-size: 36px; letter-spacing: 1ch;">
+*NOR<br>TIME<br>ACID<br>GET*
+</span>
+<img style="vertical-align: middle;" src="../static/puzzle_resources/make-your-own-crossword/example.png">
+</p>
+
+<p>Once we get a filled in crossword grid that meets all of the requirements, we'll be able to finish up this puzzle.</p>
+
+<form action="https://2019.galacticpuzzlehunt.com/puzzle/make-your-own-crossword/submit" method="post" target="target">
+<input type='hidden' name='csrfmiddlewaretoken' value='MpRiaNhZWldsRU3r4oJbNlYhlwIcBb96Qex8oG3LNxvXxQzxKcPAMEPERf0OqQ9x' />
+Puzzle:<br>
+<textarea name="puzzle" rows="9" cols="9" spellcheck="false" style="font-family: monospace; width: 18ch; box-sizing: initial; height: initial; letter-spacing: 1ch; font-size: 3rem; line-height: 2.2rem;"></textarea><br>
+<input type="submit" value="Submit">
+</form>
+<iframe name="target" style="height: 300px; border: none; font-family: monospace;"></iframe>
+
+
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

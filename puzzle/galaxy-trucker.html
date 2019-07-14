@@ -1,0 +1,691 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Galaxy Trucker</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../static/puzzle_resources/galactic-race/app.js"></script>
+
+<style>
+
+    #messages {
+        width: 80%;
+        margin: auto;
+    }
+
+    .date {
+        text-align: center;
+        font-size: .65em;
+        color: gray;
+        margin-bottom: 10px;
+        border-bottom: solid .75px;
+    }
+
+    .attatchment {
+        float: right;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+    }
+
+    .message {
+        border: solid black .5px;
+        border-radius: 17px;
+        overflow: hidden;
+        padding: 5px 15px;
+        font-size: .85em;
+        background-color: #F9F9F9;
+        width: 60%;
+        margin: 10px 0 10px 4%;
+    }
+
+    .pop-up {
+        text-align: center;
+    }
+
+    .pop-up img {
+        max-width: 650px;
+        max-height: 400px;
+    }
+
+    #business-note {
+        width: 63%;
+        margin: auto;
+        font-size: .8em;
+        border: solid black;
+        padding: 10px;
+        margin-bottom: 80px;
+    }
+
+    #business-note h3 {
+        font-size: 20px;
+        margin-bottom: 7px;
+    }
+
+    #business-note h4 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .business-subheading {
+        font-style: italic;
+    }
+
+    .novelty {
+        color: blue;
+        font-weight: bold;
+    }
+
+    .rare-earth {
+        color: brown;
+        font-weight: bold;
+    }
+
+    .gene {
+        color: green;
+        font-weight: bold;
+    }
+
+    .alien {
+        color: gold;
+        font-weight: bold;
+    }
+</style>
+
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+
+
+
+<a href="../post_hunt_solve/galaxy-trucker.html" class="btn btn--small">Check your answer spoiler-free</a>
+
+
+<a href="../solution/galaxy-trucker.html" class="btn btn--small">View solution</a>
+<a href="../stats/galaxy-trucker.html" class="btn btn--small">Stats</a>
+
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<h1>
+    
+    Galaxy Trucker
+    
+    
+</h1>
+
+<main>
+    
+<div class="flavor">
+    <p>My uncle is notorious for his get rich quick schemes. He was messaging me constantly during his last one. I
+        swear he’s only doing this so I know where he is at all times!</p>
+</div>
+
+<div id="business-note">
+    <h3>Notes on Business</h3>
+
+    <p>The Galactic Exchange only allows for four types of goods to be bought and sold: <span class="novelty">Novelty</span>,
+        <span class="rare-earth">Rare Earth</span>, <span class="gene">Gene</span>, and <span class="alien">Alien</span>.</p>
+
+    <p>Looking at the <a target="_blank" href="../static/puzzle_resources/galactic-race/GalacticDirectory.csv">Galactic Directory</a> I have, I’ve figured out where I can pick up goods, and where I can sell different types of goods.</p>
+
+    <h4> Possible Pick Up Locations</h4>
+    <p class="business-subheading"> Regulations and taxes mean I won’t be able to leave any of these places having picked up more than one good.</p>
+
+    <ul>
+        <li class="novelty">Alien Burial Site</li>
+        <li class="alien">Alien Data Repository</li>
+        <li class="alien">Alien Guardian</li>
+        <li class="alien">Alien Monolith</li>
+        <li class="alien">Alien Robotic Factory</li>
+        <li class="novelty">Artist Colony</li>
+        <li class="gene">Avian Uplift Race</li>
+        <li class="alien">Deserted Alien Colony</li>
+        <li class="alien">Deserted Alien Library</li>
+        <li class="novelty">Galactic Resort</li>
+        <li class="novelty">Gem World</li>
+        <li class="gene">Gene Designers</li>
+        <li class="gene">Hive World</li>
+        <li class="gene">Lifeforms Inc.</li>
+        <li class="alien">Lost Alien Warship</li>
+        <li class="rare-earth">New Earth</li>
+        <li class="gene">Plague World</li>
+        <li class="gene">Reptilian Uplift Race</li>
+        <li class="novelty">Secluded World</li>
+        <li class="novelty">Spice World</li>
+        <li class="gene">Uplift Gene Breeders</li>
+        <li class="rare-earth">Volcanic World</li>
+    </ul>
+
+    <h4>Possible Sell Locations</h4>
+    <p class="business-subheading">The way the market is right now, I can probably sell the shown maximum at the
+        following locations.</p>
+
+    <dl>
+        <dt>Alien Research Team</dt>
+        <dd>One <span class="alien">Alien</span></dd>
+        <dt>Consumer Markets</dt>
+        <dd>Three <span class="novelty">Novelty</span></dd>
+        <dt>Galactic Exchange</dt>
+        <dd>One of each type of good.</dd>
+        <dt>Galactic Resort</dt>
+        <dd>One good</dd>
+        <dt>Galactic Trendsetters</dt>
+        <dd>One good</dd>
+        <dt>Gambling World</dt>
+        <dd>One good</dd>
+        <dt>Gene Designers</dt>
+        <dd>Three <span class="gene">Gene</span></dd>
+        <dt>Mining League</dt>
+        <dd>Two <span class="rare-earth">Rare Earth</span></dd>
+        <dd>For some reason, they won’t buy only one.</dd>
+        <dt>New Earth</dt>
+        <dd>One good</dd>
+        <dt>Old Earth</dt>
+        <dd>Two goods</dd>
+        <dt>Pilgrimage World</dt>
+        <dd>They’ll take anything.</dd>
+        <dt>Plague World</dt>
+        <dd>One <span class="gene">Gene</span></dd>
+        <dt>Secluded World</dt>
+        <dd>One good</dd>
+        <dt>Tourist World</dt>
+        <dd>Two goods</dd>
+        <dd>For some reason, they won’t buy only one.</dd>
+    </dl>
+
+    <p class="business-subheading">Note to self: Sell oldest stuff first. Make sure nothing goes bad or stops being
+        relevant.</p>
+</div>
+
+<div id="messages">
+<div class="date">12/4/20XX</div>
+
+<p class="message"><img value="#grid" class="attatchment" id="clip-one" src="../static/puzzle_resources/galactic-race/paperclip.png"> Hey, I was finishing up packing and I found this. Do you think it's important?</p>
+
+<p class="message">Sorry I'm leaving while you’re stuck working at the Terraforming Guild. I know you're only a day
+    away, but I can't stick around.</p>
+
+<div class="date">12/5/20XX</div>
+
+<p class="message">And you said this Alien Robotic Factory wouldn't work out! The robotics production line is up and
+    running!</p>
+
+<div class="date">12/6/20XX</div>
+
+<p class="message">Met up with a friend. He's a Contact Specialist. Says he has some work for me.</p>
+
+<div class="date">12/7/20XX</div>
+
+<p class="message">Friend and I are getting drinks at the Rebel Cantina. He says he can get me in to see some of the
+    rebels.</p>
+
+<div class="date">12/8/20XX</div>
+
+<p class="message">These guys are negotiating a Rebel Pact. Want us to come back in a day or two. Won't be home for a
+    while!</p>
+
+<div class="date">12/9/20XX</div>
+
+<p class="message">Visited the Artist Colony while we're waiting for the Rebels to finish.</p>
+
+<p class="message"><img value="#painting" class="attatchment" src="../static/puzzle_resources/galactic-race/paperclip.png">Got
+        a cool painting!</p> <div class="date">12/10/20XX</div>
+
+    <p class="message">Accidentally went to visit the Reptilian Uplift Race. Didn't mean to, but I guess I can pick up
+        some
+        stuff while I'm here.</p>
+
+    <p class="message">Remind me not to continue to Old Earth. No one goes there anymore.</p>
+
+    <div class="date">12/15/20XX</div>
+
+    <p class="message">Sorry for the radio silence! I took a nearly complete tour around the Alien Booby Trap.</p>
+
+    <p class="message">I totally forgot about the rebels! I need to get back there. I'm gonna take the shortest path I
+        can
+        to get back that doesn't take me through that trap.</p>
+
+    <p class="message">BUT NOT THROUGH NEW SPARTA. I'm not that reckless!</p>
+
+    <div class="date">12/20/20XX</div>
+
+    <p class="message">Geez, they only just finished negotiations of this Rebel Pact!</p>
+
+    <p class="message">I gotta admit, it's really cheeky of them to do these negotiations next to the New Galactic
+        Order.</p>
+
+    <p class="message">I mean, New Sparta isn't setting that up for nothing, you know?</p>
+
+    <div class="date">12/21/20XX</div>
+
+    <p class="message">Looks we're celebrating this new Rebel Alliance now.</p>
+
+    <p class="message"><img value="#rebel-accords" class="attatchment" src="../static/puzzle_resources/galactic-race/paperclip.png">Managed to swipe this. Don't show anyone!</p>
+
+    <div class="date">12/22/20XX</div>
+
+    <p class="message">Oooo. Look at those Improved Logistics!</p>
+
+    <p class="message">The foreman tells me it's for the neighboring Robotic Factory. I'm really excited about that!</p>
+
+    <div class="date">12/23/20XX</div>
+
+    <p class="message">Found the edge of the galaxy!</p>
+
+    <p class="message">Turning left, because the Secluded World is to the right, and they are very much not friendly.</p>
+
+    <div class="date">12/24/20XX</div>
+
+    <p class="message">Ah. New Earth. Much better than the Old Earth.</p>
+
+    <p class="message">Was going to go to the Consumer Markets right next to here, but a friend just called me about a
+        new
+        investment opportunity. I'll be visiting him first.</p>
+
+    <div class="date">12/26/20XX</div>
+
+    <p class="message">Visiting that friend I mentioned. He's been working with his Alien Research Team.</p>
+
+    <p class="message"><img value="#investment-map" class="attatchment" src="../static/puzzle_resources/galactic-race/paperclip.png">Oh man, this opportunity looks amazing! I'm super excited about this! </p>
+
+    <div class="date">12/28/20XX</div>
+
+    <p class="message">Ew. Don't know why I'm here at the Plague World. Remind me to sanitize my ship later</p>
+
+    <p class="message">Saw some Drop Ships when I came from galactic north.</p>
+
+    <p class="message">I think I saw a Colony Ship even farther g-north?</p>
+
+    <p class="message">Probably came from the planet even further in that direction. What was it again? The Spice
+        World?</p>
+
+    <div class="date">12/29/20XX</div>
+
+    <p class="message">THE SHIP IS CLEAN!!!!!!!!! Facilities at the Consumer Markets are expensive, but this was
+        totally
+        worth it.</p>
+
+    <div class="date">12/30/20XX</div>
+
+    <p class="message">At the Mining League. Couldn't sell all of my junk yesterday, but these guys were interested in
+        some
+        more stuff I had.</p>
+
+    <div class="date">12/31/20XX</div>
+
+    <p class="message">I'm glad I'm in the robotics business. These Replicant Robots are pretty sweet! </p>
+
+    <p class="message">You know, the only other kind of robots I've seen have been Mining Robots. And they seem to be
+        only
+        on the same galactic row as home.</p>
+
+    <div class="date">1/1/20XY</div>
+
+    <p class="message">WHY DO I HAVE TO PAY EXPORT DUTIES? I'm working with these people for galaxy's sake!</p>
+
+    <div class="date">1/2/20XY</div>
+
+    <p class="message">Visiting one of the rebel factions at the Rebel Homeworld. There's apparently a trading outpost
+        near
+        here. I'm gonna go see if they're interested in buying.</p>
+
+    <div class="date">1/3/20XY</div>
+
+    <p class="message">WHAT ARE IMPERIUM TROOPS DOING HERE?!?!</p>
+
+    <div class="date">1/5/20XY</div>
+
+    <p class="message">People at this Trading Outpost aren't buying. Disappointed.</p>
+
+    <div class="date">1/7/20XY</div>
+
+    <p class="message">AND NOW THERE'S AN IMPERIUM INVASION FLEET! I'M LEAVING THIS SECTOR AS SOON AS POSSIBLE.</p>
+
+    <div class="date">1/8/20XY</div>
+
+    <p class="message">Made it back to the Rebel Homeworld safely.</p>
+
+    <p class="message"><img value="#imperium-troops-map" class="attatchment" src="../static/puzzle_resources/galactic-race/paperclip.png">So between what the Rebels here already knew about this sector and my discoveries, we cobbled together
+        this
+        map.</p>
+
+    <p class="message">They just told me about a Hidden Fortress they know of. The instructions they gave me were very
+        specific: travel one day g-north, then turn right, left, left again, then right, and you'll find the fortress.</p>
+
+    <div class="date">1/11/20XY</div>
+
+    <p class="message">Just passed a Colony Ship. Dunno what they're doing all the way out here.</p>
+
+    <div class="date">1/13/20XY</div>
+
+    <p class="message">According to the directions the Rebels gave me, the Hidden Fortress should be right here. I
+        don't
+        see it though. I'm gonna keep looking.</p>
+
+    <div class="date">1/15/20XY</div>
+
+    <p class="message">Oh man, I found the Hidden Fortress! I flew right by it the first time!</p>
+
+    <p class="message">Accidentally found the Hive World yesterday instead of finding the fortress. Barely got back here alive.
+        Gonna
+        sit here overnight till I stop shaking.</p>
+
+    <div class="date">1/16/20XY</div>
+
+    <p class="message">Oh man, you remember me talking about this Alien Monolith? Well, it's even more beautiful in
+        person.</p>
+
+    <p class="message"><img value="#alien-monolith" class="attatchment" src="../static/puzzle_resources/galactic-race/paperclip.png">I took a picture for you! </p>
+
+    <div class="date">1/17/20XY</div>
+
+    <p class="message">Hey! Met up with a friend here at Galactic Engineering for lunch.</p>
+
+    <p class="message">He's still excited about all those minerals they're getting from the neighboring Volcanic World.</p>
+
+    <div class="date">1/18/20XY</div>
+
+    <p class="message">WHAT IS WITH THESE EXPORT DUTIES?!</p>
+
+    <div class="date">1/21/20XY</div>
+
+    <p class="message">Not sure why, but I ended up spending the night at this Rebel Outpost. These guys seem really
+        disorganized.</p>
+
+    <div class="date">1/22/20XY</div>
+
+    <p class="message">Hey, remember yesterday when I said they seemed disorganized? THEY JUST AMBUSHED ME! We're all
+        sorted out now, but this is just ridiculous. What, are they trying to practice Rebel Sneak Attack tactics on
+        me?</p>
+
+    <div class="date">1/23/20XY</div>
+
+    <p class="message">Hey, didn't you want something from Lifeforms Inc.? I'm actually at the Genetics Lab right now,
+        not
+        the offices. Just trying to remember.</p>
+
+    <div class="date">1/24/20XY</div>
+
+    <p class="message">This Expedition Force my friend from the ART sent me to talk to is quite alright. Definitely
+        know
+        what they're doing. We're gonna survey these places. Talk to you in a few days!</p>
+
+    <div class="date">1/27/20XY</div>
+
+    <p class="message">Really enjoying what I've seen here, especially this Deserted Alien Colony.</p>
+
+    <p class="message">Yup. This is gonna pay off really nicely. Surveyed everything on the map. </p>
+
+    <div class="date">1/31/20XY</div>
+
+    <p class="message">Finally made it to the Pilgrimage World. Not that I'm religious or anything, but I feel it's a
+        place
+        everyone should visit at least once, you know?</p>
+
+    <div class="date">2/2/20XY</div>
+
+    <p class="message">Hmmm. Should I tell these Imperium Troops I'm working with the Rebels? How about "I'm not that
+        into
+        getting arrested?"</p>
+
+    <p class="message">Looks like there's some Drop Ships up ahead. I'm gonna do what I can to avoid them.</p>
+
+    <div class="date">2/4/20XY</div>
+
+    <p class="message">They're building this ridiculous thing... I think they're calling it an Imperium Planet Buster?</p>
+
+    <div class="date">2/7/20XY</div>
+
+    <p class="message">You know, I think seeing the Galactic Imperium is enough. I don't need to visit the throne.</p>
+
+    <div class="date">2/9/20XY</div>
+
+    <p class="message">Did you know these guys are developing Imperium Cloaking Technology? Well, you do now.</p>
+
+    <div class="date">2/10/20XY</div>
+
+    <p class="message">If anyone asks, no, I didn't steal any plans to the Imperium Planet Buster.</p>
+
+    <div class="date">2/11/20XY</div>
+
+    <p class="message">Got out of Imperium space with some valuable intelligence thanks to some Rebel Freedom Fighters.</p>
+
+    <p class="message"><img value="#merchant-district" class="attatchment" src="../static/puzzle_resources/galactic-race/paperclip.png">I think I'm gonna take a break, get some stuff in the merchant district, and then meet up again with
+        the
+        Rebels. </p>
+
+    <div class="date">2/13/20XY</div>
+
+    <p class="message">Whoa... ever consider getting a job with the Alien Tech Institute?</p>
+
+    <p class="message"><img value="#institute" class="attatchment" src="../static/puzzle_resources/galactic-race/paperclip.png">Oh, now this is cool! </p>
+
+    <div class="date">2/14/20XY</div>
+
+    <p class="message">Huh. This Avian Uplift Race is really friendly.</p>
+
+    <p class="message">They also provide an Uplift Mercenary Force for the district. I think they're training nearby.</p>
+
+    <div class="date">2/15/20XY</div>
+
+    <p class="message">There's so much cool information in this Deserted Alien Library!</p>
+
+    <p class="message">Galactic Survey: SETI is set up near here. I should probably get a friend on that team. What do
+        you
+        think?</p>
+
+    <div class="date">2/16/20XY</div>
+
+    <p class="message">I'd love to stay and relax at this Galactic Resort, but there's just too much stuff to do!</p>
+
+    <p class="message">You know, it may just be a branch of the Interstellar Bank, but it's one of the most beautiful
+        things you can see from here. And that's saying something!</p>
+
+    <p class="message"><img value="#postcard" class="attatchment" src="../static/puzzle_resources/galactic-race/paperclip.png">Oh yeah. Forgot I picked this up a while ago. Have a postcard. </p>
+
+    <div class="date">2/21/20XY</div>
+
+    <p class="message">Meeting with the some people in the Rebel Underground.</p>
+
+    <p class="message"><img value="#imperium-space" class="attatchment" src="../static/puzzle_resources/galactic-race/paperclip.png">I gave them the intelligence I acquired on Imperium space. </p>
+
+    <div class="date">2/22/20XY</div>
+
+    <p class="message">We're moving to make that attack. Just gotta avoid these Space Marines first.</p>
+
+    <div class="date">2/25/20XY</div>
+
+    <p class="message">Yeah, I'm not sticking around for the Rebel Sneak Attack to start. Hope I can get home soon.</p>
+
+    <div class="date">2/26/20XY</div>
+
+    <p class="message">WOULD YOU TELL THIS IMPERIUM WARLORD TO STOP CHASING ME?!</p>
+
+    <p class="message">NO MORE TIME TO TALK. I'M MAKING A STRAIGHT SHOT TO THE BLACK HOLES.</p>
+
+    <div class="date">3/2/20XY</div>
+
+    <p class="message">Hopefully these Black Hole MIners don't mind that I'm dodging through their territory…</p>
+
+    <p class="message">Whew. I lost the warlord. This old ship handles those black holes really well.</p>
+
+    <div class="date">3/3/20XY</div>
+
+    <p class="message">Met up with another Expedition Force.</p>
+
+    <p class="message"><img value="#expedition-force" class="attatchment" src="../static/puzzle_resources/galactic-race/paperclip.png">This one was looking to explore past this corner of the galaxy. You know, into this whole lot of nothing?
+    </p>
+
+    <div class="date">3/5/20XY</div>
+
+    <p class="message">Finally met up with the Contact Specialist again. Not in the same place, of course. He's gotta
+        cover
+        his tracks!</p>
+
+    <p class="message">He says he can get me into the Galactic Exchange that's a day out from here. I'm gonna take him
+        up
+        on that, considering that's what I wanted to do in the first place!</p>
+
+    <p class="message">Oh yeah, now that the Imperium is sorta kinda after me, my contact needs to do some extra work
+        to
+        get me into the GE safely. It's only two days travel from the Seat and the Warlord, after all.</p>
+
+    <div class="date">3/7/20XY</div>
+
+    <p class="message">Alright. Gonna have to sneak past these Space Marines that are (probably) still looking for me
+        to
+        get home.</p>
+
+    <div class="date">3/8/20XY</div>
+
+    <p class="message">So that Imperium Cloaking Tech? Works great. Didn't see them approach. Running now!</p>
+
+    <div class="date">3/9/20XY</div>
+
+    <p class="message">Sorry! Can't visit you while I'm here at the Terraforming Guild! Gotta keep moving!</p>
+
+    <p class="message">Can't fly home, either. Gotta lose them first!</p>
+
+    <div class="date">3/12/20XY</div>
+
+    <p class="message">Ha! Maybe these Black Hole Miners can salvage some of those poor ships!</p>
+
+    <p class="message">This ship handles these black holes even better than the old one did!</p>
+
+    <div class="date">3/13/20XY</div>
+
+    <p class="message">Making a deposit of all my hard-earned money from this trip at the Interstellar Bank!</p>
+
+    <p class="message">Won't be gambling this away. Can't show my face at the Gambling World anyway, with it being
+        right
+        next to the Seat and all.</p>
+
+    <div class="date">3/14/20XY</div>
+
+    <p class="message">Ah. Home sweet Galactic Trendsetters. Want to go out for drinks later?</p>
+
+    <p class="message">Oh, don't be surprised by the new ship. Got it from the Separatist Colony only time I was there.
+        Haven't had time to repaint it yet.</p>
+
+    <p class="message">What an adventure! Only revisited a place nine times (home doesn’t count), and never visited the
+        same
+        spot more than twice!</p>
+
+    <p class="message">Well, now I can say I've been nearly everywhere in the galaxy!</p>
+
+    </div>
+    <div class="pop-up" id="grid">
+        <a target="_blank" href="../static/puzzle_resources/galactic-race/Grid.jpg"><img src="../static/puzzle_resources/galactic-race/Grid.jpg"></a>
+    </div>
+    <div class="pop-up" id="alien-monolith">
+        <a target="_blank" href="../static/puzzle_resources/galactic-race/AlienMonolith.png"><img src="../static/puzzle_resources/galactic-race/AlienMonolith.png"></a>
+    </div>
+    <div class="pop-up" id="institute">
+        <a target="_blank" href="../static/puzzle_resources/galactic-race/AlienTechInstitute.png"><img src="../static/puzzle_resources/galactic-race/AlienTechInstitute.png"></a>
+    </div>
+    <div class="pop-up" id="expedition-force">
+        <a target="_blank" href="../static/puzzle_resources/galactic-race/ExpeditionForce.png"><img src="../static/puzzle_resources/galactic-race/ExpeditionForce.png"></a>
+    </div>
+    <div class="pop-up" id="imperium-space">
+        <a target="_blank" href="../static/puzzle_resources/galactic-race/ImperiumSpaceMap.png"><img src="../static/puzzle_resources/galactic-race/ImperiumSpaceMap.png"></a>
+    </div>
+    <div class="pop-up" id="imperium-troops-map">
+        <a target="_blank" href="../static/puzzle_resources/galactic-race/ImperiumTroopMap.png"><img src="../static/puzzle_resources/galactic-race/ImperiumTroopMap.png"></a>
+    </div>
+    <div class="pop-up" id="investment-map">
+        <a target="_blank" href="../static/puzzle_resources/galactic-race/InvestmentMap.png"><img src="../static/puzzle_resources/galactic-race/InvestmentMap.png"></a>
+    </div>
+    <div class="pop-up" id="merchant-district">
+        <a target="_blank" href="../static/puzzle_resources/galactic-race/MerchantDistrict.png"><img src="../static/puzzle_resources/galactic-race/MerchantDistrict.png"></a>
+    </div>
+    <div class="pop-up" id="painting">
+        <a target="_blank" href="../static/puzzle_resources/galactic-race/Painting.png"><img src="../static/puzzle_resources/galactic-race/Painting.png"></a>
+    </div>
+    <div class="pop-up" id="rebel-accords">
+        <a target="_blank" href="../static/puzzle_resources/galactic-race/RebelAccords.png"><img src="../static/puzzle_resources/galactic-race/RebelAccords.png"></a>
+    </div>
+    <div class="pop-up" id="postcard">
+        <a target="_blank" href="../static/puzzle_resources/galactic-race/TouristWorldPostcard.png"><img src="../static/puzzle_resources/galactic-race/TouristWorldPostcard.png"></a>
+    </div>
+
+    
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

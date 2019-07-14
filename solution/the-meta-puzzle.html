@@ -1,0 +1,986 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: The Meta Puzzle</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/the-meta-puzzle.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: The Meta Puzzle
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">EXTRACTION</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Anderson Wang, Colin Lu, and Lennart Jansson
+
+        
+    </h4>
+    
+
+<style>
+  /* TODO */
+  .monospace {
+    font-size: 2rem;
+    font-family: monospace;
+  }
+
+  .centered-table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .centered-image {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .red-suit {
+    color: #e00;
+  }
+</style>
+
+<p>
+At first glance, the puzzle consists of 8 distinct metapuzzles. As solvers make
+progress on the metapuzzles, they’ll find that some answers seem to be missing.
+In fact, in each case, one of the “feeder answers” for the metapuzzle is
+omitted. However, every metapuzzle is still solvable without the missing answer,
+and in every case the missing answer is uniquely “backsolvable”.
+</p>
+
+<p>
+  The missing feeder answers to each of the puzzles, as well as the meta puzzle
+  answers, in order of presentation, are:
+</p>
+
+<table class="centered-table">
+  <tr>
+    <th>“Backsolved” feeder answer</th>
+    <th>Meta answer</th>
+  </tr>
+  <tr class="monospace">
+    <td>BLACK COW</td>
+    <td>REDUCE</td>
+  </tr>
+  <tr class="monospace">
+    <td>GASOLINE</td>
+    <td>HALOGENS</td>
+  </tr>
+  <tr class="monospace">
+    <td>FOVEAL VISION</td>
+    <td>ENIAC</td>
+  </tr>
+  <tr class="monospace">
+    <td>IVES</td>
+    <td>REMARRIAGE</td>
+  </tr>
+  <tr class="monospace">
+    <td>ASSORT</td>
+    <td>ROSINESS</td>
+  </tr>
+  <tr class="monospace">
+    <td>DIGERATI</td>
+    <td>ITSY BITSY SPIDER</td>
+  </tr>
+  <tr class="monospace">
+    <td>CUBANO</td>
+    <td>NORWAY</td>
+  </tr>
+  <tr class="monospace">
+    <td>HUCKSTER</td>
+    <td>GINSBURG</td>
+  </tr>
+</table>
+
+<p>
+  Reading down, the meta answers spell <tt>RHERRING</tt> (with the first answer
+  starting with <tt>RED</tt>), which tells us not to use them further. The backsolved
+  answers together form a final metapuzzle, once again with an answer missing.
+</p>
+
+<p>
+  We notice that the backsolved answers start with distinct letters from A to I,
+  with E conspicuously absent, suggesting that once again a single answer is
+  missing. Ordering these answers alphabetically, we can read the last letters:
+</p>
+
+<p style="text-align: right; max-width: 170px; margin: 0px auto;" class="monospace">
+  ASSORT<br>
+  BLACK COW<br>
+  CUBANO<br>
+  DIGERATI<br>
+  ?<br>
+  FOVEAL VISION<br>
+  GASOLINE<br>
+  HUCKSTER<br>
+  IVES
+</p>
+
+<p>This spells <tt>TWO I?NERS</tt>, which completes to the clue phrase <tt>TWO INNERS</tt>.</p>
+
+<p>
+  Taking the two middle letters of each of these answers, each of which has an
+  even length, gives bigrams <tt>SO</tt>, <tt>CK</tt>, <tt>BA</tt>, <tt>ER</tt>,
+  <tt>??</tt>, <tt>LV</tt>, <tt>OL</tt>, <tt>KS</tt>, and <tt>VE</tt>. These
+  bigrams can be rearranged to form a chain where the second letter in one
+  bigram is the first letter of the next and they can be uniquely combined to
+  make the word <tt>BACKSOLVER</tt>, the appropriate answer to the meta, but not to this
+  puzzle! Much like how the backsolved answers were used instead of the meta
+  answers with the rest of the puzzle, we need to do the same thing and
+  backsolve this final one.
+</p>
+
+<p>
+  The missing middle bigram is <tt>AC</tt>, so the constraints on the missing answer are:
+  1) It begins with an <tt>E</tt>, 2) It ends with an <tt>N</tt>, and 3) It has even length and
+  contains <tt>AC</tt> directly in the middle. The most common (and by far the most
+  appropriate) word or phrase that satisfies these conditions is
+  <tt><b>EXTRACTION</b></tt>, the final answer.
+</p>
+
+<h3>Component Meta Solutions</h3>
+
+<h4>REDUCE meta</h4>
+
+<p>
+  The shell depicts some example “sets” and “runs”, and shows several sets of 10
+  cards. From this, we can gather that the cards represent a rummy game.
+  Furthermore, as one looks at the sets of cards more closely, it can be seen
+  that these are three new cards added between each consecutive hand of cards,
+  while three old cards are removed. Then, a natural thing to do is consider
+  exactly which cards are added and removed:
+</p>
+
+<table class="centered-table">
+    <tr>
+      <th>Hand number</th>
+      <th>Cards added</th>
+      <th>Cards removed</th>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>K<span class="red-suit">♦</span>, 10<span class="red-suit">♥</span>, J<span class="red-suit">♥</span></td>
+      <td>7♣, K<span class="red-suit">♥</span>, 2♠</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>9♣, 10♣, A♠</td>
+      <td>9<span class="red-suit">♦</span>, 10<span class="red-suit">♥</span>, J<span class="red-suit">♥</span></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>10<span class="red-suit">♦</span>, J<span class="red-suit">♦</span>, Q<span class="red-suit">♥</span></td>
+      <td>9♣, 10♣, A♠</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Q♣, K♣, 4♠</td>
+      <td>10<span class="red-suit">♦</span>, Q<span class="red-suit">♥</span>, K♠</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>5♣, J♣, J♠</td>
+      <td>Q♣ , K♣, 4♠</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8<span class="red-suit">♦</span>, Q<span class="red-suit">♦</span>, 8<span class="red-suit">♥</span></td>
+      <td>5♣, J♣, J♠</td>
+    </tr>
+  </table>
+
+<p>
+  Noting that each set of cards added is of a single color (red or black), and
+  the feeder answers we’re given, it’s natural to pair up sets of cards drawn
+  with meta answers, where the 26 red/black cards in the deck are mapped to the
+  alphabet somehow, such that each set of red cards gives the three remaining
+  letters in one of the answers starting with red (INK, DOT, RAW). and similarly
+  for the black cards. However, solvers will find that this logic puzzle seems
+  unconstrained - the key observation is that the clubs and diamonds “letter
+  mapping” is the same, and so too is the hearts and spades letter mapping (ie.
+  whatever letter the A♣  represents is the same letter as what A♦ represents).
+  For convenience, below, when we refer to “hands” we mean the cards added
+  between the pictured hands, as shown above.
+</p>
+
+<p>
+  With this in mind, here is an example of how one might deduce all of the
+  pairings:
+</p>
+
+<ul>
+  <li>We note that there are three hands in which three black cards are drawn, so the missing answer must be of the form BLACK ???</li>
+  <li>TIT being a set means that T and I represent the same card rank. Hence hand 6 is BLACK TIE, since it’s the only one with two cards of the same rank.</li>
+  <li>Hand 7 is REDRAW, since it’s the only red hand without any jacks (and the other red answers have T or I in them).</li>
+  <li>Hand 5 is the missing black answer, since SUN doesn’t share any letters with RAW, while hands 5 and 7 involve Q♣ and Q<span class="red-suit">♦</span> respectively. Hence hand 3 is BLACK SUN.</li>
+  <li>Hand 4 is RED INK, since it shares a letter with SUN.</li>
+  <li>Finally, hand 1 is RED DOT.</li>
+</ul>
+
+<p>
+  Then we have the following assignments:
+</p>
+
+<table class="centered-table">
+    <tr>
+      <th>Hand number</th>
+      <th>Cards added</th>
+      <th>Corresponding answer</th>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>K<span class="red-suit">♦</span>, 10<span class="red-suit">♥</span>, J<span class="red-suit">♥</span></td>
+      <td>RED DOT</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>9♣, 10♣, A♠</td>
+      <td>BLACK SUN</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>10<span class="red-suit">♦</span>, J<span class="red-suit">♦</span>, Q<span class="red-suit">♥</span></td>
+      <td>RED INK</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Q♣, K♣, 4♠</td>
+      <td>BLACK ???</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>5♣, J♣, J♠</td>
+      <td>BLACK TIE</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8<span class="red-suit">♦</span>, Q<span class="red-suit">♦</span>, 8<span class="red-suit">♥</span></td>
+      <td>REDRAW</td>
+    </tr>
+  </table>
+
+<p>We can also deduce some specific cards:</p>
+
+<ul>
+  <li>J<span class="red-suit">♦</span>/J♣ is I, and 10<span class="red-suit">♦</span>/10♣ is N, by looking at the cards in common between SUN and INK, and INK and TIE.</li>
+  <li>From the example run IWON, we can deduce that Q♣, K♣ are W, and O now, respectively.</li>
+  <li>5♣ is E, since it’s the only card in TIE not shared by other hands.</li>
+  <li>The run NAS tells us that S and A are 9♣ and 8♣ respectively.</li>
+  <li>By elimination from hand 2, D is 10<span class="red-suit">♥</span>.</li>
+</ul>
+
+<p>
+These observations together let us “translate” the sequence of cards at the very
+bottom, which reads DEADWOOD. This tells us to look at the <a
+href="https://en.wikipedia.org/wiki/Gin_rummy#Objective">deadwood</a> cards, as
+in gin rummy. In the last pictured hand of cards, the deadwood cards are A<span class="red-suit">♥</span>, 4<span class="red-suit">♥</span>,
+and 5<span class="red-suit">♦</span>. The given enumeration suggests that the answer to this metapuzzle is
+RED???, where the three letters are given by the letters corresponding to these
+cards. But from SUN, we already know that A<span class="red-suit">♥</span> is the U, and as mentioned earlier,
+5<span class="red-suit">♦</span>=5♣ is E.
+</p>
+
+<p>
+But how do we determine the last card, the 4<span class="red-suit">♥</span>? Well, it must be the same card as
+4♠, such that RED&lt;UE?&gt; and BLACK&lt;OW?&gt; are possible answer phrases (where &lt;&gt;
+denotes possible anagramming).
+</p>
+
+<p>
+The only possibility is that the answer is the thematic <tt>REDUCE</tt>, and the missing
+feeder answer is <b><tt>BLACK COW</tt></b>.
+</p>
+
+<h4>HALOGENS meta</h4>
+
+<p>
+There are 28 small images, each containing a rectangular grid and an arrow drawn
+from one grid cell to another. The grid is not perfectly square &mdash; each cell is
+slightly narrower than it is tall, suggesting that it isn't merely any
+rectangular grid, it is a <i>periodic table</i>.
+</p>
+
+<p>
+Each of the puzzle answers can be segmented into chemical element abbreviations.
+Each answer can then be spelled by starting at one element, then using the
+arrows from the pictures as offsets (jumps) to elements in different positions
+in the periodic table:
+</p>
+
+<table class="centered-table">
+  <tr>
+    <td>ARGENTINA</td>
+    <td>Ar Ge N Ti Na</td>
+    <td>(-4, +1)  (+1, -2)  (-11, +2)  (-3, -1)</td>
+  </tr>
+  <tr>
+    <td>FRATERNAL</td>
+    <td>F Ra Te Rn Al</td>
+    <td>(-15, +5)  (+14, -2)  (+2, +1)  (-5, -3)</td>
+  </tr>
+  <tr>
+    <td>GEARBOXES</td>
+    <td>Ge Ar B O Xe S</td>
+    <td>(+4, -1)  (-5, -1)  (+3, 0)  (+2, +3)  (-2, -2)</td>
+  </tr>
+  <tr>
+    <td>LITERACY</td>
+    <td>Li Te Ra C Y</td>
+    <td>(+15, +3)  (-14, +2)  (+12, -5)  (-11, +3)</td>
+  </tr>
+  <tr>
+    <td>RETAIN</td>
+    <td>Re Ta In</td>
+    <td>(-2, 0)  (+8, -1)</td>
+  </tr>
+</table>
+
+<p>
+(Re Ta In versus Re Ta I N is ambiguous, but the given vectors allow only one of
+those sequences.)
+</p>
+
+<p>
+The six boxes at the end suggests the meta answer is spelled out in a similar
+way using all of the remaining vectors, ending with an S. Of the nine remaining
+vectors, five are therefore used by the meta answer, and the other four should
+have been used by the puzzle answer we need to backsolve. If we try working
+backwards from the S in the meta answer, we can find the answer HALOGENS using
+the vectors (+12, +2)  (+3, -1)  (-2, +2)  (+1, -2)  (+1, +1).
+</p>
+
+<p>
+The remaining four vectors are (-15, 0)  (0, -1)  (+3, -1)  (17, 0). We don't
+have a starting or ending point, but (17, 0) is extremely constraining since it
+must go from the leftmost column of the periodic table to the rightmost column.
+The only possible good sequences of letters are Li Ne and Fr Og, and trying the
+remaining three vectors before and after those two options will eventually yield
+our missing puzzle answer <b>GASOLINE</b>  (+3, -1)  (0, -1)  (-15, 0)  (17, 0).
+</p>
+
+<h4>ENIAC meta</h4>
+
+<p>
+  Each answer consists of two words, where the first is six letters long. Out of
+  the numbers and subscripts below the answers, the subscripts range from 1-6
+  and the numbers range from 0-7. This suggests that the subscripts might index
+  into the first words of the answers, and potentially the second words could
+  give an ordering 0-7. Indeed, if we look at the second words only, they only
+  use the vowels I and O, and treating them as 1s and 0s, they make numbers 0-7,
+  with the 6 missing:
+</p>
+
+<table class="centered-table">
+  <tr>
+    <th>Answer</th>
+    <th>Vowels</th>
+    <th>Binary number</th>
+  </tr>
+  <tr>
+    <td>ICICLE WORKS</td>
+    <td>O</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>SCHOOL TRIP</td>
+    <td>I</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>ISLAND KINGDOM</td>
+    <td>IO</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>INDOOR SKYDIVING</td>
+    <td>II</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>MARINE BIOLOGY</td>
+    <td>IOO</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>ANTIGO WISCONSIN</td>
+    <td>IOI</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>???</td>
+    <td>IIO</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>BEYOND INFINITY</td>
+    <td>III</td>
+    <td>7</td>
+  </tr>
+</table>
+
+<p>
+We can now use the number-subscript pairs to index into the first words (e.g.
+1_1 is the first letter of the word corresponding to 1, which is SCHOOL, so it’s
+an S. 3_4 is the fourth letter of the word corresponding to 3, which is INDOOR,
+so it’s O). This gives us the phrase <tt>SOL?E BINAIRO</tt>, which we can complete to
+<tt>SOLVE BINAIRO</tt>. <a href="https://en.wikipedia.org/wiki/Takuzu">Binairo</a> is a type of logic puzzle where you are given a grid of
+0s and 1s and need to fill in the empty cells such that each row and column has
+the same number of 0s and 1s, no two rows or columns are identical, and there
+are no three consecutive 0s or 1s horizontally or vertically. Since each of the
+first words has the same length, we can form a 6x8 grid of letters, and then
+once again take the Os and Is as 0s and 1s to form a Binairo puzzle. Here is the
+grid of letters with Os and Is highlighted and the Binairo solution:
+</p>
+
+<img style="max-width: 75%" class="centered-image" src="the-meta-puzzle/binairo-solution.png">
+
+<p>
+The solution turns out to be unique even missing the 7th row, though it is a
+little tricky. In particular, you have to make good use of the “no repeated
+rows” condition to finish the part around the bottom 3 rows.
+</p>
+
+<p>
+For the final step, we can find each of the five 3x3 grids in this puzzle
+solution, where white is 0 and black is 1 (if we reverse the mapping then not
+all of them can be found). Each of these can be found in a unique place in the
+grid. Extracting the corresponding green letters in the center gives us ?NI?C,
+where the first question mark is the 4th letter of the missing answer, and the
+second question mark is the 5th letter of the missing answer. The only word that
+fits this pattern is ENIAC, which is somewhat fitting given that it’s a
+computer.
+</p>
+
+<p>
+To backsolve the missing answer, we know that out of the 6 letters in its first
+word, the 3rd letter is V (from the SOLVE BINAIRO message), and the 4th and 5th
+letters are E and A respectively (from ENIAC). We also know that in its second
+word, the only vowels are I, I, and O in that order. An online dictionary search
+will reveal that <b><tt>FOVEAL VISION</tt></b> is the only phrase satisfying these constraints.
+</p>
+
+<h4>REMARRIAGE meta</h4>
+
+<p>
+Solvers may notice that some of these answers are part of canonical duos.
+Indeed, four of the given answers are parts of well-known duos:
+</p>
+
+<table class="centered-table">
+  <tr>
+    <th>Answer</th>
+    <th>Partner</th>
+  </tr>
+  <tr>
+    <td>BERT</td>
+    <td>ERNIE</td>
+  </tr>
+  <tr>
+    <td>GILBERT</td>
+    <td>SULLIVAN</td>
+  </tr>
+  <tr>
+    <td>ROBIN</td>
+    <td>BATMAN</td>
+  </tr>
+  <tr>
+    <td>ROY</td>
+    <td>SIEGFRIED</td>
+  </tr>
+</table>
+
+<p>
+One might notice that the partner answers have lengths 5, 6, 8, and 9, which
+match the remaining answers’ lengths (including a missing answer in the length-7
+slot). We can then pair these answers up and extract the letters in the same
+positions, sorting by answer length:
+</p>
+
+<table class="centered-table">
+  <tr>
+    <th>Partner</th>
+    <th>Other Answer</th>
+    <th>Extracted Letters</th>
+  </tr>
+  <tr class="monospace">
+    <td>ERNIE</td>
+    <td>ARGUE</td>
+    <td>RE</td>
+  </tr>
+  <tr class="monospace">
+    <td>BATMAN</td>
+    <td>DISMAY</td>
+    <td>MA</td>
+  </tr>
+  <tr class="monospace">
+    <td>???????</td>
+    <td>BOERWAR</td>
+    <td>??</td>
+  </tr>
+  <tr class="monospace">
+    <td>SULLIVAN</td>
+    <td>MYTHICAL</td>
+    <td>IA</td>
+  </tr>
+  <tr class="monospace">
+    <td>SIEGFRIED</td>
+    <td>LANGUAGES</td>
+    <td>GE</td>
+  </tr>
+</table>
+
+<p>
+This gives us our answer, <tt>REMA??IAGE</tt>, which can only be <tt>REMARRIAGE</tt>. But what is
+the missing answer?
+</p>
+
+<p>
+Our answer must be part of a canonical duo with a partner with a name of the
+form ???r??r. The only plausible such answer is <b><tt>IVES</tt></b>, part of the famous
+printmaking duo, Currier and Ives.
+</p>
+
+<p>
+One way to find this answer is to use a onelook query such as:
+<a href="https://www.onelook.com/?w=%3F%3F%3Fr%3F%3Fr+and+*&ls=a">https://www.onelook.com/?w=%3F%3F%3Fr%3F%3Fr+and+*&ls=a</a>, but there are also
+various other tools that can help here.
+</p>
+
+<h4>ROSINESS meta</h4>
+
+<p>
+  Solvers may notice that some of the answers are part of phrases containing
+  parts of other answers. For instance, RINGO is part of the RINGO STARR, and
+  STARR is the first part of STARRING. Also, ONION RING contains the last part
+  of STARRING, so it makes sense to associate all three of these words. In this
+  way, solvers can piece together all of the words in this meta:
+</p>
+
+<table class="centered-table">
+  <tr>
+    <th>Phrase component answer 1</th>
+    <th>Other phrase component 1</th>
+    <th>Phrase component answer 2</th>
+    <th>Other phrase component 2</th>
+    <th>Container answer</th>
+  </tr>
+  <tr class="monospace">
+    <td><b>R</b>INGO</td>
+    <td>STARR</td>
+    <td><b>O</b>NION</td>
+    <td>RING</td>
+    <td>STARRING</td>
+  </tr>
+  <tr class="monospace">
+    <td><b>S</b>MART</td>
+    <td>???</td>
+    <td><b>I</b>NSERTION</td>
+    <td>???</td>
+    <td>???</td>
+  </tr>
+  <tr class="monospace">
+    <td><b>N</b>ATURAL</td>
+    <td>EVENT</td>
+    <td><b>E</b>BB</td>
+    <td>TIDE</td>
+    <td>EVENTIDE</td>
+  </tr>
+  <tr class="monospace">
+    <td><b>S</b>WINE</td>
+    <td>FLU</td>
+    <td><b>S</b>PORT</td>
+    <td>UTE</td>
+    <td>FLUTE</td>
+  </tr>
+</table>
+
+<p>
+The repeated letters in the middle of the container answers are R,S,T, and U,
+suggesting an ordering. From here we can read out the metapuzzle answer,
+ROSINESS, from the first letters of the component answers in order. To backsolve
+the missing answer, we need to find words that make phrases with SMART and
+INSERTION which end and begin with S, respectively, and can be conjoined at the
+S to make a word. ASS and SORT fit the bill, and together they make
+<b><tt>ASSORT</tt></b>.
+</p>
+
+<h4>ITSY BITSY SPIDER meta</h4>
+
+<p>
+Each of the answers can be written entirely using solfege syllables (including
+the <a
+href="https://en.wikipedia.org/wiki/Solf%C3%A8ge#Movable_do_solf%C3%A8ge">chromatic
+ones</a>) with exactly two letters leftover:
+</p>
+
+<table class="centered-table">
+  <tr>
+    <th>Answer</th>
+    <th>Solfege syllables</th>
+    <th>Leftover letters</th>
+  </tr>
+  <tr>
+    <td>CRITIC</td>
+    <td>RI, TI</td>
+    <td>CC</td>
+  </tr>
+  <tr>
+    <td>DIES IRAE</td>
+    <td>DI, SI, RA</td>
+    <td>EE</td>
+  </tr>
+  <tr>
+  <tr>
+    <td>EREMITIC</td>
+    <td>RE, MI, TI</td>
+    <td>EC</td>
+  </tr>
+  <tr>
+    <td>FAERIE</td>
+    <td>FA, RI</td>
+    <td>EE</td>
+  </tr>
+  <tr>
+    <td>FLAG</td>
+    <td>LA</td>
+    <td>FG</td>
+  </tr>
+  <tr>
+    <td>GRAFFITI</td>
+    <td>RA, FI, TI</td>
+    <td>GF</td>
+  </tr>
+  <tr>
+    <td>RELIEF</td>
+    <td>RE, LI</td>
+    <td>EF</td>
+  </tr>
+  <tr>
+    <td>SECRETED</td>
+    <td>SE, RE, TE</td>
+    <td>CD</td>
+  </tr>
+  <tr>
+    <td>SELECTED</td>
+    <td>SE, LE, TE</td>
+    <td>CD</td>
+  </tr>
+  <tr>
+    <td>SOLDIERED</td>
+    <td>SOL, DI, RE</td>
+    <td>ED</td>
+  </tr>
+</table>
+
+<p>
+  We can also transcribe the given notes into their solfege syllables: RI, TI,
+  SE, RE, TE, DI, SI, RA, SOL, DI, RE, SE, LE, TE, RE, MI, TI, FA, RI, LA, RA,
+  FI, TI, RE, LI, DI, RA, TI. We can reorder the answers so that their
+  corresponding solfege syllables in order make this same sequence: CRITIC,
+  SECRETED, DIES IRAE, SOLDIERED, SELECTED, EREMITIC, FAERIE, FLAG, GRAFFITI,
+  RELIEF, ???. The leftover letters in order are CCCDEEEDCDECEEFGGFEF??, which
+  when read as music notes, can be recognized as the song ITSY BITSY SPIDER, the
+  meta solution. To backsolve the answer, we see it must contain DI, RA, TI in
+  that order (the unused notes), as well as G and E (the last two notes of Itsy
+  Bitsy Spider). Therefore, it is <b><tt>DIGERATI</tt></b>.
+</p>
+
+<h4>NORWAY meta</h4>
+
+<p>
+Each of the puzzle answers contains a country as a substring. The paragraph of
+text has six sentences, and each sentence contains consecutive words that
+contain one of those countries' capitals scrambled with some extra letters. The
+extra letters are the same as the extra letters you get when you remove the
+country name from a puzzle answer, plus one extra letter we use to extract the
+meta answer.
+</p>
+
+
+<table class="centered-table">
+  <tr>
+    <th>Textual phrase</th>
+    <th>Capital + extra letters</th>
+    <th>Country in puzzle answer</th>
+    <th>Extra letters to chain from previous row</th>
+  </tr>
+  <tr>
+    <td>JIBS LEANING</td>
+    <td>BEIJING + SAL + <b>N</b></td>
+    <td>maCHINAte</td>
+    <td>MATE</td>
+  </tr>
+  <tr>
+    <td>VAIL ROOM</td>
+    <td>LIMA + ROV + <b>O</b></td>
+    <td>PERUsal</td>
+    <td>SAL</td>
+  </tr>
+  <tr>
+    <td>PART AS MUCH</td>
+    <td>MUSCAT + PHA + <b>R</b></td>
+    <td>rOMANov</td>
+    <td>ROV</td>
+  </tr>
+  <tr>
+    <td>WARMTH TEN</td>
+    <td>TEHRAN + MT + <b>W</b></td>
+    <td>pIRANha</td>
+    <td>PHA</td>
+  </tr>
+  <tr>
+    <td>DAMN RADIO</td>
+    <td>MADRID + NO + <b>A</b></td>
+    <td>mSPAINt</td>
+    <td>MT</td>
+  </tr>
+  <tr>
+    <td>???</td>
+    <td>??? + MATE + <b>?</b></td>
+    <td>???</td>
+    <td>NO</td>
+  </tr>
+</table>
+
+<p>
+We have five out of six letters for the meta answer, so thematically we guess
+the answer should be NORWAY, meaning we're looking for a string of words in the
+last sentence that contain the letters MATEY. "HAVE MANY AT A" fits the bill,
+giving us the remaining letters for HAVANA, the capital of CUBA. Our missing
+puzzle answer therefore contains CUBA as a substring with the remaining letters
+NO, so the missing answer is <b><tt>CUBANO</tt></b>.
+</p>
+
+<h4>GINSBURG meta</h4>
+
+<p>
+  Half of the answers are the last names of famous people who are the subjects
+  of recent biopics or historical films, each from a distinct year between 2010
+  and 2017. The other half of the answers are the last names of the actors who
+  portrayed them, with an extra letter added and anagrammed. Taking these extra
+  letters in year order gives GIN?BURG, which can be completed to make the
+  answer GINSBURG (who happens to be the subject of two recent films, <i>RBG</i> and <i>On
+  the Basis of Sex</i>).
+</p>
+
+<table class="centered-table">
+  <tr>
+    <th>"Surname" answer</th>
+    <th>Film</th>
+    <th>Year</th>
+    <th>Actor</th>
+    <th>"Actor + letter" answer</th>
+    <th>Extra letter</th>
+  </tr>
+  <tr>
+    <td>LOGUE</td>
+    <td>The King's Speech</td>
+    <td>2010</td>
+    <td>Geoffrey RUSH</td>
+    <td>SHRUG</td>
+    <td>G</td>
+  </tr>
+  <tr>
+    <td>THATCHER</td>
+    <td>The Iron Lady</td>
+    <td>2011</td>
+    <td>Meryl STREEP</td>
+    <td>RESPITE</td>
+    <td>I</td>
+  </tr>
+  <tr>
+    <td>LINCOLN</td>
+    <td>Lincoln</td>
+    <td>2012</td>
+    <td>Daniel DAY-LEWIS</td>
+    <td>DAILY NEWS</td>
+    <td>N</td>
+  </tr>
+  <tr>
+    <td>JOBS</td>
+    <td>Jobs</td>
+    <td>2013</td>
+    <td>Ashton KUTCHER</td>
+    <td>???</td>
+    <td>S</td>
+  </tr>
+  <tr>
+    <td>HAWKING</td>
+    <td>The Theory of Everything</td>
+    <td>2014</td>
+    <td>Eddie REDMAYNE</td>
+    <td>DERBY NAME</td>
+    <td>B</td>
+  </tr>
+  <tr>
+    <td>ALTMANN</td>
+    <td>Woman in Gold</td>
+    <td>2015</td>
+    <td>Helen MIRREN</td>
+    <td>MURRINE</td>
+    <td>U</td>
+  </tr>
+  <tr>
+    <td>JOHNSON</td>
+    <td>Hidden Figures</td>
+    <td>2016</td>
+    <td>Taraji HENSON</td>
+    <td>SHENRON</td>
+    <td>R</td>
+  </tr>
+  <tr>
+    <td>HARDING</td>
+    <td>I, Tonya</td>
+    <td>2017</td>
+    <td>Margot ROBBIE</td>
+    <td>BOB IGER</td>
+    <td>G</td>
+  </tr>
+</table>
+
+<p>
+  The missing answer must be an anagram of KUTCHER + S, so it is <b><tt>HUCKSTER</tt></b>. Note
+  that there is a more famous Steve Jobs movie, so the years must be used for
+  disambiguation.
+</p>
+
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>
+After this year's Mystery Hunt, we had some internal discussions about how
+backsolving is really fun for solvers, but the bane of puzzle writers who
+want to see their puzzles forward-solved. Lennart proposed the idea for a
+puzzle all about backsolving, and we happened to have an answer (EXTRACTION)
+that seemed perfect for the concept. The metameta "answer", BACKSOLVER, is a
+reference to the 2011 Mystery Hunt "collection of metapuzzles" puzzle, <a
+href="http://web.mit.edu/puzzle/www/2011/puzzles/mega_man/meta_testing/">Meta
+testing!</a>, which other GPH puzzle editors pointed out as having a similar
+presentation and for being a possible source of inspiration. We thought
+solvers who had done the 2011 Mystery Hunt would appreciate the shout-out!
+Interestingly, several members of the MH writing team that wrote that puzzle
+were on one of the only teams to forward-solve this puzzle before we released
+hints.
+</p><p>
+As we wrote the puzzle, one difficulty we found is that while many metapuzzles allow the answers to be narrowed down to a small set of 
+possibilities (often only one of which is remotely thematic), it's quite difficult to write metapuzzles with uniquely backsolvable answers,
+especially in cases where the answers themselves aren't the most common phrases. In some ways, we felt like this restriction lead to some
+interestingly creative metapuzzles.
+</p><p>
+During the hunt, perhaps justice was served on us, the writers of this puzzle, for writing such a monstrous puzzle &mdash; it ended up being
+backsolved by many teams via The Astrologers meta (rather than the intended backsolving mechanism).
+</p>
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

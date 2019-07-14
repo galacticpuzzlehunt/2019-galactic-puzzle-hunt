@@ -1,0 +1,640 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Galactic Puzzle Hunt</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a  href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a class="selected-tab" href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../wrapup.html" class="btn btn--small">Wrap-Up</a>
+<a href="finishers.html" class="btn btn--small">Finishers</a>
+<a href="../bigboard.html" class="btn btn--small">Bigboard</a>
+<a href="../stats.html" class="btn btn--small">Stats</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h3 {
+  color: #8a8aa9;
+  font-style: italic;
+}
+
+.answer {
+  margin-bottom: 40px;
+}
+
+.answer div:first-child {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+ul ul {
+  margin: 0 0 0 3rem;
+}
+ul li {
+  margin-bottom: 0px;
+}
+
+.jump {
+  border: 1px solid #cccccc;
+  padding: 25px;
+  border-radius: 10px;
+  width: 25%;
+  margin: 30px 0 60px 20px;
+}
+</style>
+
+<h1>Ask us Anything</h1>
+
+<main>
+
+<div class="jump">
+  <p><b>Jump to specific section:</b></p>
+  <div><a href="ama.html#making">Making the Hunt</a></div>
+  <div><a href="ama.html#design">Design</a></div>
+  <div><a href="ama.html#puflantu">Puflantu</a></div>
+  <div><a href="ama.html#specific">Specific Puzzles</a></div>
+  <div><a href="ama.html#advice">Advice</a></div>
+  <div><a href="ama.html#random">Random</a></div>
+</div>
+
+<h3 id="making">Making the Hunt</h3>
+
+<div class="answer">
+  <div>When did you start working on the hunt? Was the mechanic of sorting puzzle answers into metas influenced by the 2019 Mystery Hunt?</div>
+  <div><p>We started working on the hunt in September, and decided on the theme and mechanic well before the Mystery Hunt. We were surprised to see that mechanic (of ambiguous meta pairings) in there -- but it was nice to know that another writing team thought the idea was worth pursuing! Note that the 2017 Galactic Puzzle Hunt also involved assigning answers to metas, and we weren't the first hunt to use this gimmick then either.</p></div>
+</div>
+<div class="answer">
+  <div>It would be cool to hear about your puzzle-writing process. With the Archivists meta for example, was that a single person's idea or were there brainstorm sessions around it? Was the idea iterated on a lot? Were a lot of other meta ideas thrown away?</div>
+
+  <div><p>The Archivists started as Patrick Xia's idea, and was iterated on several times. Initially the mnemonics spelled out answers and not puzzle titles, but that was extremely backsolvable. We changed that, and then after a second testsolve we reordered the objects so that they were no longer in groups, and then after the third we added the panorama. All of these changes came from group brainstorms.</p>
+    <p>The Artists came from a group brainstorm and went through a lot of different iterations with different groups.</p>
+
+    <p>The Animal Trainers started out as Alan Huang's idea and went through a few different brainstorms with different groups before it got to where it is.</p>
+
+    <p>The Astrologers was written by Lennart Jansson.</p>
+
+    <p>The Artifact was Anderson Wang's riff on a meta type that several groups had come up with different versions of already.</p>
+
+    <p>One meta idea was thrown out from each of the intro and main rounds -- though we don't want to talk about how they work, in case they become puzzles in a future GPH. The intro meta (internal codename "headless chicken") evolved from a pair of ideas "chicken" and "turkey". More about this can be found in the author notes for that puzzle.</p>
+
+  </div>
+
+</div>
+
+  <div class="answer">
+    <div>Do you have any plans to try to add more puzzles that can be collaborated on in remote groups?</div>
+
+    <div><p>We're strongly in favor of puzzles that can be collaborated on remotely, and we think most of ours work well for that use case. In fact, almost all our testsolving was done by remote groups, usually with Google Sheets plus Discord voice chat. There were only a few this year that we anticipated would be harder this way, such as The Farmer's Dilemma. Other puzzles we saw people describing as harder remotely are Peaches and Race for the Galaxy, but we felt that with appropriate communication protocols the impact of being spread out can be minimized for these puzzles. For Peaches, our testsolvers judiciously used spreadsheets to solve and record complete solutions to all the subpuzzles before entering them into the game; for Race for the Galaxy, they communicated via voice chat and progressed together as soon as the first individual solved the particular subpuzzle.</p>
+
+  <p>Puzzles explicitly geared toward collaboration, as opposed to just being no worse for remote solvers, are an interesting idea and might show up in the future -- but no promises!</p>
+    </div>
+  </div>
+  <div class="answer">
+    <div>How did you all decide to hide an alien linguistics theme inside Antarctica? That seems like quite the choice.</div>
+
+    <div><p>The goal of creating and using a constructed language was among the first things we decided on for this year's hunt. Incorporating aliens was a natural choice from there. The Antarctic flavor was decided on as a "shell" plot a few months later; our main artist, Lennart Jansson, posted a mockup and everyone was on board. We felt it both provided an appropriate layer of mystery and let us visually differentiate this year from our previous hunts. We also wanted to avoid a traditional archaeological dig setting, as an archaeology expedition leading to alien contact had already been explored in <a href="http://dash9.org/" target="_blank">DASH 9</a>.</p></div>
+  </div>
+
+  <div class="answer">
+    <div>Will there be another throwback puzzle next year and will it require us to use in-depth Puflantu again? This is a very important question.</div>
+
+    <div><p>You'll have to wait until next year to see! That said, we typically try to avoid puzzles where not knowing something ahead of time would put solvers at a big disadvantage.</p></div>
+  </div>
+
+  <div class="answer">
+    <div>What will the MIT hunt be like if you ever won one?</div>
+
+    <div><p>We would be excited to run the MIT Mystery Hunt, but will only make concrete plans if we are actually scheduled to write one. In general, we highly value twists, surprises, and new ideas at every level of a puzzlehunt. If we ever have the chance to write Mystery Hunt then whatever we produce would likely reflect these goals.</p></div>
+  </div>
+
+  <div class="answer">
+    <div>Do you have people all over the world to answer hint requests or you just have shifts?</div>
+
+    <div><p>Most of us are in the United States, but we have team members on both coasts (and some on the other side of the world) and with wildly differing sleep schedules. East coast early birds take over from Asia and West coast night owls around 9-10 AM Eastern.</p></div>
+  </div>
+
+  <div class="answer">
+    <div>How many people were involved in answering the advicebergs?</div>
+    <div><p>26 unique people answered at least one adviceberg, and 16 unique people answered at least 50. Usually between 1 and 5 people were actively answering hints at any given time. Special thanks go to Yannick Yao, Charles Tam, Patrick Xia, and Ben Yang for answering over 500 hints each.</p></div>
+</div>
+
+<div class="answer">
+  <div>When exactly did you start preparing this hunt?</div>
+
+  <div><p>We started up a Discord server shortly after last year's hunt concluded, with sporadic discussion until regular meetings started up in the fall. The overall theme was settled in early October. From then until January, the basics of the conlang, such as phonetics and word order, were hammered out, as were the meta structure and hunt progression. Regular puzzle construction opened up around the new year, progressing in parallel with conlang vocabulary and grammar. There was an early burst of theme work to get the website ready to announce at Mystery Hunt, but most of the final decisions were made in March.</p></div>
+</div>
+
+<div class="answer">
+  <div>Once you have an idea for a puzzle, how long do you usually spend working to complete it? I know it differs depending on the presentation, so let's use "a fairly standard word puzzle" and "programmable stuff like Peaches and Ministry" as benchmarks.</div>
+
+  <div><p>For a "fairly standard word puzzle", it's probably a few hours of brainstorming, anywhere from an hour to 10-20 hours writing clues, and then testsolving, iterating until it's fun and elegant, and, if necessary, designing the page so it doesn't look like a boring list of clues.</p>
+
+<p>For programmable stuff the "writing clues" stage above is replaced by "writing code". Unsafe took maybe 50 hours to make.</p>
+
+<p>Peaches is a special case because in addition to programming, there was a lot of art to draw. There were about a dozen comic panels, two dozen unique character sprites, various backdrops and UI. The art took maybe 100 hours, and the coding took around 30 hours. A lot of features (like the dialog box) were much made easier by <a href="https://github.com/npinsker/nova" target="_blank">a library Nathan wrote</a>. Coming up with the powers and levels that worked for the extraction also took a week of mulling.</p>
+  </div>
+</div>
+
+<h3 id="design">Design</h3>
+
+<div class="answer">
+  <div>Where did you get the idea of coming up with a new language?</div>
+
+  <div><p><a href="https://2018.galacticpuzzlehunt.com/puzzle/bakeoff.html" target="_blank">The Wepp Perflontus Bakeoff</a> was probably the biggest direct inspiration, but we've had several theme proposals about alien contact for the past few years. Several semi-independent lines of thought, including "what if the puzzlehunt taught you a language" and "secretly friendly aliens but you misheard them" converged to the overall conlang theme.</p></div>
+</div>
+
+<div class="answer">
+  <div>How did you get the ideas for all of the interactive puzzles? Or the metas? Those are the two most difficult things to design in my opinion, and you hit them out of the park.</div>
+
+  <div><p>Most of the meta ideas came out of group brainstorming sessions. People would split into groups and think about different ways to construct interesting puzzles with language. Once we had something good, we would iterate on it repeatedly until it was something we liked.</p>
+
+    <p>We've updated a lot of solution pages to add additional notes on construction. A few more comments on individual puzzles follow:</p>
+
+    <p>Brian: I think I go over my inspiration in the authors' notes for Unsafe, but in a sentence, I like text adventures and feel like too few "straight" text adventures appear in puzzlehunts &mdash; they usually have global gimmicks and feel like they need to be played rather differently than a normal text adventure.</p>
+
+    <p style="margin-bottom: 0.5rem;">DD: For Peaches &mdash;</p>
+      <ul>
+        <li>September 2018</li>
+        <ul>
+          <li>DD: Nathan we need to write a bowsette game
+          <li>Nathan: Oh my god great idea
+        </ul>
+        <li>(five months pass and we don't do anything)</li>
+        <li>February 2019</li>
+        <ul>
+          <li>????</li>
+          <li>Through lots of iteration and frustration, find excuses to get as many -ettes into a puzzle as possible</li>
+        </ul>
+      </ul>
+
+    <p>Nathan: Word Search was received warmly last year, especially by newer teams, so we wanted to make another puzzle in that vein. With both Word Searches, we were looking to make "comfort food" puzzles &mdash; nothing experienced teams will go crazy over, but hopefully a fun and relaxing way to spend a few hours for anybody else.</p></div>
+</div>
+
+<div class="answer">
+  <div>What was the general order that the puzzles were written (and which ones were written last minute for the hunt)?</div>
+
+  <div><p>Puzzles were written when the authors had an idea that they liked. We enforced a few other light rules (such as "an author can't have two puzzles in development at the same time"), but didn't direct puzzle creation other than that. A puzzle goes through various stages of revision (initial idea, development, testsolving, revising, post-production, factchecking), each of which can take varying amounts of time depending on everyone involved, so the amount of time it takes to write a puzzle can be unpredictable. We had an internal deadline of testsolving around three weeks before the hunt; while it was not strongly enforced, most puzzles met this deadline.</p>
+
+    <p>Many intro round puzzles (such as Polar Sales and Courage and Purity) were among the first to be completed. Two of the latest puzzles to be written were Puzzle of Dragons and Observatory (the latter replacing a puzzle that had recently been cut).</p>
+
+  </div>
+</div>
+
+<div class="answer">
+  <div>Did any puzzles have to be scrapped due to the Mystery Hunt covering the same area?</div>
+
+  <div><p>No.</p></div>
+</div>
+
+<div class="answer">
+  <div>Do you start with the puzzles and then think of the METAs and how to incorporate all the solutions you already have or vice versa &mdash; think of the meta and needed phrases and then think of the puzzles to encode that phrases?</div>
+
+  <div><p>We start with the metas first, as it is very difficult to write an engaging meta around phrases that are not related in some way.</p></div>
+</div>
+
+<div class="answer">
+  <div>How did opening (round 2) metas work?</div>
+
+  <div><p>Each meta unlocked when a team solved all but 2 puzzles that correspond to that meta. We tried to be somewhat obscure with this mechanism on purpose: since teams had to figure out the correspondence between puzzles and metas, we didn't want them to (correctly) assume that the most recently solved puzzle corresponded to the meta they just unlocked. We realize that this wasn't an ideal solution and we're sorry for any hardship this caused.</p></div>
+</div>
+
+<div class="answer">
+  <div>I really enjoyed the many "procedurally generated"-type puzzles you had: Ministry of Word Searches, Image Search, Race for the Galaxy etc. Was this part of the design philosophy or just a function of the composition of your writing team?</div>
+
+  <div><p>We don't have a specific plan to make procedurally generated or interactive puzzles, but we find that in many cases these types of puzzles are the best way to deliver really fresh and creative ideas.</p></div>
+</div>
+
+<div class="answer">
+  <div>Who answers the hints, the people who wrote that specific puzzle, or someone who just knows the solution to every puzzle? </div>
+
+  <div><p>Usually we have a few people "on call" at a given time to answer the hints. Most of us are familiar enough with most of the puzzles to answer hints about them. The authors of each puzzle also prepare short guides for the rest of us to help answer common hint requests. Once the hunt has been going for a while, past hint responses become a good resource to help unfamiliar people give hints on puzzles.</p></div>
+</div>
+
+<div class="answer">
+  <div>One of the biggest thing our team always struggles with is finding the right resources. For example, google translate may not give exactly the same results as another translation engine. How do you write a puzzle so that it is safe enough with most of the resources people will come up with?</div>
+
+  <div><p>Across the team, we're aware of most of the common tools, and try to write puzzles with them in mind. Editing and testsolving usually catch cases in which different tools might lead to different results. It's not perfect, of course.</p></div>
+</div>
+
+<div class="answer">
+  <div>I have in the past gotten the impression that your website is django-based, but the language boxes (really well done, by the way!) seem to be in ruby tags. What's up?</div>
+
+  <div><p>We (ab)used HTML <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby" target="_blank">ruby</a> annotations &mdash; commonly used for rendering the pronunciation of East Asian characters &mdash; to record teams' English translations of Puflantu words. These tags have nothing to do with the <a href="https://www.ruby-lang.org/en/" target="_blank">Ruby</a> programming language. Our website is written in Python and built, as you say, with <a href="https://www.djangoproject.com/" target="_blank">Django</a>.</p></div>
+</div>
+
+<div class="answer">
+  <div>How many man-hours went into producing this hunt (and how much of an increase has it been over the last two years)?</div>
+
+  <div><p>All of us produce the hunt as a hobby and because we think it's worthwhile, so we prefer not to think about it too much! We think the number of hours spent per person hasn't gone up much since last year (with the exception of the language developers), but we do have a larger writing team than last year's, so the overall number of hours has likely gone up a little. From 2017 to 2018, the amount of work each person put in increased drastically.</p></div>
+</div>
+
+<div class="answer">
+  <div>Is there a lead designer or director that has more authority or are all choices by full agreement?</div>
+
+  <div><p>Jakob Weisblat served in an organizational role this year, in terms of running meetings and keeping things rolling, but most hunt design choices were either by broad consensus, or by a small ad-hoc group that decided to take on that task. Editors were in charge of their respective puzzles. This structure had advantages and disadvantages, and we may explore a different organizational structure next year.</p></div>
+</div>
+
+
+<h3 id="puflantu">Puflantu</h3>
+
+<div class="answer">
+  <div>Do you intend to release a full translation guide for puflantu?</div>
+
+  <div><p>Yes! It is <a href="../puflantu-guide.html" target="_blank">here.</a></p></div>
+</div>
+
+<div class="answer">
+  <div>What's your favorite puflantu word?</div>
+
+  <div><p>Wnicwe Veskepwe</p></div>
+</div>
+<div class="answer">
+  <div>What was your favorite feature you came up with for Puflantu?</div>
+
+  <div><p>The bell sounds!</p></div>
+</div>
+
+<div class="answer">
+  <div>How do you say swear words in Puflantu?</div>
+
+  <div><p>Not entirely sure, but lots of bells are involved.</p></div>
+</div>
+
+
+<h3 id="specific">Specific Puzzles</h3>
+
+<div class="answer">
+  <div>What was the design process for Ten Years Later like?</div>
+
+  <div><p>About a month before hunt, Rahul lamented the fact that we currently had no puzzles that autoplayed Rock Lobster. While brainstorming what such a puzzle would look like, he came up with the main idea behind Ten Years Later: "let's do <a href="https://2018.galacticpuzzlehunt.com/puzzle/overtime" target="_blank">Overtime</a>, but with a fake hunt." At that point the only answer left was THE LION THE WITCH AND THE WARDROBE, and the shortest cluephrase we could come up with involved 13 letters. We put out a request for silly mini-puzzles and ended up with a lot of great ideas which contributed to the long author list. Since this was an intro round puzzle, we optimized for humor instead of meatiness; we hope you got a good laugh out of some of them.</p></div>
+</div>
+
+<div class="answer">
+  <div>About Ten Years Later: the 2009 link wasn't initially available in the Archive page, but I found it there after solving the puzzle. I didn't check that page after unlocking the puzzle but before solving it. I have to know. Was something there at that time and did I completely miss it?</div>
+
+  <div><p>If you are logged in, we track when you re-encounter the 2009 site. After you regain the memories of our wonderful 2009 hunt, the link appears on the archive page.</p></div>
+</div>
+
+<div class="answer">
+  <div>About Geography Lesson: did any team submit a song containing a puzzle?</div>
+
+  <div><p>We think that the only puzzle we received was a recording of The Llama Resolution's hint request. They submitted a hint request in meter, set to Yakko's song, and we were so impressed that we asked for a recording! They sent us tracks titled air, earth, water, and fire. We're still trying to databend the final recording! Other than that, the closest we got to a puzzle was a puzzle-ish representation of pi from Foggy Brume of TeamName (and of P&A magazine). He sent us a song about how physics classes make him want to drink, in which each word length is a successive digit of pi.</p></div>
+</div>
+
+<div class="answer">
+  <div>About Phone Lines: we didn't get that far, but for the final part, was it possible to request the audio without making a phone call? (for international solvers)</div>
+
+  <div><p>Yes, we sent a transcript to anyone who requested one.</p></div>
+</div>
+
+<div class="answer">
+  <div>How was Cuspidation made?</div>
+
+  <div><p>Chris: I've updated the author's notes with a little backstory.</p></div>
+</div>
+
+<div class="answer">
+  <div>How was Peaches made?</div>
+
+  <div><p>DD: The puzzle was designed by starting with finding a reasonable set of powers that could transform SKILIFT into GORGEOUS CAKE, which took a lot of trial and error. I would have liked to use each power exactly once, but had to settle for Wiggler being used twice in order for the powers to be reasonable enough to build the levels. (Adding AT LEAST to the clue phrase also forced the game to be a bit long.) Generating levels was done by using epicurious's recipe API to get a word pool, and then running a search over all orders of operations going backwards from words/phrases from the word pool to a list of nouns. The number of times Bowser's power could be used was limited to limit the search space and to make sure the puzzles weren't degenerate (i.e. burn all the existing letters, then make a new word from scratch.) I then tested generated puzzles by hand to pick levels that were interesting logically.
+  </p>
+  <p>(See the authors' notes for a few more technical details.)</p></div>
+</div>
+
+<div class="answer">
+  <div>What caused the Peaches erratum?</div>
+
+  <div><p>The Peaches bug was caused by an anti-cheating mechanism built for source-divers. Unlike the other levels, the question mark level requests an image from our server, sending as parameters the list of all moves used to unlock all levels. The server then validates the solutions for all the levels before returning the image. If validation fails, no image is returned, and the level does not open. The issue was caused by a last-minute bug fix in the client-side code that was not fixed in the server-side code. In particular, Bowser's power removes all spaces in addition to removing the alphabetically first letter in the server-side code, but doesn't remove spaces in the client-side code. Teams that used a particular order of operations on the <tt>ANISE TAHINI</tt> level got hit by this bug. The way this bug manifested was very unfortunate, and we'll be sure to give teams an obvious error if server validation fails on any puzzles we make in the future!
+  </p></div>
+</div>
+
+<div class="answer">
+  <div>How was Observatory made?</div>
+
+  <div><p>Lewis: I've updated the author's notes with some more notes on inspiration on creating the puzzle, as well as even more nitty-gritty construction details.</p></div>
+</div>
+
+<div class="answer">
+  <div>How was A Crossword made?</div>
+
+  <div><p>Jakob: We wrote the clues and the answers at the same time. I use CrossFire as my primary crossword constructing tool, so I loaded up a 15x15 grid into CrossFire and added the cryptic-style black squares. Then I added enough extra black squares to make it pretty easy to fill, and started selecting entries that looked nice. I think FANTASY FOOTBALL was the first seed entry. We started the clue grid by writing the shortest clues, which were most constrained, and gradually added other clues shortly after adding the words. We left clues for things like FANTASY FOOTBALL for last, since we were confident we could make them work no matter what the every-7-letters constraints turned out to be. Once we had part of the grid filled in, it was a matter of iterating - trying to fill a corner, backtracking if we couldn't get it to work, and so on. For THE, we had a list of 11-letter ___ THE ___ phrases and we were choosing between them based on what the crosses were. The last part to fill in was the bottom right, by which time we had abandoned all thought of grammar or spelling, and we were happy to use something like "shapes having two plus three angle". By the end of the construction process, my eyes hurt from all the grey dots. If you don't know what I mean, stare at the second solution image (which is a screenshot of the construction sheet) for a minute.</p></div>
+</div>
+
+<div class="answer">
+  <div>How was Unsafe made? (How do you make text adventures in general?)</div>
+
+  <div><p>We used the interactive fiction engine Inform 7, which is the most common tool people use for this type of parser-based game (interactive fiction / text adventures).</p>
+    <p>For this particular puzzle, we went about it in four steps:</p>
+    <ul>
+      <li>Choose the endings that we thought we could put in a text adventure, that fit the cluephrase</li>
+      <li>Write out in words how we thought the endings would be achieved (e.g. the cage idea, the bathtub, etc)</li>
+      <li>Design the layout of the world to make the numbers match up</li>
+      <li>Implement all the individual components &mdash; this was by far the most labor-intensive part. The world ended up having over 30 "rooms" and nearly 200 objects to interact with.</li>
+    </ul>
+    <p>Lots of testsolving was necessary to make sure they didn't interact in weird ways. At one point, if you brought a mouse into the spaceship, you were no longer able to talk to the ship because the game assumed you would be talking to the mouse. The solution to that particular problem was to tell the game that mice are not animals, but things. As evidenced by the errata we issued during the hunt, we still weren't able to find all the issues through testsolving.</p>
+  </div>
+</div>
+
+<div class="answer">
+  <div>How was Twitch Plays GPH made?</div>
+
+  <div><p>The puzzle has four components:</p>
+    <ol>
+      <li>The hacked Pokemon ROM, running in an emulator</li>
+      <li>A modified version of <a href="https://github.com/hzoo/TwitchPlaysX" target="_blank">this script</a> for sending inputs from twitch chat to the emulator</li>
+      <li><a href="https://obsproject.com/" target="_blank">OBS</a> to actually stream the game</li>
+      <li>A chat bot to remove disallowed messages</li>
+    </ol>
+    <p>The actual maps were crafted tile by tile using ROM hacking tools such as <a href="https://hackromtools.altervista.org/advance-map/">AdvanceMap</a>.
+    </div>
+</div>
+
+<h3 id="advice">Advice</h3>
+
+<div class="answer">
+  <div>I'm personally under a year into puzzlehunts, and want to get more experience/become a better solver. Do you have any tips for increasing my abilities aside from just doing hunts?</div>
+
+  <div><p>There are two main differences between novice puzzlers and experienced puzzlers: their ability to assess which ideas might be correct, and their ability to test out ideas as quickly as possible.</p>
+
+<p>For the first, the best way to improve is to expose yourself to lots of puzzles, so you can be familiar with what mechanics and techniques exist. You don't necessarily need to solve them, but read and understand the solutions well enough to fully explain them to somebody else. Writing your own puzzles is also a great way to improve, as it will help you develop a sense for what can be reasonably constructed as well as what is elegant (something constructors often strive for).</p>
+
+<p>For the second point, get as familiar with puzzle tools as you possibly can. Don't solve an anagram in your head; use <a href="https://nutrimatic.org/" target="_blank">Nutrimatic</a>. If you're looking for a 7-letter verb that starts with PL, don't sit there and think, don't even write a program; use <a href="https://www.onelook.com/" target="_blank">OneLook</a> or something else. Develop a workflow for efficiently working on a puzzle (most teams use Google Sheets) and, if possible, include macros for doing common puzzle operations like indexing, removing spaces, and taking letters that appear in one string but not another. Wasted time adds up.</p>
+
+<p>Check your work. It's very draining, so most teams don't do enough of this. As solvers, we've had tiny errors that have cost us hours, before we realized that we actually had the right idea hours ago. Puzzle tools help with this, since the more of your work you automate, the less likely you are to make an error.</p>
+
+</div></div>
+
+<div class="answer">
+  <div>Do you have some recommendations for other hunts that can be solved online?</div>
+
+  <div><p><a href="http://puzzlehuntcalendar.com/" target="_blank">The Puzzle Hunt Calendar</a> is a very good resource. We recommend <a href="https://reddothunt.sg/" target="_blank">Red Dot Hunt</a>, <a href="https://puzzlepotluck.com" target="_blank">Puzzle Potluck</a> and the recurring <a href="http://www.puzzledpint.com/" target="_blank">Puzzled Pint</a> for newer solvers. Other hunts that we've enjoyed include Caltech, Mezzacotta, MUMS, and SUMS.</p></div>
+</div>
+
+<div class="answer">
+  <div>What advice would you give to people who want to start writing their own puzzles/puzzlehunts?</div>
+
+  <div><p>TESTSOLVE EVERYTHING. Have people who are completely unspoiled on your puzzle try to solve your puzzles, and listen to what they have to say. Preferably do this twice with disjoint sets of people. Though we have many experienced writers, we can never predict how hard, long, or fun a puzzle will be, or whether it will have a problem or particularly nasty red herring we hadn't expected, until we testsolve it.</p>
+
+<p>If you're a newer writer, try to construct your puzzles around ideas rather than around themes or references. Everyone will appreciate a good idea with a bad theme, but only people who like the theme will like the puzzle if the idea is lackluster.</p>
+
+<p>Do others' puzzles and puzzlehunts. It will give you a better idea of what puzzle steps are fun and what steps aren't. Doing others' puzzles can also help with finding inspiration: when you're trying to figure out how a puzzle works, you might come up with incorrect ideas that you can later write into your own puzzles.</p>
+
+<p>Keep a notebook or text file of potential puzzle ideas. Add to it often.</p>
+
+<p>Other than that, write the types of puzzles you'd like to see in a hunt. Passion is the most important ingredient of a good puzzle.</p>
+
+<p>For more specific tips, you might want to check out <a href="https://github.com/fortenforge/suggestions-for-running-a-puzzlehunt" target="_blank">this guide</a> that a couple of us put together a while back.</p>
+
+</div></div>
+
+<div class="answer">
+  <div>My teammates and I have made some of our own puzzles. However, we struggle to come up with original gimmicks. What do you think will help?</div>
+
+  <div><p>Many puzzles contain a central idea that its authors think will be interesting or fun ("What if solvers had to figure out how a word search generation algorithm works?" for Ministry of Word Searches). Other puzzles are built around a specific experience ("wouldn't it be cool if Dumb Ways to Die were a text adventure" for Unsafe, "wouldn't it be fun to race against the clock" for Race for the Galaxy). Either of these can work, but the most important thing is that you build your puzzle around an idea that you think is fun and trim anything that gets in the way of it.</p></div>
+</div>
+
+<div class="answer">
+  <div>Any advice for getting into puzzle writing/finding an avenue to practice?</div>
+
+  <div><p>For people newer to these types of puzzles, we'd first recommend solving a lot of puzzles to get a feel for them. For more experienced solvers, we'd love to see more people get some friends together and put together their own hunts -- there's no better way to practice.</p></div>
+</div>
+
+<h3 id="random">Random</h3>
+
+<div class="answer">
+  <div>How many teams submitted "RICKROLL" as one of the answer for Peaches?</div>
+
+  <div><p>25.</p></div>
+</div>
+
+<div class="answer">
+  <div>How many people solved Observatory without using hints?</div>
+
+  <div><p>We believe 2 teams forward-solved Observatory with 0 hints.</p></div>
+</div>
+
+<div class="answer">
+  <div>How many teams did you expect to finish, and how long did you think it would take the first team to cross the finish line? Were you surprised?</div>
+
+  <div><p>Many of us predicted how many teams would finish before Monday. Our average guess was 6 teams and our median guess was 5.5, and nobody guessed below 2 teams. All but one of us thought the first team would finish before Monday. We were indeed surprised at how off-base these predictions were!</p></div>
+</div>
+
+<div class="answer">
+  <div>How many are there who run GPH during the week?</div>
+
+  <div><p>Usually about 2-10 people online out of a pool of ~25 online at any given time to answer hints and emails.</p></div>
+</div>
+
+<div class="answer">
+  <div>Can you tell how many people backsolve / side solve certain puzzles?</div>
+
+  <div><p>We can usually tell whether a given solve was a backsolve, based on the timing of the solve relative to the meta solve, and the difficulty of the puzzle, but we can't always be sure. (Other guesses nearby can also be evidence either for or against backsolving - if a team is guessing answers from three letters of a meta constraint or guessing the same answer to all of their open puzzles, that's probably a backsolve, whereas if they recently called in a cluephrase or an intermediate step then it's probably not one.)</p>
+
+    <p>The <a href="https://galacticpuzzlehunt.com/stats" target="_blank">stats</a> page lists backsolves, which we calculate via a simple algorithm: anything solved five minutes before the corresponding meta solve and later is a backsolve. For this hunt, this is usually an underestimate, as several puzzles could be backsolved quite a long time before their corresponding metapuzzle was solved.</p>
+</div></div>
+
+<div class="answer">
+  <div>About the bonus intro advicebergs / answerbergs: were they planned from the start or did you add them during the hunt because teams were stuck at/before the metas?</div>
+
+  <div><p>Neither of these were planned from the start. We added them in response to the intro round and the hunt being more challenging than we expected, so that teams who were interested in seeing a larger portion of the hunt could do so. That concern was particular to this hunt to some degree since we specifically wanted lots of teams to be able to get into learning the language, which was gated behind puzzle solves.</p></div>
+</div>
+
+<div class="answer">
+  <div>What's your favorite letter in the hebrew alphabet?</div>
+
+  <div><p>Josh: Gimel</p>
+    <p>Seth: (C)het for ambiguity. This isn't relevant for anything :P</p>
+</div></div>
+
+<div class="answer">
+  <div>Please rank the 5 main kids from Willy Wonka from worst to best.</div>
+
+  <div><ul>
+      <li>Veruca</li>
+      <li>Mike Teavee (we had to look him up, but everyone is better than Veruca)</li>
+      <li>Violet</li>
+      <li>Augustus</li>
+      <li>Charlie</li>
+    </ul>
+  </div>
+</div>
+
+<div class="answer">
+  <div>What's your favourite puzzle of all time? (Not including any of yours obviously)</div>
+
+  <div><p>Some of our answers:</p>
+
+    <ul>
+<li>If you liked Courage & Purity, check out <a href="http://hunt.mathcamp.org/puzzles/2006/puzzle12.pdf" target="_blank">this puzzle</a></li>
+<li>50/50</li>
+<li>I have a number of favorites from the Katamari round of MIT Mystery Hunt 2011</li>
+<li>Stephen's Sausage Roll, by increpare</li>
+<li><a href="http://web.mit.edu/puzzle/www/2018/full/puzzle/starship_enterprise.html" target="_blank">The Sci-Fi supermeta from the 2018 Mystery Hunt</a></li>
+<li><a href="http://web.mit.edu/puzzle/www/2011/puzzles/mega_man/dr_wilys_fortress.html" target="_blank">The Mega Man supermeta from the 2011 Mystery Hunt</a></li>
+</ul></div></div>
+
+<div class="answer">
+  <div>Okay, what's your favorite letter of the alphabet?</div>
+
+  <div><p>'</p></div>
+</div>
+
+<div class="answer">
+  <div>What happened to some of the puzzle authors as children to come up with such twisted (and entertaining) puzzles?</div>
+
+  <div><p>Most of us went to MIT.</p></div>
+</div>
+
+
+<div class="answer">
+  <div>What is everyone's most memorable moment in a video game?</div>
+
+  <div><p>Colin: The moment from starting Stephen's Sausage Roll to finishing it</p>
+    <p>Nathan: same as Colin</p></div>
+</div>
+
+<div class="answer">
+  <div>When are you going to admit you are a team of rock lobsters?</div>
+
+  <div><p>Just as soon as we finally figure out a way to beat the paper tigers in the grand finals!</p></div>
+</div>
+
+<div class="answer">
+  <div>Do you guys work while writing puzzles / managing the hunt?</div>
+
+  <div><p>We write puzzles as a hobby in our free time, not at work. Managing the hunt doesn't require constant attention, so many of us are available as needed (and for conversations that come up in Discord) but otherwise not paying attention. All of us are always excited to see how the hunt goes, so we're usually a little less productive that week.</p></div>
+</div>
+
+<div class="answer">
+  <div>How much site tech has survived all three years of GPH? (Not counting 2009.)</div>
+
+  <div><p>Most of the basic functionality is slightly expanded but largely the same as 2017's (teams, puzzles, answer submissions, hints). We've added a lot of functionality as needed to support features like rate-limiting, messaging Discord channels, and sending automated emails.</p></div>
+</div>
+
+<div class="answer">
+  <div>What on earth would lead you to believe that "cuspidation" should mean "the process of getting poked by a sharp point"?</div>
+
+  <div><p>Chris: "Cusp" = sharp point. "-ation" = process. So it could be interpreted as "some process related to sharp points" such as getting poked. But mostly I just liked the way the word sounds. :)</p></div>
+</div>
+
+<div class="answer">
+  <div>The last question on this form asks for wrong phone numbers we dialed. Which puzzle caused people to call different phone numbers?</div>
+
+  <div><p><a href="../solution/phone-lines.html" target="_blank">Phone Lines</a>.</p></div>
+</div>
+
+<div class="answer">
+  <div>Are you actually advance scouts for an alien civilization, preparing us for first contact? (Also perhaps trying to identify the smartest members of our species for some purpose, either nefarious or benevolent.)</div>
+
+  <div><p>Have you heard of Battle School? It's kinda like that. Maybe.</p></div>
+</div>
+
+<div class="answer">
+  <div>Is COOKIECOOKIECOOKIE still alive?</div>
+
+  <div><p>They've learned to play a little nicer, but they're still very much alive and happily munching away.</p></div>
+</div>
+
+<div class="answer">
+  <div>What is your favourite recipe for Eggplant Parmesan?</div>
+
+  <div><p>Nathan: The only one I've tried is <a href="https://cooking.nytimes.com/recipes/12671-mark-bittmans-eggplant-parmesan" target="_blank">Mark Bittman's</a>, which is excellent (though you should add some mozzarella, I'm surprised the recipe doesn't have it). Make sure to use good tomato sauce! I like Rao's Homemade marinara sauce since I'm too lazy to make my own, but it's expensive. Any San Marzano-based tomato sauce should work great. Also, don't fry the eggplant in a pool of oil like the recipe recommends (it'll be overwhelming), just brush both sides with oil instead.</p></div>
+</div>
+
+<div class="answer">
+  <div>Which word search in Ministry of Word Searches is your favorite?</div>
+
+  <div><p>#6</p></div>
+</div>
+
+<div class="answer">
+  <div>How many of you have watched the Antarctica anime?</div>
+
+  <div><p>Colin: I watched a few episodes but haven't gotten around to finishing it yet.</p></div>
+</div>
+
+<div class="answer">
+  <div>What's your favourite pixel?</div>
+
+  <div><p>Daisuke Amaya</p></div>
+</div>
+
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

@@ -1,0 +1,302 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Puzzle of Dragons</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+
+
+
+<a href="../post_hunt_solve/puzzle-of-dragons.html" class="btn btn--small">Check your answer spoiler-free</a>
+
+
+<a href="../solution/puzzle-of-dragons.html" class="btn btn--small">View solution</a>
+<a href="../stats/puzzle-of-dragons.html" class="btn btn--small">Stats</a>
+
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<h1>
+    
+    Puzzle of Dragons
+    
+    
+</h1>
+
+<main>
+    
+<style>
+    .grid {
+        width: 570px;
+        height: 616px;
+        margin: 3px auto 10px auto;
+        display: block;
+    }
+
+    .caption {
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: -10px;
+        font-size: 3em;
+    }
+
+    .orb {
+        width: 50px
+    }
+
+    .pad-rules {
+        width: 90%;
+        margin: 10px auto 0px auto;
+    }
+</style>
+<div class="pad-rules">
+    <p>One of your teams has lost its leaders, as well as their surroundings! Help the rest of your teams first, then
+        help the last one.</p>
+    <ul>
+        <li>Each team has two leaders, and each leader has a certain set of conditions in which it leads best. Help your
+            leaders achieve those conditions to move forward!</li>
+        <li>Your teammates have skills that can help you on your journey! Use any or all available skills to change your
+            surroundings.</li>
+        <li>After using your skills, there should be a straight path available. Start at the beginning and move right
+            along
+            to the end.</li>
+        <li>Once you have helped your other teams, look at your surroundings. Maybe you can find your missing leaders,
+            as
+            well as the surroundings for the team that is lost.</li>
+        <li>We’ve provided some information at the bottom of the page. Additionally, you can click on a unit to learn
+            more
+            about it.</li>
+    </ul>
+</div>
+
+<p class="caption">_ _ _</p>
+<img class="grid" src="../static/puzzle_resources/puzzle-of-dragons/1.jpg" usemap="#grid1">
+<p class="caption">_ _ _ _ _ _</p>
+<img class="grid" src="../static/puzzle_resources/puzzle-of-dragons/2.jpg" usemap="#grid2">
+<p class="caption">_ _ _</p>
+<img class="grid" src="../static/puzzle_resources/puzzle-of-dragons/3.jpg" usemap="#grid3">
+<p class="caption">_ _ _</p>
+<img class="grid" src="../static/puzzle_resources/puzzle-of-dragons/4.jpg" usemap="#grid4">
+<p class="caption">_ _ _ _</p>
+<img class="grid" src="../static/puzzle_resources/puzzle-of-dragons/5.jpg" usemap="#grid5">
+<p> </p>
+<img class="grid" src="../static/puzzle_resources/puzzle-of-dragons/6.jpg" usemap="#grid6">
+<hr>
+<div class="pad-rules">
+    <p>We’ve included some information here about Puzzle and Dragons. This should include all you need to know about the
+        rules and mechanics to solve the puzzle, but you can find lots of information elsewhere as well, especially if
+        you
+        are still unsure about anything.</p>
+
+    <h3>Rules</h3>
+    <ul>
+        <li>On your turn, you may use any number of available active skills. This can impact the board as well as other units.
+        </li>
+        <li>Active skills have cooldowns - if a unit has used its skill recently, it will not be available, and that unit will be lowered relative to the others. For this puzzle, assume that if a unit is lowered, it currently has the maximum possible cooldown on its active skill.</li>
+        <li>Some teammates are “bound” - you can see this if they appear darker, with a number over their picture. The
+            number indicates how long they are bound for. While bound, they cannot use their active skills. Additionally, bound units are incapable of activating their leader skills (leader skills are explained in more detail further down).</li>
+        <li>After using your skills, you may take a single orb and move it as much as you like in the board. As you move
+            the
+            orb from tile A to adjacent tile B, the orb at tile B moves back to fill in tile A. Note that adjacent tiles
+            include those that are diagonally adjacent. (It may help to look up a simulator if this is not clear.)</li>
+        <li>After moving the orb, any “combos” on the board will be cleared.</li>
+        <li>Combos consist of blocks of 3 or more orbs of the same type that are joined orthogonally. Each orb must be
+            in a
+            horizontal or vertical line of 3 or more orbs of that type to be considered part of the combo.</li>
+        <li>A single block, even if it contains more than 3 orbs, is still a single combo.</li>
+        <li>Note that a combo can be formed from a non-linear block of 5 or more orbs.</li>
+        <li>Combos are cleared simultaneously. Afterwards, the orbs fall down. Any newly formed combos are also cleared
+            simultaneously and count towards your combo count for the turn, and so on until there are no new combos
+            formed.
+        </li>
+        <li>Some skills mention a “cross” combo. A cross combo looks like a “+”, with one orb in the center and an orb
+            on
+            all 4 directions of it. Note that if there are more orbs of that color attached to it, it will not count as
+            a
+            cross.</li>
+        <li>The left and right units of your team are the teams’ “leaders”. Many units have leader skills - when a unit
+            is
+            one of the two leaders, its leader skill will affect the entire team. Sometimes, it’s a passive effect (such
+            as
+            a stat multiplier); other times, it depends on what combos you make.</li>
+        <li>“Enhanced” orbs (those with a plus on them) provide a damage multiplier in game. Unless specified (in a
+            leader
+            skill, for example), they have no other in-game effect. Additionally, an enhanced orb will remain enhanced
+            if it
+            is changed by a skill.</li>
+        <li>“Locked” orbs (those with a lock on them) will not change their orb type when skills are used, but they can be moved normally, and they
+            will be cleared like any other orb (locked orbs can be part of the same combo as non-locked orbs). They can also be enhanced by skills.</li>
+        <li>Jammer, Poison, and Mortal Poison orbs can form combos as well (jammers can be matched with jammers, and so
+            on,
+            but they cannot be matched with each other) that count towards your combo count. These orbs appear
+            respectively
+            as
+            <img class="orb" src="../static/puzzle_resources/puzzle-of-dragons/Jammer.png"> <img class="orb"
+                src="../static/puzzle_resources/puzzle-of-dragons/Poison.png"> <img class="orb"
+                src="../static/puzzle_resources/puzzle-of-dragons/MortalPoison.png">.</li>
+    </ul>
+</div>
+
+
+<map name="grid1">
+    <area shape="rect" coords="3,20,95,118" href="http://www.puzzledragonx.com/en/monster.asp?n=3245" target="_blank" />
+    <area shape="rect" coords="98,5,190,103" href="http://www.puzzledragonx.com/en/monster.asp?n=3532"
+        target="_blank" />
+    <area shape="rect" coords="193,5,285,103" href="http://www.puzzledragonx.com/en/monster.asp?n=2006"
+        target="_blank" />
+    <area shape="rect" coords="288,5,380,103" href="http://www.puzzledragonx.com/en/monster.asp?n=5031"
+        target="_blank" />
+    <area shape="rect" coords="383,5,475,103" href="http://www.puzzledragonx.com/en/monster.asp?n=4831"
+        target="_blank" />
+    <area shape="rect" coords="478,20,570,118" href="http://www.puzzledragonx.com/en/monster.asp?n=3715"
+        target="_blank" />
+</map>
+
+<map name="grid2">
+    <area shape="rect" coords="3,5,95,103" href="http://www.puzzledragonx.com/en/monster.asp?n=4745" target="_blank" />
+    <area shape="rect" coords="98,5,190,103" href="http://www.puzzledragonx.com/en/monster.asp?n=1505"
+        target="_blank" />
+    <area shape="rect" coords="193,5,285,103" href="http://www.puzzledragonx.com/en/monster.asp?n=2420"
+        target="_blank" />
+    <area shape="rect" coords="288,5,380,103" href="http://www.puzzledragonx.com/en/monster.asp?n=1898"
+        target="_blank" />
+    <area shape="rect" coords="383,5,475,103" href="http://www.puzzledragonx.com/en/monster.asp?n=2536"
+        target="_blank" />
+    <area shape="rect" coords="478,5,570,103" href="http://www.puzzledragonx.com/en/monster.asp?n=1423"
+        target="_blank" />
+</map>
+
+<map name="grid3">
+    <area shape="rect" coords="3,20,95,118" href="http://www.puzzledragonx.com/en/monster.asp?n=4419" target="_blank" />
+    <area shape="rect" coords="98,5,190,103" href="http://www.puzzledragonx.com/en/monster.asp?n=3294"
+        target="_blank" />
+    <area shape="rect" coords="193,5,285,103" href="http://www.puzzledragonx.com/en/monster.asp?n=2409"
+        target="_blank" />
+    <area shape="rect" coords="288,5,380,103" href="http://www.puzzledragonx.com/en/monster.asp?n=1254"
+        target="_blank" />
+    <area shape="rect" coords="383,5,475,103" href="http://www.puzzledragonx.com/en/monster.asp?n=4280"
+        target="_blank" />
+    <area shape="rect" coords="478,5,570,103" href="http://www.puzzledragonx.com/en/monster.asp?n=3500"
+        target="_blank" />
+</map>
+
+<map name="grid4">
+    <area shape="rect" coords="3,20,95,118" href="http://www.puzzledragonx.com/en/monster.asp?n=3976" target="_blank" />
+    <area shape="rect" coords="98,5,190,103" href="http://www.puzzledragonx.com/en/monster.asp?n=4138"
+        target="_blank" />
+    <area shape="rect" coords="193,5,285,103" href="http://www.puzzledragonx.com/en/monster.asp?n=2320"
+        target="_blank" />
+    <area shape="rect" coords="288,5,380,103" href="http://www.puzzledragonx.com/en/monster.asp?n=1302"
+        target="_blank" />
+    <area shape="rect" coords="383,5,475,103" href="http://www.puzzledragonx.com/en/monster.asp?n=1101"
+        target="_blank" />
+    <area shape="rect" coords="478,20,570,118" href="http://www.puzzledragonx.com/en/monster.asp?n=3281"
+        target="_blank" />
+</map>
+
+<map name="grid5">
+    <area shape="rect" coords="3,5,95,103" href="http://www.puzzledragonx.com/en/monster.asp?n=1001" target="_blank" />
+    <area shape="rect" coords="98,5,190,103" href="http://www.puzzledragonx.com/en/monster.asp?n=1627"
+        target="_blank" />
+    <area shape="rect" coords="193,5,285,103" href="http://www.puzzledragonx.com/en/monster.asp?n=3899"
+        target="_blank" />
+    <area shape="rect" coords="288,5,380,103" href="http://www.puzzledragonx.com/en/monster.asp?n=4178"
+        target="_blank" />
+    <area shape="rect" coords="383,5,475,103" href="http://www.puzzledragonx.com/en/monster.asp?n=983"
+        target="_blank" />
+    <area shape="rect" coords="478,5,570,103" href="http://www.puzzledragonx.com/en/monster.asp?n=2982"
+        target="_blank" />
+</map>
+
+<map name="grid6">
+    <area shape="rect" coords="98,5,190,103" href="http://www.puzzledragonx.com/en/monster.asp?n=1244"
+        target="_blank" />
+    <area shape="rect" coords="193,5,285,103" href="http://www.puzzledragonx.com/en/monster.asp?n=299"
+        target="_blank" />
+    <area shape="rect" coords="288,5,380,103" href="http://www.puzzledragonx.com/en/monster.asp?n=988"
+        target="_blank" />
+    <area shape="rect" coords="383,5,475,103" href="http://www.puzzledragonx.com/en/monster.asp?n=633"
+        target="_blank" />
+</map>
+
+
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

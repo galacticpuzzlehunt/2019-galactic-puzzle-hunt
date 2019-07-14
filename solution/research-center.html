@@ -1,0 +1,236 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: Research Center</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/research-center.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: Research Center
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">LUNAR</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Lewis Chen
+
+        
+    </h4>
+    
+
+<p>
+We are presented with the ASCII art of several questionably drawn circles enclosing text and some dashes with an X.
+Inspecting each circle, we note that they each contain the word "this" and the word "that" exactly once, so it seems
+natural to try to replace these words with other words, perhaps matching the enumeration provided. Doing so with a few
+sentences, we may stumble upon the realization that these pairs are in fact anagrams of each other, which makes the
+objective of these clues more well-defined. We record these pairs, and then index into each word by the position of the X as follows:
+
+<table>
+<tr><th>This word</th><th>That word</th><th>This extract</th><th>That extract</th><th>Possible clues</th></tr>
+<tr><td>ANTIPLAGUE</td><td>PLATEAUING</td><td>G</td><td>I</td><td>"team fighting a pandemic", "stave off" -> "number will end up [stabilizing]"</td></tr>
+<tr><td>PEACH</td><td>CHEAP</td><td>A</td><td>E</td><td>"fruit stand ... sale"</td></tr>
+<tr><td>FILER</td><td>RIFLE</td><td>L</td><td>F</td><td>An action you could take on documents, and someone who could organize these documents</td></tr>
+<tr><td>DERIVATIONAL</td><td>REVALIDATION</td><td>A</td><td>O</td><td>"showing your work", "checking it again"</td></tr>
+<tr><td>HIKERS</td><td>SHRIEK</td><td>K</td><td>R</td><td>"climbing [people]", "piercing [sound]"</td></tr>
+<tr><td>ASSISTANT</td><td>SATANISTS</td><td>T</td><td>S</td><td>"demonic cult", "join" implies entering at a low rank</td></tr>
+<tr><td>MARASCHINO</td><td>HARMONICAS</td><td>I</td><td>C</td><td>"cherry liqueur", harmonicas are instruments found in a "blues band"</td></tr>
+<tr><td>SHAVEN</td><td>HAVENS</td><td>S</td><td>H</td><td>contrast to "beards", "hideout"</td></tr>
+<tr><td>CHANTEUSE</td><td>UNTEACHES</td><td>C</td><td>U</td><td>"cabaret singer", "forgot a bunch of things"</td></tr>
+<tr><td>SKETCHINESS</td><td>THICKNESSES</td><td>H</td><td>N</td><td>"drawing ... rushed", a quality of pencil marks</td></tr>
+<tr><td>GARNISHES</td><td>SHEARINGS</td><td>E</td><td>G</td><td>decorative thing that could be made out of wool, wool is taken from shearing sheep</td></tr>
+<tr><td>COMPLIES</td><td>COMPILES</td><td>S</td><td>S</td><td>what a programmer could do to company (e.g. dress) code and company (programming) code, respectively</td></tr>
+<tr><td>DELIVERS</td><td>SILVERED</td><td>E</td><td>I</td><td>what a shipping company does, what mirrors could be</td></tr>
+<tr><td>NECTARINES</td><td>TRANSIENCE</td><td>T</td><td>N</td><td>"fruit stand" (again), "fleeting"/"once every month"</td></tr>
+<tr><td>PLASTERY</td><td>PEYTRALS</td><td>Y</td><td>S</td><td>"armored cavalry", "cement slurry"</td></tr>
+<tr><td>SMITE</td><td>ITEMS</td><td>M</td><td>T</td><td>Junglers in LoL almost always take smite, and have a special item line that upgrades smite.[1]</td></tr>
+<tr><td>MOISTURE</td><td>MISROUTE</td><td>O</td><td>I</td><td>something that can condense on the windshield, "off the path"</td></tr>
+<tr><td>DILATE</td><td>DETAIL</td><td>L</td><td>T</td><td>something that means to expand, "view it in greater [clarity]"</td></tr>
+<tr><td>UNSOILED</td><td>DELUSION</td><td>O</td><td>U</td><td>something that would likely not happen if you walk through mud, equally incredulous word</td></tr>
+<tr><td>GRIT</td><td>TRIG</td><td>G</td><td>T</td><td>something meaning endurance, "sines and cosines"</td></tr>
+</table>
+<p>
+Reading across and down, first taking all of the "this" letters and then all of the "that" letters, we get
+GALAKTISCHES ETYMOLOGIEFORSCHUNGSINSTITUT (using the spacing provided by the enumeration at the bottom of the page). It turns out that this actually refers to a particular game,
+<a href="https://www.increpare.com/game/galactic-center-for-etymological-research-galaktisches-etymologieforschungsinstitut.html">"Galactic Center for Etymological Research"</a>,
+written by Stephen Lavelle (increpare) - which is also titled in German as "Galaktisches Etymologieforschungsinstitut".
+<p>
+Not only do the words Research and Center appear in the title of this game, several other references in the puzzle nicely correspond to the game.
+The planetary ASCII art in this game is reminiscent of the circles drawn on the puzzle, and furthermore if we play the game we see that
+anagrams are quite relevant - each level involves going from anagrams to other anagrams, with every switch of adjacent
+letters costing one fuel. Since we have pairs of anagrams, it seems natural to compute the minimum amount of fuel needed to go
+from one anagram to another. (More technically speaking, this is also known as the
+<a href="https://en.wikipedia.org/wiki/Kendall_tau_distance">Kendall tau distance</a>, also known as the bubble-sort distance.)
+<p>
+There are some sufficiently efficient ways to compute this. For instance, we can consider the first character of two strings. If
+they are both the same, chop them both off and move on. Otherwise, find the first occurrence of the first character in the
+first string in the second string, move that character forward to the front of the second string, and then chop them both off
+and move on (adding the number of moves needed to our running total), continuing until both strings are empty.
+<p>
+This gives us a number between 1-26 for each pair of words, so the natural extraction would be to convert these
+numbers using A=1 Z=26, for which we get the cluephrase <strong>THE SILVER STAR RPG FIVE</strong>.
+The Silver Star is the subtitle of the <a href="https://en.wikipedia.org/wiki/Lunar:_The_Silver_Star">1992 role-playing game</a> <b><tt>LUNAR</tt></b>,
+which is the desired five-letter answer.
+<p>
+Here is a table regarding the final extraction:
+
+<table>
+<tr><th>This word</th><th>That word</th><th>Fuel required</th><th>Letter</th></tr>
+<tr><td>ANTIPLAGUE</td><td>PLATEAUING</td><td>20</td><td>T</td></tr>
+<tr><td>PEACH</td><td>CHEAP</td><td>8</td><td>H</td></tr>
+<tr><td>FILER</td><td>RIFLE</td><td>5</td><td>E</td></tr>
+<tr><td>DERIVATIONAL</td><td>REVALIDATION</td><td>19</td><td>S</td></tr>
+<tr><td>HIKERS</td><td>SHRIEK</td><td>9</td><td>I</td></tr>
+<tr><td>ASSISTANT</td><td>SATANISTS</td><td>12</td><td>L</td></tr>
+<tr><td>MARASCHINO</td><td>HARMONICAS</td><td>22</td><td>V</td></tr>
+<tr><td>SHAVEN</td><td>HAVENS</td><td>5</td><td>E</td></tr>
+<tr><td>CHANTEUSE</td><td>UNTEACHES</td><td>18</td><td>R</td></tr>
+<tr><td>SKETCHINESS</td><td>THICKNESSES</td><td>19</td><td>S</td></tr>
+<tr><td>GARNISHES</td><td>SHEARINGS</td><td>20</td><td>T</td></tr>
+<tr><td>COMPLIES</td><td>COMPILES</td><td>1</td><td>A</td></tr>
+<tr><td>DELIVERS</td><td>SILVERED</td><td>18</td><td>R</td></tr>
+<tr><td>NECTARINES</td><td>TRANSIENCE</td><td>18</td><td>R</td></tr>
+<tr><td>PLASTERY</td><td>PEYTRALS</td><td>16</td><td>P</td></tr>
+<tr><td>SMITE</td><td>ITEMS</td><td>7</td><td>G</td></tr>
+<tr><td>MOISTURE</td><td>MISROUTE</td><td>6</td><td>F</td></tr>
+<tr><td>DILATE</td><td>DETAIL</td><td>9</td><td>I</td></tr>
+<tr><td>UNSOILED</td><td>DELUSION</td><td>22</td><td>V</td></tr>
+<tr><td>GRIT</td><td>TRIG</td><td>5</td><td>E</td></tr>
+</table>
+<p>
+[1]: The author hates jungling in League of Legends, so you should take any advice regarding jungle item timings with a grain of salt
+
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>
+When I first heard about the title of this game, I knew I had to write a puzzle about it, since it aligned with our hunt theme (xenolinguistics)
+and our hunt name so, so, nicely.
+<p>
+Some of the more obscure pairs (PLASTERY/PEYTRALS comes to mind) are unfortunately somewhat forced by the construction of the puzzle.
+<p>
+Initially, it was hoped that there could be "Schroedinger clues" where each clue could clue two possible words that both happen
+to be anagrams, but that was ultimately deemed too difficult to construct for even most of the more common pairs. (An attempt at it can
+at least be seen in, say, COMPILES/COMPLIES.) Ultimately, it was decided to write the clues in a roughly NPL wordplay flat style.
+<p>
+An earlier version of the puzzle did not provide the enumeration in the puzzle, which provides a few complications.
+First, it made the cluephrase quite a bit harder to recognize, and furthermore it might be a little tricky to Google
+for this game, because simply Googling for the unspaced "GALAKTISCHESETYMOLOGIEFORSCHUNGSINSTITUT"
+does not get us anywhere (at least at the time of writing), but here are a few potential strategies that do work:
+<p><ul><li>You can use another search engine - in fact, I was surprised that Google didn't work, because DuckDuckGo gets
+the unspaced query (and various other spacings) easily.</li><li>With a little knowledge of what German looks like, or by using the Detect Language feature of Google Translate, we can directly
+translate what we have. It turns out that Google Translate directly translates it as "Galactic Etymology Research Institute",
+which is almost a good query. We might consider replacing Institute with Center, as per the title of the puzzle,
+and this indeed gets us to the game.</li><li>You could experiment with various spacings, which would eventually get you there.</li></ul>
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

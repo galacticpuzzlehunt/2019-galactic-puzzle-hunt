@@ -1,0 +1,332 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Image Search</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+
+
+
+<a href="../post_hunt_solve/image-search.html" class="btn btn--small">Check your answer spoiler-free</a>
+
+
+<a href="../solution/image-search.html" class="btn btn--small">View solution</a>
+<a href="../stats/image-search.html" class="btn btn--small">Stats</a>
+
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<h1>
+    
+    Image Search
+    
+    
+</h1>
+
+<main>
+    
+
+<style>
+form {
+    text-align: center;
+}
+
+iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+hr {
+    margin: 0 1em;
+    height: 3em;
+    width: 0;
+    display: inline-block;
+    border-left: 1px solid black;
+    vertical-align: middle;
+}
+</style>
+
+
+<p class="flavor">
+  Welcome to the Galactic Art Expo!
+  Our panel of judges may be a little nearsighted, but they know what they like.
+  <br><br>
+  <span class="puzzle-erratum">During the hunt, this puzzle processed uploaded
+  images on the server. It has been replaced by a Javascript implementation.
+  Unfortunately, this requires downloading 70-100MB of data to your browser
+  (cached, so it should only need to happen once), and may be extremely slow or
+  end up breaking if you try it on a device without a modern graphics card. We
+  apologize for the inconvenience. We still do not store or see anything you
+  upload here.</span>
+</p>
+<input type="file" accept="image/*" required id="img">
+<hr>
+<select id="sel">
+  <option value="0">Judge 1</option>
+  <option value="1">Judge 2</option>
+  <option value="2">Judge 3</option>
+  <option value="3">Judge 4</option>
+  <option value="4">Judge 5</option>
+  <option value="5">Judge 6</option>
+  <option value="6">Judge 7</option>
+  <option value="7">Judge 8</option>
+  <option value="8">Judge 9</option>
+  <option value="9">Judge 10</option>
+  <option value="10">Judge 11</option>
+  <option value="11">Judge 12</option>
+  <option value="12">Judge 13</option>
+  <option value="13">Judge 14</option>
+</select>
+<input type="submit" value="Ask judge for advice" onclick="doOne()">
+<hr>
+<input type="submit" value="Submit to the jury" onclick="doAll()">
+<p id="msg"></p>
+<canvas id="out"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.3/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter@1.0.3/dist/tf-converter.min.js"></script>
+<script src="../static/puzzle_resources/image-search/spoilers.js"></script>
+<script>
+var ROOT = '/static/puzzle_resources/image-search/';
+var SIZE = 256;
+var CAPTION = null;
+
+var img = document.getElementById('img');
+var sel = document.getElementById('sel');
+var msg = document.getElementById('msg');
+var out = document.getElementById('out');
+var ctx = out.getContext('2d');
+
+function getImage() {
+  if (img.reportValidity && !img.reportValidity()) {
+    throw ':(';
+  }
+  if (!img.files.length) {
+    alert('You need to select a file!');
+    throw ':(';
+  }
+  var elt = new Image();
+  elt.src = URL.createObjectURL(img.files[0]);
+  return new Promise(function(resolve) {
+    elt.addEventListener('load', function() {
+      resolve(elt);
+    });
+  });
+}
+
+function getCaption() {
+  if (!CAPTION) {
+    CAPTION = tf.loadGraphModel(ROOT + 'caption/model.json');
+  }
+  return CAPTION;
+}
+
+function doOne() {
+  var get = getImage();
+  msg.textContent = 'Please wait...';
+  out.style.display = 'block';
+  out.width = out.height = SIZE;
+  ctx.clearRect(0, 0, SIZE, SIZE);
+  var path = ROOT + sel.value + '/model.json';
+  Promise.all([get, tf.loadGraphModel(path), getCaption()]).then(function(values) {
+    var elt = values[0];
+    var width = Math.min(SIZE, SIZE * elt.width / elt.height) | 0;
+    var height = Math.min(SIZE, SIZE * elt.height / elt.width) | 0;
+    ctx.drawImage(elt, 0, 0, width, height);
+    var raw = tf.browser.fromPixels(out).toFloat();
+    ctx.clearRect(0, 0, SIZE, SIZE);
+    console.warn('execute');
+    var styled = values[1].execute(raw);
+    var oks = caption(values[2], values[0]);
+    styled = styled.reshape([SIZE, SIZE, 3]).clipByValue(0, 255).toInt();
+    tf.browser.toPixels(styled.slice([0, 0], [height, width]), out);
+    msg.innerHTML = oks[sel.value] ? ADVICE : ARTISTS[sel.value][0];
+  }).catch(function(e) {
+    msg.textContent = 'Something went wrong :(';
+    throw e;
+  });
+}
+
+function doAll() {
+  var get = getImage();
+  msg.textContent = 'Please wait...';
+  out.style.display = 'none';
+  Promise.all([get, getCaption()]).then(function(values) {
+    var oks = caption(values[1], values[0]);
+    var response = [];
+    for (var i = 0; i < ARTISTS.length; ++i) {
+      response.push('<p><b>Judge ' + (i + 1) + '</b>:');
+      if (!oks[i]) {
+        response.push(ARTISTS[i][0]);
+      } else if (oks.sum == 1) {
+        response.push(ALONE);
+      } else {
+        response.push('<b>' + ARTISTS[i][1] + '</b>');
+      }
+    }
+    msg.innerHTML = response.join(' ');
+  }).catch(function(e) {
+    msg.textContent = 'Something went wrong :(';
+    throw e;
+  });
+}
+
+function caption(model, image) {
+  var raw = tf.browser.fromPixels(image).toFloat().div(tf.scalar(255));
+  var beamSize = 10;
+  var maxCaptionLength = 10;
+  console.warn('execute');
+  var partialCaptions = [{
+    state: model.execute({image_feed: raw}, 'lstm/initial_state').unstack()[0],
+    word: VOCAB.indexOf('<S>'),
+    logprob: 0
+  }];
+  var seen = {};
+
+  for (var i = 1; i < maxCaptionLength; ++i) {
+    var inputFeed = [];
+    var stateFeed = [];
+    for (var j = 0; j < partialCaptions.length; ++j) {
+      inputFeed.push(partialCaptions[j].word);
+      stateFeed.push(partialCaptions[j].state);
+    }
+    console.warn('execute');
+    var next = model.execute({
+      input_feed: tf.tensor(inputFeed),
+      'lstm/state_feed': tf.stack(stateFeed)
+    }, ['softmax', 'lstm/state']);
+    var softmax = next[0].arraySync();
+    var newStates = next[1].unstack();
+
+    var newPartialCaptions = [];
+    for (var j = 0; j < partialCaptions.length; ++j) {
+      var wordsAndProbs = [];
+      for (var k = 0; k < softmax[j].length; ++k) {
+        wordsAndProbs.push([k, softmax[j][k]]);
+      }
+      wordsAndProbs.sort(function(a, b) { return b[1] - a[1] });
+      for (var k = 0; k < beamSize; ++k) {
+        var w = wordsAndProbs[k][0];
+        var p = wordsAndProbs[k][1];
+        if (p < 1e-12 || VOCAB[w] == '</S>') {
+          continue;
+        }
+        seen[VOCAB[w]] = (seen[VOCAB[w]] || 0) + 1;
+        newPartialCaptions.push({
+          state: newStates[j],
+          word: w,
+          logprob: partialCaptions[j].logprob + Math.log(p)
+        });
+      }
+    }
+    if (newPartialCaptions.length == 0) {
+      break;
+    }
+    newPartialCaptions.sort(function(a, b) { return b.logprob - a.logprob });
+    if (newPartialCaptions.length > beamSize) {
+      newPartialCaptions.length = beamSize;
+    }
+    partialCaptions = newPartialCaptions;
+  }
+
+  var oks = [];
+  oks.sum = 0;
+  for (var i = 0; i < ARTISTS.length; ++i) {
+    oks[i] = false;
+    var good = ARTISTS[i][2].split(' ');
+    for (var j = 0; j < good.length; ++j) {
+      if (good[j] in seen && seen[good[j]] > 2) {
+        oks[i] = true;
+      }
+    }
+    if (oks[i]) {
+      ++oks.sum;
+    }
+  }
+  return oks;
+}
+</script>
+
+
+
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

@@ -1,0 +1,685 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Doraemon</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="static/css/normalize.css">
+        <link rel="stylesheet" href="static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="static/css/base.css">
+        
+        <link rel="stylesheet" href="static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="static/js/sorttable.js"></script>
+        <script type="text/javascript" src="static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='index.html'>Home</a>
+            <a  href='rules.html'>Rules</a>
+            
+                <a  href='story.html'>Story</a>
+            
+            
+                <a  href='puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='artifacts.html'>Artifacts</a>
+            
+            <a class="selected-tab" href='teams.html'>Teams</a>
+            <a  href='faq.html'>FAQ</a>
+            
+                <a  href='errata.html'>Updates</a>
+            
+            
+                <a  href='wrapup.html'>Wrap-Up</a>
+            
+            <a  href='archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+<style>
+.chart {
+    width: 100%;
+    height: 82px;
+    transform: scaleY(-1);
+}
+
+.baz {
+    fill: rgba(180, 160, 140, 0.3);
+}
+
+.area {
+    fill: rgb(180, 220, 150);
+}
+
+.bar {
+    stroke: rgba(248, 188, 78, 0.5);
+    stroke-width: 0.5%;
+    fill: none;
+}
+
+.meta {
+    font-style: italic;
+}
+
+.team-info-panel__members {
+    margin-top: 24px;
+}
+
+@media (min-width: 550px) {
+    .team-info-panel__members {
+        margin-top: 0;
+    }
+}
+
+.team-member-controls {
+    margin-top: 8px;
+    line-height: 36px;
+}
+
+.team-info-panel h4 {
+    margin-bottom: 0;
+}
+
+.free {
+    color: #aaa;
+}
+
+.free td:last-child:before {
+    content: "(";
+}
+
+.free td:last-child:after {
+    content: ")";
+}
+</style>
+
+<h1>Doraemon</h1>
+
+<main>
+    <div class="team-info-panel">
+        <div class="row">
+            <div class="six columns">
+                <h4>Stats</h4>
+                <div class="stat-entry">Rank: <span class="stat-entry__value">26</span></div>
+                <div class="stat-entry">Puzzles solved: <span class="stat-entry__value">42</span></div>
+                
+            </div>
+            <div class="six columns">
+                <div class="team-info-panel__members">
+                    <h4>Team Members:</h4>
+                    <div class="stat-entry">
+                        
+                        Pon, 
+                        
+                        Disney, 
+                        
+                        Tana, 
+                        
+                        Mee, 
+                        
+                        Brian, 
+                        
+                        Melody, 
+                        
+                        Weber, 
+                        
+                        Kitty
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <svg class="chart" viewbox="0 0 820800.0 41" preserveAspectRatio="none">
+        <path d="M 0 0 L 820800.0 0 L 820800.0 41 L 0 41" class="baz"></path>
+        <path d="M 820800.0 0 L 0 0
+        
+        L 0.0 1
+        L 3849.081204 1
+        
+        L 3849.081204 2
+        L 4353.326531 2
+        
+        L 4353.326531 3
+        L 8402.948185 3
+        
+        L 8402.948185 4
+        L 16803.478975 4
+        
+        L 16803.478975 5
+        L 17064.635687 5
+        
+        L 17064.635687 6
+        L 18394.990358 6
+        
+        L 18394.990358 7
+        L 24375.064864 7
+        
+        L 24375.064864 8
+        L 28711.960234 8
+        
+        L 28711.960234 9
+        L 33682.32825 9
+        
+        L 33682.32825 10
+        L 51166.702685 10
+        
+        L 51166.702685 11
+        L 77383.934155 11
+        
+        L 77383.934155 12
+        L 88814.738691 12
+        
+        L 88814.738691 13
+        L 153015.987004 13
+        
+        L 153015.987004 14
+        L 159159.262778 14
+        
+        L 159159.262778 15
+        L 164265.547284 15
+        
+        L 164265.547284 16
+        L 174808.818168 16
+        
+        L 174808.818168 17
+        L 193241.872619 17
+        
+        L 193241.872619 18
+        L 200343.690414 18
+        
+        L 200343.690414 19
+        L 255516.1328 19
+        
+        L 255516.1328 20
+        L 256642.392862 20
+        
+        L 256642.392862 21
+        L 342214.373433 21
+        
+        L 342214.373433 22
+        L 358208.784865 22
+        
+        L 358208.784865 23
+        L 363825.156183 23
+        
+        L 363825.156183 24
+        L 414468.247995 24
+        
+        L 414468.247995 25
+        L 414748.106171 25
+        
+        L 414748.106171 26
+        L 418913.617065 26
+        
+        L 418913.617065 27
+        L 454863.154888 27
+        
+        L 454863.154888 28
+        L 539000.412219 28
+        
+        L 539000.412219 29
+        L 596586.236842 29
+        
+        L 596586.236842 30
+        L 601833.944505 30
+        
+        L 601833.944505 31
+        L 634634.472893 31
+        
+        L 634634.472893 32
+        L 690800.248819 32
+        
+        L 690800.248819 33
+        L 692245.05619 33
+        
+        L 692245.05619 34
+        L 714943.056561 34
+        
+        L 714943.056561 35
+        L 759312.535211 35
+        
+        L 759312.535211 36
+        L 775247.073647 36
+        
+        L 775247.073647 37
+        L 775572.087611 37
+        
+        L 775572.087611 38
+        L 776664.009262 38
+        
+        L 776664.009262 39
+        L 777038.159797 39
+        
+        L 777038.159797 40
+        L 779911.414173 40
+        
+        L 779911.414173 41
+        L 788048.985332 41
+        
+        L 788048.985332 42
+        L 809313.717521 42
+        
+        L 809313.717521 43
+        L 820800.0 43
+        
+        " class="area"></path>
+        
+        <path d="M 164265.547284 0 L 164265.547284 41" class="bar"></path>
+        
+        <path d="M 759312.535211 0 L 759312.535211 41" class="bar"></path>
+        
+        <path d="M 775247.073647 0 L 775247.073647 41" class="bar"></path>
+        
+        <path d="M 779911.414173 0 L 779911.414173 41" class="bar"></path>
+        
+        <path d="M 788048.985332 0 L 788048.985332 41" class="bar"></path>
+        
+        <path d="M 809313.717521 0 L 809313.717521 41" class="bar"></path>
+        
+    </svg>
+    <table class="sortable gph-list-table" style="table-layout: fixed;">
+        <col style="width: 40%">
+        <col style="width: 10%">
+        <col style="width: 20%">
+        <col style="width: 10%">
+        <col style="width: 20%">
+        <tr>
+            <th>Puzzle</th>
+            <th>Incorrect guesses</th>
+            <th>Unlock time (EDT)</th>
+            <th>Time to solve</th>
+            <th>Solve time (EDT)</th>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Cross Lines" ><a href="puzzle/cross-lines.html">Cross Lines</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1552674480">Mar 15, 18:28</td>
+            <td sorttable_customkey="3849.081204">1h4m</td>
+            <td sorttable_customkey="1552692729">Mar 15, 19:32</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Twitch Plays GPH" ><a href="puzzle/twitch-plays-gph.html">Twitch Plays GPH</a></td>
+            <td>1</td>
+            <td sorttable_customkey="1552674480">Mar 15, 18:28</td>
+            <td sorttable_customkey="4353.326531">1h12m</td>
+            <td sorttable_customkey="1552693233">Mar 15, 19:40</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Line Plots" ><a href="puzzle/line-plots.html">Line Plots</a></td>
+            <td>1</td>
+            <td sorttable_customkey="1552693233">Mar 15, 19:40</td>
+            <td sorttable_customkey="4049.297073">1h7m</td>
+            <td sorttable_customkey="1552697282">Mar 15, 20:48</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="An Erratic Puzzle" ><a href="puzzle/an-erratic-puzzle.html">An Erratic Puzzle</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1552692729">Mar 15, 19:32</td>
+            <td sorttable_customkey="12954.128694">3h35m</td>
+            <td sorttable_customkey="1552705683">Mar 15, 23:08</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Courage and Purity" ><a href="puzzle/courage-and-purity.html">Courage and Purity</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1552693233">Mar 15, 19:40</td>
+            <td sorttable_customkey="12710.990857">3h31m</td>
+            <td sorttable_customkey="1552705944">Mar 15, 23:12</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Reunited" ><a href="puzzle/reunited.html">Reunited</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1552705944">Mar 15, 23:12</td>
+            <td sorttable_customkey="1330.097568">22m10s</td>
+            <td sorttable_customkey="1552707274">Mar 15, 23:34</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Letters from the Expedition" ><a href="puzzle/letters-from-the-expedition.html">Letters from the Expedition</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1552707275">Mar 15, 23:34</td>
+            <td sorttable_customkey="5979.805774">1h39m</td>
+            <td sorttable_customkey="1552713255">Mar 16, 01:14</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="The Farmer&#39;s Dilemma" ><a href="puzzle/the-farmers-dilemma.html">The Farmer&#39;s Dilemma</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1552674480">Mar 15, 18:28</td>
+            <td sorttable_customkey="28711.960234">7h58m</td>
+            <td sorttable_customkey="1552717591">Mar 16, 02:26</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Darker Doki" ><a href="puzzle/darker-doki.html">Darker Doki</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1552713255">Mar 16, 01:14</td>
+            <td sorttable_customkey="9306.877387">2h35m</td>
+            <td sorttable_customkey="1552722562">Mar 16, 03:49</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Ten Years Later" ><a href="puzzle/ten-years-later.html">Ten Years Later</a></td>
+            <td>4</td>
+            <td sorttable_customkey="1552705683">Mar 15, 23:08</td>
+            <td sorttable_customkey="34362.974843">9h32m</td>
+            <td sorttable_customkey="1552740046">Mar 16, 08:40</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Playing with Matches" ><a href="puzzle/playing-with-matches.html">Playing with Matches</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1552697283">Mar 15, 20:48</td>
+            <td sorttable_customkey="68980.674429">19h9m</td>
+            <td sorttable_customkey="1552766263">Mar 16, 15:57</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Polar Sales" ><a href="puzzle/polar-sales.html">Polar Sales</a></td>
+            <td>2</td>
+            <td sorttable_customkey="1552707275">Mar 15, 23:34</td>
+            <td sorttable_customkey="70419.466574">19h33m</td>
+            <td sorttable_customkey="1552777694">Mar 16, 19:08</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Peaches" ><a href="puzzle/peaches.html">Peaches</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1552777695">Mar 16, 19:08</td>
+            <td sorttable_customkey="64200.969125">17h50m</td>
+            <td sorttable_customkey="1552841895">Mar 17, 12:58</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Something is Off" ><a href="puzzle/something-is-off.html">Something is Off</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1552777695">Mar 16, 19:08</td>
+            <td sorttable_customkey="70344.250172">19h32m</td>
+            <td sorttable_customkey="1552848039">Mar 17, 14:40</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="The Artifact" class="meta"><a href="puzzle/the-artifact.html">The Artifact</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1552740047">Mar 16, 08:40</td>
+            <td sorttable_customkey="113098.298651">31h24m</td>
+            <td sorttable_customkey="1552853145">Mar 17, 16:05</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="50/50" ><a href="puzzle/fifty-fifty.html">50/50</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1552853147">Mar 17, 16:05</td>
+            <td sorttable_customkey="10540.947592">2h55m</td>
+            <td sorttable_customkey="1552863688">Mar 17, 19:01</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Make Your Own Crossword" ><a href="puzzle/make-your-own-crossword.html">Make Your Own Crossword</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1552841896">Mar 17, 12:58</td>
+            <td sorttable_customkey="40225.554379">11h10m</td>
+            <td sorttable_customkey="1552882121">Mar 18, 00:08</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Word Search II" ><a href="puzzle/word-search-ii.html">Word Search II</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1552853147">Mar 17, 16:05</td>
+            <td sorttable_customkey="36075.82545">10h1m</td>
+            <td sorttable_customkey="1552889223">Mar 18, 02:07</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Race for the Galaxy" ><a href="puzzle/race-for-the-galaxy.html">Race for the Galaxy</a></td>
+            <td>1</td>
+            <td sorttable_customkey="1552863689">Mar 17, 19:01</td>
+            <td sorttable_customkey="80707.080275">22h25m</td>
+            <td sorttable_customkey="1552944396">Mar 18, 17:26</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Cuspidation" ><a href="puzzle/cuspidation.html">Cuspidation</a></td>
+            <td>1</td>
+            <td sorttable_customkey="1552853147">Mar 17, 16:05</td>
+            <td sorttable_customkey="92374.513149">25h39m</td>
+            <td sorttable_customkey="1552945522">Mar 18, 17:45</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Unsafe" ><a href="puzzle/unsafe.html">Unsafe</a></td>
+            <td>2</td>
+            <td sorttable_customkey="1553020680">Mar 19, 14:38</td>
+            <td sorttable_customkey="10414.157914">2h53m</td>
+            <td sorttable_customkey="1553031094">Mar 19, 17:31</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Where are They?" ><a href="puzzle/where-are-they.html">Where are They?</a></td>
+            <td>6</td>
+            <td sorttable_customkey="1553000114">Mar 19, 08:55</td>
+            <td sorttable_customkey="46974.114185">13h2m</td>
+            <td sorttable_customkey="1553047088">Mar 19, 21:58</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Phone Lines" ><a href="puzzle/phone-lines.html">Phone Lines</a></td>
+            <td>2</td>
+            <td sorttable_customkey="1552799464">Mar 17, 01:11</td>
+            <td sorttable_customkey="253240.711455">70h20m</td>
+            <td sorttable_customkey="1553052705">Mar 19, 23:31</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Radio Broadcast" ><a href="puzzle/radio-broadcast.html">Radio Broadcast</a></td>
+            <td>1</td>
+            <td sorttable_customkey="1552853147">Mar 17, 16:05</td>
+            <td sorttable_customkey="250200.372814">69h30m</td>
+            <td sorttable_customkey="1553103348">Mar 20, 13:35</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Image Search" ><a href="puzzle/image-search.html">Image Search</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1553052705">Mar 19, 23:31</td>
+            <td sorttable_customkey="50922.628482">14h8m</td>
+            <td sorttable_customkey="1553103628">Mar 20, 13:40</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Research Center" ><a href="puzzle/research-center.html">Research Center</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1553047089">Mar 19, 21:58</td>
+            <td sorttable_customkey="60704.541585">16h51m</td>
+            <td sorttable_customkey="1553107793">Mar 20, 14:49</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Road Trip" ><a href="puzzle/road-trip.html">Road Trip</a></td>
+            <td>8</td>
+            <td sorttable_customkey="1552848039">Mar 17, 14:40</td>
+            <td sorttable_customkey="295703.493757">82h8m</td>
+            <td sorttable_customkey="1553143743">Mar 21, 00:49</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Holistic" ><a href="puzzle/holistic.html">Holistic</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1552945522">Mar 18, 17:45</td>
+            <td sorttable_customkey="282357.729724">78h25m</td>
+            <td sorttable_customkey="1553227880">Mar 22, 00:11</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Geography Lesson" ><a href="puzzle/geography-lesson.html">Geography Lesson</a></td>
+            <td>2</td>
+            <td sorttable_customkey="1552968919">Mar 19, 00:15</td>
+            <td sorttable_customkey="316546.741082">87h55m</td>
+            <td sorttable_customkey="1553285466">Mar 22, 16:11</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Ministry of Word Searches" ><a href="puzzle/ministry-of-word-searches.html">Ministry of Word Searches</a></td>
+            <td>8</td>
+            <td sorttable_customkey="1552889217">Mar 18, 02:06</td>
+            <td sorttable_customkey="401496.609717">111h31m</td>
+            <td sorttable_customkey="1553290713">Mar 22, 17:38</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Observatory" ><a href="puzzle/observatory.html">Observatory</a></td>
+            <td>3</td>
+            <td sorttable_customkey="1552944396">Mar 18, 17:26</td>
+            <td sorttable_customkey="379118.024916">105h18m</td>
+            <td sorttable_customkey="1553323514">Mar 23, 02:45</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Galaxy Trucker" ><a href="puzzle/galaxy-trucker.html">Galaxy Trucker</a></td>
+            <td>2</td>
+            <td sorttable_customkey="1552882119">Mar 18, 00:08</td>
+            <td sorttable_customkey="497561.004418">138h12m</td>
+            <td sorttable_customkey="1553379680">Mar 23, 18:21</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="A Crossword" ><a href="puzzle/a-crossword.html">A Crossword</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1552900537">Mar 18, 05:15</td>
+            <td sorttable_customkey="480587.438365">133h29m</td>
+            <td sorttable_customkey="1553381125">Mar 23, 18:45</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Colors" ><a href="puzzle/colors.html">Colors</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1552932633">Mar 18, 14:10</td>
+            <td sorttable_customkey="471189.739018">130h53m</td>
+            <td sorttable_customkey="1553403823">Mar 24, 01:03</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="The Animal Trainers" class="meta"><a href="puzzle/the-animal-trainers.html">The Animal Trainers</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1553254080">Mar 22, 11:28</td>
+            <td sorttable_customkey="179712.535211">49h55m</td>
+            <td sorttable_customkey="1553448192">Mar 24, 13:23</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="The Astrologers" class="meta"><a href="puzzle/the-astrologers.html">The Astrologers</a></td>
+            <td>3</td>
+            <td sorttable_customkey="1553103348">Mar 20, 13:35</td>
+            <td sorttable_customkey="360778.384426">100h12m</td>
+            <td sorttable_customkey="1553464127">Mar 24, 17:48</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="The Meta Puzzle" ><a href="puzzle/the-meta-puzzle.html">The Meta Puzzle</a></td>
+            <td>16</td>
+            <td sorttable_customkey="1552831678">Mar 17, 10:07</td>
+            <td sorttable_customkey="632773.392655">175h46m</td>
+            <td sorttable_customkey="1553464452">Mar 24, 17:54</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Puzzle of Dragons" ><a href="puzzle/puzzle-of-dragons.html">Puzzle of Dragons</a></td>
+            <td>14</td>
+            <td sorttable_customkey="1553031095">Mar 19, 17:31</td>
+            <td sorttable_customkey="434448.834843">120h40m</td>
+            <td sorttable_customkey="1553465544">Mar 24, 18:12</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="The Last Databender" ><a href="puzzle/the-last-databender.html">The Last Databender</a></td>
+            <td>17</td>
+            <td sorttable_customkey="1552882119">Mar 18, 00:08</td>
+            <td sorttable_customkey="583798.90899">162h9m</td>
+            <td sorttable_customkey="1553465918">Mar 24, 18:18</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="The Archivists" class="meta"><a href="puzzle/the-archivists.html">The Archivists</a></td>
+            <td>1</td>
+            <td sorttable_customkey="1553227880">Mar 22, 00:11</td>
+            <td sorttable_customkey="240910.685446">66h55m</td>
+            <td sorttable_customkey="1553468791">Mar 24, 19:06</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="The Artists" class="meta"><a href="puzzle/the-artists.html">The Artists</a></td>
+            <td>4</td>
+            <td sorttable_customkey="1553261280">Mar 22, 13:28</td>
+            <td sorttable_customkey="201248.985332">55h54m</td>
+            <td sorttable_customkey="1553476928">Mar 24, 21:22</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="The Galactic Conference" class="meta"><a href="puzzle/the-galactic-conference.html">The Galactic Conference</a></td>
+            <td>1</td>
+            <td sorttable_customkey="1553476929">Mar 24, 21:22</td>
+            <td sorttable_customkey="21264.141477">5h54m</td>
+            <td sorttable_customkey="1553498193">Mar 25, 03:16</td>
+        </tr>
+        
+    </table>
+    
+    
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

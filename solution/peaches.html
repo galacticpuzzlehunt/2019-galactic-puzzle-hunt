@@ -1,0 +1,374 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: Peaches</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/peaches.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: Peaches
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">SKI LIFT</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+DD Liu and Nathan Pinsker
+
+        
+    </h4>
+    
+
+<style>
+.peaches-powers {
+  display: table;
+  border: 1px solid #dddddd;
+  padding: 15px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.peaches-powers div div:nth-child(2) {
+  max-width: 400px;
+}
+
+.peaches-solution {
+  display: table;
+  border: 1px solid #dddddd;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+.solution-header {
+  display: table-header-group;
+}
+.solution-header div {
+  display: table-cell;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-align: center;
+}
+.solution-row {
+  display: table-row;
+}
+.solution-row div {
+  display: table-cell;
+  padding: 3px 10px;
+  vertical-align: middle;
+}
+.solution-row div:last-child {
+  font-family: monospace;
+  font-size: 2rem;
+}
+.color-span span {
+  font-weight: bold;
+}
+.power {
+  max-width: 400px;
+}
+h5 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+</style>
+
+<p>This puzzle is a series of levels requiring you to transform a given word into another word or phrase. You play as Bowser and his minions, who are sharing a Super Crown in order to impersonate Peach and attempt to run her cooking show. (The Super Crown is an item from the game New Super Mario Bros. U Deluxe, but knowledge about the game or the Mario universe is not necessary for the puzzle.) Each character has a different power, and you'll need to find the right order of operations to complete each level.</p>
+
+<p>The function of each power can be determined with some amount of playing around:</p>
+
+<div class="peaches-powers">
+  <div class="solution-header">
+    <div>Image</div>
+    <div>Character</div>
+    <div>Power</div>
+    <div>Example</div>
+  </div>
+  <div class="solution-row">
+    <div><img src = "peaches/bowser.png"/></div>
+    <div>Bowser</div>
+    <div class="power">Delete all instances of the alphabetically-first character.</div>
+    <div>BAOBAB &rarr; BOBB</div>
+  </div>
+  <div class="solution-row">
+    <div><img src = "peaches/shy.png"/></div>
+    <div>Shy Guy</div>
+    <div class="power">Switches all Rs to Ls and vice versa.</div>
+    <div>REROLL &rarr; LELORR</div>
+  </div>
+  <div class="solution-row">
+    <div><img src = "peaches/bullet.png"/></div>
+    <div>Bullet Bill</div>
+    <div class="power">Changes the first character. (Can be <b>charged</b> to change it to whatever character you want.)</div>
+    <div>HONEY &rarr; MONEY</div>
+  </div>
+  <div class="solution-row">
+    <div><img src = "peaches/boo.png"/></div>
+    <div>Boo</div>
+    <div class="power">All vowels get replaced with the vowel before them, immediately followed by the vowel after them.</div>
+    <div class="color-span">
+      <span style="color: red;">E</span><span style="color: blue;">U</span>PH<span style="color: green;">O</span>R<span style="color: orange;">I</span><span style="color: purple;">A</span> &rarr; <span style="color: red;">AI</span><span style="color: blue;">OA</span>PH<span style="color: green;">IU</span>R<span style="color: orange;">EO</span><span style="color: purple;">UE</span></div>
+  </div>
+  <div class="solution-row">
+    <div><img src = "peaches/wiggler.png"/></div>
+    <div>Wiggler</div>
+    <div class="power">Changes the chosen character to the character after it, immediately followed by the character before it. (Can be <b>charged</b> to select whatever character you want.)</div>
+    <div>ZONED &rarr; ZOOMED</div>
+  </div>
+  <div class="solution-row">
+    <div><img src = "peaches/piranha.png"/></div>
+    <div>Piranha Plant</div>
+    <div class="power">Switches the two halves of the word, and adds a space in between. (If the word has odd length, the second half of the original word will be longer.)</div>
+    <div>OFFTAKE &rarr; TAKE OFF</div>
+  </div>
+  <div class="solution-row">
+    <div><img src = "peaches/blooper.png"/></div>
+    <div>Blooper</div>
+    <div class="power">Adds the chosen character after the first character and before the last character. (Can be <b>charged</b> to select whatever character you want.)</div>
+    <div class="color-span">SAWED &rarr; S<span style="color: red;">E</span>AWE<span style="color: red;">E</span>D</div>
+  </div>
+  <div class="solution-row">
+    <div><img src = "peaches/lakitu.png"/></div>
+    <div>Lakitu</div>
+    <div class="power">Moves the chosen suffix to the beginning of the word. (Can be <b>charged</b> to select whatever suffix you want.)</div>
+    <div>OVERSLEEP &rarr; SLEEPOVER</div>
+  </div>
+</div>
+
+There are a few other rules in play that solvers may discover. One of them may be helpful (but not essential) for extraction:
+
+<ul>
+  <li>If the phrase is longer than 20 characters, only the first 20 characters will be kept.</li>
+  <li>Spaces at the beginning and end of the phrase will be deleted.</li>
+  <li>Multiple spaces in a row will be replaced with a single space.</li>
+</ul>
+
+<p>A solution for each level is given at the bottom of this page. After completing all levels, we receive this image:</p>
+
+<p><img src="peaches/final_bg.png"/></p>
+
+<p>The hint "hidden in today's episode" can be found by taking the first letters of each target dish. This gives the phrase <tt>USE EACH POWER AT LEAST ONCE</tt>. The level select screen, which shows the same cake, can be helpful for discovering this. Since the words on it transform from the starting ingredient to the ending disn name when a level is finished, when all levels are finished, the phrase can be read off of the larger letters on the cake.</p>
+
+<p><img src="peaches/level_select_screen.png"/></p>
+
+<p>Since we must reach <tt>GORGEOUS CAKE</tt> in 9 steps, this means exactly one power will be used twice. The final page also shows Bowser torching F to pay respects, which suggests that in reverse his power will effectively be "creating" an F somewhere in the word.</p>
+
+<p>We can reconstruct the operations that were applied by working backwards, with some trial and error. The most constrained operations to apply are Piranha Plant's (which requires a roughly equal number of letters on either side of the space) and the Boo's (which requires all vowels to exist in specific pairs), so it's easiest to build a solution around being able to apply those two operations.</p>
+
+<p>Here is the solution:</p>
+
+<div class="peaches-solution">
+  <div class="solution-header">
+    <div>Power (in reverse)</div>
+    <div>New phrase</div>
+  </div>
+  <div class="solution-row">
+    <div></div>
+    <div>GORGEOUS CAKE</div>
+  </div>
+  <div class="solution-row">
+    <div>Lakitu</div>
+    <div>RGEOUS CAKEGO</div>
+  </div>
+  <div class="solution-row">
+    <div>Blooper</div>
+    <div>REOUS CAKEO</div>
+  </div>
+  <div class="solution-row">
+    <div>Piranha Plant</div>
+    <div>CAKEOREOUS</div>
+  </div>
+  <div class="solution-row">
+    <div>Wiggler</div>
+    <div>BKEOREOUS</div>
+  </div>
+  <div class="solution-row">
+    <div>Wiggler</div>
+    <div>BKEOREOT</div>
+  </div>
+  <div class="solution-row">
+    <div>Boo</div>
+    <div>BKIRIT</div>
+  </div>
+  <div class="solution-row">
+    <div>Shy Guy</div>
+    <div>BKILIT</div>
+  </div>
+  <div class="solution-row">
+    <div>Bullet Bill</div>
+    <div>SKILIT</div>
+  </div>
+  <div class="solution-row">
+    <div>Bowser</div>
+    <div>SKILIFT</div>
+  </div>
+</div>
+
+<p>The answer is <tt><b>SKILIFT</b></tt>, which also fits Toadette's second hint. Remember to get off when you get to the top!</p>
+
+<p>Note that from step 2 (Blooper) to step 3 (Piranha Plant), you could also use the fact that spaces at the beginning of a phrase are deleted to get <tt>CAKEO REOUS</tt> rather than <tt>CAKEOREOUS</tt>. Using this gives <tt><b>SKI LIFT</b></tt> with the space included, which is effectively identical since spaces are removed from all submitted answers:</p>
+
+<div class="peaches-solution">
+  <div class="solution-header">
+    <div>Power (in reverse)</div>
+    <div>New phrase</div>
+  </div>
+  <div class="solution-row">
+    <div></div>
+    <div>GORGEOUS CAKE</div>
+  </div>
+  <div class="solution-row">
+    <div>Lakitu</div>
+    <div>RGEOUS CAKEGO</div>
+  </div>
+  <div class="solution-row">
+    <div>Blooper</div>
+    <div>REOUS CAKEO</div>
+  </div>
+  <div class="solution-row">
+    <div>Piranha Plant</div>
+    <div>CAKEO REOUS</div>
+  </div>
+  <div class="solution-row">
+    <div>Wiggler</div>
+    <div>BKEO REOUS</div>
+  </div>
+  <div class="solution-row">
+    <div>Wiggler</div>
+    <div>BKEO REOT</div>
+  </div>
+  <div class="solution-row">
+    <div>Boo</div>
+    <div>BKI RIT</div>
+  </div>
+  <div class="solution-row">
+    <div>Shy Guy</div>
+    <div>BKI LIT</div>
+  </div>
+  <div class="solution-row">
+    <div>Bullet Bill</div>
+    <div>SKI LIT</div>
+  </div>
+  <div class="solution-row">
+    <div>Bowser</div>
+    <div>SKI LIFT</div>
+  </div>
+</div>
+
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>Like <a href="https://theportalwiki.com/wiki/cake">Portal games</a>, games involving Peach often end with <a href="https://www.mariowiki.com/Cake">cake</a>!</p><p>Unlike <a href="https://2017.galacticpuzzlehunt.com/puzzle/1/2.html">Portal games</a>, since many of you <a href="https://2017.galacticpuzzlehunt.com/lyrics.html">reeeally seemed to want the extraction to come out of the last page</a>, we made the extraction come out of the last page! We hope more of you believe in the cake now.</p><p>We considered playing 'Never Gonna Give You Up' on the final page, but thought that might prompt a few too many incorrect guesses.</p><p>A few of you have asked about the process of making this puzzle. It was coded using <a href="https://haxeflixel.com/" target="_blank">HaxeFlixel</a> with substantial use of a <a href="https://github.com/npinsker/nova" target="_blank">library</a> that Nathan wrote. We chose HaxeFlixel since it's simple to use, easily exports to the web, and offers great support for animation and other effects. The blooper's ink-spray was the hardest effect to code, and uses a device called <a href="http://jamie-wong.com/2014/08/19/metaballs-and-marching-squares/" target="_blank">metaballs</a>. (At the time of writing, the Wikipedia page for metaballs says "not to be confused with meatballs", which we thought was amusing. Try not to get those two confused, I guess?)</p>
+    
+
+    
+
+    
+    <hr>
+    <h4>Level Solutions</h4><p>Note that levels had many possible solve paths. Getting an optimal length solve path was not necessary, as long as the number of moves was 10 or fewer. A good strategy for the harder levels is to work backwards from the target phrase, figuring out which moves are possible and trying to set it up so that Blooper or Wiggler can be used as often as possible to remove extra letters in the final phrase that don't appear in the starting word.</p><h5>Level 1 (UNAGI &rarr; UNI)</h5><div class="peaches-solution"><div class="solution-header"><div>Power (charge)</div><div>New phrase</div></div><div class="solution-row"><div></div><div>UNAGI</div></div><div class="solution-row"><div>Bowser</div><div>UNGI</div></div><div class="solution-row"><div>Bowser</div><div>UNI</div></div></div><h5>Level 2 (LARD &rarr; SALAD)</h5><div class="peaches-solution"><div class="solution-header"><div>Power (charge)</div><div>New phrase</div></div><div class="solution-row"><div></div><div>LARD</div></div><div class="solution-row"><div>Bowser</div><div>LRD</div></div><div class="solution-row"><div>Blooper (A)</div><div>LARAD</div></div><div class="solution-row"><div>Shy Guy</div><div>RALAD</div></div><div class="solution-row"><div>Bullet Bill (S)</div><div>SALAD</div></div></div><h5>Level 3 (CLAMS &rarr; EGGS)</h5><div class="peaches-solution"><div class="solution-header"><div>Power (charge)</div><div>New phrase</div></div><div class="solution-row"><div></div><div>CLAMS</div></div><div class="solution-row"><div>Bowser</div><div>CLMS</div></div><div class="solution-row"><div>Bowser</div><div>LMS</div></div><div class="solution-row"><div>Bowser</div><div>MS</div></div><div class="solution-row"><div>Blooper (G)</div><div>MGGS</div></div><div class="solution-row"><div>Bullet Bill (E)</div><div>EGGS</div></div></div><h5>Level 4 (MAIL &rarr; ECLAIR)</h5><div class="peaches-solution"><div class="solution-header"><div>Power (charge)</div><div>New phrase</div></div><div class="solution-row"><div></div><div>MAIL</div></div><div class="solution-row"><div>Shy Guy</div><div>MAIR</div></div><div class="solution-row"><div>Wiggler (M)</div><div>NLAIR</div></div><div class="solution-row"><div>Bullet Bill (D)</div><div>DLAIR</div></div><div class="solution-row"><div>Wiggler (D)</div><div>ECLAIR</div></div></div><h5>Level 5 (GOLD &rarr; AIOLI)</h5><div class="peaches-solution"><div class="solution-header"><div>Power (charge)</div><div>New phrase</div></div><div class="solution-row"><div></div><div>GOLD</div></div><div class="solution-row"><div>Blooper (I)</div><div>GIOLID</div></div><div class="solution-row"><div>Bowser</div><div>GIOLI</div></div><div class="solution-row"><div>Bullet Bill (A)</div><div>AIOLI</div></div></div><h5>Level 6 (HAY &rarr; CANDY HEN)</h5><div class="peaches-solution"><div class="solution-header"><div>Power (charge)</div><div>New phrase</div></div><div class="solution-row"><div></div><div>HAY</div></div><div class="solution-row"><div>Blooper (D)</div><div>HDADY</div></div><div class="solution-row"><div>Wiggler (first D)</div><div>HECADY</div></div><div class="solution-row"><div>Piranha Plant</div><div>ADY HEC</div></div><div class="solution-row"><div>Blooper (N)</div><div>ANDY HENC</div></div><div class="solution-row"><div>Lakitu (C)</div><div>CANDY HEN</div></div></div><h5>Level 7 (TURF &rarr; PARFAIT)</h5><div class="peaches-solution"><div class="solution-header"><div>Power (charge)</div><div>New phrase</div></div><div class="solution-row"><div></div><div>TURF</div></div><div class="solution-row"><div>Bullet Bill (U)</div><div>UURF</div></div><div class="solution-row"><div>Wiggler (first U)</div><div>VTURF</div></div><div class="solution-row"><div>Bullet Bill (E)</div><div>ETURF</div></div><div class="solution-row"><div>Lakitu (U)</div><div>URFET</div></div><div class="solution-row"><div>Boo</div><div>OARFAIT</div></div><div class="solution-row"><div>Bullet Bill (P)</div><div>PARFAIT</div></div></div><h5>Level 8 (HERON &rarr; ONIGIRI)</h5><div class="peaches-solution"><div class="solution-header"><div>Power (charge)</div><div>New phrase</div></div><div class="solution-row"><div></div><div>HERON</div></div><div class="solution-row"><div>Lakitu (R)</div><div>RONHE</div></div><div class="solution-row"><div>Wiggler (H)</div><div>RONIGE</div></div><div class="solution-row"><div>Blooper (I)</div><div>RIONIGIE</div></div><div class="solution-row"><div>Bowser</div><div>RIONIGI</div></div><div class="solution-row"><div>Lakitu (O)</div><div>ONIGIRI</div></div></div><h5>Level 9 (EASEL &rarr; WATER EEL)</h5><div class="peaches-solution"><div class="solution-header"><div>Power (charge)</div><div>New phrase</div></div><div class="solution-row"><div></div><div>EASEL</div></div><div class="solution-row"><div>Bullet Bill (W)</div><div>WASEL</div></div><div class="solution-row"><div>Lakitu (E)</div><div>ELWAS</div></div><div class="solution-row"><div>Wiggler (S)</div><div>ELWATR</div></div><div class="solution-row"><div>Blooper (E)</div><div>EELWATER</div></div><div class="solution-row"><div>Piranha Plant</div><div>ATER EELW</div></div><div class="solution-row"><div>Lakitu (W)</div><div>WATER EEL</div></div></div><h5>Level 10 (SHRINE &rarr; REFRESHROOM)</h5><div class="peaches-solution"><div class="solution-header"><div>Power (charge)</div><div>New phrase</div></div><div class="solution-row"><div></div><div>SHRINE</div></div><div class="solution-row"><div>Wiggler (E)</div><div>SHRINFD</div></div><div class="solution-row"><div>Lakitu (D)</div><div>DSHRINF</div></div><div class="solution-row"><div>Boo</div><div>DSHREONF</div></div><div class="solution-row"><div>Blooper (R)</div><div>DRSHREONRF</div></div><div class="solution-row"><div>Bowser</div><div>RSHREONRF</div></div><div class="solution-row"><div>Bowser</div><div>RSHRONRF</div></div><div class="solution-row"><div>Wiggler (N)</div><div>RSHROOMRF</div></div><div class="solution-row"><div>Blooper (E)</div><div>RESHROOMREF</div></div><div class="solution-row"><div>Lakitu (first R)</div><div>REFRESHROOM</div></div></div><h5>Level 11 (ETHICS &rarr; ANISE TAHINI)</h5><div class="peaches-solution"><div class="solution-header"><div>Power (charge)</div><div>New phrase</div></div><div class="solution-row"><div></div><div>ETHICS</div></div><div class="solution-row"><div>Bowser</div><div>ETHIS</div></div><div class="solution-row"><div>Lakitu (T)</div><div>THISE</div></div><div class="solution-row"><div>Piranha Plant</div><div>ISE TH</div></div><div class="solution-row"><div>Blooper (A)</div><div>IASE TAH</div></div><div class="solution-row"><div>Lakitu (second A)</div><div>ASE TAHI</div></div><div class="solution-row"><div>Blooper (I)</div><div>AISE TAHII</div></div><div class="solution-row"><div>Blooper (N)</div><div>ANISE TAHINI</div></div></div><h5>Level 12 (DEMON &rarr; LEMON EGGNOG)</h5><div class="peaches-solution"><div class="solution-header"><div>Power (charge)</div><div>New phrase</div></div><div class="solution-row"><div></div><div>DEMON</div></div><div class="solution-row"><div>Bullet Bill (N)</div><div>NEMON</div></div><div class="solution-row"><div>Piranha Plant</div><div>MON NE</div></div><div class="solution-row"><div>Lakitu (E)</div><div>EMON N</div></div><div class="solution-row"><div>Bullet Bill (O)</div><div>OMON N</div></div><div class="solution-row"><div>Blooper (E)</div><div>OEMON EN</div></div><div class="solution-row"><div>Blooper (G)</div><div>OGEMON EGN</div></div><div class="solution-row"><div>Blooper (G)</div><div>OGGEMON EGGN</div></div><div class="solution-row"><div>Lakitu (third G)</div><div>GEMON EGGNOG</div></div><div class="solution-row"><div>Bullet Bill (L)</div><div>LEMON EGGNOG</div></div></div><h5>Level 13 (SNOW &rarr; ASIAN SQUID)</h5><div class="peaches-solution"><div class="solution-header"><div>Power (charge)</div><div>New phrase</div></div><div class="solution-row"><div></div><div>SNOW</div></div><div class="solution-row"><div>Boo</div><div>SNIUW</div></div><div class="solution-row"><div>Blooper (I)</div><div>SINIUIW</div></div><div class="solution-row"><div>Lakitu (second I)</div><div>IUIWSIN</div></div><div class="solution-row"><div>Bullet Bill (R)</div><div>RUIWSIN</div></div><div class="solution-row"><div>Wiggler (R)</div><div>SQUIWSIN</div></div><div class="solution-row"><div>Piranha Plant</div><div>WSIN SQUI</div></div><div class="solution-row"><div>Bullet Bill (D)</div><div>DSIN SQUI</div></div><div class="solution-row"><div>Lakitu (second I)</div><div>IN SQUIDS</div></div><div class="solution-row"><div>Blooper (A)</div><div>IAN SQUIDAS</div></div><div class="solution-row"><div>Lakitu (first A)</div><div>ASIAN SQUID</div></div></div><h5>Level 14 (DRESS &rarr; TONS OF NOODLES)</h5><div class="peaches-solution"><div class="solution-header"><div>Power (charge)</div><div>New phrase</div></div><div class="solution-row"><div></div><div>DRESS</div></div><div class="solution-row"><div>Bullet Bill (F)</div><div>FRESS</div></div><div class="solution-row"><div>Shy Guy</div><div>FLESS</div></div><div class="solution-row"><div>Blooper (D)</div><div>FDLESDS</div></div><div class="solution-row"><div>Blooper (O)</div><div>FODLESDOS</div></div><div class="solution-row"><div>Blooper (N)</div><div>FNODLESDONS</div></div><div class="solution-row"><div>Piranha Plant</div><div>ESDONS FNODL</div></div><div class="solution-row"><div>Lakitu (first N)</div><div>NODLESDONS F</div></div><div class="solution-row"><div>Blooper (O)</div><div>NOODLESDONS OF</div></div><div class="solution-row"><div>Piranha Plant</div><div>DONS OF NOODLES</div></div><div class="solution-row"><div>Bullet Bill (T)</div><div>TONS OF NOODLES</div></div></div><h5>Level 15 (TIGHTS &rarr; CRAZY EIGHT)</h5><div class="peaches-solution"><div class="solution-header"><div>Power (charge)</div><div>New phrase</div></div><div class="solution-row"><div></div><div>TIGHTS</div></div><div class="solution-row"><div>Bullet Bill (Z)</div><div>ZIGHTS</div></div><div class="solution-row"><div>Wiggler (Z)</div><div>AYIGHTS</div></div><div class="solution-row"><div>Wiggler (Y)</div><div>AZXIGHTS</div></div><div class="solution-row"><div>Wiggler (X)</div><div>AZYWIGHTS</div></div><div class="solution-row"><div>Wiggler (S)</div><div>AZYWIGHTTR</div></div><div class="solution-row"><div>Lakitu (W)</div><div>WIGHTTRAZY</div></div><div class="solution-row"><div>Bullet Bill (E)</div><div>EIGHTTRAZY</div></div><div class="solution-row"><div>Piranha Plant</div><div>TRAZY EIGHT</div></div><div class="solution-row"><div>Bullet Bill (C)</div><div>CRAZY EIGHT</div></div></div>
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

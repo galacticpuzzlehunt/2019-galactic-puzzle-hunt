@@ -1,0 +1,213 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: Cross Lines</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/cross-lines.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: Cross Lines
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">VIRUS</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Yannick Yao
+
+        
+    </h4>
+    
+
+<style>
+.flag {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.grid {
+    display: inline-table;
+}
+
+table.grid td {
+    border: 1px solid black;
+    padding: 12px 15px;
+}
+
+.grid tr:nth-child(2) td:nth-child(2) {
+    background-color: lightgray;
+}
+</style>
+<p>
+The puzzle is presented as five 3 by 3 grids, with a colored stripe running down or across each column or row of each grid. A careful inspection of the non-gray stripes should reveal that all of these stripes are part of flags of countries or regions. This is confirmed by the aspect ratio of the grids that roughly resemble that of most flags, as well as the flavortext’s instruction to “identify stripes’ origins”.
+</p>
+<p>
+With a combination of pattern/palette recognition and image searches (possibly by the hex codes of the colors), we can find the flags that these stripes belong to:
+</p>
+
+<img class="flag" src="cross-lines/1.png"><hr>
+<img class="flag" src="cross-lines/2.png"><hr>
+<img class="flag" src="cross-lines/3.png"><hr>
+<img class="flag" src="cross-lines/4.png"><hr>
+<img class="flag" src="cross-lines/5.png">
+
+<p>The capitalized letters in the flavortext (<b><u>I</u></b>dentify <b><u>S</u></b>tripes’ <b><u>O</u></b>rigins) hints towards looking at the ISO code of these countries/regions. Indeed, when the 3-letter ISO codes (more formally, <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1 alpha-3 codes</a>) are entered along the stripes (left-to-right or top-to-bottom), the letters at the intersections match up, similar to a crossword (hence the title).</p>
+
+<p>We are not done yet. The two dark-gray lines and the intersection at the center of the grids indicates that the two hidden countries/regions still need to be identified so that their second letter in ISO codes are the same. After identifying these flags and filling in the grid, the center letters spell the answer <b><tt>VIRUS</tt></b>.</p>
+
+<table class="grid">
+<tr><td>E</td><td>S</td><td>H</td></tr>
+<tr><td>S</td><td>V</td><td>K</td></tr>
+<tr><td>P</td><td>N</td><td>G</td></tr>
+</table>
+<table class="grid">
+<tr><td>G</td><td>B</td><td>R</td></tr>
+<tr><td>N</td><td>I</td><td>U</td></tr>
+<tr><td>B</td><td>H</td><td>S</td></tr>
+</table>
+<table class="grid">
+<tr><td>V</td><td>N</td><td>M</td></tr>
+<tr><td>A</td><td>R</td><td>M</td></tr>
+<tr><td>T</td><td>U</td><td>R</td></tr>
+</table>
+<table class="grid">
+<tr><td>M</td><td>L</td><td>I</td></tr>
+<tr><td>A</td><td>U</td><td>S</td></tr>
+<tr><td>C</td><td>X</td><td>R</td></tr>
+</table>
+<table class="grid">
+<tr><td>S</td><td>E</td><td>N</td></tr>
+<tr><td>L</td><td>S</td><td>O</td></tr>
+<tr><td>B</td><td>H</td><td>R</td></tr>
+</table>
+
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>This puzzle combines two of my mini puzzle ideas:</p><ul><li>When a puzzle involves a crossword-like grid, if the background is not shaded and there is a 3-by-3 crossing, the center square
+      would look like a normal cell even if it is supposed to be empty, so I would often have an urge to fill something in. A similar
+      mechanic was used in a puzzle from Mezzacotta puzzle competition, but I feel like the 3 by 3 grid is a more natural layout to
+      work with.</li><li>Many flags (especially those with three stripes only) have a lot of redundant information, and could usually be compressed into a
+      single dimension without losing uniqueness. I wondered if I could make a country-themed crossword where each country is clued by a
+      cross-section of its flag running across its row or down its column.</li></ul><p>This puzzle went through several iterations of revising before the final form. In the beginning, the boxes and the flavortext were
+absent, and the stripes were only 1-pixel wide (truly sticking with the “one dimension” concept).</p><p>However, these 1-pixel wide stripes were too hard for test-solvers to see, so the widths are later changed to 4 pixels. The ISO aha
+also turned out to be nearly impossible to come up with, even though some test-solvers did notice some countries/regions sharing first
+letters. Eventually, it became clear that this needed to be clued more strongly, so the boxes and flavortext were introduced to clue ISO
+better, and the stripes were changed to their current 20-pixels-wide form.</p><p>Fortunately, these modifications landed the puzzle nicely into opening-puzzle difficulty, so depending on your puzzle experience,
+I hope you enjoyed this puzzle as a warm-up exercise for the later puzzles, or as a more gentle introduction to this style of puzzle.</p>
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

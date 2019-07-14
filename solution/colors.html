@@ -1,0 +1,363 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: Colors</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/colors.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: Colors
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">SILVER</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Jon Schneider, Anderson Wang, and Dai Yang
+
+        
+    </h4>
+    
+
+<style>
+table {
+    border-spacing: 5px;
+}
+
+table.grid td {
+    border: 1px solid black;
+    padding: 0px 8px;
+    text-align: center;
+}
+td.yellow {
+    background-color: yellow;
+}
+td.red {
+    background-color: red;
+}
+td.cyan {
+    background-color: cyan;
+}
+td.green {
+    background-color: limegreen;
+}
+td.orange {
+    background-color: orange;
+}
+td.magenta {
+    background-color: magenta;
+}
+</style>
+
+<p>
+If we try converting some of the colors to their hex values, we can see some patterns in many images. For example, the second image only uses the digits 0-9, and the last one is almost all letters A-F with some 0s thrown in. It turns out that each of the images, when converted to a 6x6 grid of hex characters, forms its own minipuzzle. Figuring out the rules of the puzzle allows you to fill in 6 missing hex digits from each grid, which have always been replaced by 0s. We now explain each of the mini-puzzles in order.</p>
+<hr>
+
+<img src="../static/puzzle_resources/colors/0.png" style="width:160px;height:160px">
+<br>
+Hex color grid:
+<table class="grid">
+<tr><td>0</td><td>F</td><td>F</td><td>2</td><td>1</td><td>1</td></tr>
+<tr><td>4</td><td>7</td><td>F</td><td>4</td><td>2</td><td>F</td></tr>
+<tr><td>F</td><td>F</td><td>F</td><td>F</td><td>0</td><td>0</td></tr>
+<tr><td>F</td><td>8</td><td>F</td><td>6</td><td>F</td><td>2</td></tr>
+<tr><td>F</td><td>F</td><td>F</td><td>0</td><td>F</td><td>3</td></tr>
+<tr><td>2</td><td>0</td><td>F</td><td>3</td><td>2</td><td>0</td></tr>
+</table>
+
+<p>This grid contains several digits and a bunch of Fs. It turns out that this represents a minesweeper board, where Fs represent mines and digits give the number of mines in the up to 8 adjacent cells. We can use simple minesweeper logic to determine the values in the zeroed-out squares:</p>
+
+<table class="grid">
+<tr><td class="yellow">F</td><td>F</td><td>F</td><td>2</td><td>1</td><td>1</td></tr>
+<tr><td>4</td><td>7</td><td>F</td><td>4</td><td>2</td><td>F</td></tr>
+<tr><td>F</td><td>F</td><td>F</td><td>F</td><td class="yellow">3</td><td class="yellow">2</td></tr>
+<tr><td>F</td><td>8</td><td>F</td><td>6</td><td>F</td><td>2</td></tr>
+<tr><td>F</td><td>F</td><td>F</td><td class="yellow">5</td><td>F</td><td>3</td></tr>
+<tr><td>2</td><td class="yellow">4</td><td>F</td><td>3</td><td>2</td><td class="yellow">F</td></tr>
+</table>
+<hr>
+
+<img src="../static/puzzle_resources/colors/1.png" style="width:160px;height:160px">
+<br>
+Hex color grid:
+<table class="grid">
+<tr><td>1</td><td>1</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+<tr><td>5</td><td>0</td><td>9</td><td>0</td><td>0</td><td>7</td></tr>
+<tr><td>4</td><td>8</td><td>1</td><td>5</td><td>5</td><td>6</td></tr>
+<tr><td>1</td><td>1</td><td>0</td><td>4</td><td>2</td><td>1</td></tr>
+<tr><td>3</td><td>0</td><td>7</td><td>1</td><td>3</td><td>0</td></tr>
+<tr><td>2</td><td>6</td><td>1</td><td>3</td><td>1</td><td>4</td></tr>
+</table>
+
+<p>For this grid, each digit is equal to the absolute value of the difference of the two digits above it. Some potential observations that help with figuring this out include the fact that many digits seem to be equal to the sum of nearby digits, and in particular it looks like the 2nd row is the sum of the 1st and 3rd rows. We can replace the six 0s with the correct digits to satisfy this condition:</p>
+
+<table class="grid">
+<tr><td>1</td><td>1</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+<tr><td>5</td><td class="red">9</td><td>9</td><td class="red">9</td><td class="red">7</td><td>7</td></tr>
+<tr><td>4</td><td>8</td><td>1</td><td>5</td><td>5</td><td>6</td></tr>
+<tr><td>1</td><td>1</td><td class="red">8</td><td>4</td><td>2</td><td>1</td></tr>
+<tr><td>3</td><td class="red">7</td><td>7</td><td>1</td><td>3</td><td class="red">5</td></tr>
+<tr><td>2</td><td>6</td><td>1</td><td>3</td><td>1</td><td>4</td></tr>
+</table>
+<hr>
+
+<img src="../static/puzzle_resources/colors/2.png" style="width:160px;height:160px">
+<br>
+Hex color grid:
+<table class="grid">
+<tr><td>2</td><td>3</td><td>5</td><td>7</td><td>B</td><td>0</td></tr>
+<tr><td>0</td><td>1</td><td>2</td><td>3</td><td>5</td><td>8</td></tr>
+<tr><td>0</td><td>1</td><td>4</td><td>1</td><td>5</td><td>9</td></tr>
+<tr><td>0</td><td>1</td><td>3</td><td>0</td><td>A</td><td>F</td></tr>
+<tr><td>2</td><td>7</td><td>0</td><td>8</td><td>2</td><td>8</td></tr>
+<tr><td>1</td><td>4</td><td>1</td><td>0</td><td>2</td><td>1</td></tr>
+</table>
+
+<p>In this puzzle, each row represents either a famous mathematical sequence or the digits of a mathematical constant: from top to bottom, they are prime numbers (note that B=11 in hex), Fibonacci numbers, digits of pi, triangular numbers, digits of e, and digits of the square root of 2. We can fill in the zeroed-out characters in each sequence as follows:</p>
+
+<table class="grid">
+<tr><td>2</td><td>3</td><td>5</td><td>7</td><td>B</td><td class="cyan">D</td></tr>
+<tr><td class="cyan">1</td><td>1</td><td>2</td><td>3</td><td>5</td><td>8</td></tr>
+<tr><td class="cyan">3</td><td>1</td><td>4</td><td>1</td><td>5</td><td>9</td></tr>
+<tr><td>0</td><td>1</td><td>3</td><td class="cyan">6</td><td>A</td><td>F</td></tr>
+<tr><td>2</td><td>7</td><td class="cyan">1</td><td>8</td><td>2</td><td>8</td></tr>
+<tr><td>1</td><td>4</td><td>1</td><td class="cyan">4</td><td>2</td><td>1</td></tr>
+</table>
+<hr>
+
+<img src="../static/puzzle_resources/colors/3.png" style="width:160px;height:160px">
+<br>
+Hex color grid:
+<table class="grid">
+<tr><td>5</td><td>0</td><td>B</td><td>E</td><td>B</td><td>E</td></tr>
+<tr><td>E</td><td>A</td><td>0</td><td>D</td><td>E</td><td>0</td></tr>
+<tr><td>A</td><td>C</td><td>A</td><td>0</td><td>E</td><td>F</td></tr>
+<tr><td>0</td><td>A</td><td>5</td><td>1</td><td>0</td><td>A</td></tr>
+<tr><td>E</td><td>D</td><td>E</td><td>E</td><td>E</td><td>C</td></tr>
+<tr><td>D</td><td>E</td><td>D</td><td>5</td><td>D</td><td>E</td></tr>
+</table>
+
+<p>In this grid, reading down each column gives an English word with one letter missing, where 1 and 5 represent I and S respectively. The words are SEABED, FACADE, BIASED, EDDIES, BEEFED, and EFFACE.</p>
+
+<table class="grid">
+<tr><td>5</td><td class="green">F</td><td>B</td><td>E</td><td>B</td><td>E</td></tr>
+<tr><td>E</td><td>A</td><td class="green">1</td><td>D</td><td>E</td><td class="green">F</td></tr>
+<tr><td>A</td><td>C</td><td>A</td><td class="green">D</td><td>E</td><td>F</td></tr>
+<tr><td class="green">B</td><td>A</td><td>5</td><td>1</td><td class="green">F</td><td>A</td></tr>
+<tr><td>E</td><td>D</td><td>E</td><td>E</td><td>E</td><td>C</td></tr>
+<tr><td>D</td><td>E</td><td>D</td><td>5</td><td>D</td><td>E</td></tr>
+</table>
+<hr>
+
+<img src="../static/puzzle_resources/colors/4.png" style="width:160px;height:160px">
+<br>
+Hex color grid:
+<table class="grid">
+<tr><td>9</td><td>5</td><td>5</td><td>2</td><td>5</td><td>1</td></tr>
+<tr><td>F</td><td>7</td><td>C</td><td>A</td><td>C</td><td>9</td></tr>
+<tr><td>9</td><td>0</td><td>A</td><td>8</td><td>D</td><td>1</td></tr>
+<tr><td>8</td><td>0</td><td>B</td><td>0</td><td>4</td><td>0</td></tr>
+<tr><td>5</td><td>F</td><td>4</td><td>B</td><td>0</td><td>B</td></tr>
+<tr><td>0</td><td>F</td><td>6</td><td>F</td><td>0</td><td>1</td></tr>
+</table>
+
+<p>Unlike the other grids which clearly have strange character distributions, this one seems relatively normal. It turns out that colors in this grid actually represent colors: each row is the hex representation of a <a href="https://en.wikipedia.org/wiki/Pantone#Color_of_the_Year">Pantone color of the year</a> from 2015-2019 in that order. This can be found by googling the first two rows (which don't have 0s, so they cannot change) together.</p>
+
+<table class="grid">
+<tr><td>9</td><td>5</td><td>5</td><td>2</td><td>5</td><td>1</td></tr>
+<tr><td>F</td><td>7</td><td>C</td><td>A</td><td>C</td><td>9</td></tr>
+<tr><td>9</td><td class="orange">2</td><td>A</td><td>8</td><td>D</td><td>1</td></tr>
+<tr><td>8</td><td class="orange">8</td><td>B</td><td>0</td><td>4</td><td class="orange">B</td></tr>
+<tr><td>5</td><td>F</td><td>4</td><td>B</td><td class="orange">8</td><td>B</td></tr>
+<tr><td class="orange">F</td><td>F</td><td>6</td><td>F</td><td class="orange">6</td><td>1</td></tr>
+</table>
+<hr>
+
+<img src="../static/puzzle_resources/colors/5.png" style="width:160px;height:160px">
+<br>
+Hex color grid:
+<table class="grid">
+<tr><td>A</td><td>C</td><td>0</td><td>0</td><td>0</td><td>D</td></tr>
+<tr><td>D</td><td>F</td><td>B</td><td>C</td><td>E</td><td>A</td></tr>
+<tr><td>E</td><td>A</td><td>0</td><td>D</td><td>B</td><td>C</td></tr>
+<tr><td>B</td><td>D</td><td>C</td><td>E</td><td>A</td><td>F</td></tr>
+<tr><td>0</td><td>E</td><td>D</td><td>A</td><td>C</td><td>B</td></tr>
+<tr><td>C</td><td>B</td><td>0</td><td>F</td><td>D</td><td>E</td></tr>
+</table>
+
+<p>Other than the 0s, this grid only has letters and no letter appears twice in any row or column, which lets us place the missing characters. In fact, this is actually a sudoku puzzle with 2x3 regions, though that's more of an easter egg and is certainly not needed to fill in the grid.</p>
+
+<table class="grid">
+<tr><td>A</td><td>C</td><td class="magenta">E</td><td class="magenta">B</td><td class="magenta">F</td><td>D</td></tr>
+<tr><td>D</td><td>F</td><td>B</td><td>C</td><td>E</td><td>A</td></tr>
+<tr><td>E</td><td>A</td><td class="magenta">F</td><td>D</td><td>B</td><td>C</td></tr>
+<tr><td>B</td><td>D</td><td>C</td><td>E</td><td>A</td><td>F</td></tr>
+<tr><td class="magenta">F</td><td>E</td><td>D</td><td>A</td><td>C</td><td>B</td></tr>
+<tr><td>C</td><td>B</td><td class="magenta">A</td><td>F</td><td>D</td><td>E</td></tr>
+</table>
+<hr>
+
+<p>Over all 6 grids, none of the changed characters appears in the same position. This means that we can combine all of them into a single 6x6 grid:</p>
+
+<table class="grid">
+<tr><td class="yellow">F</td><td class="green">F</td><td class="magenta">E</td><td class="magenta">B</td><td class="magenta">F</td><td class="cyan">D</td></tr>
+
+<tr><td class="cyan">1</td><td class="red">9</td><td class="green">1</td><td class="red">9</td><td class="red">7</td><td class="green">F</td></tr>
+
+<tr><td class="cyan">3</td><td class="orange">2</td><td class="magenta">F</td><td class="green">D</td><td class="yellow">3</td><td class="yellow">2</td></tr>
+
+<tr><td class="green">B</td><td class="orange">8</td><td class="red">8</td><td class="cyan">6</td><td class="green">F</td><td class="orange">B</td></tr>
+
+<tr><td class="magenta">F</td><td class="red">7</td><td class="cyan">1</td><td class="yellow">5</td><td class="orange">8</td><td class="red">5</td></tr>
+
+<tr><td class="orange">F</td><td class="yellow">4</td><td class="magenta">A</td><td class="cyan">4</td><td class="orange">6</td><td class="yellow">F</td></tr>
+</table>
+
+<p>At the same time, we can look at the six clues at the bottom. Perhaps with the help of some of the clearer associations (Ivy League University=brown, police=blue), we can determine that they all clue colors, and more specifically, <a href="https://en.wikipedia.org/wiki/X11_color_names">X11 web colors</a>.</p>
+
+<table>
+    <tr><td><b>Clue</b></td><td><b>X11 color</b></td><td><b>Hex representation</b></td></tr>
+    <tr><td>A citrus-y piece of lettuce</td><td>Lime Green</td><td>32CD32</td></tr>
+    <tr><td>A communist that likes flowers, but only when they're sorta cooked</td><td>Medium Violet Red</td><td>C71585</td></tr>
+    <tr><td>A grim, very expensive piece of fishing equipment</td><td>Dark Goldenrod</td><td>B8860B</td></tr>
+    <tr><td>An Ivy League University in the desert</td><td>Sandy Brown</td><td>F4A460</td></tr>
+    <tr><td>The result of putting a nut in boiling water</td><td>Blanched Almond</td><td>FFEBCD</td></tr>
+    <tr><td>What you would call the police after dark</td><td>Midnight Blue</td><td>191970</td></tr>
+</table>
+
+<p>When written in hex, each of these colors is almost identical to one of the rows in the above grid, with one of its characters changed to an F (of course, they can't be replaced with 0s as before since no character in the final grid can be a 0).</p>
+
+<table class="grid">
+<tr><td>F</td><td>F</td><td>E</td><td>B</td><td class="yellow">C</td><td>D</td></tr>
+
+<tr><td>1</td><td>9</td><td>1</td><td>9</td><td>7</td><td class="yellow">0</td></tr>
+
+<tr><td>3</td><td>2</td><td class="yellow">C</td><td>D</td><td>3</td><td>2</td></tr>
+
+<tr><td>B</td><td>8</td><td>8</td><td>6</td><td class="yellow">0</td><td>B</td></tr>
+
+<tr><td class="yellow">C</td><td>7</td><td>1</td><td>5</td><td>8</td><td>5</td></tr>
+
+<tr><td>F</td><td>4</td><td>A</td><td>4</td><td>6</td><td class="yellow">0</td></tr>
+</table>
+
+<p>(Note that these two steps can be done simultaneously, and one can help with the other. For example, knowing some of the hex digits in a color can help you find its name, and also knowing the names of the colors can help solve the puzzle without all of the subparts as long as you can guess the replaced digits)</p>
+
+<p>For the final step, we take the hex digits that the Fs change to in row order: C0C0C0. This is the hex representation of <tt><b>SILVER</b></tt>.</p>
+
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>Anderson: When we were trying to fill in the last couple puzzles in the weeks leading up to the hunt, I saw this idea that Dai submitted and had mostly gone overlooked, and thought it could work well (not to mention that one of the two remaining unassigned answers was a color!). Dai came up with most of the subpuzzle ideas in his original proposal (minesweeper, words, math constants/sequences), and we worked together with Jon to create the remaining ones. The X11 web colors step was also added to give us more flexibility in making the grids.</p><p>Some other unused ideas included an addition or multiplication problem (which we eventually decided was too hard to spot and was replaced with the more "local" subtraction), and the colors of the pride flag (we thought it would've fit perfectly in this puzzle, but unfortunately, we couldn't find a canonical set of hex codes and didn't want to arbitrarily use the picture on the Wikipedia article. This was eventually replaced by the Pantone colors.)</p>
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

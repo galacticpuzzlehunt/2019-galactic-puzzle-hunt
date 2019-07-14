@@ -1,0 +1,560 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: The Galactic Conference</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/the-galactic-conference.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: The Galactic Conference
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">WORD PEACE</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Rahul Sridhar, Anderson Wang, Jakob Weisblat, and Patrick Xia
+
+        
+    </h4>
+    
+<style>
+    img {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+    todo {
+        background-color: #fcc;
+        font-weight: bold;
+        margin: 15px;
+        padding: 6px;
+        border-radius: 4px;
+    }
+    table.meta-answers tr td:nth-child(2) {
+        font-family: monospace;
+    }
+    table.transformations tr td:nth-child(1) {
+        font-family: monospace;
+    }
+    table.plays tr:nth-child(4n+2) {
+        color: #060;
+    }
+    table.plays tr:nth-child(4n+3) {
+        color: #006;
+    }
+    table.plays tr:nth-child(4n+4) {
+        color: #860;
+    }
+    table.plays tr:nth-child(4n+5) {
+        color: #600;
+    }
+    table.plays tr td {
+        padding: 10px 8px;
+    }
+    table.scrabble-board {
+        border-collapse: inherit;
+        padding: 0;
+        margin: none;
+        border: 1px solid #ddd;
+    }
+    table.scrabble-board tr td{
+        border: 1px solid #ddd;
+        width: 30px;
+        max-width: 6%;
+        height: 30px;
+        text-align: center;
+        line-height: normal;
+        margin: 0;
+        padding: 0;
+    }
+    td.darkblue {
+        background-color: darkblue;
+        color: white;
+        font-weight: bold
+    }
+    td.darkred {
+        background-color: darkred;
+        color: white;
+    }
+    td.lightblue {
+        background-color: lightblue;
+    }
+    td.lightred {
+        background-color: lavenderblush;
+    }
+    table {
+      margin-left: auto;
+      margin-right: auto;
+    }
+</style>
+
+<p>This puzzle is about a game of Scrabble played in Puflantu. You can look <a href="https://docs.google.com/document/d/13gjGsHwkdXZuwWu08Ktn7ngYIUd449YEW2WbTYyM5Jw/edit?usp=sharing">here</a> for a full English transcript and gloss, which will be referenced throughout this solution. Note that while most words can be translated through artifacts, there are several ones that only appear in this puzzle and have to be deduced from context. These include play=elwx, empty=inve (as referenced by both the empty bag at the end and the empty, or blank, tiles), letter=sanato, word=natho, game=balotno, square=avubena, point=taftafe, and count/score=wtaf.</p>
+
+<p>Upon translating this text, we see that the game of scrabble has four players and twenty-four plays, and we are also given the number of tiles played on each turn (the number of clicks in the transcript). We are also given a list of valid two-letter words and how many points each letter is worth (naturally in base 6). The four civilizations you helped out correspond to the four scrabble players; in fact, three of them are mentioned by name in the transcript (adbolwe lifanafe=star studier=astrologer, yuqina daxafe=animal teacher=animal trainer, kudwe mwenafe=books holder=archivist).</p>
+
+<p>One useful observation is that there are 24 words played, and 24 answers among all the metas. This suggests that the words played during the scrabble game correspond to the puzzle answers/translations somehow, but they can't be played directly: for example, the first word is 4 letters long but none of the answers have 4-letter translations, and additionally the words UQI and AV are played but neither is among our answers.</p>
+
+<p>What we haven't used yet is the <i>meta answers</i>, which are mentioned in the P.S. note. The answers to the metapuzzles are as follows:</p>
+
+<table class="meta-answers">
+    <tr>
+        <th>Metapuzzle</th><th>Answer</th>
+    </tr>
+    <tr>
+        <td>The Astrologers</td><td>WE'RE IN OPPOSITION</td>
+    </tr>
+    <tr>
+        <td>The Archivists</td><td>MEMORY LOSS</td>
+    </tr>
+    <tr>
+        <td>The Animal Trainers</td><td>GO BE THE VERY BEST</td>
+    </tr>
+    <tr>
+        <td>The Artists</td><td>LARYNGITIS</td>
+    </tr>
+</table>
+<p>
+Each of these answers clues a <em>transformation</em> that the corresponding player
+uses to modify the answers before playing them in scrabble.
+</p>
+<table class="transformations">
+    <tr>
+        <th>Answer</th><th>Transformation</th>
+    </tr>
+    <tr>
+        <td>WE'RE IN OPPOSITION</td><td>Take the opposite of the answer</td>
+    </tr>
+    <tr>
+        <td>MEMORY LOSS</td><td>Remove all instances of the letters MEORY</td>
+    </tr>
+    <tr>
+        <td>GO BE THE VERY BEST</td><td>Take the superlative of the answer</td>
+    </tr>
+    <tr>
+        <td>LARYNGITIS</td><td>Change all voiced consonants to their unvoiced counterparts, using <a href="the-artists.html">Puflantu phonetics</a></td>
+    </tr>
+</table>
+<p>
+    Some of these are confirmed by SALMON=UJI devoicing to UQI, and SKI LIFT=ERAMOVO turning to AV when the letters of "MEMORY" are removed. Additionally, each player will only play answers in their own meta (you might determine this from seeing that many of the Astrologer answers have opposites or that many of the Artists answers, when devoiced, happen to be other words that exist in the language). There are eight answers that belong to more than
+    one meta. It turns out that for each of these answers, they are only
+    transformable using one of the two available transformations. For example, PEACE=TALKE is used in both the Astrologers and the Artists metas. However,
+    it cannot be devoiced, so we must assign it to the Astrologer. Here is a table of all the ambiguous answers:
+</p>
+
+<table>
+    <tr><th>Puzzle</th><th>Answer (English)</th><th>Answer (Puflantu)</th><th>Meta for transformation</th><th>Transformed answer (Puflantu)</th><th>Transformed answer (English)</th><th>Inapplicable meta</th><th>Explanation</th></tr>
+<tr><td>Colors</td><td><tt>SILVER</tt></td><td><tt>ALVERI</tt></td><td>Archivists</td><td><tt>ALVI</tt></td><td>weapon</td><td>Animal Trainers</td><td>Colors don't have superlatives</td></tr>
+<tr><td>Radio Broadcast</td><td><tt>PARABOLIC</tt></td><td><tt>GABXO</tt></td><td>Animal Trainers</td><td><tt>GABXO'</tt></td><td>most parabolic</td><td>Astrologers</td><td>There's no good opposite</td></tr>
+<tr><td>Word Search II</td><td><tt>LEATHER COATS</tt></td><td><tt>TIMEYWE MOKWE</tt></td><td>Archivists</td><td><tt>TIWKW</tt></td><td>questions (dual)</td><td>Astrologers</td><td>There's no good opposite</td></tr>
+<tr><td>50/50</td><td><tt>PEACE</tt></td><td><tt>TALKE</tt></td><td>Astrologers</td><td><tt>COCE</tt></td><td>war</td><td>Artists</td><td>C can't be devoiced</td></tr>
+<tr><td>Puzzle of Dragons</td><td><tt>DAZZLING</tt></td><td><tt>EGASKA</tt></td><td>Animal Trainers</td><td><tt>EGASKA'</tt></td><td>most dazzling</td><td>Artists</td><td>G, S, and K can't be devoiced</td></tr>
+<tr><td>A Crossword</td><td><tt>FUNNY PAGES</tt></td><td><tt>REMWE GIFZWE</tt></td><td>Archivists</td><td><tt>WGIFZW</tt></td><td>animations (dual)</td><td>Artists</td><td>devoicing would yield two words</td></tr>
+<tr><td>Road Trip</td><td><tt>NORTHEASTER</tt></td><td><tt>SEPI'FE</tt></td><td>Astrologers</td><td><tt>KUNO'FI</tt></td><td>southwester</td><td>Artists</td><td>S, P, F are not voiced</td></tr>
+<tr><td>Galaxy Trucker</td><td><tt>BLUE</tt></td><td><tt>HONWZE</tt></td><td>Artists</td><td><tt>HONWSE</tt></td><td>bacon</td><td>Animal Trainers</td><td>Colors don't have superlatives</td></tr>
+</table>
+
+<p>The fact that colors don't have superlatives is both hinted at in the <a href="../artifact/scales.html">Scales</a> artifact and directly mentioned in the dialogue on turn 19 (and indeed, this was the only reson we had such a constraint in the language). However, even without directly knowing this, it's still possible to match up ambiguous answers with their metas using the other constraints. Here's a table of the answers and their transformed versions:</p>
+
+<table><tr><th>Player</th><th>Answer</th><th>Answer translation</th><th>Transformed word</th><th>Notes</th></tr>
+    <tr><td>Animal Trainers</td><td><tt>DAZZLING</tt></td><td><tt>EGASKA</tt></td><td><tt>EGASKA'</tt></td><td>Superlatives are formed by adding ', as demonstrated in the <a href="../artifact/scales.html">Scales</a> artifact (among others)</td></tr>
+<tr><td>Animal Trainers</td><td><tt>LUNAR</tt></td><td><tt>ERQOYE</tt></td><td><tt>ERQOYE'</tt></td><td></td></tr>
+<tr><td>Animal Trainers</td><td><tt>PARABOLIC</tt></td><td><tt>GABXO</tt></td><td><tt>GABXO'</tt></td><td></td></tr>
+<tr><td>Animal Trainers</td><td><tt>DUAL</tt></td><td><tt>JWNTU</tt></td><td><tt>JWNTU'</tt></td><td></td></tr>
+<tr><td>Animal Trainers</td><td><tt>MUDDY</tt></td><td><tt>OBWNERE</tt></td><td><tt>OBWNERE'</tt></td><td></td></tr>
+<tr><td>Animal Trainers</td><td><tt>CLEAR</tt></td><td><tt>SWTABXI</tt></td><td><tt>SWTABXI'</tt></td><td></td></tr>
+<tr><td>Archivists</td><td><tt>SILVER</tt></td><td><tt>ALVERI</tt></td><td><tt>ALVI</tt></td><td></td></tr>
+<tr><td>Archivists</td><td><tt>SKI LIFT</tt></td><td><tt>ERAMOVO</tt></td><td><tt>AV</tt></td><td></td></tr>
+<tr><td>Archivists</td><td><tt>TRUE FORM</tt></td><td><tt>EHYO AXIBENA</tt></td><td><tt>HAXIBNA</tt></td><td></td></tr>
+<tr><td>Archivists</td><td><tt>LEATHER COATS</tt></td><td><tt>TIMEYWE MOKWE</tt></td><td><tt>TIWKW</tt></td><td></td></tr>
+<tr><td>Archivists</td><td><tt>FUNNY PAGES</tt></td><td><tt>REMWE GIFZWE</tt></td><td><tt>WGIFZW</tt></td><td></td></tr>
+<tr><td>Archivists</td><td><tt>MATRIX</tt></td><td><tt>XWRDI</tt></td><td><tt>XWDI</tt></td><td></td></tr>
+<tr><td>Artists</td><td><tt>UPPERCUT</tt></td><td><tt>EWZIG</tt></td><td><tt>EWSIG</tt></td><td>Note that G does not get devoiced to K as in English, because in Puflantu it is pronounced "ng"</td></tr>
+<tr><td>Artists</td><td><tt>BLUE</tt></td><td><tt>HONWZE</tt></td><td><tt>HONWSE</tt></td><td></td></tr>
+<tr><td>Artists</td><td><tt>DJINNI</tt></td><td><tt>BIKVE</tt></td><td><tt>PIKFE</tt></td><td></td></tr>
+<tr><td>Artists</td><td><tt>PRESIDENT</tt></td><td><tt>BUDJE</tt></td><td><tt>PUTQE</tt></td><td>J (d-zh) is devoiced to Q (t-ch) in Puflantu</td></tr>
+<tr><td>Artists</td><td><tt>SALMON</tt></td><td><tt>UJI</tt></td><td><tt>UQI</tt></td><td></td></tr>
+<tr><td>Artists</td><td><tt>KINDERGARTEN</tt></td><td><tt>UCVABLO</tt></td><td><tt>UXFAPLO</tt></td><td>C (zh) is devoiced to X (sh)</td></tr>
+<tr><td>Astrologers</td><td><tt>SLOW DOWN</tt></td><td><tt>'ORAR</tt></td><td><tt>'OZAZ</tt></td><td>Although "speed up" means OZAZ, the translation 'ORAR uses an imperative so we keep it when taking the opposite</td></tr>
+<tr><td>Astrologers</td><td><tt>INDOORS</tt></td><td><tt>HENWPEX</tt></td><td><tt>AMWPEX</tt></td><td>This is one of the trickier ones, since we don't define "outdoors" anywhere. Instead, the prefix "HEN" means "inner" or "early" in various parts of the language, and the prefix "AM" means the opposite (see the Urn artifact for one example)</td></tr>
+<tr><td>Astrologers</td><td><tt>PEACE</tt></td><td><tt>TALKE</tt></td><td><tt>COCE</tt></td><td>From war=COCE in the Friendly Transmission</td></tr>
+<tr><td>Astrologers</td><td><tt>STRONGER</tt></td><td><tt>VOLE'FI</tt></td><td><tt>INE'FI</tt></td><td>From weak=INE in the Friendly Transmission</td></tr>
+<tr><td>Astrologers</td><td><tt>NORTHEASTER</tt></td><td><tt>SEPI'FI</tt></td><td><tt>KUNO'FI</tt></td><td>From the cardinal directions (north, east, south, west = SE, PI, KU, NO) in the Friendly Transmission</td></tr>
+<tr><td>Astrologers</td><td><tt>EXTRACTION</tt></td><td><tt>ROMITA</tt></td><td><tt>TIVOMA</tt></td><td>From insertion=TIVOMA in the Friendly Transmission</td></tr>
+</table>
+
+<p>We provide a full walkthrough of the game below, but for conciseness here is a table of the words that are played and the final board:</p>
+
+<table class="plays">
+    <tr><th>Player</th><th>Word Played</th><th>Score</th><th>Cumulative Score</th></tr>
+<tr><td>Archivists</td><td><tt>ALVI</tt></td><td>28</td><td>28</td></tr>
+<tr><td>Astrologers</td><td><tt>TIVOMA</tt></td><td>34</td><td>34</td></tr>
+<tr><td>Artists</td><td><tt>UQI</tt></td><td>16</td><td>16</td></tr>
+<tr><td>Animal Trainers</td><td><tt>GABXO'</tt></td><td>22</td><td>22</td></tr>
+<tr><td>Archivists</td><td><tt>TIWKW</tt></td><td>10</td><td>38</td></tr>
+<tr><td>Astrologers</td><td><tt>AMWPEX</tt></td><td>29</td><td>63</td></tr>
+<tr><td>Artists</td><td><tt>PIKFE</tt></td><td>28</td><td>44</td></tr>
+<tr><td>Animal Trainers</td><td><tt>SWTABXI'</tt></td><td>92</td><td>114</td></tr>
+<tr><td>Archivists</td><td><tt>XWDI</tt></td><td>34</td><td>72</td></tr>
+<tr><td>Astrologers</td><td><tt>COCE</tt></td><td>38</td><td>101</td></tr>
+<tr><td>Artists</td><td><tt>UXFAPLO</tt></td><td>13</td><td>57</td></tr>
+<tr><td>Animal Trainers</td><td><tt>EGASKA'</tt></td><td>106</td><td>220</td></tr>
+<tr><td>Archivists</td><td><tt>WGIFZW</tt></td><td>29</td><td>101</td></tr>
+<tr><td>Astrologers</td><td><tt>KUNO'FI</tt></td><td>22</td><td>123</td></tr>
+<tr><td>Artists</td><td><tt>EWSIG</tt></td><td>10</td><td>67</td></tr>
+<tr><td>Animal Trainers</td><td><tt>JWNTU'</tt></td><td>32</td><td>252</td></tr>
+<tr><td>Archivists</td><td><tt>AV</tt></td><td>29</td><td>130</td></tr>
+<tr><td>Astrologers</td><td><tt>INE'FI</tt></td><td>21</td><td>144</td></tr>
+<tr><td>Artists</td><td><tt>PUTQE</tt></td><td>22</td><td>89</td></tr>
+<tr><td>Animal Trainers</td><td><tt>ERQOYE'</tt></td><td>81</td><td>333</td></tr>
+<tr><td>Archivists</td><td><tt>HAXIBNA</tt></td><td>38</td><td>168</td></tr>
+<tr><td>Astrologers</td><td><tt>'OZAZ</tt></td><td>20</td><td>164</td></tr>
+<tr><td>Artists</td><td><tt>HONWSE</tt></td><td>36</td><td>125</td></tr>
+<tr><td>Animal Trainers</td><td><tt>OBWNERE'</tt></td><td>44</td><td>377</td></tr>
+</table>
+
+<table class="scrabble-board">
+<tr>    <td class='darkred'>H</td>  <td class=''>O</td> <td class=''>N</td> <td class='lightblue'>W</td>    <td class=''>S</td> <td class=''>E</td> <td class=''></td>  <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='darkred'>E</td>  </tr>
+<tr>    <td class=''></td>  <td class='lightred'>B</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'>W</td> <td class=''></td>  <td class=''></td>  <td class=''>'</td> <td class='darkblue'>O</td> <td class=''>Z</td> <td class=''>A</td> <td class=''>Z</td> <td class='lightred'></td>  <td class=''>R</td> </tr>
+<tr>    <td class=''></td>  <td class=''>W</td> <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''>S</td> <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''>G</td> <td class='lightred'></td>  <td class=''></td>  <td class=''>Q</td> </tr>
+<tr>    <td class='lightblue'>I</td>    <td class=''>N</td> <td class=''>E</td> <td class='lightred'>'</td> <td class=''>F</td> <td class=''>I</td> <td class=''></td>  <td class='lightblue'></td> <td class=''>U</td> <td class=''>X</td> <td class=''>F</td> <td class='lightred'>A</td> <td class=''>P</td> <td class=''>L</td> <td class='lightblue'>O</td>    </tr>
+<tr>    <td class=''></td>  <td class=''>E</td> <td class=''></td>  <td class=''></td>  <td class='lightred'>W</td> <td class=''>G</td> <td class=''>I</td> <td class=''>F</td> <td class=''>Z</td> <td class=''>W</td> <td class='lightred'></td>  <td class=''>B</td> <td class=''></td>  <td class=''></td>  <td class=''>Y</td> </tr>
+<tr>    <td class=''></td>  <td class='darkblue'>R</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'>D</td> <td class=''></td>  <td class=''>X</td> <td class=''></td>  <td class='darkblue'></td>  <td class=''>E</td> </tr>
+<tr>    <td class=''></td>  <td class=''>E</td> <td class='lightblue'>H</td>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''>A</td> <td class='lightblue'>T</td>    <td class=''>I</td> <td class=''>V</td> <td class=''>O</td> <td class='lightblue'>M</td>    <td class=''>A</td> <td class=''>'</td> </tr>
+<tr>    <td class='darkred'>E</td>  <td class=''>'</td> <td class=''>A</td> <td class='lightblue'></td> <td class=''></td>  <td class=''>A</td> <td class=''>L</td> <td class='lightred'>V</td> <td class=''>I</td> <td class=''></td>  <td class=''></td>  <td class='lightblue'>'</td>    <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+<tr>    <td class=''>G</td> <td class=''></td>  <td class='lightblue'>X</td>    <td class=''></td>  <td class=''>U</td> <td class=''>Q</td> <td class='lightblue'>I</td>    <td class=''></td>  <td class='lightblue'>W</td>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''>A</td> <td class='darkblue'>P</td> <td class=''>I</td> <td class=''>K</td> <td class=''>F</td> <td class='darkblue'>E</td> <td class=''></td>  <td class=''></td>  <td class=''>K</td> <td class='darkblue'>A</td> <td class=''></td>  <td class=''>J</td> <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''>S</td> <td class=''></td>  <td class=''>B</td> <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''>W</td> <td class=''>M</td> <td class='lightred'></td>  <td class=''>W</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class='lightblue'>K</td>    <td class=''>U</td> <td class=''>N</td> <td class='lightred'>O</td> <td class=''>'</td> <td class=''>F</td> <td class=''>I</td> <td class='lightblue'></td> <td class=''></td>  <td class=''>W</td> <td class=''></td>  <td class='lightred'>N</td> <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> </tr>
+<tr>    <td class=''>A</td> <td class=''></td>  <td class='lightred'>A</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'></td> <td class=''>P</td> <td class=''>U</td> <td class=''>T</td> <td class='lightred'>Q</td> <td class=''>E</td> <td class=''></td>  </tr>
+<tr>    <td class=''>'</td> <td class='lightred'></td>  <td class=''></td>  <td class=''>C</td> <td class=''>O</td> <td class='darkblue'>C</td> <td class=''>E</td> <td class=''></td>  <td class=''></td>  <td class='darkblue'>E</td> <td class=''></td>  <td class=''>U</td> <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  </tr>
+<tr>    <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''>S</td> <td class=''>W</td> <td class=''>T</td> <td class='darkred'>A</td>  <td class=''>B</td> <td class=''>X</td> <td class=''>I</td> <td class='lightblue'>'</td>    <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+</table>
+
+<p>
+    We can read off the answer from the Triple Letter Score squares: <tt><b>WORD PEACE</b></tt>. Upon solving the puzzle, solvers were redirected to <a href="../victory.html">this page</a> indicating that they had completed the 2019 Galactic Puzzle Hunt.
+</p>
+
+<h3>Game walkthrough</h3>
+
+<h4>Turns 1-2</h4>
+
+<p>The first move must be a word worth 14 points (28 when doubled) and 4 letters long. There are two options for this: ALVI and XWDI. However, ALVI is much more appropriate as it means "weapon", which explains why the response is "You know this is a peace meeting, right?"</p>
+
+<p>The second move makes multiple words, so it must be played parallel to ALVI and is therefore 6 letters long. Additionally, a T must have been played on a double letter square as part of both words. There are only two 6-letter words that contain a T, TIVOMA and JWNTU', and only TIVOMA can be used to satisfy the constraint of potentially opening up a triple word square while only making valid 2-letter words, as follows:</p>
+<table class="scrabble-board">
+<tr>    <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+<tr>    <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'>T</td>    <td class=''>I</td> <td class=''>V</td> <td class=''>O</td> <td class='lightblue'>M</td>    <td class=''>A</td> <td class=''></td>  </tr>
+<tr>    <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''>A</td> <td class=''>L</td> <td class='lightred'>V</td> <td class=''>I</td> <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  </tr>
+<tr>    <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+</table>
+
+<p>Note that this board can be flipped across the diagonal, but it will be disambiguated later.</p>
+
+<h4>Turns 3-5</h4>
+<p>The word UQI is explicitly mentioned as being played on turn 3, making three total words. There is only one place to put this (below and to the left of ALVI) so that the additional two-letter words made are all valid.</p>
+
+<p>At this point, we know that the first player represents the Archivists, the second the Astrologers, the third the Artists, and the fourth the Animal Trainers.</p>
+
+<p>On turn 4, the dialogue suggests that the word GABXO' is played, as it's most strongly related to choosing the best "satellite dish". It has to intersect with exactly one existing letter since 5 tiles are played, so there are three potential places to put this. However, it must be worth 22 points because the dialogue on turn 8 says the Animal Trainers gets 92 points, and they have 114 total points after their second turn. This can only be done by placing it so it intersects the O of TIVOMA.</p>
+
+<p>The player on turn 5 must have gotten 38-28=10 points, so the dialogue suggests that the Archivists played a word that used the existing T (which has value 3) on the double letter square, which led to confusion over whether they got 13 or 10 points, since the Artists are not that familiar with Scrabble rules. The only word they have with a T is TIWKW.</p>
+
+<table class="scrabble-board">
+<tr>    <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+<tr>    <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''>G</td> <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'>A</td> <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''>B</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''>X</td> <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'>T</td>    <td class=''>I</td> <td class=''>V</td> <td class=''>O</td> <td class='lightblue'>M</td>    <td class=''>A</td> <td class=''></td>  </tr>
+<tr>    <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''>A</td> <td class=''>L</td> <td class='lightred'>V</td> <td class=''>I</td> <td class=''></td>  <td class=''></td>  <td class='lightblue'>'</td>    <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''>U</td> <td class=''>Q</td> <td class='lightblue'>I</td>    <td class=''></td>  <td class='lightblue'>W</td>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''>K</td> <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''>W</td> <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  </tr>
+<tr>    <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+</table>
+
+<h4>Turns 6-8</h4>
+
+<p>Turn 6: the Astrologer uses A and E on triple letter tiles, which means that their word must have an A and E 4 letters apart. The only such word is AMWPEX, and there is only one place to put it (to the right of TIWKW) so that all words formed are valid.</p>
+
+<p>Turn 7: the dialogue suggests that the Artist plays a word that also has a war-like meaning. This is therefore PIKFE, which means "bow". It must be played parallel to another word since 5 tiles were played, and it turns out that the only place to make only valid words and score 44-16=28 is underneath AQI (the word AQES being stressed in the dialogue references that the word AQE was also made).</p>
+
+<p>Turn 8: the Animal Trainer makes a bingo and scores 92 points with a triple word. This turns out to be on the bottom row, intersecting SWTABXI' with the X in AMWPEX.</p>
+
+<table class="scrabble-board">
+<tr>    <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+<tr>    <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''>G</td> <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'>A</td> <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''>B</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''>X</td> <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'>T</td>    <td class=''>I</td> <td class=''>V</td> <td class=''>O</td> <td class='lightblue'>M</td>    <td class=''>A</td> <td class=''></td>  </tr>
+<tr>    <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''>A</td> <td class=''>L</td> <td class='lightred'>V</td> <td class=''>I</td> <td class=''></td>  <td class=''></td>  <td class='lightblue'>'</td>    <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''>U</td> <td class=''>Q</td> <td class='lightblue'>I</td>    <td class=''></td>  <td class='lightblue'>W</td>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class='darkblue'>P</td> <td class=''>I</td> <td class=''>K</td> <td class=''>F</td> <td class='darkblue'>E</td> <td class=''></td>  <td class=''></td>  <td class=''>K</td> <td class='darkblue'>A</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''>W</td> <td class=''>M</td> <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''>W</td> <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'></td> <td class=''>P</td> <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'>E</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  </tr>
+<tr>    <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''>S</td> <td class=''>W</td> <td class=''>T</td> <td class='darkred'>A</td>  <td class=''>B</td> <td class=''>X</td> <td class=''>I</td> <td class='lightblue'>'</td>    <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+</table>
+
+<h4>Turns 9-12</h4>
+
+<p>At this point, the remaining words for the Archivists are AV, HAXIBNA, WGIFZW, and XWDI.</p>
+<p>The remaining words for the Astrologers are COCE, INE'FI, KUNO'FI, and 'OZAZ.</p>
+<p>The remaining words for the Artists are EWSIG, HONWSE, PUTQE, and UXFAPLO.</p>
+<p>The remaining words for the Animal Trainers are EGAKSA', ERQOYE', JWNTU', and OBWNERE'.</p>
+
+<p>Turn 9: The only letters worth 10 points are D and Y. Therefore, the word played must be XWDI, with the D going on a triple letter square. This must be intersecting the I in TIVOMA.</p>
+
+<p>Turn 10: Based on the reaction, this word must also be war-related; the only such word is COCE, which means, well, WAR. There is only one place to play this so that it's parallel to another word (since 4 tiles were played) and it scores 38 points, which is above SWTABXI' to get the double triple letter on the C.</p>
+
+<p>Turn 11: The Artist thought they would get a bonus for making a 7-letter word but only played 5 tiles. They also used a blank tile as an "F", so this word has to be UXFAPLO, intersecting the X in XWDI and A in GABXO'.</p>
+
+<p>Turn 12: The Animal Trainer got a bingo and also made an extra word using their A, so they must have played EGASKA' and the extra word must be APIKFE (which does happen to be in the Friendly Transmission). Using the first A to make APIKFE and doubling the K gives the necessary 106 points.</p>
+
+<table class="scrabble-board">
+<tr>    <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+<tr>    <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''>G</td> <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''>U</td> <td class=''>X</td> <td class=''>F</td> <td class='lightred'>A</td> <td class=''>P</td> <td class=''>L</td> <td class='lightblue'>O</td>    </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''>W</td> <td class='lightred'></td>  <td class=''>B</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'>D</td> <td class=''></td>  <td class=''>X</td> <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'>T</td>    <td class=''>I</td> <td class=''>V</td> <td class=''>O</td> <td class='lightblue'>M</td>    <td class=''>A</td> <td class=''></td>  </tr>
+<tr>    <td class='darkred'>E</td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''>A</td> <td class=''>L</td> <td class='lightred'>V</td> <td class=''>I</td> <td class=''></td>  <td class=''></td>  <td class='lightblue'>'</td>    <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+<tr>    <td class=''>G</td> <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''>U</td> <td class=''>Q</td> <td class='lightblue'>I</td>    <td class=''></td>  <td class='lightblue'>W</td>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''>A</td> <td class='darkblue'>P</td> <td class=''>I</td> <td class=''>K</td> <td class=''>F</td> <td class='darkblue'>E</td> <td class=''></td>  <td class=''></td>  <td class=''>K</td> <td class='darkblue'>A</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''>S</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''>W</td> <td class=''>M</td> <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class='lightblue'>K</td>    <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''>W</td> <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> </tr>
+<tr>    <td class=''>A</td> <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'></td> <td class=''>P</td> <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''>'</td> <td class='lightred'></td>  <td class=''></td>  <td class=''>C</td> <td class=''>O</td> <td class='darkblue'>C</td> <td class=''>E</td> <td class=''></td>  <td class=''></td>  <td class='darkblue'>E</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  </tr>
+<tr>    <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''>S</td> <td class=''>W</td> <td class=''>T</td> <td class='darkred'>A</td>  <td class=''>B</td> <td class=''>X</td> <td class=''>I</td> <td class='lightblue'>'</td>    <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+</table>
+
+<h4>Turns 13-16</h4>
+
+<p>Turn 13: the dialogue suggests that the Archivist played a word with two Ws, so it must be WGIFZW, and given that they only have one W, they must intersect another W in the grid. Also, they score 29 points (this can either be deduced from the fact that they tie the Astrologer who currently has 101 points, or from looking ahead to turn 17 where they play AV and subtracting 130 - 72 (their current score) - 29 (the number of points for playing AV)). The only way to do this is by intersecting the W in XWDI.</p>
+
+<p>Turn 14: This turn is a little trickier. The dialogue suggests that they play a word which doesn't look like a word, which suggests KUNO'FI meaning SOUTHWESTER (or "more southwest"). In order to get a score a little over 120, this move must score between 20 and ~24 points. This is done by playing off the K in EGASKA' to get the double word score for 22 points. It's not definite that the word played is KUNO'FI, so some looking ahead may be necessary to confirm that this is the right one.</p>
+
+<p>Turn 15: The top row was first opened on this turn, which disambiguates the possible reflection from the beginning. Additionally, the word scored 10 points, so it turns out it has to be EWSIG intersecting the G in WGIFZW.</p>
+
+<p>Turn 16: The only word that the Animal Trainer has with a T is JWNTU', and they play on a double word score. The only place to do this intersecting the ' of SWTABXI.</p>
+
+<table class="scrabble-board">
+<tr>    <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''>E</td> <td class=''></td>  <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+<tr>    <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'>W</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''>S</td> <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''>G</td> <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''>I</td> <td class=''></td>  <td class='lightblue'></td> <td class=''>U</td> <td class=''>X</td> <td class=''>F</td> <td class='lightred'>A</td> <td class=''>P</td> <td class=''>L</td> <td class='lightblue'>O</td>    </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'>W</td> <td class=''>G</td> <td class=''>I</td> <td class=''>F</td> <td class=''>Z</td> <td class=''>W</td> <td class='lightred'></td>  <td class=''>B</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'>D</td> <td class=''></td>  <td class=''>X</td> <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'>T</td>    <td class=''>I</td> <td class=''>V</td> <td class=''>O</td> <td class='lightblue'>M</td>    <td class=''>A</td> <td class=''></td>  </tr>
+<tr>    <td class='darkred'>E</td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''>A</td> <td class=''>L</td> <td class='lightred'>V</td> <td class=''>I</td> <td class=''></td>  <td class=''></td>  <td class='lightblue'>'</td>    <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+<tr>    <td class=''>G</td> <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''>U</td> <td class=''>Q</td> <td class='lightblue'>I</td>    <td class=''></td>  <td class='lightblue'>W</td>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''>A</td> <td class='darkblue'>P</td> <td class=''>I</td> <td class=''>K</td> <td class=''>F</td> <td class='darkblue'>E</td> <td class=''></td>  <td class=''></td>  <td class=''>K</td> <td class='darkblue'>A</td> <td class=''></td>  <td class=''>J</td> <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''>S</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''>W</td> <td class=''>M</td> <td class='lightred'></td>  <td class=''>W</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class='lightblue'>K</td>    <td class=''>U</td> <td class=''>N</td> <td class='lightred'>O</td> <td class=''>'</td> <td class=''>F</td> <td class=''>I</td> <td class='lightblue'></td> <td class=''></td>  <td class=''>W</td> <td class=''></td>  <td class='lightred'>N</td> <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> </tr>
+<tr>    <td class=''>A</td> <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'></td> <td class=''>P</td> <td class=''></td>  <td class=''>T</td> <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''>'</td> <td class='lightred'></td>  <td class=''></td>  <td class=''>C</td> <td class=''>O</td> <td class='darkblue'>C</td> <td class=''>E</td> <td class=''></td>  <td class=''></td>  <td class='darkblue'>E</td> <td class=''></td>  <td class=''>U</td> <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  </tr>
+<tr>    <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''>S</td> <td class=''>W</td> <td class=''>T</td> <td class='darkred'>A</td>  <td class=''>B</td> <td class=''>X</td> <td class=''>I</td> <td class='lightblue'>'</td>    <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+</table>
+
+<h4>Turns 17-20</h4>
+<p>The remaining Archivists words are AV and HAXIBNA.</p>
+<p>The remaining Astrologers words are INE'FI and 'OZAZ.</p>
+<p>The remaining Artists words are HONWSE and PUTQE.</p>
+<p>The remaining Animal Trainers words are ERQOYE' and OBWNERE'.</p>
+
+<p>Turn 17: The word AV is played. The dialogue suggests that a longer word was formed at the same time, so it's ATIMOVA (a word which also suspiciously appears in Friendly Transmission).</p>
+
+<p>Turn 18: The quotation of "FW" in the dialogue suggests that also formed the word "FW", which can be done by placing INE'FI intersecting EWSIG.</p>
+
+<p>Turn 19: A color is played on this turn, and a comment is made about potentially adding a bell (or ') to the end of it to access the triples on the right side. PUTQE is a greenish color and it can be played intersecting both AMWPEX and JWNTU' to get 3 total tiles played.</p>
+
+<p>Turn 20: The dialogue suggests that the Animal Trainer made two words scoring 60 and 21 points. They must use a triple word score for this, and it turns out that placing ERQOYE' on the top-right while simultaneously making ATIVOMA' satisfies this. Some of the words played in this round and the previous round can also be confirmed with the score check immediately following this.</p>
+
+<table class="scrabble-board">
+<tr>    <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''>E</td> <td class=''></td>  <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='darkred'>E</td>  </tr>
+<tr>    <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'>W</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''>R</td> </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''>S</td> <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''>G</td> <td class='lightred'></td>  <td class=''></td>  <td class=''>Q</td> </tr>
+<tr>    <td class='lightblue'>I</td>    <td class=''>N</td> <td class=''>E</td> <td class='lightred'>'</td> <td class=''>F</td> <td class=''>I</td> <td class=''></td>  <td class='lightblue'></td> <td class=''>U</td> <td class=''>X</td> <td class=''>F</td> <td class='lightred'>A</td> <td class=''>P</td> <td class=''>L</td> <td class='lightblue'>O</td>    </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'>W</td> <td class=''>G</td> <td class=''>I</td> <td class=''>F</td> <td class=''>Z</td> <td class=''>W</td> <td class='lightred'></td>  <td class=''>B</td> <td class=''></td>  <td class=''></td>  <td class=''>Y</td> </tr>
+<tr>    <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'>D</td> <td class=''></td>  <td class=''>X</td> <td class=''></td>  <td class='darkblue'></td>  <td class=''>E</td> </tr>
+<tr>    <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'>T</td>    <td class=''>I</td> <td class=''>V</td> <td class=''>O</td> <td class='lightblue'>M</td>    <td class=''>A</td> <td class=''>'</td> </tr>
+<tr>    <td class='darkred'>E</td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''>A</td> <td class=''>L</td> <td class='lightred'>V</td> <td class=''>I</td> <td class=''></td>  <td class=''></td>  <td class='lightblue'>'</td>    <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+<tr>    <td class=''>G</td> <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''>U</td> <td class=''>Q</td> <td class='lightblue'>I</td>    <td class=''></td>  <td class='lightblue'>W</td>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''>A</td> <td class='darkblue'>P</td> <td class=''>I</td> <td class=''>K</td> <td class=''>F</td> <td class='darkblue'>E</td> <td class=''></td>  <td class=''></td>  <td class=''>K</td> <td class='darkblue'>A</td> <td class=''></td>  <td class=''>J</td> <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''>S</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''>W</td> <td class=''>M</td> <td class='lightred'></td>  <td class=''>W</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class='lightblue'>K</td>    <td class=''>U</td> <td class=''>N</td> <td class='lightred'>O</td> <td class=''>'</td> <td class=''>F</td> <td class=''>I</td> <td class='lightblue'></td> <td class=''></td>  <td class=''>W</td> <td class=''></td>  <td class='lightred'>N</td> <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> </tr>
+<tr>    <td class=''>A</td> <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'></td> <td class=''>P</td> <td class=''>U</td> <td class=''>T</td> <td class='lightred'>Q</td> <td class=''>E</td> <td class=''></td>  </tr>
+<tr>    <td class=''>'</td> <td class='lightred'></td>  <td class=''></td>  <td class=''>C</td> <td class=''>O</td> <td class='darkblue'>C</td> <td class=''>E</td> <td class=''></td>  <td class=''></td>  <td class='darkblue'>E</td> <td class=''></td>  <td class=''>U</td> <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  </tr>
+<tr>    <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''>S</td> <td class=''>W</td> <td class=''>T</td> <td class='darkred'>A</td>  <td class=''>B</td> <td class=''>X</td> <td class=''>I</td> <td class='lightblue'>'</td>    <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+</table>
+
+<h4>Turn 21-24</h4>
+
+<p>We're in the home stretch! For turn 21, the word HAXIBNA is played with 5 tiles, so it has to intersect two existing letters. This has to be the I in APIKFE and the N in KUNO'FI.</p>
+
+<p>Turn 22: The word 'OZAZ is played using a blank on a Z and making an additional word with the A. This is AGABXO (yet another word we put in the Friendly Transmission).</p>
+
+<p>Turn 23: The word HONWSE is played using a corner, so it must be the top-left corner going right.</p>
+
+<p>Turn 24: The word OBWNERE' is played with only 6 tiles, so it must intersect two existing letters. These are the O in the just-played HONWSE and the N in INE'FI.</p>
+
+<table class="scrabble-board">
+<tr>    <td class='darkred'>H</td>  <td class=''>O</td> <td class=''>N</td> <td class='lightblue'>W</td>    <td class=''>S</td> <td class=''>E</td> <td class=''></td>  <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class='darkred'>E</td>  </tr>
+<tr>    <td class=''></td>  <td class='lightred'>B</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'>W</td> <td class=''></td>  <td class=''></td>  <td class=''>'</td> <td class='darkblue'>O</td> <td class=''>Z</td> <td class=''>A</td> <td class=''>Z</td> <td class='lightred'></td>  <td class=''>R</td> </tr>
+<tr>    <td class=''></td>  <td class=''>W</td> <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''>S</td> <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  <td class=''>G</td> <td class='lightred'></td>  <td class=''></td>  <td class=''>Q</td> </tr>
+<tr>    <td class='lightblue'>I</td>    <td class=''>N</td> <td class=''>E</td> <td class='lightred'>'</td> <td class=''>F</td> <td class=''>I</td> <td class=''></td>  <td class='lightblue'></td> <td class=''>U</td> <td class=''>X</td> <td class=''>F</td> <td class='lightred'>A</td> <td class=''>P</td> <td class=''>L</td> <td class='lightblue'>O</td>    </tr>
+<tr>    <td class=''></td>  <td class=''>E</td> <td class=''></td>  <td class=''></td>  <td class='lightred'>W</td> <td class=''>G</td> <td class=''>I</td> <td class=''>F</td> <td class=''>Z</td> <td class=''>W</td> <td class='lightred'></td>  <td class=''>B</td> <td class=''></td>  <td class=''></td>  <td class=''>Y</td> </tr>
+<tr>    <td class=''></td>  <td class='darkblue'>R</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='darkblue'>D</td> <td class=''></td>  <td class=''>X</td> <td class=''></td>  <td class='darkblue'></td>  <td class=''>E</td> </tr>
+<tr>    <td class=''></td>  <td class=''>E</td> <td class='lightblue'>H</td>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'>T</td>    <td class=''>I</td> <td class=''>V</td> <td class=''>O</td> <td class='lightblue'>M</td>    <td class=''>A</td> <td class=''>'</td> </tr>
+<tr>    <td class='darkred'>E</td>  <td class=''>'</td> <td class=''>A</td> <td class='lightblue'></td> <td class=''></td>  <td class=''>A</td> <td class=''>L</td> <td class='lightred'>V</td> <td class=''>I</td> <td class=''></td>  <td class=''></td>  <td class='lightblue'>'</td>    <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+<tr>    <td class=''>G</td> <td class=''></td>  <td class='lightblue'>X</td>    <td class=''></td>  <td class=''>U</td> <td class=''>Q</td> <td class='lightblue'>I</td>    <td class=''></td>  <td class='lightblue'>W</td>    <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class=''>A</td> <td class='darkblue'>P</td> <td class=''>I</td> <td class=''>K</td> <td class=''>F</td> <td class='darkblue'>E</td> <td class=''></td>  <td class=''></td>  <td class=''>K</td> <td class='darkblue'>A</td> <td class=''></td>  <td class=''>J</td> <td class=''></td>  <td class='darkblue'></td>  <td class=''></td>  </tr>
+<tr>    <td class=''>S</td> <td class=''></td>  <td class=''>B</td> <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class=''>W</td> <td class=''>M</td> <td class='lightred'></td>  <td class=''>W</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  </tr>
+<tr>    <td class='lightblue'>K</td>    <td class=''>U</td> <td class=''>N</td> <td class='lightred'>O</td> <td class=''>'</td> <td class=''>F</td> <td class=''>I</td> <td class='lightblue'></td> <td class=''></td>  <td class=''>W</td> <td class=''></td>  <td class='lightred'>N</td> <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> </tr>
+<tr>    <td class=''>A</td> <td class=''></td>  <td class='lightred'>A</td> <td class=''></td>  <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''></td>  <td class='lightblue'></td> <td class=''>P</td> <td class=''>U</td> <td class=''>T</td> <td class='lightred'>Q</td> <td class=''>E</td> <td class=''></td>  </tr>
+<tr>    <td class=''>'</td> <td class='lightred'></td>  <td class=''></td>  <td class=''>C</td> <td class=''>O</td> <td class='darkblue'>C</td> <td class=''>E</td> <td class=''></td>  <td class=''></td>  <td class='darkblue'>E</td> <td class=''></td>  <td class=''>U</td> <td class=''></td>  <td class='lightred'></td>  <td class=''></td>  </tr>
+<tr>    <td class='darkred'></td>   <td class=''></td>  <td class=''></td>  <td class='lightblue'></td> <td class=''>S</td> <td class=''>W</td> <td class=''>T</td> <td class='darkred'>A</td>  <td class=''>B</td> <td class=''>X</td> <td class=''>I</td> <td class='lightblue'>'</td>    <td class=''></td>  <td class=''></td>  <td class='darkred'></td>   </tr>
+</table>
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>
+    This was the first meta idea that we solidified after nailing down the specifics of how the language would work in the hunt, although it was actually constructed and testsolved fairly later on since it required a lot of language work. We chose the transformations such that each one explored a different aspect of the language (phonetics / vocabulary / grammar / spelling) and managed to find thematic answers that clued each of them. Several of the first teams to tackle this supermeta all missed the fact that they had to use the metapuzzle answers (perhaps because the answers were <em>too</em> thematic) so we added a sentence to the P.S. note indicating that they would come in handy.
+</p><p>
+    Due to some miscommunication, the Astrologers meta was made with NORTHEASTER a while before we realized that it didn't actually have a good opposite (well, SOUTHWESTER is a word but it's not well-known and it doesn't mean a storm). We didn't want to force the meta and an already-written puzzle to change to accomodate a new answer, so we ended up defining it as "more northeast" and also lampshaded it in the dialogue with the "that can't be a real word, can it?".
+<p>
+    The dialogue where the Artist asks why it wasn't worth 13 points was pretty much directly quoted from somthing Anderson said when looking over the Scrabble game, since he had forgotten about bonuses being single-use. We then realized that this could act as a clue in itself and put it in.
+</p><p>
+    The fact that the triple letter scores are almost symmetric, with the missing square potentially containing an "L" to complete the phrase WORLD PEACE, was intentional, as we thought it would be a somewhat funny "trap" that teams who didn't finish the game could fall into. However, it was intended that you would only need to place a little more than half of the words to guess the answer, since we understood that this puzzle could potentially take a long time, and by that point you'd probably demonstrated enough proficiency of the language to finish. In the end, this still took teams longer than we would have liked, and we apologize for that - in retrospect we could have made many of the clues easier/less tricky while still requiring solvers to have a decent understanding of the language.
+</p>
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

@@ -1,0 +1,477 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style>
+
+body {
+	style="-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+ 	unselectable="on"
+ 	onselectstart="return false;" 
+ 	onmousedown="return false;"
+}
+.console {
+	border-style: solid;
+	padding: 10px;
+	width:80%;
+	display: block;
+	word-wrap: break-word;
+}
+</style>
+<title>your name</title>
+</head>
+<body>
+<p>
+Please enter your name:
+</p><p>
+<span class="console" id="entry">_</span>
+</p>
+<p id="solution"></p>
+<p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+var entry = document.getElementById("entry");
+var string = "";
+var cursorPos = 0;
+var moves = [];
+
+var doincrement=false;
+
+function deleteChar(){
+	if (cursorPos==0||string.length==0){
+
+	} else {
+		string = string.substring(0,cursorPos-1)+string.substring(cursorPos);
+		cursorPos--;
+	}
+}
+
+function getch(c){
+	if (c==" ") return c;
+	if (doincrement){
+		doincrement=false;
+		return increment(c);		
+	} 
+	return c;
+}
+
+function reverse(s){
+    return s.split("").reverse().join("");
+}
+
+function GenString(){
+	if (cursorPos<0){
+		cursorPos=0;
+	}
+	if (cursorPos>string.length){
+		cursorPos=string.length;
+	}
+	var str = string.substring(0,cursorPos)+"_"+string.substring(cursorPos);
+	entry.innerHTML=str;
+}
+
+function doBackspace(){
+	if(string.length<3){
+		string="";
+		cursorPos=0;
+	} else {
+		string =string.substring(1);
+		cursorPos--;
+		deleteChar();
+	}
+}
+
+function insertChar(c){
+	string = string.substring(0,cursorPos)+getch(c)+string.substring(cursorPos);
+	cursorPos++;
+	if (kcount>0){
+		string = string.substring(0,cursorPos)+"k"+string.substring(cursorPos);
+		cursorPos++;
+		kcount--;
+	}
+}
+
+function doA(){
+	if (string.length>1){
+		string = string[1]+string[0]+string.substring(2);
+		insertChar("a");
+	} else if (string.length==1){
+		string = getch("a")+string[0];
+		cursorPos++;
+	} else {
+		insertChar("a");
+	}
+}
+
+function doB(){
+	if (string.length===0){
+		string="b";
+	} else {
+		if (kcount>0){
+			string = string[0]+getch("b")+"k"+string.substring(2);
+			cursorPos++;
+			kcount--;
+		} else {
+			string = string[0]+getch("b")+string.substring(2);
+		}
+	}
+
+	cursorPos++;
+}
+
+function doC(){
+	insertChar("c");
+	string="c"+string;
+	cursorPos++;
+}
+
+function doD(){
+	string = string.substring(1);
+	cursorPos--;
+	insertChar("d");
+}
+
+function doE(){
+	if (string.length==0||cursorPos==0){
+		insertChar("e");
+	} else {
+		cursorPos--;
+		insertChar("e");
+		cursorPos++;
+	}
+}
+
+function doF(){
+
+	if (string.length>0){
+		if (kcount==0){
+			string = string +getch("f")+string;
+			cursorPos++;
+		} else {			
+			string = string +getch("f")+"k"+string;
+			cursorPos+=2;
+		}
+
+	} else {
+		insertChar("f");
+	}
+
+}
+
+function doG(){
+	insertChar("g");
+	cursorPos--;	
+}
+
+function doH(){
+	insertChar("h");
+	string = string.substring(0,cursorPos);
+	cursorPos=string.length;
+}
+
+function doI(){
+	insertChar("i");
+	string = reverse(string);
+	cursorPos=string.length-cursorPos;
+	cursorPos++;
+}
+
+function doJ(){
+	insertChar("j");
+	string = string.replace(/b/g,"1");
+	string = string.replace(/d/g,"b");
+	string = string.replace(/1/g,"d");
+
+	string = string.replace(/p/g,"1");
+	string = string.replace(/q/g,"p");
+	string = string.replace(/1/g,"q");
+}
+
+var kcount=0;
+function doK(){
+	insertChar("k");
+	kcount=1;
+}
+
+function increment(c){
+	if (c==" ") return c;
+	var cc= c.charCodeAt(0) + 1;
+	if (cc==58){
+		cc=48;
+	}
+	if (cc>122){
+		cc=97;
+	}
+	return String.fromCharCode(cc);
+}
+
+function decrement(c){
+	var cc= c.charCodeAt(0) - 1;
+
+	if (cc==46){
+		cc=57;
+	}
+	if (cc=96){
+		cc=122;
+	}
+	return String.fromCharCode(cc);
+}
+
+function doL(){
+	insertChar("l");
+	doincrement=true;
+}
+
+function doM(){
+	for (var i=1;i<string.length;i++){
+		string = string.substring(0,i)+string.substring(i+1);
+	}
+	insertChar("m");
+}
+
+function doN(){
+	var prevChar="";
+	if (string.length>0){
+		prevChar=string[cursorPos-1];
+		var regex = new RegExp(prevChar, "g");
+		string = string.replace(regex,"");
+	}
+
+	if (prevChar!="n"){
+		insertChar("n");	
+	}
+}
+
+function doO(){
+	insertChar("o");
+	string = string + string[0];
+}
+
+function doP(){
+	insertChar("p");	
+	if (cursorPos>1){
+		insertChar(string[cursorPos-2]);
+	}
+}
+
+function doQ(){
+	if (string.length>2){
+		string = string.substring(2)+string[0]+string[1];
+		if (cursorPos>=2){
+			cursorPos-=2;
+		} else {
+			cursorPos = string.length+cursorPos-2;
+		}
+		insertChar("q");
+	} else {		
+		insertChar("q");
+	}
+}
+
+function doR(){
+	insertChar("r");
+	if (string.length>=2){
+		cursorPos--;
+		insertChar(string[1]);
+		cursorPos++;
+	}
+}
+
+function doS(){
+	if(cursorPos>0){
+		string = string.substring(0,cursorPos-1)+increment(string[cursorPos-1])+string.substring(cursorPos);
+	}
+	insertChar("s");
+}
+
+function doT(){
+	string = reverse(string.substring(0,cursorPos))+string.substring(cursorPos);
+	insertChar("t");
+}
+
+function doU(){
+	insertChar("u");
+	string = string.replace(/q/g,"");
+}
+
+function doV(){
+	cursorPos-=3;
+	if (cursorPos<0){
+		cursorPos=0;
+	}
+	insertChar("v");
+}
+
+function doW(){
+	cursorPos=string.length;
+	insertChar("u");
+	insertChar("u");
+}
+
+function doX(){
+	if (cursorPos>=2){
+		deleteChar();
+		deleteChar();
+	} else if (cursorPos>1){
+		deleteChar();
+	}
+	insertChar("x");
+}
+
+function doY(){
+	if (string.length>0){
+		string = string.substring(string.length-3)+string.substring(0,string.length-3);
+		cursorPos+=2;
+		if (cursorPos>string.length){
+			cursorPos-=string.length+1;
+		}
+	}
+	insertChar("y");
+}
+
+function doZ(){
+	insertChar("s");
+	insertChar("z");
+}
+
+
+function preventBackspaceHandler(evt) {
+    evt = evt || window.event;
+    var result=true;
+    moves.push(evt.keyCode);
+    switch (evt.keyCode) {
+    	case 8:
+    		doBackspace();
+        	result=false;
+        	break;
+        case 32:
+        	insertChar(" ");
+        	//fuck it, it doesn't matter there's no break here.
+        case 65:
+        	doA();
+        	break;
+        case 66:
+        	doB();
+        	break;
+        case 67:
+        	doC();
+        	break;
+        case 68:
+        	doD();
+        	break;
+        case 69:
+        	doE();
+        	break;
+        case 70:
+        	doF();
+        	break;
+        case 71:
+        	doG();
+        	break;
+        case 72:
+        	doH();
+        	break;
+        case 73:
+        	doI();
+        	break;
+        case 74:
+        	doJ();
+        	break;
+        case 75:
+        	doK();
+        	break;
+        case 76:
+        	doL();
+        	break;
+        case 77:
+        	doM();
+        	break;
+        case 78:
+        	doN();
+        	break;
+        case 79:
+        	doO();
+        	break;
+        case 80:
+        	doP();
+        	break;
+        case 81:
+        	doQ();
+        	break;
+        case 82:
+        	doR();
+        	break;
+        case 83:
+        	doS();
+        	break;
+        case 84:
+        	doT();
+        	break;
+        case 85:
+        	doU();
+        	break;
+        case 86:
+        	doV();
+        	break;
+        case 87:
+        	doW();
+        	break;
+        case 88:
+        	doX();
+        	break;
+        case 89:
+        	doY();
+        	break;
+        case 90:
+        	doZ();
+        	break;
+       	case 48:
+        	insertChar("0");
+        	break;
+        	case 49:
+        	insertChar("1");
+        	break;
+        	case 50:
+        	insertChar("2");
+        	break;
+        	case 51:
+        	insertChar("3");
+        	break;
+        	case 52:
+        	insertChar("4");
+        	break;
+        	case 53:
+        	insertChar("5");
+        	break;
+        	case 54:
+        	insertChar("6");
+        	break;
+        	case 55:
+        	insertChar("7");
+        	break;
+        	case 56:
+        	insertChar("8");
+        	break;
+        	case 57:
+        	insertChar("9");
+        	break;
+
+    }
+    GenString();
+    if (result==false){    	
+        evt.preventDefault();
+    }
+    if (cursorPos == string.length && string == 'your name') {
+      document.getElementById('solution').innerHTML =
+        'You did it! Here\'s the solution: <img src="../symbols/koi.png"></img>';
+    }
+    return result;
+}
+document.addEventListener("keydown", preventBackspaceHandler);
+
+</script>
+
+</p></body></html>

@@ -1,0 +1,50 @@
+@media screen {
+    body, .wrapper {
+        background-color: #101113;
+    }
+}
+
+.bg {
+    background-image: url(../images/otherpagesbg-n1x.jpg);
+    background-position: center -200px;
+}
+
+@media(min-device-pixel-ratio: 2), (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
+    .bg {
+        background-image: url(../images/otherpagesbg-n2x.jpg);
+    }
+}
+
+@media screen {
+    h1, h2, .top {
+        color: #deeafc;
+        mix-blend-mode: initial;
+    }
+
+    .top {
+        color: white;
+    }
+
+    .top a {
+        color: #deeafc;
+    }
+
+    .top a:hover {
+        color: #ffffff;
+    }
+
+    .top .btn, .top input.submit-button {
+        background-color: #deeafc;
+        color: #0c0906;
+    }
+
+    .top .btn:hover, .top input.submit-button:hover {
+        background-color: #ffffff;
+        color: #0c0906;
+    }
+}
+
+.solved-title-marker {
+    color: #ffffff;
+    text-shadow: 0 1px 6px #0c0906;
+}

@@ -1,0 +1,169 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: Polar Sales</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/polar-sales.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: Polar Sales
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">CAST IRON</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Abigail Caron, Ian Osborn, and Robert Tunney
+
+        
+    </h4>
+    
+
+<style>
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<p>
+We are presented with a series of pictures, each with a sale tag and some numbers that look suspiciously like coordinates. By plugging
+the coordinates into a search engine, we find that each is somewhere in Antarctica. Unfortunately, Google Maps doesn't have any specific
+annotations for the locations given. We may notice that all of the points are along the edges of the continent, or reference a more
+detailed map of Antarctica, to realize that each marked point is a named <a href="https://en.wikipedia.org/wiki/List_of_Antarctic_ice_shelves">ice shelf</a>.
+The entries are ordered alphabetically (reading down the left column and then the right) by ice shelf to aid in identification.</p>
+
+<p>Considering the associated images, we may now notice that each is a homophone/homonym of an arctic animal, for example TURN -> TERN.
+If we overlay the identified animal and ice shelf, we note that there is exactly one overlapping letter for each pair; N in the case of TERN
+and BRUNT. Ordering by the sale percentage, we get the answer: <b><tt>CAST IRON</tt></b>.</p>
+
+<table>
+<tr><th>Image</th><th>Sale %</th><th>Animal</th><th>Coordinates</th><th>Ice Shelf</th><th>Extracted Letter</th></tr>
+<tr><td>Charred Wood</td><td>10</td><td>Char</td><td>-68.67, 152.5</td><td>Cook</td><td>C</td></tr>
+<tr><td>Hair</td><td>20</td><td>Hare</td><td>-69.62, 14.75</td><td>Lazarev</td><td>A</td></tr>
+<tr><td>Wax Seal</td><td>30</td><td>Seal</td><td>-77, -148</td><td>Sulzberger</td><td>S</td></tr>
+<tr><td>Bunting</td><td>40</td><td>Bunting</td><td>-66.67, 85</td><td>West</td><td>T</td></tr>
+<tr><td>Puffing Wolf</td><td>50</td><td>Puffin</td><td>-75.1, -105.52</td><td>Thwaites</td><td>I</td></tr>
+<tr><td>Bare Feet</td><td>60</td><td>Bear</td><td>-69.75, 71</td><td>Amery</td><td>R</td></tr>
+<tr><td>Guy Fawkes</td><td>70</td><td>Fox</td><td>-81.5, -175</td><td>Ross</td><td>O</td></tr>
+<tr><td>U-Turn</td><td>80</td><td>Tern</td><td>-75.67, -25</td><td>Brunt</td><td>N</td></tr>
+</table>
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>Immediately after mystery hunt several of us got to chatting about animal homophones. A few weeks later, GPH was officially Antarctic
+themed and Abby got mildly lost in a geology department, resulting in the discovery that antarctic ice shelves had names. These two ideas
+were pulled together by cluing arctic animals, and while there was some initial excitement about using Polar Coordinates in a clever
+way in the puzzle... polar coordinates applied to earth is literally just latitude and longitude. D'oh! </p>
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

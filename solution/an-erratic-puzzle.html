@@ -1,0 +1,480 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: An Erratic Puzzle</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/an-erratic-puzzle.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: An Erratic Puzzle
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">UNEXPECTED</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Anderson Wang
+
+        
+    </h4>
+    
+
+<style>
+table.grid {
+    table-layout: fixed;
+    width: 700px;
+    font-family: "Consolas", "Courier New", Courier, monospace;
+}
+
+table.grid td {
+    border: 1px solid black;
+    padding: 0px 4px;
+}
+
+table.grid td.noborder {
+    border: 0;
+}
+
+table.grid td.yellow {
+    background-color: yellow;
+}
+</style>
+
+<p>There are two mostly-independent parts of this puzzle: 1) Figuring out how the given grid extracts to the answer RED HERRING, as mentioned in the note following the last erratum, and 2) Figuring out what the original puzzle looks like so you can apply the extraction method from 1) to get the answer to the puzzle.</p>
+
+<p>For part 1, within each column or row of the grid, the 1st letter of the 1st word, the 2nd letter of the 2nd word, the 3rd letter of the 3rd word, the 4th letter of the 4th word, and the 5th letter of the 5th word can all be replaced with the same letter to make new English words. For example, in the last row, RAVELS/ATONY/WANES/SLOTS/BRINK become GAVELS/AGONY/WAGES/SLOGS/BRING, so a G is written in the blank next to the last row. This letter-changing mechanic is hinted at by some of the weirder words, like ATONY in the final grid and ASTATE and SCARRER in the original grid.</p>
+
+<table class="grid">
+<tr><td class="noborder">R</td><td class="noborder">E</td><td class="noborder">D</td><td class="noborder">H</td><td class="noborder">E</td><td class="noborder"></td></tr>
+<tr><td>CARER</td><td>OLDER</td><td>COMES</td><td>SEAT</td><td>BASES</td><td class="noborder">R</td></tr>
+<tr><td>GAINS</td><td>FLAT</td><td>AIDED</td><td>SCALE</td><td>RAVELS</td><td class="noborder">R</td></tr>
+<tr><td>TONIC</td><td>BEDS</td><td>DAYS</td><td>ACRED</td><td>PROTEST</td><td class="noborder">I</td></tr>
+<tr><td>HAIL</td><td>SLOW</td><td>FORTS</td><td>SIGS</td><td>TALOS</td><td class="noborder">N</td></tr>
+<tr><td>RAVELS</td><td>ATONY</td><td>WANES</td><td>SLOTS</td><td>BRINK</td><td class="noborder">G</td></tr>
+</table>
+
+<p>For part 2, we will need to work our way backwards from the end to the beginning of the errata to “undo” them. A detailed walkthrough of how to do this is below, but at a high level, reversing the errata turns out to be a kind of logic puzzle/”duck konundrum” hybrid. Once we get the original grid, shown here, we can apply the same extraction to get the answer <tt><b>UNEXPECTED</b></tt>.</p>
+
+<table class="grid">
+<tr><td class="noborder">U</td><td class="noborder">N</td><td class="noborder">E</td><td class="noborder">X</td><td class="noborder">P</td><td class="noborder"></td></tr>
+<tr><td>INSURE</td><td>RAVELS</td><td>BLAND</td><td>TAXIS</td><td>FORTS</td><td class="noborder">E</td></tr>
+<tr><td>BASES</td><td>SLOTS</td><td>TALOS</td><td>OPEN</td><td>SCARRER</td><td class="noborder">C</td></tr>
+<tr><td>HAIL</td><td>SEAT</td><td>BEDS</td><td>WANES</td><td>COMES</td><td class="noborder">T</td></tr>
+<tr><td>ASTATE</td><td>FLAT</td><td>SLOW</td><td>MANY</td><td>SHINS</td><td class="noborder">E</td></tr>
+<tr><td>GENIES</td><td>OLDER</td><td>HIRES</td><td>BEAUS</td><td>SCALE</td><td class="noborder">D</td></tr>
+</table>
+
+<h3>Walkthrough for undoing the errata</h3>
+
+<p>First, keep in mind that all words between errata 11 and 31 must be reasonably common English words (except for TALOS, the mentioned character from Greek mythology, and ATONY, which is explicitly called out in the errata), a fact that will be implicitly used below. Also, the errata have been divided into somewhat arbitrary groups, with the current grid shown at the end of each group with any changes from the previous grid highlighted in yellow.</p>
+
+<div class="puzzle-erratum">
+<p>Erratum #31: You know what I hate? I really hate lamps. So the word that has to do with lamps should be replaced with a different "word" by taking its 6th, 4th, 1st, and 6th letters in that order. Unfortunately, this breaks the streak of everything being a reasonably common English word, but sometimes life is tough like that. The puzzle has been updated to reflect this.</p>
+</div>
+
+<p>The word after applying this erratum must be a 4-letter word whose first and last letters are the same, and the only such "word" in the grid is SIGS. The word before the erratum must therefore have the form G??I?S* and have to do with lamps, so it must be GENIES.</p>
+
+<table class="grid">
+<tr><td>CARER</td><td>OLDER</td><td>COMES</td><td>SEAT</td><td>BASES</td><td class="noborder"></td></tr>
+<tr><td>GAINS</td><td>FLAT</td><td>AIDED</td><td>SCALE</td><td>RAVELS</td></tr>
+<tr><td>TONIC</td><td>BEDS</td><td>DAYS</td><td>ACRED</td><td>PROTEST</td></tr>
+<tr><td>HAIL</td><td>SLOW</td><td>FORTS</td><td class="yellow">GENIES</td><td>TALOS</td></tr>
+<tr><td>RAVELS</td><td>ATONY</td><td>WANES</td><td>SLOTS</td><td>BRINK</td></tr>
+</table>
+
+<div class="puzzle-erratum">
+<p>Erratum #29: One word should have its second letter, "L", changed to another letter. The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #30: That letter that you changed the "L" to in the previous erratum? One word in the middle column should have that letter replaced with the last letter of that word. The puzzle has been updated to reflect this.</p>
+</div>
+
+<p>The word changed in erratum #30 must be in the middle column and have its last letter appear somewhere else in the word, so it must be AIDED. At the same time, the word changed in #29 must have its second letter replaceable by an L, and the only such words are SEAT and BRINK. However, out of their second letters, "E" and "R", only "R" can replace the D in AIDED to get a valid word, so the previous words must have been AIRED and BLINK.</p>
+
+<table class="grid">
+<tr><td>CARER</td><td>OLDER</td><td>COMES</td><td>SEAT</td><td>BASES</td><td class="noborder"></td></tr>
+<tr><td>GAINS</td><td>FLAT</td><td class="yellow">AIRED</td><td>SCALE</td><td>RAVELS</td></tr>
+<tr><td>TONIC</td><td>BEDS</td><td>DAYS</td><td>ACRED</td><td>PROTEST</td></tr>
+<tr><td>HAIL</td><td>SLOW</td><td>FORTS</td><td>GENIES</td><td>TALOS</td></tr>
+<tr><td>RAVELS</td><td>ATONY</td><td>WANES</td><td>SLOTS</td><td class="yellow">BLINK</td></tr>
+</table>
+
+<div class="puzzle-erratum">
+<p>Erratum #28: There aren't any 7-letter words yet, so how about we add 3 letters to the beginning of a word to make a 7-letter word. The puzzle has been updated to reflect this.</p>
+</div>
+
+<p>The only 7-letter word in the grid is PROTEST, so it must have been TEST beforehand.</p>
+
+<div class="puzzle-erratum">
+<p>Erratum #27: One verb in this grid has an opposite that begins with a certain letter and ends in "OSE". This word should be replaced with the word immediately northwest of it, except one letter should be changed to the first letter of the aforementioned opposite. The puzzle has been updated to reflect this. Who even knows what's going on anymore?</p></div>
+
+<p>The word in question must share all but one letter with the word to its northwest, and the only such word is ACRED. Because the I in AIRED was changed to a C, the opposite must begin with C and end in OSE, which means it must be CLOSE and the previous word was OPEN (there are other iffier options like CHOSE and REJECTED, but OPEN is also confirmed by erratum #25 anyways).</p>
+
+<table class="grid">
+<tr><td>CARER</td><td>OLDER</td><td>COMES</td><td>SEAT</td><td>BASES</td><td class="noborder"></td></tr>
+<tr><td>GAINS</td><td>FLAT</td><td>AIRED</td><td>SCALE</td><td>RAVELS</td></tr>
+<tr><td>TONIC</td><td>BEDS</td><td>DAYS</td><td class="yellow">OPEN</td><td class="yellow">TEST</td></tr>
+<tr><td>HAIL</td><td>SLOW</td><td>FORTS</td><td>GENIES</td><td>TALOS</td></tr>
+<tr><td>RAVELS</td><td>ATONY</td><td>WANES</td><td>SLOTS</td><td>BLINK</td></tr>
+</table>
+
+<div class="puzzle-erratum">
+<p>Erratum #26: One letter in a vision-related word should be changed to make a different vision-related word. The puzzle has been updated to reflect this.</p>
+</div>
+
+<p>Looking through the words, the only one that satisfies the vision-related constraint is BLINK to BLIND.</p>
+
+<div class="puzzle-erratum">
+<p>Erratum #25: The word whose last four letters are a common name should be swapped with the word whose last three letters are a common office object. The puzzle has yet again been updated to reflect this.</p>
+</div>
+
+<p>These two words are ATONY and OPEN.</p>
+
+<div class="puzzle-erratum">
+<p>Erratum #24: The 3-letter word should have a state abbreviation added to the front to make a new word (hey, this new word is kind of fitting given that letters were just added to it!). The puzzle has been updated to reflect this. </p>
+</div>
+
+<p>The 5-letter words whose first two letters are a state abbreviation that can be removed to make a new 3-letter word are GAINS and SCALE. GAINS is much more fitting because it gains letters (this will also be further checked by erratum #20).</p>
+
+<table class="grid">
+<tr><td>CARER</td><td>OLDER</td><td>COMES</td><td>SEAT</td><td>BASES</td><td class="noborder"></td></tr>
+<tr><td class="yellow">INS</td><td>FLAT</td><td>AIRED</td><td>SCALE</td><td>RAVELS</td></tr>
+<tr><td>TONIC</td><td>BEDS</td><td>DAYS</td><td class="yellow">ATONY</td><td>TEST</td></tr>
+<tr><td>HAIL</td><td>SLOW</td><td>FORTS</td><td>GENIES</td><td>TALOS</td></tr>
+<tr><td>RAVELS</td><td class="yellow">OPEN</td><td>WANES</td><td>SLOTS</td><td class="yellow">BLIND</td></tr>
+</table>
+
+<div class="puzzle-erratum">
+<p>Erratum #23: The Greek mythological figure should be swapped with the word immediately south-east of it. Also, two letters from the mythological figure should be added inside the other swapped word (I promise the result is a real word, even if it doesn't look like it!). The puzzle has been updated to reflect this.</p>
+</div>
+
+<p>The Greek mythological figure is TALOS, so it must have been swapped with ATONY, which is currently north-west of it. Also, ATONY must have been ANY beforehand, since TO are the two letters in the middle that it shares with TALOS.</p>
+
+<table class="grid">
+<tr><td>CARER</td><td>OLDER</td><td>COMES</td><td>SEAT</td><td>BASES</td><td class="noborder"></td></tr>
+<tr><td>INS</td><td>FLAT</td><td>AIRED</td><td>SCALE</td><td>RAVELS</td></tr>
+<tr><td>TONIC</td><td>BEDS</td><td>DAYS</td><td class="yellow">TALOS</td><td>TEST</td></tr>
+<tr><td>HAIL</td><td>SLOW</td><td>FORTS</td><td>GENIES</td><td class="yellow">ANY</td></tr>
+<tr><td>RAVELS</td><td>OPEN</td><td>WANES</td><td>SLOTS</td><td>BLIND</td></tr>
+</table>
+
+<div class="puzzle-erratum">
+<p>Erratum #20: I decided to change three words in the same row (the puzzle has been updated to reflect this). The changes I made were: 1) Changing an "H" to a different letter, 2) Removing the first letter of a word that means "a lot", and 3) Removing "URE" from the end of a word.</p>
+
+<p>Erratum #21: There are two words whose first letter is a compass direction and whose last letter is that compass direction rotated counter-clockwise by 90 degrees. Let’s swap those two (don't ask why). The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #22: One of the words changed in erratum 20 should be swapped with one of the words moved in erratum 21. Sorry about that. The puzzle has been updated to reflect this. </p>
+</div>
+
+<p>The two words swapped in erratum #21 must have been SCALE and WANES. In erratum #20, the only word the second transformation can apply to is ANY (from MANY) and the only word for the third transformation is INS (from INSURE). Therefore, the row in question must be the 2nd or 4th row.</p>
+
+<p>If it were the 4th row, then INS must have been swapped with either SCALE or WANES in erratum #22 to end up in the 2nd row, but neither SCALE nor WANES is in the 4th row currently, which is a contradiction. Therefore, the row mentioned in erratum #20 must have been the 2nd row, and ANY was swapped with SCALE in erratum #22. So, to reverse these errata, we must:
+<ol>
+<li>Swap ANY with SCALE.</li>
+<li>Swap SCALE with WANES.</li>
+<li>Change INS to INSURE, change ANY to MANY, and change AIRED to HIRED (the only word of the remaining 3 in the row that can have a letter changed to H).</li>
+</ol>
+</p>
+
+<table class="grid">
+<tr><td>CARER</td><td>OLDER</td><td>COMES</td><td>SEAT</td><td>BASES</td><td class="noborder"></td></tr>
+<tr><td class="yellow">INSURE</td><td>FLAT</td><td class="yellow">HIRED</td><td class="yellow">MANY</td><td>RAVELS</td></tr>
+<tr><td>TONIC</td><td>BEDS</td><td>DAYS</td><td>TALOS</td><td>TEST</td></tr>
+<tr><td>HAIL</td><td>SLOW</td><td>FORTS</td><td>GENIES</td><td class="yellow">WANES</td></tr>
+<tr><td>RAVELS</td><td>OPEN</td><td class="yellow">SCALE</td><td>SLOTS</td><td>BLIND</td></tr>
+</table>
+
+<div class="puzzle-erratum">
+<p>Erratum #19: Remember that word we changed in the 10th erratum? We have to change it again by removing the first letter. The puzzle has been updated to reflect this. And apparently, I am incapable of fixing this puzzle, so maybe I should just do some more random things and hope that works.</p>
+</div>
+
+<p>The mentioned 10th erratum is:
+
+<div class="puzzle-erratum">Erratum #10: Whoa there, look at that word with the double letter. Is that even a real word? Apparently, Merriam Webster thinks it's leather-related?? Let's remove one of the letters so that it's a more reasonable word (if a frightening one). The puzzle has been updated to reflect this.</div>
+</p>
+
+<p>Erratum #19 implies that the word in question hasn’t changed since (though you can also independently work through 11-18 to verify this). In reverse, this means that we can add a letter to the beginning of a word to get a “frightening” word, and then add another letter to get a word with a double letter that’s related to leather (at least according to Merriam-Webster). The unique possibility here turns out to be CARER->SCARER->SCARRER.
+</p>
+
+<table class="grid">
+<tr><td class="yellow">SCARER</td><td>OLDER</td><td>COMES</td><td>SEAT</td><td>BASES</td><td class="noborder"></td></tr>
+<tr><td>INSURE</td><td>FLAT</td><td>HIRED</td><td>MANY</td><td>RAVELS</td></tr>
+<tr><td>TONIC</td><td>BEDS</td><td>DAYS</td><td>TALOS</td><td>TEST</td></tr>
+<tr><td>HAIL</td><td>SLOW</td><td>FORTS</td><td>GENIES</td><td>WANES</td></tr>
+<tr><td>RAVELS</td><td>OPEN</td><td>SCALE</td><td>SLOTS</td><td>BLIND</td></tr>
+</table>
+
+<p>(Warning: long wall of text coming up)</p>
+
+<div class="puzzle-erratum">
+<p>Erratum #18: The puzzle has been updated to reflect the fact that I just decided to swap the word "COMES" with another word in the grid.</p>
+</div>
+
+<p>To figure out where COMES was swapped from, we can see that erratum #11 references its location: <div class="puzzle-erratum">Erratum #11: Speaking of things that clearly aren't words, look at that "word" to the right of "COMES". Google tells me that it's a nickname of a university in the Sun Belt Conference, so I think we need to remove the two As and anagram the rest to get something that might be given at a university. While we're at it, there's a very boring word with an A in it, so why don't we change that A to an I? The puzzle has been updated to reflect this.</div>
+</p>
+
+<p>The word that might be given at a university is TEST, and adding two As and anagramming can make A STATE, the nickname of Arkansas State University. Therefore, COMES must have been to the left of TEST at erratum #11, but we’re not sure if it moved in between, so we’ll come back to it later (it turns out that it does not move).
+</p>
+
+<div class="puzzle-erratum">
+<p>Erratum #13: There is exactly one column with 4 or more words that end in S's, which is just way too much. Let's make the bottom word in that column past tense and swap it with another word in that column. The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #14: That word you just moved to the bottom of its column should now be swapped with the word in the bottom-right corner. The puzzle has been updated to reflect this. Or has it? Just kidding, of course it has.</p>
+
+<p>Errata #15 and #16 undo each other.</p>
+
+<p>Erratum #17: The word "SHINS" in the right column has never been moved or changed yet! We need to do something about that. How about we change it to something else and then swap it with the center square of the grid? The puzzle has been updated to reflect this.</p>
+</div>
+
+<p>This is probably the trickiest part of the puzzle. The only past tense word in the grid is HIRED, and no other past tense word could have been changed between erratum #13 and now, so the “bottom word” mentioned in erratum #13 must have been HIRED. Furthermore, HIRED could not have been moved in #14, #17 (because it’s not in the right column), or #18 (because HIRED could not have been immediately to the left of TEST at any point [this can be confirmed by looking at the errata between 11 and now]), so the column in erratum #13 must be the middle column. This implies erratum #14 swaps the bottom words of the middle and last columns.
+</p>
+
+<p>Now, let’s think about where SHINS could have come from in the right column. It must have swapped with a word that ends in an S, or else the middle column would not have had 4 words ending in S at erratum #13. Therefore, there are 3 possibilities: BASES in row 1, RAVELS in row 2, and WANES in row 4. However, given that SHINS never been moved or changed, it cannot be in the first or second rows since those words were just changed twice in errata #15 and #16 (they were also swapped in #1 for good measure). Therefore, the only possibility is WANES in the 4th row.
+</p>
+
+<p>We can also consider erratum #12:</p>
+
+<div class="puzzle-erratum"><p>Erratum #12: Actually, the pluralized vehicle in the grid looks out of place; it should be swapped with the word one row above and three columns to the left of it. Also, we need to change its 2nd, 3rd, and 5th letters to make a drink, much like how I need to make a drink right now. The puzzle has been updated to reflect this.</p></div>
+
+<p>The only drink in the grid is TONIC, and the only way to change its 2nd, 3rd, and 5th letters to make a pluralized vehicle is TAXIS. Also, that word hasn’t moved since then, so it must have been swapped with the 4th word in the 4th row.
+</p>
+
+<p>From looking through all of our deductions in #12 through #17, we can confirm that neither TEST nor COMES (the word to the left of TEST) could have moved then, so erratum #18 must have swapped COMES with TALOS (the word currently to the left of TEST).
+</p>
+
+<table class="grid">
+<tr><td>SCARER</td><td>OLDER</td><td class="yellow">TALOS</td><td>SEAT</td><td>BASES</td><td class="noborder"></td></tr>
+<tr><td>INSURE</td><td>FLAT</td><td>HIRED</td><td>MANY</td><td>RAVELS</td></tr>
+<tr><td>TONIC</td><td>BEDS</td><td>DAYS</td><td class="yellow">COMES</td><td>TEST</td></tr>
+<tr><td>HAIL</td><td>SLOW</td><td>FORTS</td><td>GENIES</td><td>WANES</td></tr>
+<tr><td>RAVELS</td><td>OPEN</td><td>SCALE</td><td>SLOTS</td><td>BLIND</td></tr>
+</table>
+
+<p>We can now use our deductions in the previous section to walk all the way back through erratum #12:
+<ul>
+<li>To reverse #17, we swap DAYS and WANES (the fourth word in the last column, as previously established), and then change DAYS back to SHINS.</li>
+<li>To reverse #15 and #16, do nothing.</li>
+<li>To reverse #14, swap SCALE and BLIND.</li>
+<li>To reverse #13, swap BLIND with HIRED, and then change HIRED back to HIRES (which is necessary to have four words that end in S in the middle column).</li>
+<li>To reverse #12, change TONIC to TAXIS and swap it with GENIES.</li>
+</ul>
+</p>
+
+<table class="grid">
+<tr><td>SCARER</td><td>OLDER</td><td>TALOS</td><td>SEAT</td><td>BASES</td><td class="noborder"></td></tr>
+<tr><td>INSURE</td><td>FLAT</td><td class="yellow">BLIND</td><td>MANY</td><td>RAVELS</td></tr>
+<tr><td class="yellow">GENIES</td><td>BEDS</td><td class="yellow">WANES</td><td>COMES</td><td>TEST</td></tr>
+<tr><td>HAIL</td><td>SLOW</td><td>FORTS</td><td class="yellow">TAXIS</td><td class="yellow">SHINS</td></tr>
+<tr><td>RAVELS</td><td>OPEN</td><td class="yellow">HIRES</td><td>SLOTS</td><td class="yellow">SCALE</td></tr>
+</table>
+
+<p>As previously mentioned, reversing #11 involves changing TEST to ASTATE, and the only way to change an I to an A to make a boring word is BLIND to BLAND. Also as previously mentioned, we reverse #10 by changing SCARER to SCARRER.
+</p>
+
+<table class="grid">
+<tr><td class="yellow">SCARRER</td><td>OLDER</td><td>TALOS</td><td>SEAT</td><td>BASES</td><td class="noborder"></td></tr>
+<tr><td>INSURE</td><td>FLAT</td><td class="yellow">BLAND</td><td>MANY</td><td>RAVELS</td></tr>
+<tr><td>GENIES</td><td>BEDS</td><td>WANES</td><td>COMES</td><td class="yellow">ASTATE</td></tr>
+<tr><td>HAIL</td><td>SLOW</td><td>FORTS</td><td>TAXIS</td><td>SHINS</td></tr>
+<tr><td>RAVELS</td><td>OPEN</td><td>HIRES</td><td>SLOTS</td><td>SCALE</td></tr>
+</table>
+
+<div class="puzzle-erratum">
+<p>Erratum #6: One particular word should be swapped with the word two rows directly below it. Also, the word "BEAUS" should be replaced by this same particular word. The puzzle has been updated to reflect this. Honestly, we're not sure how we missed this one.</p>
+
+<p>Erratum #7: Oh, that word that "BEAUS" turned into in the previous erratum? That now needs to be swapped with "SEAT". The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #8: Oh wait, that word you just swapped with "SEAT"? That should now be swapped with the word immediately to its right. The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #9: Man, sorry, we just can't decide on the right position of that word, let's swap it one last time with "FORTS". We swear it won't move anymore! And the puzzle has been updated to reflect this.</p>
+</div>
+
+<p>In erratum #6, we duplicate a word by changing “BEAUS” to it and then swap it three times in errata #7-#9. The only duplicate word in the grid is RAVELS, so one of the two RAVELS must have come from BEAUS. The original (non-BEAUS) RAVELS was swapped with a word two rows below it, which means it must be currently be in one of the bottom 3 rows and must therefore be the RAVELS in the bottom-left corner. So the RAVELS in the 2nd row must have been the one being swapped around, and we can reverse it by swapping it with FORTS, then SLOW (the word immediately to its left), then SEAT, and finally changing it to BEAUS. At the same time, we swap the other RAVELS with GENIES two rows above it.
+</p>
+
+<table class="grid">
+<tr><td>SCARRER</td><td>OLDER</td><td>TALOS</td><td class="yellow">BEAUS</td><td>BASES</td><td class="noborder"></td></tr>
+<tr><td>INSURE</td><td>FLAT</td><td>BLAND</td><td>MANY</td><td class="yellow">FORTS</td></tr>
+<tr><td class="yellow">RAVELS</td><td>BEDS</td><td>WANES</td><td>COMES</td><td>ASTATE</td></tr>
+<tr><td>HAIL</td><td class="yellow">SEAT</td><td class="yellow">SLOW</td><td>TAXIS</td><td>SHINS</td></tr>
+<tr><td class="yellow">GENIES</td><td>OPEN</td><td>HIRES</td><td>SLOTS</td><td>SCALE</td></tr>
+</table>
+
+<p>We’re now in the home stretch!
+</p>
+
+<div class="puzzle-erratum">
+<p>Erratum #5: I spoke too soon, but this should fix it for sure. Two of the columns that contain exactly one "N" among all their words should be reversed. The puzzle has been updated to reflect this.</p>
+</div>
+
+<p>There are 3 columns with exactly one “N”: the 2nd, 4th, and 5th. However, the 5th column could not have been reversed because it contains SHINS, which is not allowed to move until erratum #17. So we reverse the 2nd and 4th columns.
+</p>
+
+<div class="puzzle-erratum">
+<p>Erratum #4: Oops, apparently this puzzle still has errors. To fix it, take the row in which every word has exactly one "E" and shift every word in that row one position to the left (with the leftmost word wrapping around to the rightmost position). The puzzle has been updated to reflect this.</p>
+</div>
+
+<p>This is the third row, we just need to be careful to shift to the right when reversing.
+</p>
+
+<table class="grid">
+<tr><td>SCARRER</td><td class="yellow">OPEN</td><td>TALOS</td><td class="yellow">SLOTS</td><td>BASES</td><td class="noborder"></td></tr>
+<tr><td>INSURE</td><td class="yellow">SEAT</td><td>BLAND</td><td class="yellow">TAXIS</td><td>FORTS</td></tr>
+<tr><td class="yellow">ASTATE</td><td class="yellow">RAVELS</td><td class="yellow">BEDS</td><td class="yellow">WANES</td><td class="yellow">COMES</td></tr>
+<tr><td>HAIL</td><td class="yellow">FLAT</td><td>SLOW</td><td class="yellow">MANY</td><td>SHINS</td></tr>
+<tr><td>GENIES</td><td class="yellow">OLDER</td><td>HIRES</td><td class="yellow">BEAUS</td><td>SCALE</td></tr>
+</table>
+
+<div class="puzzle-erratum">
+<p>Erratum #3: Looks like that didn’t fix it, but this should work: the two words that are made up of the letters in "EATS" should be swapped with the words immediately above them. The puzzle has been updated to reflect this.</p>
+</div>
+
+<p>These two words are ASTATE and SEAT. As before, we should be careful to swap them with the words below them to reverse.
+</p>
+
+<table class="grid">
+<tr><td>SCARRER</td><td>OPEN</td><td>TALOS</td><td>SLOTS</td><td>BASES</td><td class="noborder"></td></tr>
+<tr><td>INSURE</td><td class="yellow">RAVELS</td><td>BLAND</td><td>TAXIS</td><td>FORTS</td></tr>
+<tr><td class="yellow">HAIL</td><td class="yellow">SEAT</td><td>BEDS</td><td>WANES</td><td>COMES</td></tr>
+<tr><td class="yellow">ASTATE</td><td>FLAT</td><td>SLOW</td><td>MANY</td><td>SHINS</td></tr>
+<tr><td>GENIES</td><td>OLDER</td><td>HIRES</td><td>BEAUS</td><td>SCALE</td></tr>
+</table>
+
+<div class="puzzle-erratum">
+<p>Erratum #2: Unfortunately, the testsolvers found another mistake in the puzzle. The row with two adjacent words that share 4 distinct letters should be reversed. The puzzle has been updated to reflect this.</p>
+</div>
+
+<p>This is the first row (TALOS/SLOTS).
+</p>
+
+<div class="puzzle-erratum">
+<p>Erratum: The first and second rows should be swapped. The puzzle has been updated to reflect this.</p>
+</div>
+
+<p>As stated.</p>
+
+<table class="grid">
+<tr><td class="yellow">INSURE</td><td class="yellow">RAVELS</td><td class="yellow">BLAND</td><td class="yellow">TAXIS</td><td class="yellow">FORTS</td><td class="noborder"></td></tr>
+<tr><td class="yellow">BASES</td><td class="yellow">SLOTS</td><td class="yellow">TALOS</td><td class="yellow">OPEN</td><td class="yellow">SCARRER</td></tr>
+<tr><td>HAIL</td><td>SEAT</td><td>BEDS</td><td>WANES</td><td>COMES</td></tr>
+<tr><td>ASTATE</td><td>FLAT</td><td>SLOW</td><td>MANY</td><td>SHINS</td></tr>
+<tr><td>GENIES</td><td>OLDER</td><td>HIRES</td><td>BEAUS</td><td>SCALE</td></tr>
+</table>
+
+<p>Phew, we're done!</p>
+
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>Apologies for the inclusion of OPEC and X-AXIS as words in the final extraction. Those were not ideal, but it was very difficult to come up with better words fitting the extraction method, and I figured that it wouldn't affect solving too much.</p><p>The idea for this puzzle came from a discussion about potential "joke" puzzle ideas, where someone suggested a complicated duck konundrum-style puzzle, except a new erratum would be released every 30 minutes or so. I then joked about a idea where the entire puzzle would involve applying a set of errata correctly, except some of them might cancel each other out or do weird things. When someone let me know that UNEXPECTED was still an available answer, I started taking that idea more seriously...</p><p>I brainstormed several variations on this, and decided that the puzzle of applying errata "in reverse" to get from a "fixed puzzle" back to an original puzzle was the most interesting (and amusing). My main goal when writing the sequence of errata was to avoid it being a straightforward duck konundrum where you carefully undo each step in turn, so I tried to include errata that referenced previous errata in weird ways. Though, I did want to keep the first few steps unambiguous and independent of the others as a "warm up".</p><p>As for the actual writing process, after deciding on the RED HERRING extraction, I wrote a program to search for words that could simultaneously fit in both grids, figuring that it would be easier to keep the size of the puzzle down if I could avoid changing as many words as possible. I was able to get 15 words shared between the two grids, and then came up with plans for how to turn the remaining 10 words into each other (Some, like SCARRER->CARER, were easy. Others like INSURE->GAINS were a little more work. When it came to SHINS->DAYS, I just gave up and gave the word explicitly). After that, writing the errata was a matter of transforming one grid into the other while attempting to include some interesting logic.</p><p>During testsolving, people repeatedly got stuck on the step of determining where SHINS came from in erratum #17. This is the main reason why errata #15 and #16 were added right before it (before, it actually required looking all the way back to the first erratum, which in retrospect was way too difficult), and I also tried to emphasize the part where SHINS never moved or changed. I still think it's the hardest part of the puzzle, but I hope that most teams got through it without too much frustration.</p>
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

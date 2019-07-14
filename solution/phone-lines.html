@@ -1,0 +1,263 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: Phone Lines</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/phone-lines.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: Phone Lines
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">INDOORS</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Lennart Jansson
+
+        
+    </h4>
+    
+
+<p>Each recording consists of a short piece of flavortext followed by eight or nine words. The
+recordings come in pairs, constituting three different minipuzzles -- recordings 1 and 2 are a
+pair, as are 3 and 4, and 5 and 6. Solvers must use the flavortext to deduce a wordplay
+mechanic that will allow each of the words in one recording to be paired with a word in the other
+recording. The twist is that rather than manipulating letters as in traditional wordplay puzzles,
+this puzzle involves manipulating phonemes (as clued by the puzzle flavortext: "using phones").</p>
+
+<p>(Affricates, diphthongs, and rhotic vowels are treated as single phonemes throughout.)</p>
+
+<h4>Minipuzzle 1</h4>
+
+The words in the first recording are "standard blends" while the words in the second are "premium blends" -- this hints that the latter are phonemic transadditions of words in the first. The correct pairing is:
+
+<table>
+<tr><th>First word</th><th>Second word</th><th>Additional phonemes (transcribed here with ARPABET)</th></tr>
+<tr><td>ADJOURNS</td><td>SYRINGES</td><td>S IH</td></tr>
+<tr><td>CACHING</td><td>VANQUISH</td><td>V W</td></tr>
+<tr><td>DETOX</td><td>COTTONSEED</td><td>AH N</td></tr>
+<tr><td>DRIPPING</td><td>DEPRIVING</td><td>AY V</td></tr>
+<tr><td>GARLIC</td><td>OLIGARCHS</td><td>OW S</td></tr>
+<tr><td>IMPULSE</td><td>SIMPLIFY</td><td>F AY</td></tr>
+<tr><td>STIFFLY</td><td>WISTFULLY</td><td>W AH</td></tr>
+<tr><td>WHISTLED</td><td>WINDOWLESS</td><td>N OW</td></tr>
+</table>
+
+
+<p>The first words were given in alphabetical order, so this is not the right order yet. These eight phonemic bigrams can be rearranged into a chain such that the second phoneme in a pair is the first phoneme in the next: this produces the chain of nine phonemes:</p>
+
+<p><strong>F AY V W AH N OW S IH</strong></p>
+
+<h4>Minipuzzle 2</h4>
+The first recording contains "base packages", while the second recording contains "premium upgrades" -- this hints that we can somehow insert the second words into the first words. Indeed, we can replace one phoneme in each of the first words with one of the second words to produce a new valid word.
+
+<table>
+<tr><th>First word</th><th>Second word</th><th>Composite (second inserted into first)</th><th>Replaced phoneme</th></tr>
+<tr><td>DISCS</td><td>TURBAN</td><td>DISTURBANCE</td><td>K</td></tr>
+<tr><td>TAXI</td><td>TICKLE</td><td>TACTICALLY</td><td>S</td></tr>
+<tr><td>HEIGHTEN</td><td>DRUDGE</td><td>HYDROGEN</td><td>T</td></tr>
+<tr><td>SCREWED</td><td>AMBLE</td><td>SCRAMBLED</td><td>UW</td></tr>
+<tr><td>SWEEPER</td><td>TORQUE</td><td>STOREKEEPER</td><td>W</td></tr>
+<tr><td>PUTTER</td><td>RANKS</td><td>PRANKSTER</td><td>AH</td></tr>
+<tr><td>MINTER</td><td>LILY</td><td>MILLILITER</td><td>N</td></tr>
+<tr><td>HEALTHY</td><td>SINK</td><td>HELSINKI</td><td>TH</td></tr>
+<tr><td>TRAITOR</td><td>ERMINE</td><td>TERMINATOR</td><td>R</td></tr>
+</table>
+
+<p>The first words were given in a specific non-alphabetic order, so the replaced phonemes are
+already in the correct order.</p>
+
+<h4>Minipuzzle 3</h4>
+The flavortext hints "picking up where we left off". Each word in the second recording seem to
+start with the same string of phonemes that a word in the first recording ends with, which we can
+use to pair the words. The flavortext also hints about "dropped connections", and indeed, if we
+take the first part of a first word and the second part of a second word and replace the missing
+connection (add a phoneme in the middle), we can make a new unique word.
+
+<table>
+<tr><th>First word</th><th>Second word</th><th>Composite (first half of first word and second half of second word)</th><th>Added phoneme</th></tr>
+<tr><td>CHAIRMEN</td><td>MINUTES</td><td>CHARIOTS</td><td>IY</td></tr>
+<tr><td>REGRESS</td><td>WRESTLING</td><td>REGALING</td><td>EY</td></tr>
+<tr><td>BRIDAL</td><td>DULLEST</td><td>BRIGHTEST</td><td>T</td></tr>
+<tr><td>PARLAYED</td><td>LADLES</td><td>PARCELS</td><td>S</td></tr>
+<tr><td>COMPEL</td><td>PELTED</td><td>COMMITTED</td><td>IH</td></tr>
+<tr><td>ADDITION</td><td>SHUNTING</td><td>ADDICTING</td><td>K</td></tr>
+<tr><td>GRAPPLE</td><td>PULPING</td><td>GRASPING</td><td>S</td></tr>
+<tr><td>DUBLIN</td><td>LINTERS</td><td>DEBATORS</td><td>EY</td></tr>
+<tr><td>SHOREBIRD</td><td>BURDENED</td><td>SHORTENED</td><td>T</td></tr>
+</table>
+
+<p>The first words were given in a specific non-alphabetic order, so the replaced phonemes are
+already in the correct order.</p>
+
+<hr>
+
+We have nine extracted phonemes from each minipuzzle -- if we read all 27 in the correct order,
+it spells the US phone number <strong>(510) 621-3868</strong>. Calling this number with an actual phone, we
+receive the final stage of the puzzle: six words that are on sale and will be "discounted". This
+hints we can remove one phoneme from each of the words to obtain new words.
+
+<table><tr><th>Given word</th><th>Discounted word</th><th>Removed phoneme</th></tr>
+<tr><td>GRANITE</td><td>GRANT</td><td>IH</td></tr>
+<tr><td>DINING</td><td>DYING</td><td>N</td></tr>
+<tr><td>DEJECTED</td><td>EJECTED</td><td>D</td></tr>
+<tr><td>TORUS</td><td>TRUSS</td><td>OW</td></tr>
+<tr><td>DESECRATE</td><td>DESICCATE</td><td>R</td></tr>
+<tr><td>RIESLING</td><td>REELING</td><td>Z</td></tr></table>
+
+If we read out the six removed phonemes in given order, we will hear the final answer,
+<b><tt>INDOORS</tt></b>.
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>
+This puzzle is a spiritual successor to <a
+href="https://2017.galacticpuzzlehunt.com/puzzle/5/1.html">dʒʌmbəl</a>, a puzzle
+I wrote for GPH 2017.
+
+One of my goals this time around was to make the fact that the puzzle involves
+phonetics be an aha moment rather than obvious from the puzzle's
+appearance. The presentation here as a set of audio files also has the nice
+benefit of disambiguating the pronunciation of these words, to hopefully
+minimize the potential for solvers' dialects to affect the phonemes that feed
+into the wordplay portions of the puzzle.
+</p><p>In general I'm drawn to the idea of phonetic wordplay because, similar to
+typical letter-based wordplay, it offers lots of satisfying insights along
+the lines of "whoa, that set of phonemes actually makes a real word".
+However, letter-based wordplay has the disadvantage that many forms of it are
+very easy to solve with computer-based dictionary search tools &mdash; by
+contrast, there's only one relatively clean <a
+href="http://www.speech.cs.cmu.edu/cgi-bin/cmudict">free-to-use phonemic data
+source for English words</a> and no convenient online pattern-based search
+tools, so during a puzzle hunt, solvers are actually forced to solve the
+puzzle themselves rather than always just plugging in regexes into
+Nutrimatic. Given the ease that letter-based wordplay mechanics can be
+adapted to work on phonemes, I think this kind of puzzle type has a huge
+amount of relatively unexplored potential.
+</p><p>
+All the flavor/theme for this puzzle came out of the title. I was trying to
+think of interesting ways to subtly hint that the puzzle is
+phonetics-related, and the word "phone" popped into my mind as a common word
+with lots of related cultural associations that's also related to phonetics. So
+the title became "Phone Lines" since the solution involves making connections
+from a word in one list to a word in the other, I realized I could process
+all the recordings to make them sound like they came from a phone call, the
+cluephrase spelled out could be a real phone number (which also solved the
+problem of how to force solvers to solve all three subpuzzles in order to
+extract), and you'd have to pick up a real phone and call the number to
+finish the puzzle. So once I had that first thematic idea, the rest of the
+puzzle pretty much wrote itself!
+</p>
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

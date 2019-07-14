@@ -1,0 +1,603 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: Puzzle of Dragons</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/puzzle-of-dragons.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: Puzzle of Dragons
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">DAZZLING</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Phillip Ai
+
+        
+    </h4>
+    
+
+<style>
+</style>
+
+<p>This puzzle centers around Puzzle and Dragons, a mobile match-3 JRPG. It presents 5 teams with boards and a 6th team
+    that is missing its leaders and the board.</p>
+
+<p>The flavor text clues that you'll want to activate the leader skills for each board. We'll go through how to do that
+    for each one in depth, but note that while this logic essentially relies on orb counts, solvers can also consider the actual
+    board when trying to make combos.</p>
+
+<h4>Notes</h4>
+
+<ul>
+    <li>When referencing units for their active skills or leader skills, an abbreviation of their name will be used.
+    </li>
+
+    <li>Occasionally, certain skills have extraneous parts (such as affecting skyfall for future turns, which are
+        irrelevant). These will be omitted in descriptions.</li>
+
+    <li>Jammer, Poison, and Mortal Poison orbs are often changed together. I'll refer to them as JPM when they are
+        changed together.</li>
+
+    <li>Occasionally, I'll give a string for the board. It can be placed in pad.dawnglare.com to visualize the board and
+        combos.
+    </li>
+</ul>
+
+<h3>Board 1</h3>
+
+<p>The available active skills are:</p>
+<ul>
+    <li> Goemon - Entire board => Fire.</li>
+    <li> Flamme - Right-most column => Fire.</li>
+    <li> Sweet Tooth Zaerog - Top-most row => Dark, Bottom-most row => Wood. Lock Fire, Water, Wood, Light, Dark,
+        Heart orbs.</li>
+</ul>
+
+<p>The leader skills are:</p>
+
+<ul>
+    <li> Ninegaruda - ATK x3 when clearing 6 connected Dark orbs. ATK x3 when clearing 6 connected Fire orbs.</li>
+    <li> Awoken Raphael - ATK x6 when there are 5 or less orbs on the board after matching. ATK x4 when attacking
+        with 4 colors out of (Fire, Water, Wood, Light, Dark).</li>
+</ul>
+
+<h4>Logic</h4>
+
+<ul>
+    <li> Ninegaruda requires 6 connected Fire orbs, there are currently none.</li>
+    <li> Flamme and Goemon are the only ones that can create Fire orbs. Flamme creates at most 4 (since the Heart
+        orb in the right column is locked). Thus, we must use Goemon at some point.</li>
+    <li> Note that we also need 4 different non-Heart colors for Raphael's leader skill.
+        <ul>
+            <li>Let us assume we use Goemon before Zaerog (if we use Zaerog at all). Regardless of whether or not we
+                use Flamme, this will create a board with two Light orbs, two Heart orbs, and many Fire orbs (i.e.
+                the only non-Fire orbs are those that were locked).</li>
+            <li>We have no way to create Light or Water orbs, and 2 is not enough for a combo. Thus, we cannot match
+                4 colors as required by Awoken Raphael. Thus, we must use Zaerog before Goemon.</li>
+        </ul>
+    <li> If we use Zaerog => Goemon, there will only be 4 Fire orbs. We must use Flamme before Zaerog to create more
+        Fire orbs before the board is locked.</li>
+</ul>
+
+<p>Thus, the units whose active skills used are:</p>
+
+<ol>
+    <li> Flamme, the Burst of Crimson Gear</li>
+    <li> Sweet Tooth Phantom Dragon King, Zaerog∞</li>
+    <li> Avowed Thief, Ishikawa Goemon</li>
+</ol>
+
+<p>After using these skills, the board will be DDDDDDLDGLHRRLDGLHLDRRRRLGGLHG. </p>
+
+<img class="grid" src="puzzle-of-dragons/board1final.PNG">
+
+<p>With this board, it should be clear that
+    the best move is to take the Fire orb on the left side in the 3rd row and move it all the way to the end, connecting
+    the Fire orbs and matching various combos.</p>
+
+<p>The board would then be DDDDDDLDGLHRLDGLHRLDRRRRLGGLHG. We can see that
+    it fulfills all conditions for both leader skills.</p>
+
+<img class="grid" src="puzzle-of-dragons/board1finalmove.PNG">
+
+<p>The solver should note that this also aligns with the flavor text: "there should be a straight path available. Start
+    at the beginning and move <em>right</em> along to the end." This should help the solver find the board movement for
+    other
+    boards.</p>
+
+<h3>Board 2:</h3>
+
+<p>
+    <p>Available actives</p>
+</p>
+<ul>
+    <li> Baldin - Light + Jammer => Fire. Wood + Poison + Mortal Poison => Dark.</li>
+    <li> Water Knight - Heart => Water. Bind recovery 3 turns.</li>
+    <li> Spica - Heart + JPM => Wood.</li>
+    <li> Dark Swordsman - Heart => Dark. Bind recovery 3 turns.</li>
+    <li> Yamato Takeru (bound 7 turns) - Wood => Fire. Dark => Heart. Enhance Heart orbs.</li>
+    <li> Odin (bound 4 turns) - Bind recovery 5 turns.</li>
+</ul>
+
+<p>
+    <p>Leader skills</p>
+</p>
+
+<li> Baldin - ATK x3 with 6 combos. ATK x2 when attacking with Fire and Dark simultaneously.</li>
+<li> Odin - ATK x3.5 with 8 connected Wood orbs.</li>
+
+<h4>Logic</h4>
+
+<li> We need 3 Fire orbs for Baldin's leader skill.
+    <ul>
+        <li>The only way to create Fire orbs is with Yamato Takeru and Baldin.</li>
+        <li>Baldin can only create 2 Fire orbs, so Yamato Takeru must be used. (It is not certain yet if Baldin is
+            used.)</li>
+    </ul>
+</li>
+<li> We need 8 Wood orbs for Odin's leader skill.
+    <ul>
+        <li>We've established that we must use Yamato Takeru, which converts Wood => Fire. We must therefore create more
+            Wood orbs afterwards using Spica.</li>
+        <li>>Note that we must also use Baldin before Spica (if ever) since Baldin also removes Wood orbs.
+        </li>
+    </ul>
+<li> We've established that we must use Yamato Takeru before Spica. If we use Baldin before Yamato Takeru, Baldin
+    will remove the Wood orbs and there will be no way to generate more for Yamato Takeru (since Spica must be used
+    afterwards). Thus, Baldin must be used after Yamato Takeru and before Spica (if ever).</li>
+<li> To use Yamato Takeru, we must first unbind it using Odin and at least one of Water Knight and Dark Swordsman.
+</li>
+<li> To use Odin, we must first unbind it using <em>both</em> Water Knight and Dark Swordsman (though the order is
+    unclear
+    for now).</li>
+<li> If we use Dark Swordsman first, the 5th row becomes mostly Dark orbs, which turn into Heart orbs (Yamato
+    Takeru) and into Wood orbs (Spica). If we use Water Knight first, we do not have enough Wood orbs at the end.
+    Thus, we must use Dark Swordsman first.</li>
+<li> We can see that we will not have enough Fire orbs without using Baldin, so we must use it (after Yamato Takeru and before Spica, as discussed earlier).
+
+<p>Thus, we have our ordering for the active skills:</p>
+
+<ol>
+    <li> Dark Dragon Swordsman</li>
+    <li> Water Dragon Knight</li>
+    <li> Shining Lance Wielder, Odin </li>
+    <li> Long-Standing Desire God-Emperor, Yamato Takeru</li>
+    <li> Mega Awoken Blade Mechdragon, Baldin</li>
+    <li> Dark Plant Mechanical Star God, Spica</li>
+</ol>
+
+<p>The resulting board is DBLDBLDDRRRRBGBDGLGGGGGGLDGLDG.</p>
+
+<img class="grid" src="puzzle-of-dragons/board2final.PNG">
+
+<p>If we take the Light orb in the left column in the 5th row
+    and move it to the end of the row, we see that the Wood orbs in row 5 line up with those in row 3, the Light orb
+    forms a combo in the last column, and the Dark orbs form a column in column 4. With cascading, it eventually forms 6
+    combos, and all conditions are met for the leader skills.</p>
+<p>The final board is DBLDBLDDRRRRBGBDGLGGGGGGDGLDGL.</p>
+
+<img class="grid" src="puzzle-of-dragons/board2finalmove.PNG">
+
+<h3>Board 3</h3>
+
+<p>
+    <p>Available actives</p>
+</p>
+
+<ul>
+    <li> Y'Shtola - Dark => Water. Fire => Heart.</li>
+    <li> Gabriel - Light => Water. Dark => Heart. Enhance Heart.</li>
+    <li> Dark Laila - Bottom-most row => Dark.</li>
+    <li> Awoken Osiris - Unlock orbs. Right-most column => Wood.</li>
+    <li> RDQXQ - Dark => Light. Fire => Heart. JPM => Water.</li>
+</ul>
+
+<p>
+    <p>Leader skills</p>
+</p>
+
+<ul>
+    <li> Moby Dick - ATK x3 with <em>exactly</em> 6 combos. ATK x8 with 9 connected Heart orbs.</li>
+    <li> RDQXQ - ATK x4 with 4 colors. ATK x4 with 8 connected Light <em>or</em> Water orbs.</li>
+</ul>
+
+<h4>Logic</h4>
+
+<ul>
+    <li> Moby Dick requires 9 Heart orbs. We have three skills that create Heart orbs: two of them turn Fire => Heart,
+        and the third turns Dark => Heart. There are not enough Fire orbs to only rely on those Heart-makers, so we must
+        use Gabriel to turn some amount of Dark orbs to Heart orbs.</li>
+    <li> RDQXQ requires 8+ connected Light or Water orbs. Let us assume for now that we create 8+ Light orbs.
+        <ul>
+            <li> We've already established that we must use Gabriel, which converts Light => Water orbs. Thus, we must
+                use
+                RDQXQ
+                after Gabriel to create Light orbs.</li>
+            <li> To get 8 Light orbs, we must use Laila (creating 6 Dark orbs) and Osiris (unlocking 3 Dark orbs). Note
+                that
+                these
+                must be used after Gabriel, or the Dark orbs will go towards Heart orbs rather than Light orbs as
+                desired.
+            </li>
+            <li> The board would look like something like this (depending on the order of Laila vs Osiris):
+                LGHBBGGLGHHBHHHHBGLGHHBGLLLLLL.
+            </li>
+            <li> There's no particular way to make a simple move to connect the Light orbs; even if
+                there were, you would have 1 Heart combo, 1 Light combo, 2 Wood combos, and 1 Water Combo, for a total
+                of 5
+                combos,
+                whereas Moby Dick requires 6.</li>
+            <li> Thus, we cannot satisfy RDQXQ's leader skill with Light orbs, and we must use Water orbs.</li>
+        </ul>
+    <li> As we just established, we need 8 Water orbs.
+        <ul>
+            <li> Let us try to create the Water orbs without using Laila, solely from the existing Dark and Light orbs.</li>
+            <li> If we do not use Awoken Osiris to unlock the 3 Dark orbs, there will only be 7 Water orbs. So we must use Osiris, which gets rid of the two Light orbs in the right column.</li>
+            <li> We can form exactly 8 Water orbs from the remaining Dark and Light orbs. Unfortunately, we've established that Gabriel must convert at <i>least</i> one Dark orb to Heart.</li>
+            <li> Thus, it is impossible to create the Water orbs without Laila, and we must use Laila => Y'Shtola.</li>
+        </ul>
+    <li> From here, we can see that Gabriel => Laila => Y'Shtola gives us the desired orb count, and a pretty good board.</li>
+</ul>
+
+<p>
+    <p>Actives used</p>
+</p>
+
+<ol>
+    <li> Guiding Archangel, Gabriel</li>
+    <li> Mysterious Guest, Laila</li>
+    <li> Sharlayan Sage, Y'shtola</li>
+</ol>
+
+<p>The resulting board will be DGHJJJGDGHHBHHHHBGDGHHBGBBBBBB.</p>
+
+<img class="grid" src="puzzle-of-dragons/board3final.PNG">
+
+<p>Since we want 6 combos (for Moby Dick), we can see that
+    taking the Wood orb in the left column in row 2 and moving it to the end of the row sets up both Wood combos, the
+    Dark combo, and connects the Heart combo. We can furthermore see that we cannot use Osiris or RDQXQ, as they will
+    destroy the Jammer combo.</p>
+
+<p>The final board is DGHJJJDGHHBGHHHHBGDGHHBGBBBBBB.</p>
+
+<img class="grid" src="puzzle-of-dragons/board3finalmove.PNG">
+
+<h3>Board 4</h3>
+
+<p>Available actives</p>
+
+<ul>
+    <li> Nergigante - Left column => Dark. Right column => Heart.</li>
+    <li> Jord (bound 1 turn) - Dark => Wood. Fire => Light. Lock Wood + Light orbs.</li>
+    <li> Merlin (bound 1 turn)- Fire + Jammer => Water. Heart + Poison + Mortal Poison => Fire.</li>
+    <li> Alraune - Bind recovery 3 turns.</li>
+</ul>
+
+<p>Leader skills</p>
+
+<ul>
+    <li> Ronove - ATK x4 when matching Fire, Water, Wood, Light, Dark simultaneously. ATK x4 when matching a Heart cross
+        combo.</li>
+    <li> Mel - ATK x6 when matching 2 Heart combos.</li>
+</ul>
+
+<h4>Logic</h4>
+
+<ul>
+    <li> We need a combo for each color, but we don't have enough Wood orbs or Light orbs. We must therefore use Jord.
+    </li>
+    <li> If we use Jord, it will get rid of all of our Dark orbs. We must therefore use Nergigante <em>after</em> we use
+        Jord.
+        (Note that we will still have 3 Fire orbs remaining, since they are locked.)</li>
+    <li> Note that we need 1 Heart cross for Ronove, which requires 5 Heart orbs. We also need one more Heart combo for
+        Mel, for a total of at least 8 Heart orbs. If we use Merlin at any point, we will not have enough Heart orbs.
+    </li>
+    <li> Thus, we want to use Jord => Nergigante. However, Jord is bound. We must therefore use Alraune first.</li>
+</ul>
+
+<p>Actives used</p>
+<ol>
+    <li> World Tree Sprite, Alraune</li>
+    <li> Awoken Jord</li>
+    <li> Nergigante</li>
+</ol>
+
+<p>The resulting board is LLBHHGDLLLHHDBBGGGLBBLRHDRRHHH.</p>
+
+<img class="grid" src="puzzle-of-dragons/board4final.PNG">
+
+<p>We choose row 4 (this is clued by moving the Fire orb into
+    position to fall and moving the Heart orbs so there are the correct amount in each column to form the Heart cross).
+</p>
+<p>The final board is LLBHHGDLLLHHDBBGGGBBLRHLDRRHHH.</p>
+
+<img class="grid" src="puzzle-of-dragons/board4finalmove.PNG">
+
+<h3>Board 5:</h3>
+
+<p>Available actives</p>
+
+<ul>
+    <li> Anubis - Wood => Dark.</li>
+    <li> Chester - Jammer + Poison => Heart.</li>
+    <li> Cotton - Fire => Wood, Water => Heart.</li>
+    <li> Aife - Unlock orbs. Fire + JPM => Water.</li>
+    <li> Valkyrie - Heart => Dark.</li>
+    <li> AU&Y - Fire => Water, Heart => Dark, JPM => Wood.</li>
+</ul>
+
+<p>Leader skills</p>
+
+<ul>
+    <li> Anubis - ATK x10 at 10 combos.</li>
+    <li> AU&Y - ATK x5 at 3 Water combos. ATK x4 when attacking with Water, Wood, Light, and Dark simultaneously.</li>
+</ul>
+
+<h4>Logic</h4>
+<ul>
+    <li> Note that AU&Y's leader skill requires 9 Water orbs while there are only 6 at the moment.
+        <ul>
+            <li>There are two ways to create Water orbs - Aife, and AU&Y.</li>
+            <li>AU&Y only turns Fire => Water, and there still would not be enough.</li>
+            <li>Thus, we must use Aife at some point.</li>
+        </ul>
+    </li>
+    <li> Furthermore, we cannot use AU&Y before Aife, as there will again not be enough Water orbs if we do so. Thus, we
+        cannot use AU&Y to create Wood orbs.</li>
+    <li> If we use Anubis at any point, we must create Wood orbs afterwards. Cotton can convert Fire => Wood orbs, but
+        there are only 2 Fire orbs, and AU&Y cannot be used to create Wood orbs. Thus, we cannot use Anubis at any
+        point.</li>
+    <li> We must therefore create Dark orbs from Heart orbs, using either Valkyrie or AU&Y.</li>
+    <li> Note that, due to Anubis's leader skill, we must form 10 combos out of the 30 orbs. Thus, we must have 10
+        combos of exactly 3 orbs each, and the number of orbs of each color must be a multiple of 3.
+        <ul>
+            <li>As is, the number of Heart + Dark orbs is not a multiple of 3. (Using Cotton right now would not change
+                that;
+                using Cotton after Aife or AU&Y might, but it should be evident that it would be impossible to create 9
+                Water orbs
+                afterwards.) To fix this, we use Chester, which converts the two Jammer orbs to Heart orbs, giving us 6
+                Heart + Dark
+                orbs.</li>
+            <li>Note the 4 Wood orbs. We won't use Anubis, and we can't use AU&Y to change the Wood orbs specifically -
+                we must therefore use Cotton to bring it up to 6 Wood orbs.</li>
+            <li>We'll probably want to convert the Heart orbs to Dark orbs before using Cotton; otherwise, there will be
+                a lot of Dark orbs that are connected that will be hard to separate into multiple combos.</li>
+        </ul>
+    </li>
+</ul>
+
+<p>We can thus work out the skill order to be:</p>
+<ol>
+    <li> Dimensional Sorcerer, Chester</li>
+    <li> Black Blaze, Graceful Valkyrie</li>
+    <li> Horned Fort Toy Dragon Caller, Cotton</li>
+    <li> Aife</li>
+</ol>
+
+<p>The resulting board is HHHBGBDLGGBHDLGDDDBBGGBHDLHBBB.</p>
+
+<img class="grid" src="puzzle-of-dragons/board5final.PNG">
+
+<p> If we choose row 1, we can see that the Wood orbs and Water
+    orbs line up to cascade. (Note: Although you could move any of the three Heart orbs there, the flavor text and the
+    other boards should indicate that you do take the leftmost Heart orb and move it right.)</p>
+<p>The final board is HHBGBHDLGGBHDLGDDDBBGGBHDLHBBB.</p>
+
+<img class="grid" src="puzzle-of-dragons/board5finalmove.PNG">
+
+<h3>Extraction</h3>
+
+<p>At this point, we note that we have not used the Enhanced orbs at any point yet. While some were created in boards 2
+    and 3, there were several that were given that should be suspicious. If we count the number of enhanced orbs
+    (including those created in boards 2 and 3), we should note that this matches the number of blanks for each board
+    <em>and</em> the number of active skills used. Furthermore, the column that the enhanced orbs are in aligns
+    precisely
+    with
+    the units whose actives were used. We take the row number (1-5 top-bottom) and index into the name of the unit, and
+    we get:</p>
+
+<ol>
+    <li> fl<strong>A</strong>mme</li>
+    <li> s<strong>W</strong>eet</li>
+    <li> av<strong>O</strong>wed</li>
+    <li> dar<strong>K</strong> dragon</li>
+    <li> wat<strong>E</strong>r dragon</li>
+    <li> shi<strong>N</strong>ing</li>
+    <li> long-<strong>S</strong>tanding</li>
+    <li> meg<strong>a</strong> Awoken</li>
+    <li> dar<strong>K</strong> plant</li>
+    <li> g<strong>U</strong>iding</li>
+    <li> m<strong>Y</strong>sterious</li>
+    <li> sh<strong>A</strong>rylan</li>
+    <li> wor<strong>L</strong>d</li>
+    <li> awok<strong>E</strong>n jord</li>
+    <li> ner<strong>G</strong>igante</li>
+    <li> d<strong>I</strong>mensional</li>
+    <li> bl<strong>A</strong>ck</li>
+    <li> hor<strong>N</strong>ed</li>
+    <li> <strong>A</strong>ife</li>
+</ol>
+
+<p>This gives us AWOKENSAKUYALEGIANA, or Awoken Sakuya and Legiana, our two missing Leaders.</p>
+
+<ul>
+    <li> Awoken Sakuya - ATK x2 at 10 combos. ATK x5 when attacking with Fire, Water, Wood, and Light simultaneously.
+    </li>
+    <li> Legiana - ATK x4 when there are less than 7 orbs remaining on the board. ATK x4 when attacking with Water,
+        Wood, and Dark simultaneously.</li>
+</ul>
+
+<p>
+    We should also notice that our solve moves involved each of the 5 rows. We take these rows and place them into the
+    empty board, which appears as follows (Note: we had to use the board after the orb movement for the Enhanced orbs to
+    line up with the units whose actives skills were used. This indicates that, in this step, we should also use the
+    rows after the orb movement.) (The white ‘L’ indicates that the orb is locked):
+</p>
+
+<img class="grid" src="puzzle-of-dragons/grid6.png">
+
+<p>Available actives</p>
+
+<ul>
+    <li> Guan Yu (bound) - Heart + Poison => Fire</li>
+    <li> Angelion - Dark => Heart</li>
+    <li> Amaterasu - Full bind recovery</li>
+    <li> Amon (bound) - Fire => Water</li>
+</ul>
+
+<h4>Logic</h4>
+
+<ul>
+    <li> Awoken Sakuya requires 10 combos, so each color must appear in multiples of 3.</li>
+    <li> Note that there are 4 Dark orbs. The only skill that can change the number of Dark orbs is Angelion, so they
+        must be used.
+        <ul>
+            <li>Note furthermore that Legiana requires Dark orbs. This should indicate that the locked orbs remain
+                locked in this
+                board, if there was any confusion.</li>
+        </ul>
+    <li> There are 5 Water orbs, which we must make a multiple of 3. We must therefore use Amon.</li>
+    <li> Amon gets rid of Fire orbs, which we need for Awoken Sakuya's leader skill. We must therefore use Guan Yu
+        <em>after</em> Amon.</li>
+    <li> There are 2 locked Heart orbs. If we use Angelion before Guan Yu, there will only be these 2 Heart orbs, but we
+        need a multiple of 3. Thus, Angelion must be after Guan Yu.</li>
+</ul>
+
+<p>Actives used</p>
+
+<ol>
+    <li> Dancing Light, Amaterasu Ohkami</li>
+    <li> Blizzard Archdemon, Amon</li>
+    <li> Valiant & Loyal Deity, Guan Yu</li>
+    <li> Angelion</li>
+</ol>
+
+<p>This time, each unit has two Enhanced orbs per column. We index both into the name and get</p>
+
+<ol>
+    <li> <strong>DA</strong>ncing</li>
+    <li> bli<strong>ZZ</strong>ard</li>
+    <li> va<strong>LI</strong>ant</li>
+    <li> a<strong>NG</strong>elion</li>
+</ol>
+
+Our final answer is <b><tt>DAZZLING</tt></b>.
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>This was the first puzzle I wrote! I play Puzzle and Dragons (PaD) a fair amount, and I thought a puzzle using the basic mechanics would be fun. It took a while though before I settled on the current extraction - part of the difficulty is that orb movement in PaD is quite unconstrained, so I had to come up with an orb movement that was convincing when found but also not immediately obvious.</p><p>Eventually of course, I settled on the row mechanic seen in the current iteration. It also lent itself well to the idea of creating a 'meta' board, but again, it took quite a while to come up with an interesting mechanic to extract an actual answer from the meta board. I did have the idea of using the enhanced orbs to give letters, but it didn't come together until I thought of hiding the meta board leaders in the enhanced orbs as well.</p><p>The puzzle actually took a while to create. I was optimistic that the constraints placed by the construction wouldn't impede me too much, but it was trickier than expected, and a lot of changes I made 'broke' work that I had already done. It was also tricky as this was my first time making a puzzle, but I got a lot of insight from an early testsolve that relied on orb-counting. And finally, I wanted to really explore a variety with the 5 different boards, and I do think I achieved that, so I'm pretty happy with the outcome.</p><p>A note on technical details: the simulators I knew of weren't able to generate an image of a board with locked orbs, so I actually had to manually pull them from the game itself (if you noticed the locked orbs had a different background, that's why). Another teammate pointed out that Nidhogg Descended gives plenty of locked orbs, and we were able to create the images for the puzzle. (I have since found a simulator that <i>does</i> provide locked orbs.)</p><p>One final note: I think the puzzle would have been a lot more fun if, instead of providing still images, we had provided a simulator that let solvers play with the orbs and activate the skills, and I wish I had put in the work to create that.</p>
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

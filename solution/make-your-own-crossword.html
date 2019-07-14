@@ -1,0 +1,372 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: Make Your Own Crossword</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/make-your-own-crossword.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: Make Your Own Crossword
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">MUDDY</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Josh Alman
+
+        
+    </h4>
+    
+<style>
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td {
+  padding-right: 100px;
+}
+
+.long th {
+  padding: 5px 5px;
+  font-weight: normal;
+}
+
+table img {
+    width: 256px;
+    max-width: 25vw;
+}
+</style>
+
+<p>
+The first step is to make a crossword grid satisfying all the given constraints. There are, of course, many ways to go about doing this, but here are a few tips and strategies which can help make it a manageable task:
+
+<ul>
+<li>Start by placing most, but not all, of your black squares, so that you have some flexibility later when filling in white squares with letters. It helps if you can divide up the grid into four or five smaller regions which don't need many words crossing between them. Smaller regions are easier to fill with words, and you can assign just one or two of the tougher letters to each region so that you don't have to deal with them all at once.</li>
+<table>
+<tr><th>This grid would be hard to fill in::</th><th>This grid would be much easier:</th></tr>
+<tr><td><img src="make-your-own-crossword/sol1.png"></td><td><img src="make-your-own-crossword/sol2.png"></td></tr>
+</table>
+<li>Next, pick your words containing the letters V, W, X, Y, and Z (you need two words for each letter which will cross each other), and place them in your grid. It helps to pick words that otherwise have common letters so that filling in the rest of the grid is easier. For instance, we might pick ZOO and OZONE as our two words containing Z.</li>
+<li>Finally, fill in the rest of the grid. The tool for checking whether words are common or uncommon is helpful here; we should try not to put many uncommon words in the first regions of the grid we fill out, so that we have some remaining for later regions.</li>
+<li>There is <a href="https://www.cruciverb.com/index.php?action=ezportal;sa=page;p=20">software</a> available which can help you find words to fill in crossword grids. This can be a useful tool, although it isn't necessary: we were able to make a number of grids without any computer help.</li>
+</ul>
+
+
+After some work, we are finally able to make a grid satisfying all the rules, and when we submit it to the server, we're given back another grid. For instance:
+
+
+<table>
+<tr><th>Our Puzzle:</th><th>Returned grid:</th></tr>
+<tr><td><pre>
+M A D A M * P E A
+U V U L A * O R C
+T O K E N * L E T
+E W E * D U O * *
+* * * M A P * * *
+* * O A T * L A P
+T A X * O Z O N E
+O R E * R O U T E
+P E N * Y O D E L
+</pre></td><td><pre>
+U A S A U * L W A
+R * R R A * C E N
+A C E W N * R W A
+W * W * S R C * *
+* * * U A L * * *
+* * C A A * R A L
+A A * * C * C N W
+C E W * E C R A W
+L W N * * C S W R
+</pre></td></tr>
+</table>
+
+
+<p>We observe that every instance of a given character in our original grid was replaced by another character. In our example, the mapping is as follows:<p>
+<table class="long">
+<tr>
+<th> Original: </th>
+<th> * </th>
+<th> A </th>
+<th> B </th>
+<th> C </th>
+<th> D </th>
+<th> E </th>
+<th> F </th>
+<th> G </th>
+<th> H </th>
+<th> I </th>
+<th> J </th>
+<th> K </th>
+<th> L </th>
+<th> M </th>
+<th> N </th>
+<th> O </th>
+<th> P </th>
+<th> Q </th>
+<th> R </th>
+<th> S </th>
+<th> T </th>
+<th> U </th>
+<th> V </th>
+<th> W </th>
+<th> X </th>
+<th> Y </th>
+<th> Z </th>
+</tr>
+<tr>
+<th> Replaced By: </th>
+<th> * </th>
+<th> A </th>
+<th> # </th>
+<th> N </th>
+<th> S </th>
+<th> W </th>
+<th> # </th>
+<th> # </th>
+<th> # </th>
+<th> # </th>
+<th> # </th>
+<th> E </th>
+<th> R </th>
+<th> U </th>
+<th> N </th>
+<th> C </th>
+<th> L </th>
+<th> # </th>
+<th> E </th>
+<th> # </th>
+<th> A </th>
+<th> R </th>
+<th> * </th>
+<th> * </th>
+<th> * </th>
+<th> * </th>
+<th> * </th>
+</tr>
+</table>
+<p>We can see that the second row of the map is starting to spell out the cluephrase: <b>ANSWER UNCLEAR...</b>. However, we are missing eight letters in our original grid (the ones mapping to # above), and so we're missing the last eight letters of the cluephrase as well. With some more work (either by modifying our original grid or starting from scratch) we can find another grid with more unique letters in it, for instance:
+
+
+
+
+<table>
+<tr><th>Our Puzzle:</th><th>Returned grid:</th></tr>
+<tr><td><pre>
+C A N * * * W A X
+A T O P * H E R O
+B O V E * U S E R
+* M A G E N T A *
+* * * A F T * * *
+* M A S T E R S *
+M E N U * R A I L
+A R K S * S I Z E
+Y E H * * * L E D
+</pre></td><td><pre>
+S A R * * * * A *
+A I O R * N E S O
+N O * E * L O E S
+* A A U E R I A *
+* * * A R I * * *
+* A A O I E S O *
+A E R L * S A C E
+A S L O * O C * E
+* E N * * * E E W
+</pre></td></tr>
+</table>
+
+<p>The new mapping is:<p>
+<table class="long">
+<tr>
+<th> Original: </th>
+<th> * </th>
+<th> A </th>
+<th> B </th>
+<th> C </th>
+<th> D </th>
+<th> E </th>
+<th> F </th>
+<th> G </th>
+<th> H </th>
+<th> I </th>
+<th> J </th>
+<th> K </th>
+<th> L </th>
+<th> M </th>
+<th> N </th>
+<th> O </th>
+<th> P </th>
+<th> Q </th>
+<th> R </th>
+<th> S </th>
+<th> T </th>
+<th> U </th>
+<th> V </th>
+<th> W </th>
+<th> X </th>
+<th> Y </th>
+<th> Z </th>
+</tr>
+<tr>
+<th> Replaced By: </th>
+<th> * </th>
+<th> A </th>
+<th> N </th>
+<th> S </th>
+<th> W </th>
+<th> E </th>
+<th> R </th>
+<th> U </th>
+<th> N </th>
+<th> C </th>
+<th> # </th>
+<th> L </th>
+<th> E </th>
+<th> A </th>
+<th> R </th>
+<th> O </th>
+<th> R </th>
+<th> # </th>
+<th> S </th>
+<th> O </th>
+<th> I </th>
+<th> L </th>
+<th> * </th>
+<th> * </th>
+<th> * </th>
+<th> * </th>
+<th> * </th>
+</tr>
+</table>
+
+<p>Now we're only missing two letters, so we get all but the last two letters of the cluephrase: <b>ANSWER UNCLEAR OR SOIL??</b>. The final cluephrase (which we can either guess or work harder to get more letters of) is <b>ANSWER UNCLEAR OR SOILED</b>, so the final answer is <b><tt>MUDDY</tt></b>.
+
+
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>
+This puzzle was inspired by my recent attempts to learn how to make crossword puzzles. I've been solving crossword puzzles for a while, but constructing a puzzle is a whole different challenge.
+I tried to make the constraints somewhat similar to what a cruciverbalist might aim for in a real puzzle.
+That said, it's hard to express what makes a good crossword puzzle in a way a computer can understand and check, and I'm sure most of the grids that solvers make for this puzzle would need some editing before they could appear in a newspaper.
+At any rate, I hope I've motivated some of you to try your hands at crossword making too!
+
+<p>
+If you made a grid that you think is particularly interesting, please send it in to us! We'd
+love to see it and maybe post a collection of crossword puzzles in our wrapup.
+
+<p>
+Thanks to Nathan Pinsker for some technical assistance, and the <a href="http://www.datamuse.com/api/">datamuse API</a> which I used for word lookup.
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

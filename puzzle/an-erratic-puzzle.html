@@ -1,0 +1,213 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>An Erratic Puzzle</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+
+
+
+<a href="../post_hunt_solve/an-erratic-puzzle.html" class="btn btn--small">Check your answer spoiler-free</a>
+
+
+<a href="../solution/an-erratic-puzzle.html" class="btn btn--small">View solution</a>
+<a href="../stats/an-erratic-puzzle.html" class="btn btn--small">Stats</a>
+
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<h1>
+    
+    An Erratic Puzzle
+    
+    
+</h1>
+
+<main>
+    
+
+<style>
+table.grid {
+    table-layout: fixed;
+    width: 700px;
+    font-family: "Consolas", Courier, monospace;
+}
+
+table.grid td {
+    border: 1px solid black;
+    padding: 0px 4px;
+}
+
+table.grid td.noborder {
+    border: 0;
+}
+
+td.yellow {
+    background-color: yellow;
+}
+</style>
+
+<div class="puzzle-erratum">
+<p>Erratum: The first and second rows should be swapped. The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #2: Unfortunately, the testsolvers found another mistake in the puzzle. The row with two adjacent words that share 4 distinct letters should be reversed. The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #3: Looks like that didn’t fix it, but this should work: the two words that are made up of the letters in "EATS" should be swapped with the words immediately above them. The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #4: Oops, apparently this puzzle still has errors. To fix it, take the row in which every word has exactly one "E" and shift every word in that row one position to the left (with the leftmost word wrapping around to the rightmost position). The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #5: I spoke too soon, but this should fix it for sure. Two of the columns that contain exactly one "N" among all their words should be reversed. The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #6: One particular word should be swapped with the word two rows directly below it. Also, the word "BEAUS" should be replaced by this same particular word. The puzzle has been updated to reflect this. Honestly, we're not sure how we missed this one.</p>
+
+<p>Erratum #7: Oh, that word that "BEAUS" turned into in the previous erratum? That now needs to be swapped with "SEAT". The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #8: Oh wait, that word you just swapped with "SEAT"? That should now be swapped with the word immediately to its right. The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #9: Man, sorry, we just can't decide on the right position of that word, let's swap it one last time with "FORTS". We swear it won't move anymore! And the puzzle has been updated to reflect this.</p>
+
+<p>Erratum #10: Whoa there, look at that word with the double letter. Is that even a real word? Apparently, Merriam Webster thinks it's leather-related?? Let's remove one of the letters so that it's a more reasonable word (if a frightening one). The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #11: Speaking of things that clearly aren't words, look at that "word" to the right of "COMES". Google tells me that it's a nickname of a university in the Sun Belt Conference, so I think we need to remove the two As and anagram the rest to get something that might be given at a university. While we're at it, there's a very boring word with an A in it, so why don't we change that A to an I? The puzzle has been updated to reflect this.</p>
+
+<p>Finally, all of these words are reasonably common English words! (except for the character from Greek mythology, but he's pretty cool so I'll let it slide). This is not an erratum, I just want to express my hope that this long nightmare list of errata is finally over.</p>
+
+<p>Erratum #12: Actually, the pluralized vehicle in the grid looks out of place; it should be swapped with the word one row above and three columns to the left of it. Also, we need to change its 2nd, 3rd, and 5th letters to make a drink, much like how I need to make a drink right now. The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #13: There is exactly one column with 4 or more words that end in S's, which is just way too much. Let's make the bottom word in that column past tense and swap it with another word in that column. The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #14: That word you just moved to the bottom of its column should now be swapped with the word in the bottom-right corner. The puzzle has been updated to reflect this. Or has it? Just kidding, of course it has.</p>
+
+<p>Erratum #15: Every word in the first two rows should be replaced with the word 42 positions after it on the alphabetized list of every word in Webster's Third New International Dictionary, Unabridged. The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #16: Just kidding, every word in the first two rows should now be replaced with the word 42 positions before it on the alphabetized list of every word in Webster's Third New International Dictionary, Unabridged. The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #17: The word "SHINS" in the right column has never been moved or changed yet! We need to do something about that. How about we change it to something else and then swap it with the center square of the grid? The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #18: The puzzle has been updated to reflect the fact that I just decided to swap the word "COMES" with another word in the grid.</p>
+
+<p>Erratum #19: Remember that word we changed in the 10th erratum? We have to change it again by removing the first letter. The puzzle has been updated to reflect this. And apparently, I am incapable of fixing this puzzle, so maybe I should just do some more random things and hope that works.</p>
+
+<p>Erratum #20: I decided to change three words in the same row (the puzzle has been updated to reflect this). The changes I made were: 1) Changing an "H" to a different letter, 2) Removing the first letter of a word that means "a lot", and 3) Removing "URE" from the end of a word.</p>
+
+<p>Erratum #21: There are two words whose first letter is a compass direction and whose last letter is that compass direction rotated counter-clockwise by 90 degrees. Let’s swap those two (don't ask why). The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #22: One of the words changed in erratum 20 should be swapped with one of the words moved in erratum 21. Sorry about that. The puzzle has been updated to reflect this. </p>
+
+<p>Erratum #23: The Greek mythological figure should be swapped with the word immediately south-east of it. Also, two letters from the mythological figure should be added inside the other swapped word (I promise the result is a real word, even if it doesn't look like it!). The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #24: The 3-letter word should have a state abbreviation added to the front to make a new word (hey, this new word is kind of fitting given that letters were just added to it!). The puzzle has been updated to reflect this. </p>
+
+<p>Erratum #25: The word whose last four letters are a common name should be swapped with the word whose last three letters are a common office object. The puzzle has yet again been updated to reflect this.</p>
+
+<p>Erratum #26: One letter in a vision-related word should be changed to make a different vision-related word. The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #27: One verb in this grid has an opposite that begins with a certain letter and ends in "OSE". This word should be replaced with the word immediately northwest of it, except one letter should be changed to the first letter of the aforementioned opposite. The puzzle has been updated to reflect this. Who even knows what's going on anymore?</p>
+
+<p>Erratum #28: There aren't any 7-letter words yet, so how about we add 3 letters to the beginning of a word to make a 7-letter word. The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #29: One word should have its second letter, "L", changed to another letter. The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #30: That letter that you changed the "L" to in the previous erratum? One word in the middle column should have that letter replaced with the last letter of that word. The puzzle has been updated to reflect this.</p>
+
+<p>Erratum #31: You know what I hate? I really hate lamps. So the word that has to do with lamps should be replaced with a different "word" by taking its 6th, 4th, 1st, and 6th letters in that order. Unfortunately, this breaks the streak of everything being a reasonably common English word, but sometimes life is tough like that. The puzzle has been updated to reflect this.</p>
+
+<p>YES! I DID IT! The testsolving report just came in and everyone agrees that the answer is unambiguously RED HERRING. I can’t believe randomly moving and changing words around actually fixed the puzzle! Time to get back to my life, thank god....<br>
+...<br>
+...<br>
+...<br>
+...<br>
+Um, hey teams. I just talked with the head editor; apparently the whole RED HERRING thing was a joke they made and the original puzzle was perfectly fine. Well, this is embarrassing...</p>
+
+</div>
+
+<table class="grid">
+<tr><td class="noborder">_</td><td class="noborder">_</td><td class="noborder">_</td><td class="noborder">_</td><td class="noborder">_</td><td class="noborder"></td></tr>
+<tr><td>CARER</td><td>OLDER</td><td>COMES</td><td>SEAT</td><td>BASES</td><td class="noborder">_</td></tr>
+<tr><td>GAINS</td><td>FLAT</td><td>AIDED</td><td>SCALE</td><td>RAVELS</td><td class="noborder">_</td></tr>
+<tr><td>TONIC</td><td>BEDS</td><td>DAYS</td><td>ACRED</td><td>PROTEST</td><td class="noborder">_</td></tr>
+<tr><td>HAIL</td><td>SLOW</td><td>FORTS</td><td>SIGS</td><td>TALOS</td><td class="noborder">_</td></tr>
+<tr><td>RAVELS</td><td>ATONY</td><td>WANES</td><td>SLOTS</td><td>BRINK</td><td class="noborder">_</td></tr>
+</table>
+
+
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

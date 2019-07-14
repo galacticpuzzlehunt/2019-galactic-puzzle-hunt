@@ -1,0 +1,552 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Galactic Puzzle Hunt</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="static/css/normalize.css">
+        <link rel="stylesheet" href="static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="static/css/base.css">
+        
+        <link rel="stylesheet" href="static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="static/js/sorttable.js"></script>
+        <script type="text/javascript" src="static/js/bigfoot.js"></script>
+        
+<script>
+    var bigfoot = $.bigfoot({
+        popoverCreateDelay: 0
+    });
+</script>
+
+<style>
+    .puflantu-block {
+        margin: 0 5px 10px 20px;
+    }
+
+    .puflantu-block p {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .puflantu {
+        font-family: monospace;
+    }
+
+
+    .design-notes {
+        margin-left: 3%;
+        margin-right: 33%;
+        font-style: italic;
+    }
+
+    tr:last-child th {
+        border: none;
+    }
+</style>
+
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='index.html'>Home</a>
+            <a  href='rules.html'>Rules</a>
+            
+                <a  href='story.html'>Story</a>
+            
+            
+                <a  href='puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='artifacts.html'>Artifacts</a>
+            
+            <a  href='teams.html'>Teams</a>
+            <a  href='faq.html'>FAQ</a>
+            
+                <a  href='errata.html'>Updates</a>
+            
+            
+                <a  href='wrapup.html'>Wrap-Up</a>
+            
+            <a  href='archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+<h1>On Puflantu</h1>
+<main>
+    <!--<p id="author">by the esteemed Charles Tam, Ph.<sup id="fnref:1">
+            <a href="#fn:1" rel="footnote">1</a>
+        </sup>D.</p>-->
+
+
+    <p>Teams that solve the The Artifact meta begin to receive artifacts written in Perflontus (puflantu), which is used
+        in
+        the four main round metas as well as the metameta. The artifacts are intended to give teams known or deducible
+        texts
+        against which to begin learning how to translate Perflontus. What follows is a summary of language features,
+        starting from the most basic. For puflantu vocabulary, see <a href="https://github.com/galacticpuzzlehunt/puflantu">here</a>.</p>
+    <p>For the remainder of this write-up, and in other write-ups where it becomes relevant, Perflontus text will be
+        written
+        in <span class="puflantu">monospace</span>.</p>
+    <p class="design-notes">Design notes: Perflontus takes a lot of design cues from Chinese, Japanese, Korean, and
+        Spanish
+        (in some order), along with a few etymological decisions from Russian. I felt that German would seep a bit into
+        the
+        language regardless of what we wanted through its relationship with English. I tried to refer to the Asian
+        languages, both because two of them are SOV and because I wanted to give native English speakers a little less
+        of a
+        "home" advantage in picking up Puflantu.</p>
+    <h3>Mouth Sounds and Word Composition</h3>
+    <p>Perflontus uses the English alphabet plus apostrophe (henceforth <span class="puflantu">'</span>). Most of the
+        sounds are what a
+        Spanish speaker would expect them to be. More details are available in the Artists meta solution.</p>
+    <p>Syllables in Perflontus are always contain a single vowel, which may be preceded by up to one consonant and
+        followed
+        by up to one consonant. This implies that consonant clusters of 3 or more do not exist in Perflontus, that
+        initial
+        consonants are never clustered, and that whenever two vowels are adjacent there is a syllable break between
+        them.
+        For purposes of most of the language rules, ' is a consonant that is always a syllable unto
+        itself.<sup id="fnref:1">
+            <a href="puflantu-guide.html#fn:1" rel="footnote">1</a>
+            </sup</p> <p>Stress in Perflontus always falls on the vowel preceding a word's final consonant cluster.<sup
+                id="fnref:2">
+                <a href="puflantu-guide.html#fn:2" rel="footnote">2</a>
+            </sup> If no such vowel
+            exists,
+            it falls on the word's first syllable instead.</p>
+    <p>Nouns and the things that modify them always end in vowels. Verbs and adverbs<sup id="fnref:3">
+            <a href="puflantu-guide.html#fn:3" rel="footnote">3</a>
+        </sup> always end in consonants. To this
+        end
+        the suffix -s is frequently used to adverbialize words, including at the end of particles like -li(s) and
+        -ka(s).
+    </p>
+    <p class="design-notes">Design notes: A lot of the details here were nailed down early. The phoneme inventory
+        intentionally excludes /θ/ and /ð/, and includes /ɲ/ and /ŋ/, in an effort to sound less English. The bell was
+        originally pitched as a funny inclusion for the FAQ ("We'll add 'a bell' to the recommended materials with no
+        further explanation") and took a life of its own from there. Early versions of our consonant chart include
+        "Manual"
+        row as a manner of articulation just for this.</p>
+    <h3>Sentence Structure</h3>
+    <p>Perflontus is head-final and uses a subject-object-verb (SOV) sentence structure<sup id="fnref:4">
+            <a href="puflantu-guide.html#fn:4" rel="footnote">4</a>
+        </sup>. Commas are used to set off long
+        phrases.<sup id="fnref:5">
+            <a href="puflantu-guide.html#fn:5" rel="footnote">5</a>
+        </sup> Taking cues from other SOV languages, we tried to place adverbs between the object and the verb as
+        often as
+        possible.</p>
+    <div class="puflantu-block">
+        <p>I eat cookies.</p>
+        <p>cookie-PL eat-1S<sup id="fnref:6">
+                <a href="puflantu-guide.html#fn:6" rel="footnote">6</a>
+        </sup></p>
+        <p class="puflantu">Torelwe wlwmoc.</p>
+    </div>
+    <p>The particle -ka(s) is used at the end of verbs to indicate the end of a dependent clause. The role of the
+        modified
+        word within the dependent clause is indicated by the use of the relative pronouns <span
+            class="puflantu">al</span> and <span class="puflantu">ol</span>; the former
+        later
+        expanded its role to include adverbs used in the dependent clause, e.g. <span class="puflantu">albwr</span> "at
+        that time" from <span class="puflantu">al-</span> +
+        <span class="puflantu">bwri</span>
+        "time". Such an adverb, if it exists, is placed at the beginning of the dependent clause instead of as close to
+        the
+        verb as possible.</p>
+    <div class="puflantu-block">
+        <p>I eat when I'm hungry.</p>
+        <p>that-time hungry be-1S-DEP-ADV eat-1S</p>
+        <p class="puflantu">Albwr ruzeqo zwm-kas wlwmoc.</p>
+    </div>
+    <p class="design-notes">Design notes: Properly handling dependent clauses was easily the most time-consuming part of
+        design, since it's the part of syntax that really lets you build sentences with normal amounts of complexity. (A
+        real linguist might say something here about generative grammar.) It's not really obvious how heavily we rely on
+        these things until one tries to go without them (including constructs like rephrasing "with X" as "that
+        possesses
+        X").</p>
+    <p class="design-notes">Ultimately the structure I went with is very Englishy, and in a lot of cases -ka(s) can be
+        understood as "that" or "which" in a first pass (as opposed to, say, Chinese, which uses a genitive particle to
+        mark
+        dependent clauses as a property that possesses the modified word). The placement of referring adverbs like
+        <span class="puflantu">albwr</span>
+        and <span class="puflantu">alhan</span> at the start of dependent clauses happened pretty early and I didn't
+        realize it was inconsistent
+        with
+        our other adverb placement until it was already everywhere. At least it's inconsistent in a systematic way?</p>
+    <h3>Verbs</h3>
+    <p>Perflontus inflects its verbs in a variety of ways, as follows:</p>
+    <ul>
+        <li>Proclitic particles for tense (future/past), aspect (imperfective/perfective), and mood
+            (hypothetical/counterfactual).</li>
+        <li> Prefixes for reversal (which is distinct from negation), imperative mood, augmentation, and diminution.
+            (The
+            latter two also migrated to being valid nounjective prefixes.)</li>
+        <li>Up to three infixes for the subject pronoun, negation, and object pronoun, in that order, placed before the
+            root
+            verb's final vowel.</li>
+        <li>Nounjectivifying<sup id="fnref:7">
+                <a href="puflantu-guide.html#fn:7" rel="footnote">7</a>
+        </sup> suffixes for gerund/participle/infinitive (mixing), agent (mixer/mix-capable), patient
+            (mixee/mixable), locative (mix-hosting), instrument (mix-enabling), causative (mix-causing), and resultative
+            (mixture).</li>
+    </ul>
+    <p>Each verb has a root form that is never used alone; one of the last three inflections is always applied. To this
+        end
+        the root form is formally notated with an asterisk indicating the infix position (e.g. wl*oc), though we ended
+        up
+        only having one irregular verb where this notation was a useful reminder (to be, az / z*).</p>
+    <p>Because verbs necessarily have personal pronouns infixed in them, the pronouns are often elided, except when they
+        are
+        desired for emphasis or clarity.</p>
+    <div class="puflantu-block">
+        <p>I eat cookies.</p>
+        <p>1S cookie-PL eat-1S</p>
+        <p class="puflantu">Wm torelwe wlwmoc.</p>
+    </div>
+    <div class="puflantu-block">
+        <p>cookie-PL eat-1S-3pO</p>
+        <p class="puflantu">Torelwe wlwmodoc.</p>
+    </div>
+    <div class="puflantu-block" style="text-decoration: line-through;">
+        <p>1S cookie-PL eat</p>
+        <p class="puflantu">Wm torelwe wloc.</p>
+    </div>
+    <div class="puflantu-block">
+        <p>Cookies are eaten.</p>
+        <p>cookie-PL eat-3pO</p>
+        <p class="puflantu">Torelwe wlodoc.</p>
+    </div>
+    <p>Two of the verbs (and possibly more) are "reversed" from what an English speaker would expect. This feature is
+        borrowed from Spanish, just because. The verbs that appeared in artifacts were som*un "to please" (i.e.
+        "gustar")
+        and pel*ig "to worry". That is, one says "X pleases me" instead of "I like X", and "X worries me" instead of "I
+        worry about X".</p>
+    <p>The affixes/clitics are as follows. If multiple affixes with the same position are used, they appear in the order
+        listed in the table:</p>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Tense-aspect-mood proclitics (if multiple are used, they appear as one word)</th>
+            </tr>
+            <tr>
+                <td class="puflantu">im</td>
+                <td>past tense (PST)</td>
+                <td class="puflantu">im wl*oc</td>
+                <td>ate</td>
+            </tr>
+            <tr>
+                <td class="puflantu">et</td>
+                <td>future tense (FUT)</td>
+                <td class="puflantu"> et wl*oc</td>
+                <td> will eat</td>
+            </tr>
+            <tr>
+                <td class="puflantu">av</td>
+                <td>imperfective aspect (IMPF)</td>
+                <td class="puflantu">av wl*oc</td>
+                <td>is eating</td>
+            </tr>
+            <tr>
+                <td class="puflantu">os</td>
+                <td>perfective aspect (PRF)</td>
+                <td class="puflantu">os wl*oc</td>
+                <td>has eaten</td>
+            </tr>
+            <tr>
+                <td class="puflantu">fel</td>
+                <td>hypothetical mood (HYP)</td>
+                <td class="puflantu">fel wl*oc</td>
+                <td>might eat</td>
+            </tr>
+            <tr>
+                <td class="puflantu">gaq</td>
+                <td>counterfactual mood (CNT)</td>
+                <td class="puflantu">gaq wl*oc</td>
+                <td>would eat</td>
+            </tr>
+            <tr>
+                <th colspan="4">Prefixes</th>
+            </tr>
+            <tr>
+                <td class="puflantu">'</td>
+                <td>imperative mood (IMP)</td>
+                <td class="puflantu">
+                    'l*ay<br>
+                    'liz*ay/'lix*ay
+                </td>
+                <td>
+                    leave (request/instruction)
+                    (explicit 2P subject = command)
+                </td>
+            </tr>
+            <tr>
+                <td class="puflantu">ag</td>
+                <td>augmentative (AUG)</td>
+                <td class="puflantu">agj*uf</td>
+                <td>overcook (<span class="puflantu">j*uf</span> cook)</td>
+            </tr>
+            <tr>
+                <td class="puflantu">sa</td>
+                <td>diminutive (DIM)</td>
+                <td class="puflantu">sam*id</td>
+                <td>glance (<span class="puflantu">m*id</span> see)</td>
+            </tr>
+            <tr>
+                <td class="puflantu">vo</td>
+                <td>reverse (REV)</td>
+                <td class="puflantu">vol*ay</td>
+                <td>return (<span class="puflantu">l*ay</span> leave)</td>
+            </tr>
+            <tr>
+                <th colspan="4">Infixes</th>
+            </tr>
+            <tr>
+                <td> Subject pronouns</td>
+                <td colspan="3">
+                    <table>
+                        <tr>
+                            <td></td>
+                            <th>Subject</th>
+                            <th>Dual Subject</th>
+                            <th>Plural Subject</th>
+                        </tr>
+                        <tr>
+                            <th>First Person</th>
+                            <td class="puflantu">wm</td>
+                            <td class="puflantu">wn</td>
+                            <td class="puflantu">wy</td>
+                        </tr>
+                        <tr>
+                            <th>Second Person</th>
+                            <td class="puflantu">iz</td>
+                            <td class="puflantu">ij</td>
+                            <td class="puflantu">ix</td>
+                        </tr>
+                        <tr>
+                            <th>Third Person</th>
+                            <td class="puflantu">at</td>
+                            <td class="puflantu">ab</td>
+                            <td class="puflantu">ad</td>
+                        </tr>
+                        <tr>
+                            <th>Relative</th>
+                            <td class="puflantu">al</td>
+                            <td class="puflantu">ar</td>
+                            <td class="puflantu">ary</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="puflantu">ey</td>
+                <td>negative (NEG)</td>
+                <td class="puflantu">mer*ey*in</td>
+                <td>cannot (<span class="puflantu">mer*in</span> to be able to)</td>
+            </tr>
+            <tr>
+                <td>Oblique/object pronouns</td>
+                <td colspan="3">
+                    <table>
+                        <tr>
+                            <td></td>
+                            <th>Object</th>
+                            <th>Dual Object</th>
+                            <th>Plural Object</th>
+                        </tr>
+                        <tr>
+                            <th>First Person</th>
+                            <td class="puflantu">um</td>
+                            <td class="puflantu">un</td>
+                            <td class="puflantu">uy</td>
+                        </tr>
+                        <tr>
+                            <th>Second Person</th>
+                            <td class="puflantu">ez</td>
+                            <td class="puflantu">ej</td>
+                            <td class="puflantu">ex</td>
+                        </tr>
+                        <tr>
+                            <th>Third Person</th>
+                            <td class="puflantu">ot</td>
+                            <td class="puflantu">ob</td>
+                            <td class="puflantu">od</td>
+                        </tr>
+                        <tr>
+                            <th>Relative</th>
+                            <td class="puflantu">ol</td>
+                            <td class="puflantu">or</td>
+                            <td class="puflantu">ory</td>
+                        </tr>
+                    </table>
+
+                </td>
+            </tr>
+            <tr>
+                <th colspan="4">Suffixes (Verb → Nounjective)</th>
+            </tr>
+            <tr>
+                <td class="puflantu">a</td>
+                <td>gerund/participle/infinitive (GER)</td>
+                <td class="puflantu">wl*oca</td>
+                <td>eating / to eat</td>
+            </tr>
+            <tr>
+                <td class="puflantu">afe</td>
+                <td>agent (AGT)</td>
+                <td class="puflantu">wl*ocafe</td>
+                <td>eater / eat-capable</td>
+            </tr>
+            <tr>
+                <td class="puflantu">who</td>
+                <td>patient (PAT)</td>
+                <td class="puflantu">wl*ocwho</td>
+                <td>eatee / edible</td>
+            </tr>
+            <tr>
+                <td class="puflantu">ice</td>
+                <td>locative (LOC)<sup id="fnref:8">
+                        <a href="puflantu-guide.html#fn:8" rel="footnote">8</a>
+                </sup></td>
+                <td class="puflantu">wl*ocice</td>
+                <td>place where (one) eats</td>
+            </tr>
+            <tr>
+                <td class="puflantu">ede</td>
+                <td>causative (CAU)<sup id="fnref:9">
+                        <a href="puflantu-guide.html#fn:9" rel="footnote">9</a>
+                </sup></td>
+                <td class="puflantu">wl*ocede</td>
+                <td>eat-causing</td>
+            </tr>
+            <tr>
+                <td class="puflantu">aqo</td>
+                <td>instrumentative (INS)</td>
+                <td class="puflantu">wl*ocaqo</td>
+                <td>for eating</td>
+            </tr>
+            <tr>
+                <td class="puflantu">oda</td>
+                <td>resultative (RES)</td>
+                <td class="puflantu">wl*ocoda</td>
+                <td>eat-result</td>
+            </tr>
+            </tbod>
+    </table>
+    <h3>Nounjectives</h3>
+    <p> Nouns in Perflontus also double as adjectives. For those things that in English would clearly be one or the
+        other, it is up to the listener/reader to determine the sense of the corresponding type. For example we used
+        <span class="puflantu">furwnwe</span> as "fluffy (plural)" in the Bakeoff but as "clouds" in the "Dumb" lyrics
+        clip.</p>
+    <p>Nouns take relatively few additional morphemes; the most frequent are the <span class="puflantu">-w</span> and
+        <span class="puflantu">-we</span> suffixes, which replace the noun's final vowel when using the dual and plural
+        numbers respectively. In addition, nounjectives can be negated by infixing <span class="puflantu">-ay-</span>
+        prior to their last vowel, similar to how it's done with verbs.</p>
+    <p>The <span class="puflantu">ag-</span>, <span class="puflantu">sa-</span>, and <span class="puflantu">vo-</span>
+        prefixes also retain the same meanings as when they are applied to verbs, but their usage on nounjectives is
+        more a matter of forming new root words than as generally applicable prefixes.</p>
+
+    <div class="footnotes">
+        <ol>
+            <li class="footnote" id="fn:1">
+                <p>The rules surrounding <span class="puflantu">'</span> are a little more complicated than this due to
+                    other language rules/constraints, but this is close enough.</p>
+            </li>
+
+            <li class="footnote" id="fn:2">
+                <p>This may not have been honored as much in the Artists meta as I'd have liked, since I was more
+                    preoccupied with speaking slowly without being completely monotone.</p>
+            </li>
+
+            <li class="footnote" id="fn:3">
+                <p>For a very loose definition of "adverb". There are definitely adjective-modifying words that didn't
+                    end up getting the adverbial transformation because I felt it would be too confusing.</p>
+            </li>
+
+            <li class="footnote" id="fn:4">
+                <p>This was rigidly imposed for a lot of artifact creation but started slipping as our adverbial phrases
+                    got longer and more complex (e.g. by allowing those adverbial phrases to come after the verbs they
+                    modify, instead of before).</p>
+            </li>
+
+            <li class="footnote" id="fn:5">
+                <p>This compensates somewhat for the lack of syntax-marking particles, as in Japanese or Korean. I
+                    didn't start doing this much until later in the translation process, when I felt my fundamentals and
+                    vision for the language were clear enough that I could afford to be slack in natural ways.</p>
+            </li>
+
+            <li class="footnote" id="fn:6">
+                <p>Our translation process made extensive use of <a
+                        href="https://en.wikipedia.org/wiki/Interlinear_gloss">glosses</a>, which represent a sort of
+                    halfway translation
+                    point where all the syntax of a sentence has been converted to the target language, but none of the
+                    vocabulary has. This makes it easier for us to check that grammar is correct without having to
+                    memorize the lexicon, and it also allows us to search over glossed text when a word or grammatical
+                    feature needs to be replaced. Here the -PL marker stands for "plural", and the -1S stands for "first
+                    person subject".</p>
+            </li>
+
+            <li class="footnote" id="fn:7">
+                <p class="puflantu">Iqa ehyo natho aza merateyin.</p>
+            </li>
+
+            <li class="footnote" id="fn:8">
+                <p>We ended up not using this one as much as we could have, since it's somewhat ambiguous and hard to
+                    come up with example for. In retrospect it might have been good to extend this suffix to nouns and
+                    replace the <span class="puflantu">X henqo(s)</span> "X interior" pattern. A more organic example
+                    might be something like <span class="puflantu">Rwmo
+                        rali qekadice et zat</span> "My house will be the meeting-place."</p>
+            </li>
+
+            <li class="footnote" id="fn:9">
+                <p>Another suffix that got neglected; we could have used <span class="puflantu">wlocede</span>
+                    "appetite" or <span class="puflantu">zumuzede</span> "soporific".</p>
+            </li>
+        </ol>
+    </div>
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

@@ -1,0 +1,276 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: 50/50</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/fifty-fifty.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: 50/50
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">PEACE</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Lewis Chen, Anderson Wang, and Patrick Xia
+
+        
+    </h4>
+    
+
+<style>
+table.grid {
+    margin: auto;
+}
+
+table.grid td {
+    border: 1px solid black;
+    padding: 0px 4px;
+}
+
+table.grid td.red {
+    background-color: red;
+}
+
+table.grid td.limegreen {
+    background-color: limegreen;
+}
+
+p.answer {
+    font-family: "Consolas", "Courier New", Courier, monospace;
+    display: inline;
+}
+</style>
+
+<p>Each "word" in the puzzle consists of the letters of two words interleaved: for example, WEHEKILNDYU can be disentangled to make WEEKLY and HINDU. In this way, each line can be split up to make two clues whose answers fit the two enumerations given in parentheses, though most of the answers are somewhat whimsical and do not have dictionary nature. As an example, the first line WEHEKILNDYU MAGOORIOD DGEAMEED CEONVECNETPT can be split up into HINDU GOOD DEED CONCEPT and WEEKLY MARIO GAME EVENT, whose answers are KARMA and KART MONDAY. In each case, the shorter answer appears as a subsequence of the longer answer reading left to right, which aids in solving the clues. For conciseness, the full list of clues and solutions are at the bottom of this page.</p>
+
+<p>In each case, the two clues have the same length in letters (which can act as a confirmation), and also the length of the shorter answer is exactly half that of the longer answer. So, much like how we removed half of the letters in the original strings to make the clues, we can remove the shorter answers from the longer answers (e.g. KART MONDAY - KARMA = TONDY). In each case, the resulting string is the name of a superhero (sometimes the first name or surname) with a letter added. In this case, TONDY = TONY + D.</p>
+
+<table class="grid">
+<tr><td><b>Shorter answer</b></td><td><b>Longer answer</b></td><td><b>Subtraction result</b></td><td><b>Superhero</b></td><td><b>Extra letter</b></td></tr>
+<tr><td>KARMA</td><td>KART MONDAY</td><td>TONDY</td><td class="limegreen">TONY</td><td>D</td></tr>
+<tr><td>BURN DIMS</td><td>BURST AND RAIN GEMS</td><td>STARANGE</td><td class="red">STRANGE</td><td>A</td></tr>
+<tr><td>RED URN</td><td>WARNED DURANT</td><td>WANDAT</td><td class="red">WANDA</td><td>T</td></tr>
+<tr><td>OLD CONS</td><td>ONE BULL DEACONS</td><td>NEBULEA</td><td class="limegreen">NEBULA</td><td>E</td></tr>
+<tr><td>AFTER</td><td>DWARF TAXER</td><td>DWRAX</td><td class="red">DRAX</td><td>W</td></tr>
+<tr><td>CHASE O</td><td>CHASQUI HELLO</td><td>QUIHLL</td><td class="red">QUILL</td><td>H</td></tr>
+<tr><td>ANGLE</td><td>HANGUL LAKE</td><td>HULAK</td><td class="limegreen">HULK</td><td>A</td></tr>
+<tr><td>AWED ALE</td><td>MA WANTED ALIENS</td><td>MANTINS</td><td class="red">MANTIS</td><td>N</td></tr>
+<tr><td>ELS COT</td><td>MELTS BACK OUT</td><td>MTBAKU</td><td class="limegreen">M’BAKU</td><td>T</td></tr>
+<tr><td>IN BATTLE</td><td>TIN BEACH TALL TALE</td><td>TECHALLA</td><td class="red">T’CHALLA</td><td>E</td></tr>
+<tr><td>S.O.S. BAN</td><td>SHOOK SOYBEAN</td><td>HOKOYE</td><td class="limegreen">OKOYE</td><td>H</td></tr>
+<tr><td>MY LOANS</td><td>ROOMY CLOAK NEST</td><td>ROOCKET</td><td class="limegreen">ROCKET</td><td>O</td></tr>
+<tr><td>MALLE ELEGY</td><td>SMALL PEEL TIED GERMANY</td><td>SPTIDERMAN</td><td class="red">SPIDERMAN</td><td>T</td></tr>
+<tr><td>FOEHN</td><td>FOR THE HORN</td><td>RTHOR</td><td class="limegreen">THOR</td><td>R</td></tr>
+<tr><td>RY ANTES</td><td>FAIR LYCAN TONES</td><td>FAILCON</td><td class="red">FALCON</td><td>I</td></tr>
+<tr><td>YAK ELF</td><td>GYRO SAKE LOFT</td><td>GROSOT</td><td class="red">GROOT</td><td>S</td></tr>
+<tr><td>SCHEMING</td><td>SNATCHED MAIN SHAG</td><td>NATDASHA</td><td class="limegreen">NATASHA</td><td>D</td></tr>
+<tr><td>ONE DOC</td><td>BOUNCED ROCKY</td><td>BUCRKY</td><td class="red">BUCKY</td><td>R</td></tr>
+<tr><td>GUSH IN</td><td>GUESS THE VEIN</td><td>ESTEVE</td><td class="limegreen">STEVE</td><td>E</td></tr>
+<tr><td>UNMEANT</td><td>RUN HOME AND REST</td><td>RHODRES</td><td class="limegreen">RHODES</td><td>R</td></tr>
+</table>
+<br>
+
+<p>Each of these superheroes appeared in the film <a href="https://en.wikipedia.org/wiki/Avengers:_Infinity_War">Avengers: Infinity War</a>, and the general 50/50 theming of removing half of the letters hints at Thanos’s plan to wipe out half of all life in the universe. Indeed, out of these 20 superheroes, 10 of them died when Thanos snapped at the end of the film (highlighted in red) and the other 10 survived (highlighted in green). The letters corresponding to the surviving heroes spell out DEATH ORDER, so we can find the order the other 10 heroes died in the film: Bucky, T’Challa, Groot, Wanda, Falcon, Mantis, Drax, Quill, Strange, and (<a href="https://knowyourmeme.com/memes/disintegration-effect-i-dont-feel-so-good">notably</a>) Spiderman. This order can be found on Wikipedia, various online listicles, or some <a href="https://www.youtube.com/watch?v=dFomwoVngOI">Youtube compilations</a>.</p>
+
+<p>Reading the letters corresponding to the disintegrated heroes in this order gives REST IN WHAT. The answer is therefore <tt><b>PEACE</b></tt> (RIP in pieces).</p>
+
+<h3>Full clue answers</h3>
+
+<p class="answer">WEHEKILNDYU MAGOORIOD DGEAMEED CEONVECNETPT (5, 4 6)</p><br>
+<p class="answer">HINDU GOOD DEED CONCEPT: <b>KARMA</b></p><br>
+<p class="answer">WEEKLY MARIO GAME EVENT: <b>KART MONDAY</b></p><br>
+<br>
+<p class="answer">THWHAIRDT WDEAETGHREEER INBALLOJUONRSY BECOMDOES WHLEESNS OBRVERFILILGEDHT OWITRH NJOTIECEAWBELLRYE (4 4, 5 3 4 4)</p><br>
+<p class="answer">THIRD DEGREE INJURY BECOMES LESS BRIGHT OR NOTICEABLE: <b>BURN DIMS</b></p><br>
+<p class="answer">WHAT WEATHER BALLOONS DO WHEN OVERFILLED WITH JEWELRY: <b>BURST AND RAIN GEMS</b></p><br>
+<br>
+<p class="answer">RVESAISSEELD FYELOLROW ACASHRESD THAATTS RWARURIBYOR COKLOREVIEDN (3 3, 6 6)</p><br>
+<p class="answer">VESSEL FOR ASHES THATS RUBY COLORED: <b>RED URN</b></p><br>
+<p class="answer">RAISED YELLOW CARD AT WARRIOR KEVIN: <b>WARNED DURANT</b></p><br>
+<br>
+<p class="answer">OFSFHEILCERSL GAOFME TAHNED CHPUIGEORNCH DOFROP TBHEUT UNINQOUET TAPHUIRUSHINSG (3 4, 3 4 7)</p><br>
+<p class="answer">SHELL GAME AND PIGEON DROP BUT NOT PHISHING: <b>OLD CONS</b></p><br>
+<p class="answer">OFFICERS OF THE CHURCH OF THE UNIQUE TAURUS: <b>ONE BULL DEACONS</b></p><br>
+<br>
+<p class="answer">WONORED LPREEVYCINEDINGG ETAARIRFTHFS OINN JBAASDHFULEN OSMITHR FSLIELEMPY (5, 5 5)</p><br>
+<p class="answer">WORD PRECEDING EARTH IN JADEN SMITH FILM: <b>AFTER</b></p><br>
+<p class="answer">ONE LEVYING TARIFFS ON BASHFUL OR SLEEPY: <b>DWARF TAXER</b></p><br>
+<br>
+<p class="answer">GPURERSETINGUE TFHEROM ALPRUNHNABIENTGS IFINFTEECNTAHN MLEETTSSEERNGER (5 1, 7 5)</p><br>
+<p class="answer">PURSUE THE ALPHABETS FIFTEENTH LETTER: <b>CHASE O</b></p><br>
+<p class="answer">GREETING FROM RUNNING INCAN MESSENGER: <b>CHASQUI HELLO</b></p><br>
+<br>
+<p class="answer">GECHUOMENGJTRUHOY OWRIBTJECTTEN ITHANTS NOFTATIVEEN DSCENORIPTETD WIFOTHR TEHXEAMPLTAE (5, 6 4)</p><br>
+<p class="answer">GEOMETRY OBJECT THATS OFTEN DENOTED WITH THETA: <b>ANGLE</b></p><br>
+<p class="answer">CHUNGJUHO WRITTEN IN NATIVE SCRIPT FOR EXAMPLE: <b>HANGUL LAKE</b></p><br>
+<br>
+<p class="answer">MFOILMMLEYD DESBIIRTTEEDR VISBITEORSER FRWIOTHM SAPMAZEMEACENT (4 3, 2 6 6)</p><br>
+<p class="answer">FILLED BITTER BEER WITH AMAZEMENT: <b>AWED ALE</b></p><br>
+<p class="answer">MOMMY DESIRED VISITORS FROM SPACE: <b>MA WANTED ALIENS</b></p><br>
+<br>
+<p class="answer">GFORLIDINLLEDG CHEBESESED WENDITOHDRARSWED FBROYM GOLFAER ERNPACITE (3 3, 5 4 3)</p><br>
+<p class="answer">FOLDING BED ENDORSED BY GOLFER ERNIE: <b>ELS COT</b></p><br>
+<p class="answer">GRILLED CHEESES WITHDRAW FROM A PACT: <b>MELTS BACK OUT</b></p><br>
+<br>
+<p class="answer">UHONLIKWELY MSATOCBERTHY AABNOUDT HAROALD GOMDWEITALLNSOICN SHDIEDORE (2 6, 3 5 4 4)</p><br>
+<p class="answer">HOW MACBETH AND HAROLD GODWINSON DIED: <b>IN BATTLE</b></p><br>
+<p class="answer">UNLIKELY STORY ABOUT A METALLIC SHORE: <b>TIN BEACH TALL TALE</b></p><br>
+<br>
+<p class="answer">SETMOTIAONATLULTEY DIDSAILSLTOWIURBENDG EDDAIMSTRAMEESS SLEGIGUNAMELS (1.1.1. 3, 5 7)</p><br>
+<p class="answer">STATUTE DISALLOWING DISTRESS SIGNALS: <b>S.O.S. BAN</b></p><br>
+<p class="answer">EMOTIONALLY DISTURBED EDAMAME LEGUME: <b>SHOOK SOYBEAN</b></p><br>
+<br>
+<p class="answer">SPMOACNIEYOUS BTHAIRDTS HIOME BORRMOWADEED FWITRHOM INCAPETERESST (2 5, 5 5 4)</p><br>
+<p class="answer">MONEY THAT I BORROWED WITH INTEREST: <b>MY LOANS</b></p><br>
+<p class="answer">SPACIOUS BIRDS HOME MADE FROM CAPES: <b>ROOMY CLOAK NEST</b></p><br>
+<br>
+<p class="answer">TPIOENYM BWANANRITATEN FSOKRIN EQTHUALLEED SILSENCOTRE WOORFLD BDIREERCTLOIRSN CODUEANTTHRY (5 5, 5 4 4 7)</p><br>
+<p class="answer">POEM WRITTEN FOR THE SILENT WORLD DIRECTORS DEATH: <b>MALLE ELEGY</b></p><br>
+<p class="answer">TINY BANANA SKIN EQUALLED SCORE OF BERLIN COUNTRY: <b>SMALL PEEL TIED GERMANY</b></p><br>
+<br>
+<p class="answer">WSTHROYNG WPOACHINEDRS WASSOOUCILATEDD WWAITNTH AUNICLOPRNSS (5, 3 3 4)</p><br>
+<p class="answer">STRONG WIND ASSOCIATED WITH ALPS: <b>FOEHN</b></p><br>
+<p class="answer">WHY POACHERS WOULD WANT UNICORNS: <b>FOR THE HORN</b></p><br>
+<br>
+<p class="answer">CGUOILTOARISRT TCINOODETSR STAORTFS AAN PIOMKPARETIRAL WERHEAWNOLDF (2 5, 4 5 5)</p><br>
+<p class="answer">GUITARIST COODER STARTS A POKER HAND: <b>RY ANTES</b></p><br>
+<p class="answer">COLOR TINTS OF AN IMPARTIAL WEREWOLF: <b>FAIR LYCAN TONES</b></p><br>
+<br>
+<p class="answer">ATIBTETTAICN BOCONTVAIINNINEG TGREHAEKT SASPENDWIAKSCH SAINDARNDIN ROICER QWUIENYNEA (3 3, 4 4 4)</p><br>
+<p class="answer">TIBETAN BOVINE THAT SPEAKS SINDARIN OR QUENYA: <b>YAK ELF</b></p><br>
+<p class="answer">ATTIC CONTAINING GREEK SANDWICH AND RICE WINE: <b>GYRO SAKE LOFT</b></p><br>
+<br>
+<p class="answer">MSAEIZKEINDG SEPRICMRAERTY WTHICILKY PRLAUNSG (8, 8 4 4)</p><br>
+<p class="answer">MAKING SECRET WILY PLANS: <b>SCHEMING</b></p><br>
+<p class="answer">SEIZED PRIMARY THICK RUG: <b>SNATCHED MAIN SHAG</b></p><br>
+<br>
+<p class="answer">HLOOLBBLIEDDAY OFAMRED MABRTEOXENSR BABLBUTOA NONOT BAOTH TRATOMGPOLEITHNERE (3 3, 7 5)</p><br>
+<p class="answer">HOLLIDAY OR MARTENS BUT NOT BOTH TOGETHER: <b>ONE DOC</b></p><br>
+<p class="answer">LOBBED FAMED BOXER BALBOA ON A TRAMPOLINE: <b>BOUNCED ROCKY</b></p><br>
+<br>
+<p class="answer">SUGADDENMLYE IRANPVOILVIDNGLY IFDLENOTIFWICATION FROOMF OVUTSENIADEE CDIAVRAEECTION (4 2, 5 3 4)</p><br>
+<p class="answer">SUDDENLY RAPIDLY FLOW FROM OUTSIDE DIRECTION: <b>GUSH IN</b></p><br>
+<p class="answer">GAME INVOLVING IDENTIFICATION OF VENAE CAVAE: <b>GUESS THE VEIN</b></p><br>
+<br>
+<p class="answer">SNOCORTE FINRTEONDMED OTHIRDR REBAMOVSEDE THAEN RWOERDCOSVER DEFIONITIONR RMECUAYPERBEATE (7, 3 4 3 4)</p><br>
+<p class="answer">NOT INTENDED OR REMOVED A WORDS DEFINITION MAYBE: <b>UNMEANT</b></p><br>
+<p class="answer">SCORE FROM THIRD BASE THEN RECOVER OR RECUPERATE: <b>RUN HOME AND REST</b></p><br>
+
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>The idea for this puzzle began when some of us were talking about how we felt we didn't have enough pop culture-related puzzles (well, pop culture minus video games...) in the hunt, and I jokingly suggested a puzzle about the Thanos snap. After thinking about it more, we came up with this idea that incorporated the "removing half of something" concept in several ways.</p><p>The first version of this puzzle gave the clues completely mixed, without word breaks, but this proved to be way too difficult in testsolving so it was changed to what you see now. Unfortunately, this does make it harder to notice that the clues are the same length, but that observation isn't particularly important for the puzzle anyways.</p><p>Another version of this puzzle used the final cluephrase PEMARACIAE, from which you could take out MARIA (another character who died in Infinity War) to leave PEACE. However, it turns out to be somewhat difficult to find the correct order (one high-up Youtube result for Infinity War death scenes unfortunately has them in the wrong order), so we rewrote it to give a direct cluephrase instead. Luckily we were able to come up with something pretty thematic, and besides, "do it again" steps are overrated anyway. :P
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

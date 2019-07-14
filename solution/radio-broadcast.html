@@ -1,0 +1,357 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: Radio Broadcast</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/radio-broadcast.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: Radio Broadcast
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">PARABOLIC</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Josh Alman and Ian Osborn
+
+        
+    </h4>
+    
+<style>
+table {
+    width: 100%;
+}
+table img {
+    width: 256px;
+    max-width: 25vw;
+}
+</style>
+
+
+This puzzle consists of an audio file of the end of a baseball game. The batters for each team are in order alphabetically by last name, which suggests that their order does not matter. However, for most of the defensive plays, the fielders are referred to either by position or by name, but not both. This suggests that the solver will need to identify which player is playing at each position. (For full details about how to do so, see below.) The commentators also mention <a
+href="https://en.wikipedia.org/wiki/Baseball_scorekeeping">fielding position numbers</a>, which give a method for extracting letters from the players’ last names.
+
+<p><p>
+<b>Away Team</b>
+<table>
+<thead><tr><th>Position Number</th><th>Position</th><th>Player</th><th>Extracted Letter</th></tr></thead><tbody>
+ <tr><td>1</td><td>Pitcher</td><td>Duke Snider</td><td>S</td></tr>
+ <tr><td>2</td><td>Catcher</td><td>Billy Butler</td><td>U</td></tr>
+ <tr><td>3</td><td>First Base</td><td>Bruce Campbell</td><td>M</td></tr>
+ <tr><td>4</td><td>Second Base</td><td>Edgar Martínez</td><td>T</td></tr>
+ <tr><td>5</td><td>Third Base</td><td>Red Faber</td><td>R</td></tr>
+ <tr><td>6</td><td>Shortstop</td><td>Kole Calhoun</td><td>U</td></tr>
+ <tr><td>7</td><td>Left Field</td><td>Carl Yastrzemski</td><td>E</td></tr>
+ <tr><td>8</td><td>Center Field</td><td>Burke Badenhop</td><td>P</td></tr>
+ <tr><td>9</td><td>Right Field</td><td>Martín Maldonado</td><td>O</td></tr>
+</tbody></table>
+
+<p>
+<b>Home Team</b>
+<table>
+<thead><tr><th>Position Number</th><th>Position</th><th>Player</th><th>Extracted Letter</th></tr></thead><tbody>
+ <tr><td>1</td><td>Pitcher</td><td>Tris Speaker</td><td>S</td></tr>
+ <tr><td>2</td><td>Catcher</td><td>Warren Spahn</td><td>P</td></tr>
+ <tr><td>3</td><td>First Base</td><td>Enos Slaughter</td><td>A</td></tr>
+ <tr><td>4</td><td>Second Base</td><td>Joe McGinnity</td><td>I</td></tr>
+ <tr><td>5</td><td>Third Base</td><td>Phil Niekro</td><td>R</td></tr>
+ <tr><td>6</td><td>Shortstop</td><td>Kurt Stillwell</td><td>W</td></tr>
+ <tr><td>7</td><td>Left Field</td><td>Evan Longoria</td><td>I</td></tr>
+ <tr><td>8</td><td>Center Field</td><td>Bernie Williams</td><td>S</td></tr>
+ <tr><td>9</td><td>Right Field</td><td>Brett Saberhagen</td><td>E</td></tr>
+</tbody></table>
+
+The extracted letters spell out SUM TRUE POS PAIRWISE. While matching players to their positions, the solver will have needed to look up the positions that these players play(ed) in real life. By adding the position numbers for the players’ true positions pairwise (by pairing up the players at each position in the radio broadcast) and converting to letters, we end up with the final answer <b>PARABOLIC</b>.
+
+<p>
+<table>
+<thead><tr><th>Position (in game)</th><th>Away Team Player</th><th>Real Position Number</th><th>Home Team Player</th><th>Real Position Number</th><th>Sum of Position Numbers</th><th>Letter</th></tr></thead><tbody>
+ <tr><td>Pitcher</td><td>Duke Snider</td><td>8</td><td>Tris Speaker</td><td>8</td><td>16</td><td>P</td></tr>
+ <tr><td>Catcher</td><td>Billy Butler</td><td>0</td><td>Warren Spahn</td><td>1</td><td>1</td><td>A</td></tr>
+ <tr><td>First Base</td><td>Bruce Campbell</td><td>9</td><td>Enos Slaughter</td><td>9</td><td>18</td><td>R</td></tr>
+ <tr><td>Second Base</td><td>Edgar Martínez</td><td>0</td><td>Joe McGinnity</td><td>1</td><td>1</td><td>A</td></tr>
+ <tr><td>Third Base</td><td>Red Faber</td><td>1</td><td>Phil Niekro</td><td>1</td><td>2</td><td>B</td></tr>
+ <tr><td>Shortstop</td><td>Kole Calhoun</td><td>9</td><td>Kurt Stillwell</td><td>6</td><td>15</td><td>O</td></tr>
+ <tr><td>Left Field</td><td>Carl Yastrzemski</td><td>7</td><td>Evan Longoria</td><td>5</td><td>12</td><td>L</td></tr>
+ <tr><td>Center Field</td><td>Burke Badenhop</td><td>1</td><td>Bernie Williams</td><td>8</td><td>9</td><td>I</td></tr>
+ <tr><td>Right Field</td><td>Martín Maldonado</td><td>2</td><td>Brett Saberhagen</td><td>1</td><td>3</td><td>C</td></tr>
+</tbody></table>
+
+<p>
+
+<hr>
+<b>Determining Which Player Plays at Each Position:</b>
+
+<p>(Bot 7) On Joe
+McGinnity’s ground ball out, Kole Calhoun fielded the ball and took it to
+second base himself, which means he is either the second baseman or the
+shortstop for the away team.</p>
+
+
+
+<p>(Bot 7) On
+Brett Saberhagen’s single, we are told that the away team’s center fielder is
+normally a pitcher. Once we hear the names of all of the away team players, we
+can narrow down their center fielder to either Red Faber or Burke Badenhop.</p>
+
+
+
+<p>(Bot 7) During
+Enos Slaughter’s at bat, we are told that Red Faber is closer to the third base
+dugout than Edgar Martínez.
+We will use this information later.</p>
+
+
+
+<p>(Bot 7) Also
+during Enos Slaughter’s at bat, we are told that the away team’s catcher is
+normally a designated hitter. Again, once we hear the names of all of the away
+team players, we can narrow down their catcher to either Billy Butler or Edgar
+Martínez.</p>
+
+
+
+<p>(Top 8) On
+Burke Badenhop’s ground ball, we are told that the ground ball goes past Enos
+Slaughter and into the outfield, meaning that Slaughter is the home team’s
+pitcher, first baseman, second baseman, third baseman, or shortstop.</p>
+
+
+
+<p>(Top 8) On
+Billy Butler’s double, we are told that the ball was hit along one of the two
+foul lines, and Evan Longoria fielded it and threw it back in to the infield.
+Therefore, Longoria is the home team’s left fielder or right fielder.</p>
+
+
+
+<p>(Top 8)
+During Kole Calhoun’s at bat, we are told that Burke Badenhop and Phil Niekro
+are standing at the same base. Since Badenhop is the runner at third base after
+Butler’s double, this means that <b>Phil Niekro</b> is the <b>home team’s third
+baseman</b>.</p>
+
+
+
+<p>(Top 8) Also
+during Kole Calhoun’s at bat, we are told that only two of the home team’s
+players are at their natural positions. We will use this information later.</p>
+
+
+
+<p>(Top 8) On Bruce
+Campbell’s fly ball out, we are told that the home team’s right fielder, first
+baseman, and catcher all have last names beginning with the letter S.
+Therefore, Longoria cannot be their right fielder, so <b>Evan Longoria</b> is
+the <b>home team’s left fielder</b>.</p>
+
+
+
+<p>(Bot 8) The
+home team’s catcher leads off the bottom of the 8th inning. Warren Spahn was at
+bat in the bottom of the 7th when the hidden ball trick ended the inning, so he
+also bats to lead off the bottom of the 8th. So, <b>Warren Spahn</b> is the <b>home
+team’s catcher</b>.</p>
+
+
+
+<p>(Bot 8) The
+home team’s catcher (Warren Spahn) hits a pop-up near the right fielder and
+first baseman, and Bruce Campbell catches it, so he plays one of these two
+positions for the away team.</p>
+
+
+
+<p>(Bot 8) On
+Tris Speaker’s fly ball out, we are told that <b>Carl Yastrzemski</b> is the <b>away
+team’s left fielder</b>.</p>
+
+
+
+<p>(Bot 8)
+During Kurt Stillwell’s at bat, we are told that the defense employs the shift.
+Stillwell hits a ground ball to the right side of the infield, where Edgar
+Martínez fields it and throws to the first baseman. This implies that Martínez
+is the away team’s second baseman or third baseman. Therefore, since he cannot
+be the catcher, the <b>away team’s catcher</b> must be <b>Billy Butler</b>.
+Also, since Red Faber is closer to the third base dugout than Martínez, Martínez
+cannot be the third baseman (the position closest to the third base dugout), so
+<b>Edgar Martínez</b> is the <b>away team’s second baseman</b>. Therefore,
+Calhoun cannot be their second baseman, so <b>Kole Calhoun</b> is the <b>away
+team’s shortstop</b>.</p>
+
+
+
+<p>(Top 9)
+After Martín Maldonado’s single, we are told that both teams’ pitchers are
+normally center fielders. Once we hear the names of all of the players, we can
+identify that the <b>away team’s pitcher</b> is <b>Duke Snider</b>, and that
+the home team’s pitcher is either Tris Speaker or Bernie Williams.</p>
+
+
+
+<p>(Top 9) On
+Duke Snider’s pop-up, we are told that Joe McGinnity makes the catch, so he is
+the home team’s first baseman, second baseman, third baseman, or shortstop. We
+can eliminate third base as a possibility since we already know that Phil
+Niekro is the home team’s third baseman. We can also eliminate first base as a
+possibility, since the home team’s first baseman’s last name starts with the
+letter S. So McGinnity is the home team’s second baseman or shortstop.</p>
+
+
+
+<p>(Bot 9) On
+Bernie Williams’s home run, Martín Maldonado tries to make the catch, so he is
+an outfielder for the away team. Since Yastrzemski is their left fielder and
+their center fielder is either Faber or Badenhop, <b>Martín Maldonado</b> is
+the <b>away team’s right fielder</b>. Since Campbell can no longer be the right
+fielder, <b>Bruce Campbell</b> is the <b>away team’s first baseman</b>. At this
+point, there are only two positions (third base, center field) and two players
+(Red Faber, Burke Badenhop) remaining for the away team. Since Red Faber is
+closer to the third base dugout than Edgar Martínez, the second baseman, <b>Red
+Faber</b> is the <b>away team’s third baseman</b>. This leaves <b>Burke
+Badenhop</b> as the <b>away team’s center fielder</b>.</p>
+
+
+
+<p>(Bot 9)
+After Bernie Williams’s home run, we are told that Williams and Slaughter do
+not both play infield positions. Since we know from earlier that Slaughter is
+an infielder, Bernie Williams must be an outfielder for the home team. Since
+Longoria is the home team’s left fielder and their right fielder’s last name
+starts with the letter S, <b>Bernie Williams</b> is the <b>home team’s center
+fielder</b>. This also leaves <b>Tris Speaker</b> as the <b>home team’s pitcher</b>.</p>
+
+<p>We are now
+left with four players (Enos Slaughter, Joe McGinnity, Kurt Stillwell, Brett Saberhagen)
+and four positions (first base, second base, shortstop, right field) for the
+home team. Since Bernie Williams is the only home team player at his natural
+position so far, exactly one of the four remaining players plays at their
+normal position. There are two possibilities: Enos Slaughter at right field or
+Kurt Stillwell at shortstop. However, we know from earlier that Slaughter is an
+infielder, so <b>Kurt Stillwell</b> must be the <b>home team’s shortstop</b>.
+Therefore, <b>Joe McGinnity</b> can only be the <b>home team’s second baseman</b>.
+Since Slaughter is an infielder, <b>Enos Slaughter</b> is the <b>home team’s
+first baseman</b>. Finally, this leaves <b>Brett Saberhagen</b> as the <b>home team’s right
+fielder</b>.</p>
+
+
+
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>
+We had been discussing making a puzzle in the form of a baseball radio broadcast for a long time, and we're very happy with how this one turned out! We tried to make the puzzle accessible to people who don't know a lot about baseball, for instance by explaining position numbers and the infield shift as part of the broadcast, and carefully wording what we said to avoid ambiguities for someone unfamiliar with baseball lingo. At the same time, we included a few fun things that baseball fans would enjoy, and non-baseball fans might look up and appreciate, like the hidden ball trick and a nod to the home run ball which bounced off of Canseco's head. We aimed to use recognizable player names when our final extraction mechanism allowed it, and most of the players in our game are either current players or Hall of Famers.
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>

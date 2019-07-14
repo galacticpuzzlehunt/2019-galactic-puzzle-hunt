@@ -1,0 +1,368 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+<title>Solution: Line Plots</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/skeleton.css">
+        <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../static/css/base.css">
+        
+        <link rel="stylesheet" href="../static/css/night.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link rel="stylesheet" href="../static/css/bigfoot-default.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
+        <script type="text/javascript" src="../static/js/sorttable.js"></script>
+        <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        
+    </head>
+    <body><div class="wrapper">
+        
+        <div class="bg"></div>
+        <div class="top">
+        
+        <nav>
+            <a  href='../index.html'>Home</a>
+            <a  href='../rules.html'>Rules</a>
+            
+                <a  href='../story.html'>Story</a>
+            
+            
+                <a class="selected-tab" href='../puzzles.html'>Puzzles</a>
+            
+            
+                <a  href='../artifacts.html'>Artifacts</a>
+            
+            <a  href='../teams.html'>Teams</a>
+            <a  href='../faq.html'>FAQ</a>
+            
+                <a  href='../errata.html'>Updates</a>
+            
+            
+                <a  href='../wrapup.html'>Wrap-Up</a>
+            
+            <a  href='../archive.html'>Archive</a>
+        </nav>
+        <div class="actions">
+            <div class="top-left-actions-container">
+            
+<a href="../puzzle/line-plots.html" class="btn btn--small">Back to the puzzle</a>
+
+            </div>
+            <div class="login-controls-container">
+            
+            </div>
+        </div>
+        
+        </div>
+        <div class="content">
+            
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: Line Plots
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">KOOL AID</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        
+        Written by
+        
+Alan Huang
+
+        
+    </h4>
+    
+<style>
+dt {
+    font-family: monospace;
+}
+
+dt b {
+    text-decoration: underline;
+}
+</style>
+
+<p>
+This is a puzzle about video game series with weird numbering conventions.
+
+<p>
+Each graph represents a series, with games always shown at the x-coordinate
+for their original release date. Numbered installments are shown with a dot at
+the corresponding y-coordinate; when the numbers are high, the scale is
+logarithmic. Those with both numbers and additional words show rebus icons
+attached to the dot. Titles without a number use icons only; they are given a
+y-coordinate by interpolating between neighboring numbers, which may be
+confusing at first, but should eventually become clear. Not every game in every
+series is depicted &mdash; I tended to drop ones that would have required their
+own icons not shared with any other games &mdash; but most of the mainline
+entries in each series should be covered.
+
+<dl>
+    <dt>RO<b>L</b>LERCOASTERTYCOON</dt>
+    <dd>
+        A roller coaster icon is provided as a starting hint. The last two are
+        <i>RollerCoaster Tycoon 4 Mobile</i> and <i>RollerCoaster Tycoon
+        World</i>.
+    </dd>
+    <dt>HA<b>L</b>FLIFE</dt>
+    <dd>
+        <i>Half-Life 2: Episode One</i> and <i>Two</i> are represented as 2.1
+        and 2.2. <i>Half-Life 3</i> has been rumored for over a decade (Gabe
+        Newell pictured) but never confirmed.
+    </dd>
+    <dt>M<b>A</b>RIOPARTY</dt>
+    <dd>
+        <i>Mario Party</i> has straightforward numbering up to 10, but this
+        graph introduces Game Boy Advance and Nintendo DS icons. After 10 come
+        <i>Mario Party: The Top 100</i> and then <i>Super Mario Party</i>.
+    </dd>
+    <dt>J<b>A</b>MESBOND</dt>
+    <dd>
+        This graph includes every game titled <i>James Bond 007</i>. It
+        unfortunately breaks the rule by not including icons for all the
+        subtitles, but they don't really line up with the icons used elsewhere
+        and would have been hard to clue. Hopefully the constant line at 7 is
+        suspicious enough to give away the series.
+    </dd>
+    <dt>EUROPAUNI<b>V</b>ERSALIS</dt>
+    <dd>
+        One of the more obscure and less interesting graphs here. <i>Europa
+        Universalis: Rome</i> was released in 2008.
+    </dd>
+    <dt>RESIDENTE<b>V</b>IL</dt>
+    <dd>
+        Mostly straightforward, except that <i>Code: Veronica</i> and
+        <i>Zero</i> came out before <i>4</i>.
+    </dd>
+    <dt>WARCR<b>A</b>FT</dt>
+    <dd>
+        This one might be tricky to identify despite how well-known it is. I
+        considered including all the <i>World of Warcraft</i> expansions up to
+        the present, but as above they would have been hard to clue.
+    </dd>
+    <dt>STARW<b>A</b>RSBATTLEFRONT</dt>
+    <dd>
+        EA rebooted the series in 2015.
+        <a href="https://2018.galacticpuzzlehunt.com/puzzle/pride-and-accomplishment">
+        Our puzzle</a> from last year references the most recent game.
+    </dd>
+    <dt>S<b>I</b>DMEIERSCIVILIZATION</dt>
+    <dd>
+        Now we get into the more interesting icons. <i>CivCity: Rome</i> was
+        released in 2006. There were also two <i>Civilization Revolution</i>
+        games for consoles, as well as <i>Civilization: Beyond Earth</i>.
+    </dd>
+    <dt>K<b>I</b>NGDOMHEARTS</dt>
+    <dd>
+        In order: <i>1</i>, <i>2</i>, <i>358/2 days</i>, <i>Birth by Sleep</i>,
+        <i>3D: Dream Drop Distance</i>, <i>HD Remixes 1.5</i>, <i>2.5</i>,
+        <i>2.8</i> (<i>Final Chapter Prologue</i>), and <i>1.5 + 2.5</i> (= 4),
+        and <i>3</i>. The icon above for revolution is used here as day. I
+        opted not to include the subtitle on <i>Dream Drop Distance</i> as it
+        acronyms to <i>3D</i> anyway.
+    </dd>
+    <dt>MA<b>S</b>SEFFECT</dt>
+    <dd>
+        <i>Mass Effect Galaxy</i> came out in 2009 for iOS; <i>Mass Effect:
+        Andromeda</i> came out in 2017.
+    </dd>
+    <dt>AS<b>S</b>ASSINSCREED</dt>
+    <dd>
+        After <i>IV: Black Flag</i>, we have <i>Unity</i> (1), <i>Origins</i>
+        (0, 0), then <i>Odyssey</i>.
+    </dd>
+    <dt><b>B</b>IOSHOCK</dt>
+    <dd>
+        <i>BioShock Infinite</i> was (asymptotically) released in 2013.
+    </dd>
+    <dt><b>B</b>ATTLEFIELD</dt>
+    <dd>
+        Despite the jumping around, each individual installment here should be
+        pretty straightforward. The high-numbered ones are <i>1942</i>,
+        <i>2142</i>, and <i>1943</i>.
+    </dd>
+    <dt>DRAG<b>O</b>NAGE</dt>
+    <dd>
+        <i>Dragon Age: Origins</i>, <i>II</i>, and <i>Inquisition</i>.
+    </dd>
+    <dt>CALL<b>O</b>FDUTY</dt>
+    <dd>
+        The main series counts up to <i>4: Modern Warfare</i>, which splits off
+        its own series of three games. Then it continues with <i>World at
+        War</i>, <i>Advanced Warfare</i>, <i>Infinite Warfare</i>, and
+        <i>WWII</i>. The separate line below has a different color because it
+        represents the four numbered <i>Black Ops</i> games.
+    </dd>
+    <dt>ULT<b>I</b>MA</dt>
+    <dd>
+        Another boring graph, but the early 80s start and very early MMO
+        installment (<i>Ultima Online</i>, 1997) can serve as clues. <i>Ultima
+        VII</i> had a <i>Part Two</i>.
+    </dd>
+    <dt>MAR<b>I</b>OKART</dt>
+    <dd>
+        In order: <i>Super Mario Kart</i>, <i>64</i>, <i>Super Circuit</i>,
+        <i>Double Dash</i>, <i>DS</i>, <i>Wii</i>, <i>7</i>, and <i>8</i>.
+        (<i>8 Deluxe</i> not pictured.)
+    </dd>
+    <dt>THEE<b>L</b>DERSCROLLS</dt>
+    <dd>
+        The first icon here means <i>Arena</i>. <i>V: Skyrim</i> was released
+        in 2011, followed by <i>The Elder Scrolls Online</i>.
+    </dd>
+    <dt>FINA<b>L</b>FANTASY</dt>
+    <dd>
+        <i>Final Fantasy IV</i> and <i>VI</i> were released as <i>II</i> and
+        <i>III</i> in North America, after which <i>VII</i> was not altered.
+        <i>X</i> had a direct sequel, as did <i>XIII</i>, but <i>Type-0</i>
+        is (arguably) in the same series (using the icon that meant code
+        above). <i>XIV</i> was relaunched as <i>A Realm Reborn</i>, and
+        <i>World of Final Fantasy</i> was released in 2016 shortly before
+        <i>XV</i>. (<i>All the Bravest</i> not pictured.)
+    </dd>
+    <dt>AGEOFEMP<b>I</b>RES</dt>
+    <dd>
+        <i>Age of Empires II: The Age of Kings</i> released in 1999 and was
+        given an <i>HD Edition</i> fourteen years later.
+    </dd>
+    <dt>SUPERMAR<b>I</b>O</dt>
+    <dd>
+        The North American version of <i>Super Mario Bros. 2</i> was famously
+        a completely different game rebranded as Mario. After <i>Super Mario
+        Bros. 3</i> we have <i>Super Mario Land</i> and <i>World</i>. <i>64</i>
+        received a remake as a launch title for the DS. After <i>Sunshine</i>
+        we have <i>Galaxy</i> and <i>Galaxy 2</i>, and most recently,
+        <i>Odyssey</i>.
+    </dd>
+    <dt>POKEMO<b>N</b>STADIUM</dt>
+    <dd>
+        The little-known 1998 <i>Pokémon Stadium</i> was released only in
+        Japan. Its sequel was released as <i>Pokémon Stadium</i> in North
+        America, followed in the second generation by <i>Stadium 2</i>
+        (instead subtitled <i>Gold / Silver</i> in Japan). In generation 3,
+        abandoning the <i>Stadium</i> name, we have <i>Colosseum</i>,
+        <i>XD</i>, and finally <i>Battle Revolution</i>.
+    </dd>
+    <dt>MADDEN<b>N</b>FL</dt>
+    <dd>
+        Many yearly sports series switched between <i>200X</i> and <i>9X</i>
+        / <i>0X</i> / <i>1X</i>, but <i>Madden</i> takes the cake by also
+        having <i>1</i>, <i>2</i>, <i>64</i>, and <i>25</i> installments.
+    </dd>
+    <dt>RA<b>G</b>NAROKONLINE</dt>
+    <dd>
+        <i>Ragnarok Online 2</i> was canceled and rebooted in 2012. Several
+        spinoff games released in the interim included <i>Ragnarok DS</i> and
+        <i>Ragnarok Odyssey</i>.
+    </dd>
+    <dt>ME<b>G</b>AMAN</dt>
+    <dd>
+        The classic <i>Mega Man</i> series spanned eight games up to the
+        mid-90s. A separate series using Roman numerals was released for the
+        Game Boy. The darker blue line represents the <i>X</i> series
+        (interpreted as 10), while the red is the <i>Zero</i> series. Finally
+        we have the "modern" continuations <i>9</i>, <i>10</i>, and <i>11</i>.
+    </dd>
+</dl>
+
+<p>
+Since graphs are paired up, write the names of the series next to each other as
+clued by the left-aligned enumerations, and read off the unique letter that is
+in the same position in both titles. A web search for <tt>LAVA IS BOILING</tt>
+will turn up
+<a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/LavaIsBoilingKoolAid">
+a TV Tropes page</a>, so the answer is <tt><b>KOOL AID</b></tt>.
+
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>
+There are unfortunately a few "filler" series that were included to get the
+right letters, but I was able to pick most of them based on having interesting
+graphs or icons shared with other series. As a result, though, the puzzle ended
+up pretty long. Hopefully identification is easy enough to compensate for that;
+even testsolvers who didn't play many video games reported that they were able
+to find most of the ones they didn't recognize by looking for games released in
+certain years with the given enumerations.
+
+<p>
+The title of this puzzle is a reference to an MIT Mystery Hunt puzzle named
+<a href="http://web.mit.edu/puzzle/www/2011/puzzles/katamari_damacy/plotlines/">Plotlines</a>
+(<a href="https://xkcd.com/657/">inspiration</a>,
+<a href="http://web.mit.edu/puzzle/www/2012/puzzles/a_circus_line/potlines/">sequel</a>,
+<a href="http://web.mit.edu/puzzle/www/2018/full/puzzle/potlines.html">sequel</a>),
+although this puzzle shares little in common with it. I wanted to title it
+Hotlines as a subtle Easter egg (a term that here means "cute footnote to put
+in the solution") referencing the game
+<a href="https://en.wikipedia.org/wiki/Hotline_Miami_2:_Wrong_Number"><i>Hotline Miami 2: Wrong Number</i></a>, but was overruled after some
+discussion.
+
+<p>
+It is interesting to note that the <i>Super Mario</i> series in particular
+also provides an ordering of the Earth, Sun, Milky Way, possibly a deity
+(<i>Maker</i>), and the Mediterranean Sea, presumably in order of increasing
+size, as well as in relation to various numbers. Up to three brothers are
+smaller than the world, but the world is no larger than 64. Any conclusions to
+be drawn are left as an exercise to the solver.
+
+<p>
+Shortly before hunt, it was announced that USB 3.0 would be rebranded as USB
+3.2 Gen 1, USB 3.2 Gen 2, and USB 3.2 Gen 2×2. Maybe that should have made it
+into this puzzle.
+    
+
+    
+
+    
+      
+</main>
+
+
+        </div>
+        
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92192633-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+        
+    </div></body>
+</html>
