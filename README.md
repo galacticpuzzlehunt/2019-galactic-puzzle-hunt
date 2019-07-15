@@ -5,6 +5,10 @@ This site, eventually hosted on [2019.galacticpuzzlehunt.com](https://2019.galac
 ## TODO
 
 * Static answer checker
-* Identify which interactive puzzles need fixing
+* Fix interactive puzzles
+  * Make Your Own Crossword
+  * Race for the Galaxy
+  * Ministry of Word Searches
+  * Image Search
 * Do something with the translations
 * 404 page
