@@ -11,4 +11,3 @@ This site, eventually hosted on [2019.galacticpuzzlehunt.com](https://2019.galac
   * Ministry of Word Searches
   * Image Search
 * Do something with the translations
-* 404 page
