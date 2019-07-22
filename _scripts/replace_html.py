@@ -1,8 +1,9 @@
 import os
 import argparse
 
-text = "href='"
-replacement = "href='../"
+text = '''"<h3>Solved!</h3>
+<p>The answer was <b>" + right_answer + "</b>.</p>"'''
+replacement = '''"<h3>Solved!</h3>\\n<p>The answer was <b>" + right_answer + "</b>.</p>"'''
 
 
 

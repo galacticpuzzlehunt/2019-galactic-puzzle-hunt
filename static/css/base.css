@@ -410,6 +410,11 @@ tr:last-child td {
     color: #c32;
 }
 
+.solved-panel--instruction {
+    color: #da3;
+}
+
+
 .solved-title-marker {
     font-size: 50%;
     color: #0c0906;

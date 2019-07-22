@@ -4,7 +4,6 @@ This site, eventually hosted on [2019.galacticpuzzlehunt.com](https://2019.galac
 
 ## TODO
 
-* Static answer checker
 * Fix interactive puzzles
   * Make Your Own Crossword
   * Race for the Galaxy
