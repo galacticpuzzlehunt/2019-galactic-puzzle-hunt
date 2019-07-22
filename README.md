@@ -8,6 +8,5 @@ This site, eventually hosted on [2019.galacticpuzzlehunt.com](https://2019.galac
 * Fix interactive puzzles
   * Make Your Own Crossword
   * Race for the Galaxy
-  * Ministry of Word Searches
   * Image Search
 * Do something with the translations
