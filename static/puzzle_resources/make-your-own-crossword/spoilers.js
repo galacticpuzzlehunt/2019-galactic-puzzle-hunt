@@ -22,6 +22,7 @@ var process = function(word) {
 };
 
 var lookup_word = function(word) {
+  word = word.toLowerCase();
   process(word).then(result => {
     var text = '';
     if (result == 0) {
