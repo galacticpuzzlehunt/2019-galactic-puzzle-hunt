@@ -468,3 +468,7 @@ tr:last-child td {
   text-decoration:underline;
   font-weight: bold;
 }
+
+div.hint {
+  margin-bottom: 10px;
+}
