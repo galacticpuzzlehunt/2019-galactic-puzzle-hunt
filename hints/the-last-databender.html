@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
 
-<title>Word Search II</title>
+<title>Hints: The Last Databender</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=0.5">
         <link rel="stylesheet" href="../static/css/normalize.css">
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="../static/js/jquery.formset.js"></script>
         <script type="text/javascript" src="../static/js/sorttable.js"></script>
         <script type="text/javascript" src="../static/js/bigfoot.js"></script>
+        <script type="text/javascript" src="../static/js/hints.js"></script>
 
     </head>
     <body><div class="wrapper">
@@ -57,16 +58,7 @@
         <div class="actions">
             <div class="top-left-actions-container">
 
-
-
-
-<a href="../post_hunt_solve/word-search-ii.html" class="btn btn--small">Check your answer spoiler-free</a>
-
-
-<a href="../solution/word-search-ii.html" class="btn btn--small">View solution</a>
-<a href="../stats/word-search-ii.html" class="btn btn--small">Stats</a>
-<a href="../hints/word-search-ii.html" class="btn btn--small">Hints</a>
-
+<a href="../puzzle/the-last-databender.html" class="btn btn--small">Back to the puzzle</a>
 
             </div>
             <div class="login-controls-container">
@@ -78,92 +70,40 @@
         <div class="content">
 
 
-<h1>
-
-    Word Search II
-
-
-</h1>
+<h1>Hints: The Last Databender</h1>
 
 <main>
-
-
-<style>
-.circle {
-  display: inline-block;
-  text-align: center;
-  width: 22px;
-  line-height: 22px;
-  border: 2px solid #333366;
-  border-radius: 999px;
-}
-
-h5 {
-  margin-top: 0.5rem;
-  font-size: 2rem;
-  color: #4f6a95;
-}
-
-#error {
-  display: inline-block;
-  font-weight: bold;
-  color: red;
-  font-size: 1.5rem;
-}
-
-p {
-  margin-bottom: 1rem;
-}
-</style>
-
-<meta name="csrf-token" content="pak3iU3tL7TAILLIWScOaKwlKUxDGUURtZ0TwNPfCjb5oHhOCGid93nIgDPfvzUi">
-<script type="text/javascript"
-<script>
-$.ajaxSetup({
-    headers: {
-        'X-CSRFToken': $('meta[name="csrf-token"]').attr('content')
-    }
-});
-</script>
-
-<script type="text/javascript" src="../static/puzzle_resources/word-search-ii/interface.js"></script>
-<span><i><p>“Remember the word search we had <a href="https://2018.galacticpuzzlehunt.com/puzzles">last year</a>? That sure was fun!” said Nathan.</p>
-
-<p>“Didn’t we have two word searches?” said Josh.</p>
-
-<p>“Wait...I thought we had eight?”</p>
-
-<p>“Anyway,’ said Josh, “this time I want you to guess the pair of words I'm thinking of.”</p>
-
-<p>“Pairs of words? Oh no! The first time was hard enough!”</p>
-
-<p>“You mean the first two times,” Josh corrected. “Oh, I forgot: there’s a twist, too — but don’t worry, we can start with a practice round.”</p>
-
-<p>“Can you help me guess his words?” Nathan whispers to you. “I’ll give you half the loot!”</p>
-  </i></span>
-
-<hr>
-
-<div style="margin-top: 50px;">
-  <select id="word-select" style="display: inline-block;">
-    <option value="1">Practice</option>
-    <option value="2">Round 1</option>
-    <option value="3">Round 2</option>
-    <option value="4">Round 3</option>
-    <option value="5">Round 4</option>
-    <option value="6">Round 5</option>
-    <option value="7">Round 6</option>
-  </select>
-
-  <div id="submit-form" style="display: inline-block;">
-    <input type="text" id="guess" style="width: 60%;">
-    <button id="guess_btn" class="btn btn--small">Guess!</button>
+  <div class="hint-preview-text">Stuck on first step:</div>
+  <div class="hint">
+    Look at the six rectangles in the middle of the image. You should be able to make out a word or two on the lower left corner of each. Is there a way to cancel out the noise over these six rectangles?
   </div>
-  <div id="error"></div>
-</div>
 
-<div id="results"></div>
+  <div class="hint-preview-text">Stuck on second step:</div>
+  <div class="hint">
+    <ul>
+      <li>The same clue is played four times, though at different speed (one of them is even negative!) Use the same technique as the first step to help you reduce the noise.</li>
+      <li>You may want to look at <a href="https://2018.galacticpuzzlehunt.com/puzzle/destructive-interference.html" target="_blank">Destructive Interference</a> from last year’s GPH.</li>
+      <li>You do not have to match perfectly exactly, though the closer you can get the better.</li>
+    </ul>
+  </div>
 
+  <div class="hint-preview-text">Stuck on the third step:</div>
+  <div class="hint">
+    <ul>
+      <li>If you cannot extract the file, make sure that you export in the same way you imported the audio.</li>
+      <li>The folder structures look like some paths between letters. You may want to combine them into a single long path so that the ends match.</li>
+    </ul>
+  </div>
+
+  <div class="hint-preview-text">Stuck on the fourth step:</div>
+  <div class="hint">
+    There should be 10 lines to be combined as ASCII art. The two lines with underscores only should be on the first and sixth line.
+  </div>
+
+  <div class="hint-preview-text">Stuck on extraction:</div>
+  <div class="hint">
+    Make sure that you have all four answers. We are working mod 26 here, but the letter A should still be the smallest number instead of Z.
+  </div>
 
 </main>
 
