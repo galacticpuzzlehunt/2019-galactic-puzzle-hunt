@@ -4,6 +4,15 @@ var dictionary = null;
 var activePopup = null;
 var row_map = null;
 var $dict = null;
+var storage = window.localStorage;
+var size = 0;
+
+function populate_dictionary() {
+  for (var i = 0; i < storage.length; i++) {
+    d[storage.key(i)] = storage.getItem(storage.key(i));
+  }
+  size = storage.length;
+}
 
 function normalize(word) {
     return word.toLowerCase();
@@ -126,62 +135,39 @@ function closePopup (cancel) {
     if (cancel) {
         input.val(d[word]);
     } else if ((d[word] || '') != translation) {
-        $.ajax({
-            url: '/dictionary',
-            data: {
-                'word' : word,
-                'translation': translation,
-            },
-            dataType: 'json',
-            method: 'POST',
-        });
+        storage.setItem(word, translation);
         update_dictionary_entry(word, translation);
     }
 }
 
 var main_function = function () {
+    populate_dictionary();
     if ($("#dictionary").length > 0) {
-        $.when(
-            $.ajax('/dictionary' + location.search),
-            $.ajax({
-                url: '/artifact_phrases' + location.search,
-                dataType: 'json',
-                contentType: 'application/json; charset=utf-8',
-            })
-        ).done(function (dict_data, page_data) {
-            d = dict_data[0];
-            pages = page_data[0]['content'];
-            for (var l = 0; l < pages.length; l++) {
-                var artifact = pages[l];
-                var html = $('<div>').append(artifact['html']);
-                if (artifact['link'] == '/artifact/greasy-booklet') {
-                    var gpages = $('.page', html).toArray();
-                    for (var page_idx = 0; page_idx < gpages.length; page_idx++) {
-                        var tags = $(".puflantu", gpages[page_idx]).toArray();
-                        for (var i = 0; i < tags.length; i++)
-                            phrases.push({'link': artifact['link'], 'name': artifact['name'], 'phrase': tags[i].innerHTML, 'page': page_idx + 1});
-                    }
-                } else {
-                    var tags = $(".puflantu", html).toArray();
-                    for (var i = 0; i < tags.length; i++)
-                        phrases.push({'link': artifact['link'], 'name': artifact['name'], 'phrase': tags[i].innerHTML});
-                }
-            }
-            fill_dictionary();
-            attach_translations();
-            add_listeners();
-            translate_words();
-        });
+      pages = artifact_phrases['content'];
+      for (var l = 0; l < pages.length; l++) {
+          var artifact = pages[l];
+          var html = $('<div>').append(artifact['html']);
+          if (artifact['link'] == '/artifact/greasy-booklet') {
+              var gpages = $('.page', html).toArray();
+              for (var page_idx = 0; page_idx < gpages.length; page_idx++) {
+                  var tags = $(".puflantu", gpages[page_idx]).toArray();
+                  for (var i = 0; i < tags.length; i++)
+                      phrases.push({'link': artifact['link'], 'name': artifact['name'], 'phrase': tags[i].innerHTML, 'page': page_idx + 1});
+              }
+          } else {
+              var tags = $(".puflantu", html).toArray();
+              for (var i = 0; i < tags.length; i++)
+                  phrases.push({'link': artifact['link'], 'name': artifact['name'], 'phrase': tags[i].innerHTML});
+          }
+      }
+      fill_dictionary();
+      attach_translations();
+      add_listeners();
+      translate_words();
     } else {
-        $.ajax({
-            url: '/dictionary' + location.search,
-            success: function (data) {
-                d = data;
-                attach_translations();
-                add_listeners();
-                translate_words();
-            }
-        });
+      attach_translations();
+      add_listeners();
+      translate_words();
     }
     $(window).focus(function() {
         // Reduce duplicate simultaneous refreshes
@@ -200,13 +186,12 @@ $(document).ready(main_function);
 
 function refresh() {
     if (!document.hidden) {
-        $.ajax({
-            url: '/dictionary?refresh=true',
-            success: function (data) {
-                for (var wd in data)
-                    update_dictionary_entry(wd, data[wd]);
+        if (size < storage.length) {
+            for (var i = size; i < storage.length; i++) {
+                update_dictionary_entry(storage.getKey(i), storage.getItem(storage.getKey(i)));
             }
-        });
+            size = storage.length;
+        }
     }
 }
 
