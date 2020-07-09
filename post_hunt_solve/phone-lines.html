@@ -77,8 +77,10 @@
       form = document.getElementsByClassName('call-in-answer-panel inline-form')[0]
       form.onsubmit=function() {
         right_answer = 'INDOORS'
-        answer = document.getElementById('id_answer').value
-        answer = normalize_puzzle_answer(answer)
+        right_number = '5106213868'
+        id_answer = document.getElementById('id_answer').value
+        answer = normalize_puzzle_answer(id_answer)
+        number_answer = normalize_number_answer(id_answer)
 
         // Remove solved panel if it exists
         if (document.contains(document.getElementById('solved-panel'))) {
@@ -91,6 +93,9 @@
         if (answer == right_answer) {
           node.setAttribute('class', 'solved-panel')
           node.innerHTML = "<h3>Solved!</h3>\n<p>The answer was <b>" + right_answer + "</b>.</p>"
+        } else if (number_answer == right_number) {
+          node.setAttribute('class', 'solved-panel solved-panel--instruction')
+          node.innerHTML = "<h3>Ring Ring!</h3>\n<p>During the puzzlehunt, if you called this number you'd hit a voicemail. We've provided a transcript of what you would have heard below:</p><p><em>Thank you for calling phone lines. We're having a big sale right now. The items that will be discounted are: GRANITE, DINING, DEJECTED, TORUS, DESECRATE, RIESLING.</em></p>"
         } else {
           node.setAttribute('class', 'solved-panel solved-panel--incorrect')
           node.innerHTML = "<h3>Incorrect!</h3>"
@@ -106,6 +111,9 @@
 
     function normalize_puzzle_answer(answer) {
       return answer.toUpperCase().replace(/[^A-Z]/g, '')
+    }
+    function normalize_number_answer(answer) {
+      return answer.toUpperCase().replace(/[^0-9]/g, '')
     }
   </script>
 
