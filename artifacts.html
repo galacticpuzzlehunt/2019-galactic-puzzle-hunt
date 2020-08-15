@@ -217,6 +217,70 @@
         </table>
     </div>
 
+    <hr>
+
+    <p class="flavor">
+        As you solved puzzles in the main round of the hunt, we'd list their
+        answers and <span class="puflantu">puflantu</span> translations of
+        the corresponding answers in this table. Hover over the blacked-out text
+        to reveal the translation.
+    </p>
+
+    <style>
+      .spoiler, #spoiler {
+        border-right: solid 1px white;
+      }
+      .spoiler {
+        background-color: black;
+        color: transparent;
+      }
+    </style>
+
+    <script>
+      window.onload = function() {
+      var spoilers = document.getElementsByClassName("spoiler");
+      for (var i = 0; i < spoilers.length; i++) {
+        var e = spoilers[i];
+        e.addEventListener("click", function handle(a) {
+          a.currentTarget.classList.remove("spoiler");
+        });
+      }};
+    </script>
+
+    <table class="gph-list-table">
+        <thead>
+            <th>Puzzle</th>
+            <th>Answer</th>
+            <th>Translation</th>
+        </thead>
+        <tbody>
+          <tr><td>Something is Off</td><td class="spoiler">DUAL</td><td class="spoiler">JWNTU</td></tr>
+          <tr><td>Peaches</td><td class="spoiler">SKI LIFT</td><td class="spoiler">ERAMOVO</td></tr>
+          <tr><td>Phone Lines</td><td class="spoiler">INDOORS</td><td class="spoiler">HENWPEX</td></tr>
+          <tr><td>The Meta Puzzle</td><td class="spoiler">EXTRACTION</td><td class="spoiler">ROMITA</td></tr>
+          <tr><td>Make Your Own Crossword</td><td class="spoiler">MUDDY</td><td class="spoiler">OBWNERE</td></tr>
+          <tr><td>Road Trip</td><td class="spoiler">NORTHEASTER</td><td class="spoiler">SEPI'FI</td></tr>
+          <tr><td>Word Search II</td><td class="spoiler">LEATHER COATS</td><td class="spoiler">TIMEYWE MOKWE</td></tr>
+          <tr><td>50/50</td><td class="spoiler">PEACE</td><td class="spoiler">TALKE</td></tr>
+          <tr><td>Radio Broadcast</td><td class="spoiler">PARABOLIC</td><td class="spoiler">GABXO</td></tr>
+          <tr><td>Cuspidation</td><td class="spoiler">SLOW DOWN</td><td class="spoiler">'ORAR</td></tr>
+          <tr><td>Race for the Galaxy</td><td class="spoiler">STRONGER</td><td class="spoiler">VOLE'FI</td></tr>
+          <tr><td>Galaxy Trucker</td><td class="spoiler">BLUE</td><td class="spoiler">HONWZE</td></tr>
+          <tr><td>The Last Databender</td><td class="spoiler">CLEAR</td><td class="spoiler">SWTABXI</td></tr>
+          <tr><td>Ministry of Word Searches</td><td class="spoiler">PRESIDENT</td><td class="spoiler">BUDJE</td></tr>
+          <tr><td>A Crossword</td><td class="spoiler">FUNNY PAGES</td><td class="spoiler">REMWE GIFZWE</td></tr>
+          <tr><td>Colors</td><td class="spoiler">SILVER</td><td class="spoiler">ALVERI</td></tr>
+          <tr><td>Observatory</td><td class="spoiler">SALMON</td><td class="spoiler">UJI</td></tr>
+          <tr><td>Holistic</td><td class="spoiler">TRUE FORM</td><td class="spoiler">EHYO AXIBENA</td></tr>
+          <tr><td>Geography Lesson</td><td class="spoiler">DJINNI</td><td class="spoiler">BIKVE</td></tr>
+          <tr><td>Where Are They?</td><td class="spoiler">KINDERGARTEN</td><td class="spoiler">UCVABLO</td></tr>
+          <tr><td>Unsafe</td><td class="spoiler">MATRIX</td><td class="spoiler">XWRDI</td></tr>
+          <tr><td>Puzzle of Dragons</td><td class="spoiler">DAZZLING</td><td class="spoiler">EGASKA</td></tr>
+          <tr><td>Research Center</td><td class="spoiler">LUNAR</td><td class="spoiler">ERQOYE</td></tr>
+          <tr><td>Image Search</td><td id="spoiler" class="spoiler">UPPERCUT</td><td class="spoiler">EWZIG</td></tr>
+        </tbody>
+    </table>
+
 
 </main>
 
