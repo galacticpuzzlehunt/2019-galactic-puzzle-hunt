@@ -314,7 +314,6 @@ function translate_words(div) {
                     (word.toLowerCase() == word.charAt(0).toLowerCase() + word.slice(1))
             )
                 pretty_translation = translation.charAt(0).toUpperCase() + translation.slice(1);
-            console.log(norm_word, word, pretty_translation);
             $('.translation', this).text(pretty_translation);
             $('.translation-input', this).attr('value', translation);
         }
