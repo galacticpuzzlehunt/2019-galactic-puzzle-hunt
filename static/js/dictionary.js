@@ -12,6 +12,10 @@ function populate_dictionary() {
     d[storage.key(i)] = storage.getItem(storage.key(i));
   }
   size = storage.length;
+  for (const wd in default_translations) {
+    if (!(wd in d))
+      d[wd] = default_translations[wd];
+  }
 }
 
 function normalize(word) {
