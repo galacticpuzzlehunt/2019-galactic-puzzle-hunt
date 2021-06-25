@@ -7,14 +7,23 @@ var $dict = null;
 var storage = window.localStorage;
 var size = 0;
 
+const SOLUTION_KEY = "default_translations";
+var solutions_enabled = JSON.parse(storage.getItem(SOLUTION_KEY)) || false;
+
 function populate_dictionary() {
+  d = {};
+  size = 0;
   for (var i = 0; i < storage.length; i++) {
+    if (storage.key(i) == SOLUTION_KEY)
+      continue;
     d[storage.key(i)] = storage.getItem(storage.key(i));
+    size++;
   }
-  size = storage.length;
-  for (const wd in default_translations) {
-    if (!(wd in d))
-      d[wd] = default_translations[wd];
+  if (solutions_enabled) {
+      for (const wd in default_translations) {
+        if (!(wd in d))
+          d[wd] = default_translations[wd];
+      }
   }
 }
 
@@ -192,7 +201,7 @@ function refresh() {
     if (!document.hidden) {
         if (size < storage.length) {
             for (var i = size; i < storage.length; i++) {
-                update_dictionary_entry(storage.getKey(i), storage.getItem(storage.getKey(i)));
+                update_dictionary_entry(storage.key(i), storage.getItem(storage.key(i)));
             }
             size = storage.length;
         }
@@ -304,19 +313,17 @@ function translate_words(div) {
     $('.translateable', div || document.body).each(function (i) {
         var word = $(this).attr('data-word');
         var norm_word = normalize(word);
-        if (norm_word in d) {
-            var translation = d[norm_word];
-            var pretty_translation = translation;
-            if (word == word.toUpperCase())
-                pretty_translation = translation.toUpperCase();
-            else if (
-                    (word.toLowerCase() != word) &&
-                    (word.toLowerCase() == word.charAt(0).toLowerCase() + word.slice(1))
-            )
-                pretty_translation = translation.charAt(0).toUpperCase() + translation.slice(1);
-            $('.translation', this).text(pretty_translation);
-            $('.translation-input', this).attr('value', translation);
-        }
+        var translation = d[norm_word] || "";
+        var pretty_translation = translation;
+        if (word == word.toUpperCase())
+            pretty_translation = translation.toUpperCase();
+        else if (
+                (word.toLowerCase() != word) &&
+                (word.toLowerCase() == word.charAt(0).toLowerCase() + word.slice(1))
+        )
+            pretty_translation = translation.charAt(0).toUpperCase() + translation.slice(1);
+        $('.translation', this).text(pretty_translation);
+        $('.translation-input', this).attr('value', translation);
     });
 }
 
@@ -340,6 +347,15 @@ function update_dictionary_entry(word, translation) {
         }
     }
 }
+
+function toggleTranslations() {
+    solutions_enabled = !solutions_enabled;
+    populate_dictionary();
+    translate_words();
+    fill_dictionary();
+    storage.setItem(SOLUTION_KEY, solutions_enabled);
+}
+
 
 function get_related_words(target_word) {
     // Ignore casing
