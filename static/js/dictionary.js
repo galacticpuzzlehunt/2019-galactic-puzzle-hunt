@@ -160,7 +160,7 @@ var main_function = function () {
       for (var l = 0; l < pages.length; l++) {
           var artifact = pages[l];
           var html = $('<div>').append(artifact['html']);
-          if (artifact['link'] == '/artifact/greasy-booklet') {
+          if (artifact['link'] == '/artifact/greasy-booklet.html') {
               var gpages = $('.page', html).toArray();
               for (var page_idx = 0; page_idx < gpages.length; page_idx++) {
                   var tags = $(".puflantu", gpages[page_idx]).toArray();
@@ -255,7 +255,7 @@ function fill_dictionary() {
                 return (
                     "<div class=\"phrase-link\"><a href=\"" +
                     phrase['link'] +
-                    (phrase['link'] == '/artifact/greasy-booklet' ? "?page=" + phrase['page']  : "") + "\">" +
+                    (phrase['link'] == '/artifact/greasy-booklet.html' ? "?page=" + phrase['page']  : "") + "\">" +
                     "(" + phrase['name'] + ")" +
                     "</a></div><div class=\"phrase-content\"><span class='puflantu'>" + phrase['phrase'] + "</span></div>"
                 );
